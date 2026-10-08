@@ -1,0 +1,28 @@
+name: tests
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: byte-agent-eval
+      - uses: actions/checkout@v4
+        with:
+          repository: chendi-Shi/byte-agent-platform
+          ref: 099b14f1bb4460622cbd7d8d91a672d98a2a0cb1
+          path: byte-agent-platform
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -e byte-agent-eval
+      - run: python -m unittest discover -s tests -v
+        working-directory: byte-agent-eval
+      - run: python -m byte_eval run --fixture
+        working-directory: byte-agent-eval
+      - run: python -m byte_eval report --include-fixtures
+        working-directory: byte-agent-eval
+      - run: python -m byte_eval export-sft
+        working-directory: byte-agent-eval
