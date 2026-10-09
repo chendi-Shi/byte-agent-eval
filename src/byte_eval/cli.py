@@ -17,7 +17,7 @@ def main():
     parser.add_argument("--base-url", default="http://127.0.0.1:11434")
     parser.add_argument("--trials", type=int, default=1)
     parser.add_argument("--split", choices=["dev", "holdout"], default="dev")
-    parser.add_argument("--profiles", nargs="+", choices=["baseline", "grounded", "no-changes"], default=["baseline", "grounded", "no-changes"])
+    parser.add_argument("--profiles", nargs="+", choices=["baseline", "grounded", "no-changes", "verified"], default=["baseline", "grounded", "no-changes"])
     parser.add_argument("--task-ids", nargs="+")
     parser.add_argument("--limit", type=int)
     parser.add_argument("--model-context", type=int, default=4096)

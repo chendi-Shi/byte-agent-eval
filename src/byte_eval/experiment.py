@@ -30,9 +30,36 @@ changes imply incident/conflicting_evidence/verify_changes/conflicting_evidence.
 and current change evidence; when the runbook is absent, cite the change record and acknowledge the gap.
 No change tool means no verified causal evidence: collect evidence rather than invent a cause.
 """ + FORMAT
+VERIFIED = GROUNDED + """\nFor every tool call use the exact service enum fixed by the operator's task.
+For the final error_rate copy service_metrics.error_rate from the complete 30-minute observation.
+Do not copy recent_error_rate or baseline_error_rate into error_rate. These fields serve only the
+status/trend diagnosis. Return one JSON object with the defined enum values and observed evidence ids.
+A deterministic verifier may request a correction based only on your actual tool observations.
+Corrections consume the same step/call/token budgets; never change observations or hide earlier errors.
+"""
 PROFILES = {"baseline": {"system": BASELINE, "tools": ["service_metrics", "knowledge_search", "incident_changes"], "kind": "prompt_baseline"},
             "grounded": {"system": GROUNDED, "tools": ["service_metrics", "knowledge_search", "incident_changes"], "kind": "prompt_treatment"},
-            "no-changes": {"system": GROUNDED, "tools": ["service_metrics", "knowledge_search"], "kind": "causal_tool_ablation"}}
+            "no-changes": {"system": GROUNDED, "tools": ["service_metrics", "knowledge_search"], "kind": "causal_tool_ablation"},
+            "verified": {"system": VERIFIED, "tools": ["service_metrics", "knowledge_search", "incident_changes"], "kind": "tool_scope_and_output_validation"}}
+
+VERIFICATION_RULES = {"contract": "diagnostic-verifier-v1", "gold_labels_read": False,
+    "required_observations": ["service_metrics", "knowledge_search", "incident_changes"],
+    "tool_service_scope": "operator-fixed service enum, required before execution",
+    "numeric_value": "latest target-service service_metrics.error_rate for complete 30-minute window; fraction tolerance 1e-6",
+    "output_schema": "one exact JSON object, defined enums, no duplicate keys/citations or extra text",
+    "citations": "actual target-service runbook/change evidence ids; absent runbook may cite changes alone",
+    "strict_service_history": True, "semantic_cause_or_recommendation_inference": False,
+    "repair": "only repairable output/observation defects; existing tool errors remain failures; original budgets apply"}
+
+
+def _effective_task_profile(task, profile, all_tools):
+    tools = {name: all_tools[name] for name in PROFILES[profile]["tools"]}
+    validator = None
+    if profile == "verified":
+        from byte_agent.verification import scope_tools, make_diagnostic_validator
+        tools = scope_tools(tools, task["service"])
+        validator = make_diagnostic_validator(task["service"], task["prompt"], strict_service_history=True)
+    return tools, validator
 
 
 def digest(value):
@@ -124,8 +151,18 @@ def run_suite(tasks_path, platform_path, output, fixture=False, model=None, base
     try:
         kb.ingest(data / "knowledge")
         all_tools = registry(kb, data / "metrics.sqlite")
-        profile_specs = {p: {**PROFILES[p], "tool_specs": [all_tools[name].spec() for name in PROFILES[p]["tools"]]} for p in profiles}
-        metadata = {"schema": 2, "tasks": tasks, "platform_source": code, "eval_source": eval_code, "dataset": data_files,
+        profile_specs = {}
+        effective = {}
+        for p in profiles:
+            task_specs, validator_revisions = {}, {}
+            for task in tasks:
+                task_tools, validator = _effective_task_profile(task, p, all_tools)
+                effective[(task["id"], p)] = (task_tools, validator)
+                task_specs[task["id"]] = [{"spec": t.spec(), "revision": t.revision} for t in task_tools.values()]
+                validator_revisions[task["id"]] = getattr(validator, "revision", None)
+            profile_specs[p] = {**PROFILES[p], "task_tool_specs": task_specs, "validator_revisions": validator_revisions,
+                                "verification_rules": VERIFICATION_RULES if p == "verified" else None}
+        metadata = {"schema": 3, "tasks": tasks, "platform_source": code, "eval_source": eval_code, "dataset": data_files,
                     "model_revision": model_revision, "model_config": config, "model": model, "endpoint": base_url,
                     "fixture": fixture, "trials": trials, "split": split,
                     "budgets": {"steps": max_steps, "calls": max_calls, "tokens": max_tokens, "context": 60000},
@@ -150,7 +187,7 @@ def run_suite(tasks_path, platform_path, output, fixture=False, model=None, base
                         if existing[key].get("run_status") == "uncertain":
                             return results  # Never retry a potentially billed request automatically.
                         continue
-                    tools = {name: all_tools[name] for name in PROFILES[profile]["tools"]}
+                    tools, validator = effective[(task["id"], profile)]
                     if fixture:
                         agent = _fixture(task, tools, Scripted)
                     else:
@@ -158,13 +195,18 @@ def run_suite(tasks_path, platform_path, output, fixture=False, model=None, base
                         agent.revision = {**model_revision, "generation_config": agent.config}
                     directory = output / "traces" / task["id"] / str(trial) / profile
                     started_at, start = _utc(), time.monotonic()
-                    trace = Runtime(directory, agent, tools, max_steps=max_steps, max_calls=max_calls, max_tokens=max_tokens,
-                                    system_prompt=PROFILES[profile]["system"]).run(task["prompt"])
+                    runtime_options = {"max_steps": max_steps, "max_calls": max_calls, "max_tokens": max_tokens,
+                                       "system_prompt": PROFILES[profile]["system"]}
+                    if profile == "verified":
+                        runtime_options["answer_validator"] = validator
+                    trace = Runtime(directory, agent, tools, **runtime_options).run(task["prompt"])
                     result = {**score(task, trace, tools), "task_id": task["id"], "family": task.get("family"), "split": split, "trial": trial,
                               "profile": profile, "profile_kind": PROFILES[profile]["kind"], "config_hash": config_hash,
                               "trace_path": (directory / "trace.json").relative_to(output).as_posix(), "trace_sha256": hashlib.sha256((directory / "trace.json").read_bytes()).hexdigest(),
                               "run_status": trace["status"], "started_at": started_at, "finished_at": _utc(), "wall_seconds": time.monotonic() - start,
-                              "seed": seed + trial, "available_tools": list(tools)}
+                              "seed": seed + trial, "available_tools": list(tools), "validator_revision": getattr(validator, "revision", None),
+                              "validation_attempts": sum(e.get("kind") == "validation" for e in trace["events"]),
+                              "validation_rejections": sum(e.get("kind") == "validation" and not e.get("valid") for e in trace["events"])}
                     results.append(result)
                     _write_json(result_path, results)
                     if trace["status"] == "uncertain":
@@ -185,9 +227,11 @@ def report(output, include_fixtures=False):
     manifest = json.loads((output / "experiment.json").read_text(encoding="utf-8"))
     results = json.loads((output / "results.json").read_text(encoding="utf-8"))
     summary = summarize(results, include_fixtures)
-    summary["paired"] = paired_delta(results, include_fixtures)
-    summary["causal_tool_ablation"] = paired_delta(results, include_fixtures, profiles=("no-changes", "grounded"))
-    summary["ablation_decision_fields"] = paired_delta([{**r, "success": r.get("decision_correct", False)} for r in results], include_fixtures, profiles=("no-changes", "grounded"))
+    if {"baseline", "grounded"} <= set(manifest["profiles"]):
+        summary["paired"] = paired_delta(results, include_fixtures)
+    if {"no-changes", "grounded"} <= set(manifest["profiles"]):
+        summary["causal_tool_ablation"] = paired_delta(results, include_fixtures, profiles=("no-changes", "grounded"))
+        summary["ablation_decision_fields"] = paired_delta([{**r, "success": r.get("decision_correct", False)} for r in results], include_fixtures, profiles=("no-changes", "grounded"))
     planned = {(t["id"], n, p) for t in manifest["tasks"] for n in range(manifest["trials"]) for p in manifest["profiles"]}
     recorded = {(r["task_id"], r["trial"], r["profile"]) for r in results}
     missing = sorted(planned - recorded)
@@ -208,10 +252,18 @@ def report(output, include_fixtures=False):
         text += "INCOMPLETE: missing trials: " + json.dumps(summary["missing_trials"]) + "\n\n"
     if "interrupted" in summary:
         text += "INTERRUPTED: " + json.dumps(summary["interrupted"]) + "\n\n"
-    text += "Prompt comparison (same tools/budgets), task-clustered bootstrap: " + json.dumps(summary["paired"]) + "\n\n"
-    text += "Causal tool ablation (different available tools; not a prompt comparison): " + json.dumps(summary["causal_tool_ablation"]) + "\n\n"
-    text += "Secondary decision-field ablation (ignores evidence completeness, never replaces task success): " + json.dumps(summary["ablation_decision_fields"]) + "\n\n"
-    text += "Ablation task success requires the same complete evidence as the full-tool task, so missing incident_changes mechanically fails that check. Use exact decision-field accuracy as a secondary diagnostic and inspect cause/recommendation failures; do not claim the completeness delta proves improved reasoning.\n\n"
+    if "paired" in summary:
+        text += "Prompt comparison (same tools/budgets), task-clustered bootstrap: " + json.dumps(summary["paired"]) + "\n\n"
+    if "causal_tool_ablation" in summary:
+        text += "Causal tool ablation (different available tools; not a prompt comparison): " + json.dumps(summary["causal_tool_ablation"]) + "\n\n"
+        text += "Secondary decision-field ablation (ignores evidence completeness, never replaces task success): " + json.dumps(summary["ablation_decision_fields"]) + "\n\n"
+        text += "Ablation task success requires the same complete evidence as the full-tool task, so missing incident_changes mechanically fails that check. Use exact decision-field accuracy as a secondary diagnostic and inspect cause/recommendation failures; do not claim the completeness delta proves improved reasoning.\n\n"
+    if "verified" in manifest["profiles"]:
+        summary["verified_treatment"] = {"kind": "tool_scope_and_output_validation", "rules": VERIFICATION_RULES,
+            "validation_attempts": sum(r.get("validation_attempts", 0) for r in results if r["profile"] == "verified"),
+            "validation_rejections": sum(r.get("validation_rejections", 0) for r in results if r["profile"] == "verified"),
+            "comparison": "descriptive treatment results only; no paired delta across configurations or claim of pure prompt/LLM-training improvement"}
+        text += "Verified is an operator tool-scope and deterministic output-validation treatment, not a pure prompt comparison or LLM training. The validator sees tool observations and schema rules, not benchmark labels; the independent oracle still scores causes/recommendations. Corrections consume the existing budgets; blocked/failed tool calls remain failures. No paired verified-vs-other delta is computed across configurations.\n\n"
     text += "First failures and all check failures: " + json.dumps({p: {"first": g["failures"], "checks": g["check_failures"]} for p, g in summary["groups"].items()}) + "\n\n"
     text += "Synthetic incidents; public holdout checks service/scenario isolation, not an unseen production benchmark. Wilson intervals are descriptive; repeated trials share a task, so bootstrap clusters by task. Fixture results validate software only. Missing/unknown token usage is not zero cost. Structured enums and cited current records validate bounded decisions, not arbitrary natural-language reasoning.\n"
     (output / "report.md").write_text(text, encoding="utf-8")

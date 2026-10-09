@@ -28,14 +28,14 @@ def parse_answer(answer):
         raise ValueError("non-finite JSON constant: " + value)
     try:
         obj = json.loads(answer, object_pairs_hook=_unique_object, parse_constant=invalid_constant)
-    except (ValueError, TypeError) as exc:
+    except (ValueError, TypeError, RecursionError) as exc:
         raise ValueError("invalid JSON: " + str(exc)) from exc
     if not isinstance(obj, dict) or set(obj) != FIELDS:
         raise ValueError("answer must contain exactly: " + ", ".join(sorted(FIELDS)))
     if not isinstance(obj["service"], str) or not obj["service"]:
         raise ValueError("service must be a nonempty string")
     rate = obj["error_rate"]
-    if rate is not None and (type(rate) not in (int, float) or not math.isfinite(rate) or not 0 <= rate <= 1):
+    if rate is not None and (type(rate) not in (int, float) or not 0 <= rate <= 1 or not math.isfinite(rate)):
         raise ValueError("error_rate must be null or a finite fraction in [0,1]")
     for field, values in (("status", STATUSES), ("likely_cause", CAUSES), ("recommendation", RECOMMENDATIONS), ("uncertainty", UNCERTAINTIES)):
         if not isinstance(obj[field], str) or obj[field] not in values:
@@ -52,7 +52,7 @@ def _same_number(actual, expected):
     if expected is None:
         return actual is None
     # Absolute fraction tolerance accepts six-decimal reporting, not a wrong percentage scale.
-    return type(actual) in (int, float) and math.isfinite(actual) and math.isclose(actual, expected, abs_tol=1e-6, rel_tol=1e-6)
+    return type(actual) in (int, float) and 0 <= actual <= 1 and math.isfinite(actual) and math.isclose(actual, expected, abs_tol=1e-6, rel_tol=1e-6)
 
 
 def score(task, trace, allowed_tools=None):
