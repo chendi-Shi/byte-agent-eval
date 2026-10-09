@@ -1,0 +1,7 @@
+# Install the CPU PyTorch wheel using https://download.pytorch.org/whl/cpu first.
+torch>=2.5,<3
+transformers>=4.57,<5
+peft>=0.14,<1
+accelerate>=1.2,<2
+safetensors>=0.4,<1
+huggingface-hub>=0.28,<1
