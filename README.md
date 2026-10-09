@@ -1,8 +1,10 @@
 # Byte Agent Eval
 
-面向 Agent 规划、工具使用与最终结果的独立评测项目，配套 [Byte Agent Platform](https://github.com/chendi-Shi/byte-agent-platform)。覆盖 32 个合成业务服务、严格证据验收、公平提示对照、工具消融、统计报告和可审计的 SFT 候选导出。
+面向 Agent 规划、工具使用与最终结果的独立评测项目，配套 [Byte Agent Platform](https://github.com/chendi-Shi/byte-agent-platform)。覆盖 32 个合成业务服务、严格证据验收、公平提示对照、工具消融、统计报告、可审计的 SFT 候选导出，以及独立的 CPU 小语言模型 LoRA SFT／REINFORCE 工具策略训练。
 
-已通过 35 项评测测试。真实 Qwen3 4B 验证模式在开发回归中通过 2/2，在完整留出集中通过 7/8（87.5%）；两个开发实验合计导出 8 条待人工审查的 SFT 候选，未训练模型。实际配置、分数、统计范围和全部失败轨迹见 [examples/model-results.md](examples/model-results.md)。开发回归有选择偏差，留出样本仅 8 个。Scripted 结果只验证软件，默认从模型统计与训练候选排除。
+原评测核心通过 35 项测试；新增训练模块的 9 项真实工具／隔离／来源检查和 7 项真实 PyTorch 梯度／加载检查也已通过。真实 Qwen3 4B 验证模式在开发回归中通过 2/2，在完整留出集中通过 7/8（87.5%）；两个开发实验合计导出 8 条待人工审查的 SFT 候选。原 Qwen 配置、分数、统计范围和全部失败轨迹见 [examples/model-results.md](examples/model-results.md)。开发回归有选择偏差，留出样本仅 8 个。Scripted 结果只验证软件，默认从模型统计与训练候选排除。
+
+新增 SmolLM2-135M-Instruct 训练更新的是小模型注意力 LoRA，使用受约束动作与机械答案渲染，不是原 Qwen3 4B 的训练或同口径成绩。流程见 [训练说明](docs/training.md)，本次完整运行的完成状态、权重验收及前后分数以 [训练报告](examples/experiments/training-v3/report.md) 和 [实际 summary](examples/experiments/training-v3/summary.json) 为准；不根据实现或参数变化预先宣称能力提升。[中文项目讲解](docs/project-walkthrough.zh-CN.md) 说明“干了什么、怎么做”。
 
 ## 运行
 
@@ -19,7 +21,7 @@ python -m byte_eval report --output runs/fixture-dev --include-fixtures
 python -m byte_eval run --fixture --split holdout --output runs/fixture-holdout
 ```
 
-正式模型运行不读取验收标签作为输入；model 只接收 task prompt、工具 schema 和工具返回的合成观测。
+正式模型运行不读取验收标签作为输入；model 只接收 task prompt、工具 schema 和工具返回的合成观测。下例的 `qwen3:4b-instruct` 是本地模板标签：首次使用先按 [模型准备](docs/reproduce.md#模型与运行环境) 下载 `qwen3:4b`，再执行 `python -m byte_agent prepare-model --model qwen3:4b --target qwen3:4b-instruct`；不要直接下载这个自定义标签。
 
 ```bash
 python -m byte_eval run --model qwen3:4b-instruct --profiles verified --split dev --task-ids creator-upload live-session --model-context 3072 --model-output 384 --timeout 300 --max-tokens 48000 --output runs/verified-dev-regressions
@@ -67,12 +69,24 @@ python -m byte_eval export-sft --output runs/verified-dev-regressions --destinat
 
 `export-sft` 仅接受 dev 中真实模型完成且全验收成功的轨迹，重新独立评分、校验 trace SHA256、验证路径与配置并去重；holdout、fixture、失败和篡改轨迹不能进入候选。
 
-导出为 Ollama-chat messages，包括模型动作和工具观测；带来源、配置指纹与 `human_review_required=true`。这是经验证的候选数据准备，尚未训练模型，也不能直接宣称 SFT/RL 提升。不同训练框架的 chat template/token mask 转换需另行完成。
+导出为 Ollama-chat messages，包括模型动作和工具观测；带来源、配置指纹与 `human_review_required=true`。导出本身是候选数据准备，不能直接宣称 SFT/RL 提升。8 条已有候选经自动技术复评分，仍保留人工审查要求；这些长轨迹没有直接混入下面的小模型训练。
 
 候选仍需人工审查；数量为 0 时保留真实结果，不能用 fixture、holdout 或失败轨迹补齐。模板兼容修复与验证反馈也不属于训练。
+
+## CPU 小模型 SFT 与 Agentic RL
+
+固定官方 SmolLM2-135M-Instruct revision `12fd25f77366fa6b3b4b768ec3050bf629380bac`。冻结 18 个开发训练服务、6 个开发验证服务和 8 个公开留出服务；72 条动作监督明确标注 `synthetic-supervised`，使用开发教师标签与实际工具观测，排除验证／留出服务和 fixture。
+
+模型从原始词表的 9 个单 token 动作中选择三种工具调用或六类终止诊断。SFT 条件交叉熵实际反传到 `q_proj`／`v_proj` LoRA rank 4。REINFORCE 采样真实多步工具 episode，使用独立验收与工具覆盖／重复／预算奖励、同组其他 episode 的奖励基线和固定 episode 数归一化。RL 前重建优化器清除 SFT 动量；默认熵项为零。每阶段保存 adapter 与 SHA-256，加载前先扰动所有 LoRA tensor，再要求完全恢复，避免空加载器伪通过。
+
+Base／SFT／SFT+RL 在同一组 6+8 服务上以相同 greedy 解码与渲染器评测。操作者固定工具参数，渲染器复制实际指标和引用、输出严格 schema，因此这项结果是“受约束策略加渲染器”，不能与自由生成 JSON 的 Qwen 成功率直接对比。源码不会在隐式模型下载失败后退回脚本或随机模型；真实失败、零提升和负提升均保留。
+
+公开 adapter 可通过 [消费者示例](examples/evaluate_adapter.py) 单独加载和评测，无须重新训练。消费者的 14 条结果匹配同时包括原有成功与失败，不能写成 14 条业务任务全通过；业务成功率另看每个 split 的 `full_contract_successes_with_renderer`。
+
+安装和执行命令见 [训练说明](docs/training.md)；[固定依赖](requirements-training-lock.txt) 记录实际环境，CPU training CI 用极小随机 Llama 验证真实 autograd／保存／恢复，不下载 135M 权重，不冒充模型性能实验。
 
 ## 来源与范围
 
 参考 [AgentBench](https://github.com/THUDM/AgentBench)、[AgentDojo](https://github.com/ethz-spylab/agentdojo) 的独立验收与攻击/任务效果并行评估思路；代码与合成数据独立实现，没有运行或宣称这些官方 benchmark 分数。[设计说明](docs/design.md) 记录取舍。
 
-公开 holdout 用于验证服务隔离和工程复现，不是隐藏的生产泛化基准。没有 GPU 微调、生产数据、生产规模测试或无条件安全保证。应按仓库记录的实测结果描述项目。
+公开 holdout 用于验证服务隔离和工程复现，不是隐藏的生产泛化基准。小模型训练在 CPU 上进行；没有生产数据、生产规模测试或无条件安全保证。应按仓库记录的实测结果描述项目。岗位对应与讲述入口见 [JD 对齐](docs/jd-map.md) 和 [面试讲述](docs/interview.md)。
