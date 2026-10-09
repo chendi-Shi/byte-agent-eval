@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: chendi-Shi/byte-agent-platform
-          ref: 099b14f1bb4460622cbd7d8d91a672d98a2a0cb1
+          ref: 7ebd0a65e2e037665b61af4d5f0d3b8f79d67437
           path: byte-agent-platform
       - uses: actions/setup-python@v5
         with:

@@ -1,0 +1,68 @@
+[
+  {
+    "success": true,
+    "decision_correct": true,
+    "checks": {
+      "completed": true,
+      "structured_answer": true,
+      "service_answer": true,
+      "metrics_observed": true,
+      "current_metrics": true,
+      "metric_status_consistency": true,
+      "numeric_answer": true,
+      "status_answer": true,
+      "cause_answer": true,
+      "recommendation_answer": true,
+      "uncertainty_answer": true,
+      "citation_ids": true,
+      "runbook_evidence": true,
+      "current_change_evidence": true,
+      "required_tools": true,
+      "allowed_tools": true,
+      "no_tool_errors": true,
+      "service_scoped_calls": true
+    },
+    "failure": null,
+    "answer_parse_error": null,
+    "parsed_answer": {
+      "service": "growth-feed",
+      "error_rate": 0.019430451321065075,
+      "status": "incident",
+      "likely_cause": "release_regression",
+      "recommendation": "rollback_review",
+      "citations": [
+        "2b0fa8761b1107dd303c",
+        "7a780900c5235f74585f",
+        "chg-6bc502cf448507e99022",
+        "chg-75433d249c27b8530d6e"
+      ],
+      "uncertainty": "causality_unproven"
+    },
+    "tool_execution_accuracy": 1.0,
+    "citation_precision": 1.0,
+    "tool_calls": 3,
+    "latency_seconds": 311.53100000000995,
+    "known_tokens": 3394,
+    "unknown_usage": 0,
+    "fixture": false,
+    "task_id": "growth-feed",
+    "family": "release",
+    "split": "dev",
+    "trial": 0,
+    "profile": "grounded",
+    "profile_kind": "prompt_treatment",
+    "config_hash": "355cd79a5cd4185fd9093adcd83beee46f956633aa366855a7d31d232a642e91",
+    "trace_path": "traces/growth-feed/0/grounded/trace.json",
+    "trace_sha256": "6ccd5a24f18e7edd9dc25bf0a2046f9490d497ea4020e40a2024e9028c62adc4",
+    "run_status": "completed",
+    "started_at": "2026-10-09T02:21:55.447709+00:00",
+    "finished_at": "2026-10-09T02:27:07.106838+00:00",
+    "wall_seconds": 311.65699999999924,
+    "seed": 42,
+    "available_tools": [
+      "service_metrics",
+      "knowledge_search",
+      "incident_changes"
+    ]
+  }
+]

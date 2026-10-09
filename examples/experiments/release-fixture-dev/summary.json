@@ -1,0 +1,171 @@
+{
+  "label": "ENGINEERING FIXTURES — NOT MODEL PERFORMANCE",
+  "excluded_fixtures": 0,
+  "groups": {
+    "baseline": {
+      "trials": 24,
+      "successes": 24,
+      "success_rate": 1.0,
+      "decision_accuracy": 1.0,
+      "decision_accuracy_definition": "Exact answer fields only; does not require observed/cited evidence or all required tools. Secondary metric, never replaces task success.",
+      "wilson95_descriptive": [
+        0.8620194241710247,
+        1
+      ],
+      "known_tokens": 0,
+      "unknown_usage_trials": 24,
+      "mean_tool_calls": 3,
+      "median_wall_seconds": 0.15600000000267755,
+      "parse_failure_trials": 0,
+      "check_failures": {
+        "allowed_tools": 0,
+        "cause_answer": 0,
+        "citation_ids": 0,
+        "completed": 0,
+        "current_change_evidence": 0,
+        "current_metrics": 0,
+        "metric_status_consistency": 0,
+        "metrics_observed": 0,
+        "no_tool_errors": 0,
+        "numeric_answer": 0,
+        "recommendation_answer": 0,
+        "required_tools": 0,
+        "runbook_evidence": 0,
+        "service_answer": 0,
+        "service_scoped_calls": 0,
+        "status_answer": 0,
+        "structured_answer": 0,
+        "uncertainty_answer": 0
+      },
+      "failures": {}
+    },
+    "grounded": {
+      "trials": 24,
+      "successes": 24,
+      "success_rate": 1.0,
+      "decision_accuracy": 1.0,
+      "decision_accuracy_definition": "Exact answer fields only; does not require observed/cited evidence or all required tools. Secondary metric, never replaces task success.",
+      "wilson95_descriptive": [
+        0.8620194241710247,
+        1
+      ],
+      "known_tokens": 0,
+      "unknown_usage_trials": 24,
+      "mean_tool_calls": 3,
+      "median_wall_seconds": 0.1559999999954016,
+      "parse_failure_trials": 0,
+      "check_failures": {
+        "allowed_tools": 0,
+        "cause_answer": 0,
+        "citation_ids": 0,
+        "completed": 0,
+        "current_change_evidence": 0,
+        "current_metrics": 0,
+        "metric_status_consistency": 0,
+        "metrics_observed": 0,
+        "no_tool_errors": 0,
+        "numeric_answer": 0,
+        "recommendation_answer": 0,
+        "required_tools": 0,
+        "runbook_evidence": 0,
+        "service_answer": 0,
+        "service_scoped_calls": 0,
+        "status_answer": 0,
+        "structured_answer": 0,
+        "uncertainty_answer": 0
+      },
+      "failures": {}
+    },
+    "no-changes": {
+      "trials": 24,
+      "successes": 0,
+      "success_rate": 0.0,
+      "decision_accuracy": 0.2916666666666667,
+      "decision_accuracy_definition": "Exact answer fields only; does not require observed/cited evidence or all required tools. Secondary metric, never replaces task success.",
+      "wilson95_descriptive": [
+        0,
+        0.13798057582897535
+      ],
+      "known_tokens": 0,
+      "unknown_usage_trials": 24,
+      "mean_tool_calls": 2,
+      "median_wall_seconds": 0.125,
+      "parse_failure_trials": 0,
+      "check_failures": {
+        "allowed_tools": 0,
+        "cause_answer": 17,
+        "citation_ids": 0,
+        "completed": 0,
+        "current_change_evidence": 24,
+        "current_metrics": 0,
+        "metric_status_consistency": 0,
+        "metrics_observed": 0,
+        "no_tool_errors": 0,
+        "numeric_answer": 0,
+        "recommendation_answer": 17,
+        "required_tools": 24,
+        "runbook_evidence": 0,
+        "service_answer": 0,
+        "service_scoped_calls": 0,
+        "status_answer": 0,
+        "structured_answer": 0,
+        "uncertainty_answer": 17
+      },
+      "failures": {
+        "cause_answer": 17,
+        "current_change_evidence": 7
+      }
+    }
+  },
+  "paired": {
+    "profiles": [
+      "baseline",
+      "grounded"
+    ],
+    "paired_tasks": 24,
+    "paired_trials": 24,
+    "missing_pair_trials": 0,
+    "missing_pairs": [],
+    "delta": 0.0,
+    "bootstrap95": [
+      0.0,
+      0.0
+    ]
+  },
+  "causal_tool_ablation": {
+    "profiles": [
+      "no-changes",
+      "grounded"
+    ],
+    "paired_tasks": 24,
+    "paired_trials": 24,
+    "missing_pair_trials": 0,
+    "missing_pairs": [],
+    "delta": 1.0,
+    "bootstrap95": [
+      1.0,
+      1.0
+    ]
+  },
+  "ablation_decision_fields": {
+    "profiles": [
+      "no-changes",
+      "grounded"
+    ],
+    "paired_tasks": 24,
+    "paired_trials": 24,
+    "missing_pair_trials": 0,
+    "missing_pairs": [],
+    "delta": 0.7083333333333334,
+    "bootstrap95": [
+      0.5416666666666666,
+      0.875
+    ]
+  },
+  "planned_trials": 72,
+  "recorded_trials": 72,
+  "complete": true,
+  "missing_trials": [],
+  "split": "dev",
+  "config_hash": "bb49a69b89790c4f92135475e63a2536698f61d7fe7e14039ad7dcd0fd9f144d"
+}

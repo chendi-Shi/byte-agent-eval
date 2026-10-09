@@ -1,0 +1,71 @@
+{
+  "label": "MODEL RUNS — SYNTHETIC INCIDENT SUITE",
+  "excluded_fixtures": 0,
+  "groups": {
+    "verified": {
+      "trials": 2,
+      "successes": 2,
+      "success_rate": 1.0,
+      "decision_accuracy": 1.0,
+      "decision_accuracy_definition": "Exact answer fields only; does not require observed/cited evidence or all required tools. Secondary metric, never replaces task success.",
+      "wilson95_descriptive": [
+        0.34237195288961925,
+        1
+      ],
+      "known_tokens": 7223,
+      "unknown_usage_trials": 0,
+      "mean_tool_calls": 3,
+      "median_wall_seconds": 247.3515000000043,
+      "parse_failure_trials": 0,
+      "check_failures": {
+        "allowed_tools": 0,
+        "cause_answer": 0,
+        "citation_ids": 0,
+        "completed": 0,
+        "current_change_evidence": 0,
+        "current_metrics": 0,
+        "metric_status_consistency": 0,
+        "metrics_observed": 0,
+        "no_tool_errors": 0,
+        "numeric_answer": 0,
+        "recommendation_answer": 0,
+        "required_tools": 0,
+        "runbook_evidence": 0,
+        "service_answer": 0,
+        "service_scoped_calls": 0,
+        "status_answer": 0,
+        "structured_answer": 0,
+        "uncertainty_answer": 0
+      },
+      "failures": {}
+    }
+  },
+  "planned_trials": 2,
+  "recorded_trials": 2,
+  "complete": true,
+  "missing_trials": [],
+  "split": "dev",
+  "config_hash": "2ee0dfb5f91126dfaa4e40f105ddb876950202008009ba9ec79744041a85ab05",
+  "verified_treatment": {
+    "kind": "tool_scope_and_output_validation",
+    "rules": {
+      "contract": "diagnostic-verifier-v1",
+      "gold_labels_read": false,
+      "required_observations": [
+        "service_metrics",
+        "knowledge_search",
+        "incident_changes"
+      ],
+      "tool_service_scope": "operator-fixed service enum, required before execution",
+      "numeric_value": "latest target-service service_metrics.error_rate for complete 30-minute window; fraction tolerance 1e-6",
+      "output_schema": "one exact JSON object, defined enums, no duplicate keys/citations or extra text",
+      "citations": "actual target-service runbook/change evidence ids; absent runbook may cite changes alone",
+      "strict_service_history": true,
+      "semantic_cause_or_recommendation_inference": false,
+      "repair": "only repairable output/observation defects; existing tool errors remain failures; original budgets apply"
+    },
+    "validation_attempts": 2,
+    "validation_rejections": 0,
+    "comparison": "descriptive treatment results only; no paired delta across configurations or claim of pure prompt/LLM-training improvement"
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "label": "MODEL RUNS — SYNTHETIC INCIDENT SUITE",
+  "excluded_fixtures": 0,
+  "groups": {
+    "grounded": {
+      "trials": 1,
+      "successes": 0,
+      "success_rate": 0.0,
+      "decision_accuracy": 0.0,
+      "decision_accuracy_definition": "Exact answer fields only; does not require observed/cited evidence or all required tools. Secondary metric, never replaces task success.",
+      "wilson95_descriptive": [
+        0,
+        0.7934567085261071
+      ],
+      "known_tokens": 856,
+      "unknown_usage_trials": 0,
+      "mean_tool_calls": 0,
+      "median_wall_seconds": 24.10899999999674,
+      "parse_failure_trials": 1,
+      "check_failures": {
+        "allowed_tools": 0,
+        "cause_answer": 1,
+        "citation_ids": 1,
+        "completed": 0,
+        "current_change_evidence": 1,
+        "current_metrics": 1,
+        "metric_status_consistency": 1,
+        "metrics_observed": 1,
+        "no_tool_errors": 0,
+        "numeric_answer": 1,
+        "recommendation_answer": 1,
+        "required_tools": 1,
+        "runbook_evidence": 1,
+        "service_answer": 1,
+        "service_scoped_calls": 0,
+        "status_answer": 1,
+        "structured_answer": 1,
+        "uncertainty_answer": 1
+      },
+      "failures": {
+        "structured_answer": 1
+      }
+    }
+  },
+  "paired": {
+    "profiles": [
+      "baseline",
+      "grounded"
+    ],
+    "paired_tasks": 0,
+    "paired_trials": 0,
+    "missing_pair_trials": 1,
+    "missing_pairs": [
+      {
+        "task_id": "growth-feed",
+        "trial": 0,
+        "config_hash": "f0d3e28498f1cd1b95764f85f424207acf6da995ced1137c7543029595a9a4fb",
+        "missing_profiles": [
+          "baseline"
+        ]
+      }
+    ],
+    "delta": null,
+    "bootstrap95": null
+  },
+  "causal_tool_ablation": {
+    "profiles": [
+      "no-changes",
+      "grounded"
+    ],
+    "paired_tasks": 0,
+    "paired_trials": 0,
+    "missing_pair_trials": 1,
+    "missing_pairs": [
+      {
+        "task_id": "growth-feed",
+        "trial": 0,
+        "config_hash": "f0d3e28498f1cd1b95764f85f424207acf6da995ced1137c7543029595a9a4fb",
+        "missing_profiles": [
+          "no-changes"
+        ]
+      }
+    ],
+    "delta": null,
+    "bootstrap95": null
+  },
+  "ablation_decision_fields": {
+    "profiles": [
+      "no-changes",
+      "grounded"
+    ],
+    "paired_tasks": 0,
+    "paired_trials": 0,
+    "missing_pair_trials": 1,
+    "missing_pairs": [
+      {
+        "task_id": "growth-feed",
+        "trial": 0,
+        "config_hash": "f0d3e28498f1cd1b95764f85f424207acf6da995ced1137c7543029595a9a4fb",
+        "missing_profiles": [
+          "no-changes"
+        ]
+      }
+    ],
+    "delta": null,
+    "bootstrap95": null
+  },
+  "planned_trials": 1,
+  "recorded_trials": 1,
+  "complete": true,
+  "missing_trials": [],
+  "split": "dev",
+  "config_hash": "f0d3e28498f1cd1b95764f85f424207acf6da995ced1137c7543029595a9a4fb"
+}

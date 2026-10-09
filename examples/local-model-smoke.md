@@ -1,3 +1,5 @@
+> 历史记录（2026-10-08 初版）。当前模型结果见 [model-results.md](model-results.md)，本页保留早期超时的原始记录。
+
 # Local model smoke — incomplete
 
 2026-10-08，发布前工程检查。真实 qwen3:4b 请求在 90 秒超时窗口内没有返回回答。
@@ -17,3 +19,4 @@
 服务查询显示 qwen3:4b 在 CPU 上运行（size_vram=0），这只是环境观察，不能证明超时的单一原因。模型 digest、量化和 Ollama 版本见 [JSON record](local-model-smoke.json)。没有宣称成功完成模型任务或实现模型提升。
 
 已验证：20 项单元/集成测试通过；6 条合成轨迹跑通；fixture SFT 导出为 0；本地 bge-m3 构建 5 个知识块，并用 1024 维向量完成混合检索，首个来源为 search.md。
+

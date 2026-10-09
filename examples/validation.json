@@ -1,0 +1,14 @@
+{
+  "date_utc": "2026-10-09",
+  "source_commit": "aff57b9d6496a4f3e228fc9e4bb2d0139101e357",
+  "runs": [
+    {"command": "python -m unittest discover -s tests -v", "passed": 31, "wall_seconds": 43.411},
+    {"command": "python -m unittest discover -s tests -p test_scoring_boundaries.py -v", "passed": 4, "wall_seconds": 0.011}
+  ],
+  "unique_tests_passed": 35,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "source_changed_between_test_runs": false,
+  "scope": "Software verification on Windows; independent scoring, 32-case verified fixture coverage, profile compatibility, strict SFT export guards and malformed-output boundaries. Model-performance records are separate."
+}

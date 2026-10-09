@@ -1,0 +1,190 @@
+{
+  "label": "MODEL RUNS — SYNTHETIC INCIDENT SUITE",
+  "excluded_fixtures": 0,
+  "groups": {
+    "baseline": {
+      "trials": 8,
+      "successes": 2,
+      "success_rate": 0.25,
+      "decision_accuracy": 0.25,
+      "decision_accuracy_definition": "Exact answer fields only; does not require observed/cited evidence or all required tools. Secondary metric, never replaces task success.",
+      "wilson95_descriptive": [
+        0.07147768885802763,
+        0.5907301208974108
+      ],
+      "known_tokens": 20468,
+      "unknown_usage_trials": 0,
+      "mean_tool_calls": 3,
+      "median_wall_seconds": 189.22649999999703,
+      "parse_failure_trials": 1,
+      "check_failures": {
+        "allowed_tools": 0,
+        "cause_answer": 3,
+        "citation_ids": 1,
+        "completed": 0,
+        "current_change_evidence": 1,
+        "current_metrics": 1,
+        "metric_status_consistency": 1,
+        "metrics_observed": 1,
+        "no_tool_errors": 0,
+        "numeric_answer": 4,
+        "recommendation_answer": 3,
+        "required_tools": 1,
+        "runbook_evidence": 1,
+        "service_answer": 1,
+        "service_scoped_calls": 1,
+        "status_answer": 1,
+        "structured_answer": 1,
+        "uncertainty_answer": 5
+      },
+      "failures": {
+        "numeric_answer": 3,
+        "structured_answer": 1,
+        "uncertainty_answer": 2
+      }
+    },
+    "grounded": {
+      "trials": 8,
+      "successes": 4,
+      "success_rate": 0.5,
+      "decision_accuracy": 0.5,
+      "decision_accuracy_definition": "Exact answer fields only; does not require observed/cited evidence or all required tools. Secondary metric, never replaces task success.",
+      "wilson95_descriptive": [
+        0.21521252682444186,
+        0.7847874731755582
+      ],
+      "known_tokens": 25801,
+      "unknown_usage_trials": 0,
+      "mean_tool_calls": 3,
+      "median_wall_seconds": 252.47649999999703,
+      "parse_failure_trials": 2,
+      "check_failures": {
+        "allowed_tools": 0,
+        "cause_answer": 2,
+        "citation_ids": 2,
+        "completed": 0,
+        "current_change_evidence": 2,
+        "current_metrics": 1,
+        "metric_status_consistency": 1,
+        "metrics_observed": 1,
+        "no_tool_errors": 0,
+        "numeric_answer": 4,
+        "recommendation_answer": 2,
+        "required_tools": 1,
+        "runbook_evidence": 2,
+        "service_answer": 2,
+        "service_scoped_calls": 1,
+        "status_answer": 2,
+        "structured_answer": 2,
+        "uncertainty_answer": 2
+      },
+      "failures": {
+        "numeric_answer": 2,
+        "structured_answer": 2
+      }
+    },
+    "no-changes": {
+      "trials": 8,
+      "successes": 0,
+      "success_rate": 0.0,
+      "decision_accuracy": 0.125,
+      "decision_accuracy_definition": "Exact answer fields only; does not require observed/cited evidence or all required tools. Secondary metric, never replaces task success.",
+      "wilson95_descriptive": [
+        0,
+        0.3244156195108769
+      ],
+      "known_tokens": 21634,
+      "unknown_usage_trials": 1,
+      "mean_tool_calls": 3.25,
+      "median_wall_seconds": 179.46149999999034,
+      "parse_failure_trials": 2,
+      "check_failures": {
+        "allowed_tools": 0,
+        "cause_answer": 5,
+        "citation_ids": 2,
+        "completed": 1,
+        "current_change_evidence": 8,
+        "current_metrics": 1,
+        "metric_status_consistency": 1,
+        "metrics_observed": 1,
+        "no_tool_errors": 0,
+        "numeric_answer": 4,
+        "recommendation_answer": 5,
+        "required_tools": 8,
+        "runbook_evidence": 2,
+        "service_answer": 2,
+        "service_scoped_calls": 1,
+        "status_answer": 2,
+        "structured_answer": 2,
+        "uncertainty_answer": 4
+      },
+      "failures": {
+        "cause_answer": 2,
+        "completed": 1,
+        "current_change_evidence": 1,
+        "numeric_answer": 2,
+        "structured_answer": 1,
+        "uncertainty_answer": 1
+      }
+    }
+  },
+  "paired": {
+    "profiles": [
+      "baseline",
+      "grounded"
+    ],
+    "paired_tasks": 8,
+    "paired_trials": 8,
+    "missing_pair_trials": 0,
+    "missing_pairs": [],
+    "delta": 0.25,
+    "bootstrap95": [
+      0.0,
+      0.5
+    ]
+  },
+  "causal_tool_ablation": {
+    "profiles": [
+      "no-changes",
+      "grounded"
+    ],
+    "paired_tasks": 8,
+    "paired_trials": 8,
+    "missing_pair_trials": 0,
+    "missing_pairs": [],
+    "delta": 0.5,
+    "bootstrap95": [
+      0.125,
+      0.875
+    ]
+  },
+  "ablation_decision_fields": {
+    "profiles": [
+      "no-changes",
+      "grounded"
+    ],
+    "paired_tasks": 8,
+    "paired_trials": 8,
+    "missing_pair_trials": 0,
+    "missing_pairs": [],
+    "delta": 0.375,
+    "bootstrap95": [
+      0.0,
+      0.75
+    ]
+  },
+  "planned_trials": 24,
+  "recorded_trials": 24,
+  "complete": false,
+  "missing_trials": [],
+  "split": "dev",
+  "config_hash": "f95ca782d785eb9380c6ee32b84e8216d059100e68259f7fc50a3563851fbfe2",
+  "interrupted": {
+    "reason": "provider_uncertain",
+    "task_id": "growth-invite",
+    "profile": "no-changes",
+    "recorded_trials": 24,
+    "planned_trials": 24,
+    "at": "2026-10-09T03:51:25.508393+00:00"
+  }
+}
