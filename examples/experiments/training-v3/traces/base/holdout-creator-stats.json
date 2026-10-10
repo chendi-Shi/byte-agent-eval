@@ -1,0 +1,257 @@
+{
+  "states": [
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=holdout-creator-stats. Actions=\nNext action:",
+      "action": "A",
+      "input_tokens": 87,
+      "probabilities": [
+        0.3048672676086426,
+        0.07070973515510559,
+        0.03185548260807991,
+        0.065350241959095,
+        0.0766349583864212,
+        0.023969514295458794,
+        0.01946122571825981,
+        0.11304503679275513,
+        0.29410654306411743
+      ],
+      "context": {
+        "input_tokens": 87,
+        "original_tokens": 87,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=holdout-creator-stats. Actions=A\nMetrics={\"samples\":30,\"error_rate\":0.0029258056054399808,\"recent_error_rate\":0.002971171605235686,\"baseline_error_rate\":0.0028799740396706283,\"recent_max_p95_ms\":271.44,\"baseline_requests\":24653,\"recent_requests\":24906}\nNext action:",
+      "action": "A",
+      "input_tokens": 215,
+      "probabilities": [
+        0.6186776161193848,
+        0.057692043483257294,
+        0.022387953475117683,
+        0.045781929045915604,
+        0.08470247685909271,
+        0.015611181035637856,
+        0.012306783348321915,
+        0.09815524518489838,
+        0.04468480870127678
+      ],
+      "context": {
+        "input_tokens": 215,
+        "original_tokens": 215,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=holdout-creator-stats. Actions=AA\nMetrics={\"samples\":30,\"error_rate\":0.0029258056054399808,\"recent_error_rate\":0.002971171605235686,\"baseline_error_rate\":0.0028799740396706283,\"recent_max_p95_ms\":271.44,\"baseline_requests\":24653,\"recent_requests\":24906}\nNext action:",
+      "action": "A",
+      "input_tokens": 215,
+      "probabilities": [
+        0.6156585812568665,
+        0.051921457052230835,
+        0.02465037815272808,
+        0.04005156084895134,
+        0.10321177542209625,
+        0.029235079884529114,
+        0.02085188589990139,
+        0.06151042506098747,
+        0.052908919751644135
+      ],
+      "context": {
+        "input_tokens": 215,
+        "original_tokens": 215,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=holdout-creator-stats. Actions=AAA\nMetrics={\"samples\":30,\"error_rate\":0.0029258056054399808,\"recent_error_rate\":0.002971171605235686,\"baseline_error_rate\":0.0028799740396706283,\"recent_max_p95_ms\":271.44,\"baseline_requests\":24653,\"recent_requests\":24906}\nNext action:",
+      "action": "A",
+      "input_tokens": 216,
+      "probabilities": [
+        0.6286044716835022,
+        0.050225015729665756,
+        0.02309688739478588,
+        0.038636501878499985,
+        0.09664613008499146,
+        0.0264777559787035,
+        0.020377662032842636,
+        0.06010184437036514,
+        0.05583370849490166
+      ],
+      "context": {
+        "input_tokens": 216,
+        "original_tokens": 216,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    }
+  ],
+  "episode": {
+    "task_id": "holdout-creator-stats",
+    "split": "holdout",
+    "actions": [
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "reward": -0.7,
+    "score": {
+      "success": false,
+      "decision_correct": false,
+      "checks": {
+        "completed": false,
+        "structured_answer": false,
+        "service_answer": false,
+        "metrics_observed": true,
+        "current_metrics": true,
+        "metric_status_consistency": true,
+        "numeric_answer": false,
+        "status_answer": false,
+        "cause_answer": false,
+        "recommendation_answer": false,
+        "uncertainty_answer": false,
+        "citation_ids": false,
+        "runbook_evidence": false,
+        "current_change_evidence": false,
+        "required_tools": false,
+        "allowed_tools": true,
+        "no_tool_errors": true,
+        "service_scoped_calls": true
+      },
+      "failure": "completed",
+      "answer_parse_error": "invalid JSON: Expecting value: line 1 column 1 (char 0)",
+      "parsed_answer": null,
+      "tool_execution_accuracy": 1.0,
+      "citation_precision": null,
+      "tool_calls": 4,
+      "latency_seconds": 0.01275369999348186,
+      "known_tokens": 737,
+      "unknown_usage": 0,
+      "fixture": false
+    },
+    "trace": {
+      "status": "budget_exceeded",
+      "answer": "",
+      "events": [
+        {
+          "kind": "tool",
+          "name": "service_metrics",
+          "arguments": {
+            "service": "holdout-creator-stats",
+            "window_minutes": 30
+          },
+          "output": {
+            "service": "holdout-creator-stats",
+            "samples": 30,
+            "error_rate": 0.0029258056054399808,
+            "max_p95_ms": 271.44,
+            "requests": 49559,
+            "window_minutes": 30,
+            "as_of_minute": 59,
+            "status": "observed",
+            "baseline_error_rate": 0.0028799740396706283,
+            "baseline_max_p95_ms": 271.44,
+            "baseline_requests": 24653,
+            "recent_error_rate": 0.002971171605235686,
+            "recent_max_p95_ms": 271.44,
+            "recent_requests": 24906,
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.0029150999907869846
+        },
+        {
+          "kind": "tool",
+          "name": "service_metrics",
+          "arguments": {
+            "service": "holdout-creator-stats",
+            "window_minutes": 30
+          },
+          "output": {
+            "service": "holdout-creator-stats",
+            "samples": 30,
+            "error_rate": 0.0029258056054399808,
+            "max_p95_ms": 271.44,
+            "requests": 49559,
+            "window_minutes": 30,
+            "as_of_minute": 59,
+            "status": "observed",
+            "baseline_error_rate": 0.0028799740396706283,
+            "baseline_max_p95_ms": 271.44,
+            "baseline_requests": 24653,
+            "recent_error_rate": 0.002971171605235686,
+            "recent_max_p95_ms": 271.44,
+            "recent_requests": 24906,
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.0027913000085391104
+        },
+        {
+          "kind": "tool",
+          "name": "service_metrics",
+          "arguments": {
+            "service": "holdout-creator-stats",
+            "window_minutes": 30
+          },
+          "output": {
+            "service": "holdout-creator-stats",
+            "samples": 30,
+            "error_rate": 0.0029258056054399808,
+            "max_p95_ms": 271.44,
+            "requests": 49559,
+            "window_minutes": 30,
+            "as_of_minute": 59,
+            "status": "observed",
+            "baseline_error_rate": 0.0028799740396706283,
+            "baseline_max_p95_ms": 271.44,
+            "baseline_requests": 24653,
+            "recent_error_rate": 0.002971171605235686,
+            "recent_max_p95_ms": 271.44,
+            "recent_requests": 24906,
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.002978200005600229
+        },
+        {
+          "kind": "tool",
+          "name": "service_metrics",
+          "arguments": {
+            "service": "holdout-creator-stats",
+            "window_minutes": 30
+          },
+          "output": {
+            "service": "holdout-creator-stats",
+            "samples": 30,
+            "error_rate": 0.0029258056054399808,
+            "max_p95_ms": 271.44,
+            "requests": 49559,
+            "window_minutes": 30,
+            "as_of_minute": 59,
+            "status": "observed",
+            "baseline_error_rate": 0.0028799740396706283,
+            "baseline_max_p95_ms": 271.44,
+            "baseline_requests": 24653,
+            "recent_error_rate": 0.002971171605235686,
+            "recent_max_p95_ms": 271.44,
+            "recent_requests": 24906,
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.004069099988555536
+        }
+      ],
+      "tokens": 737,
+      "unknown_usage": 0,
+      "fixture": false
+    },
+    "wall_seconds": 3.719098000001395,
+    "decoder": "greedy one-of-nine original LM vocabulary tokens",
+    "stage": "base"
+  }
+}

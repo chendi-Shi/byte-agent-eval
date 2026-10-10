@@ -1,0 +1,293 @@
+{
+  "states": [
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=holdout-recommend-cache. Actions=\nNext action:",
+      "action": "A",
+      "input_tokens": 88,
+      "probabilities": [
+        0.9971550703048706,
+        0.00022296744282357395,
+        0.0002534675586502999,
+        0.0005948810139670968,
+        0.00015338817320298404,
+        0.0004172581830061972,
+        0.00021404055587481707,
+        0.00022244070714805275,
+        0.0007665365119464695
+      ],
+      "context": {
+        "input_tokens": 88,
+        "original_tokens": 88,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=holdout-recommend-cache. Actions=A\nMetrics={\"samples\":0,\"error_rate\":null,\"recent_error_rate\":null,\"baseline_error_rate\":null,\"recent_max_p95_ms\":null,\"baseline_requests\":0,\"recent_requests\":0}\nNext action:",
+      "action": "B",
+      "input_tokens": 143,
+      "probabilities": [
+        0.000488034711452201,
+        0.9937577247619629,
+        0.0048304065130651,
+        0.00025971437571570277,
+        0.000263599562458694,
+        0.00011026865831809118,
+        8.545511082047597e-05,
+        5.8620684285415336e-05,
+        0.0001461468928027898
+      ],
+      "context": {
+        "input_tokens": 143,
+        "original_tokens": 143,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=holdout-recommend-cache. Actions=AB\nMetrics={\"samples\":0,\"error_rate\":null,\"recent_error_rate\":null,\"baseline_error_rate\":null,\"recent_max_p95_ms\":null,\"baseline_requests\":0,\"recent_requests\":0}\nPolicy={\"found\":true,\"error_limit\":0.0281,\"latency_limit\":515}\nNext action:",
+      "action": "C",
+      "input_tokens": 170,
+      "probabilities": [
+        0.00011368195555405691,
+        0.00013961931108497083,
+        0.9978809952735901,
+        0.00047620854456909,
+        0.00021595481666736305,
+        0.0005981738213449717,
+        4.916388206765987e-05,
+        0.0003045799385290593,
+        0.00022170224110595882
+      ],
+      "context": {
+        "input_tokens": 170,
+        "original_tokens": 170,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=holdout-recommend-cache. Actions=ABC\nMetrics={\"samples\":0,\"error_rate\":null,\"recent_error_rate\":null,\"baseline_error_rate\":null,\"recent_max_p95_ms\":null,\"baseline_requests\":0,\"recent_requests\":0}\nPolicy={\"found\":true,\"error_limit\":0.0281,\"latency_limit\":515}\nChanges=[{\"kind\":\"telemetry\",\"status\":\"missing\",\"minute\":58},{\"kind\":\"dependency\",\"status\":\"healthy\",\"minute\":55}]\nNext action:",
+      "action": "H",
+      "input_tokens": 202,
+      "probabilities": [
+        0.0026055783964693546,
+        0.00047362770419567823,
+        0.004112354014068842,
+        0.055955082178115845,
+        0.23339800536632538,
+        0.1252250075340271,
+        0.09442659467458725,
+        0.39557287096977234,
+        0.08823074400424957
+      ],
+      "context": {
+        "input_tokens": 202,
+        "original_tokens": 202,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    }
+  ],
+  "episode": {
+    "task_id": "holdout-recommend-cache",
+    "split": "holdout",
+    "actions": [
+      "A",
+      "B",
+      "C",
+      "H"
+    ],
+    "reward": 1.3,
+    "score": {
+      "success": true,
+      "decision_correct": true,
+      "checks": {
+        "completed": true,
+        "structured_answer": true,
+        "service_answer": true,
+        "metrics_observed": true,
+        "current_metrics": true,
+        "metric_status_consistency": true,
+        "numeric_answer": true,
+        "status_answer": true,
+        "cause_answer": true,
+        "recommendation_answer": true,
+        "uncertainty_answer": true,
+        "citation_ids": true,
+        "runbook_evidence": true,
+        "current_change_evidence": true,
+        "required_tools": true,
+        "allowed_tools": true,
+        "no_tool_errors": true,
+        "service_scoped_calls": true
+      },
+      "failure": null,
+      "answer_parse_error": null,
+      "parsed_answer": {
+        "service": "holdout-recommend-cache",
+        "error_rate": null,
+        "status": "insufficient_data",
+        "likely_cause": "insufficient_evidence",
+        "recommendation": "collect_evidence",
+        "uncertainty": "insufficient_data",
+        "citations": [
+          "1cb876a2561ee58d7e03",
+          "c8ad4758c9955827da93",
+          "e26ba42e9471c164f05f",
+          "5adb9ed2233ba9211fe8",
+          "f6061bdd628ce1a86418",
+          "chg-f490e8804d702913c478",
+          "chg-2d35fbaeff3c65b3c4bf"
+        ]
+      },
+      "tool_execution_accuracy": 1.0,
+      "citation_precision": 1.0,
+      "tool_calls": 3,
+      "latency_seconds": 0.00828890000411775,
+      "known_tokens": 607,
+      "unknown_usage": 0,
+      "fixture": false
+    },
+    "trace": {
+      "status": "completed",
+      "answer": "{\"service\": \"holdout-recommend-cache\", \"error_rate\": null, \"status\": \"insufficient_data\", \"likely_cause\": \"insufficient_evidence\", \"recommendation\": \"collect_evidence\", \"uncertainty\": \"insufficient_data\", \"citations\": [\"1cb876a2561ee58d7e03\", \"c8ad4758c9955827da93\", \"e26ba42e9471c164f05f\", \"5adb9ed2233ba9211fe8\", \"f6061bdd628ce1a86418\", \"chg-f490e8804d702913c478\", \"chg-2d35fbaeff3c65b3c4bf\"]}",
+      "events": [
+        {
+          "kind": "tool",
+          "name": "service_metrics",
+          "arguments": {
+            "service": "holdout-recommend-cache",
+            "window_minutes": 30
+          },
+          "output": {
+            "service": "holdout-recommend-cache",
+            "samples": 0,
+            "error_rate": null,
+            "max_p95_ms": null,
+            "requests": 0,
+            "window_minutes": 30,
+            "as_of_minute": null,
+            "status": "missing",
+            "baseline_error_rate": null,
+            "baseline_max_p95_ms": null,
+            "baseline_requests": 0,
+            "recent_error_rate": null,
+            "recent_max_p95_ms": null,
+            "recent_requests": 0,
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.00305649999063462
+        },
+        {
+          "kind": "tool",
+          "name": "knowledge_search",
+          "arguments": {
+            "service": "holdout-recommend-cache",
+            "query": "incident policy observation window status diagnostic evidence uncertainty holdout-recommend-cache",
+            "limit": 5
+          },
+          "output": {
+            "service": "holdout-recommend-cache",
+            "source": null,
+            "evidence": [
+              {
+                "id": "1cb876a2561ee58d7e03",
+                "source": "holdout-recommend-cache/runbook.md",
+                "text": "# holdout-recommend-cache: recommendation cache incident policy",
+                "score": 0.01639344262295082,
+                "trust": "untrusted_evidence"
+              },
+              {
+                "id": "c8ad4758c9955827da93",
+                "source": "holdout-recommend-cache/runbook.md",
+                "text": "Use the exact service filter when retrieving this runbook. Evidence from another\nservice has different limits and cannot establish the status of holdout-recommend-cache.",
+                "score": 0.016129032258064516,
+                "trust": "untrusted_evidence"
+              },
+              {
+                "id": "e26ba42e9471c164f05f",
+                "source": "holdout-recommend-cache/runbook.md",
+                "text": "## Observation window and status\nRequest service_metrics for the latest 30 minutes. Its recent fields summarize\nthe newest 15 samples, and baseline fields summarize the earlier 15 samples.\nThe final error_rate must be the complete 30-minute error_rate, as a decimal.\nAn incident exists if recent_error_rate >= 0.0281 or\nrecent_max_p95_ms > 515 milliseconds. Both conditions below those\nlimits imply healthy, provided current metric samples and this policy exist.\nMissing metrics or a missing runbook imply insufficient_data: do not infer\nhealthy from a null error_rate or borrow a different service's thresholds.",
+                "score": 0.015873015873015872,
+                "trust": "untrusted_evidence"
+              },
+              {
+                "id": "5adb9ed2233ba9211fe8",
+                "source": "holdout-recommend-cache/runbook.md",
+                "text": "## Uncertainty and citations\nUse uncertainty=causality_unproven for evidence-supported incident hypotheses;\nnone_detected for healthy observations; insufficient_data for missing required\nevidence; conflicting_evidence for unresolved conflicts. Correlation does not\nprove causation. Cite this runbook and current incident_changes evidence ids.",
+                "score": 0.015625,
+                "trust": "untrusted_evidence"
+              },
+              {
+                "id": "f6061bdd628ce1a86418",
+                "source": "holdout-recommend-cache/runbook.md",
+                "text": "## Diagnostic evidence rules\nThe serving dependency for recommendation cache is embedding-store. Obtain incident_changes:\nthe runbook contains policies, not the service's current change history.\nAn active release before the metric deterioration, stable demand and a healthy\ndependency support likely_cause=release_regression and recommendation=rollback_review.\nAn active dependency failure before deterioration takes priority over a stale,\naborted or later unrelated release: dependency_outage / dependency_escalation.\nAn active traffic surge with a higher recent/baseline request ratio and healthy\ndependency supports capacity_pressure / capacity_review. Error rates alone do\nnot distinguish these causes. Cite the relevant current change evidence id.\nConflicting health probes or two unresolved competing change explanations require\nconflicting_evidence / verify_changes. A current incident without sufficient\ncausal evidence requires insufficient_evidence / collect_evidence.\nA healthy service req",
+                "score": 0.015384615384615385,
+                "trust": "untrusted_evidence"
+              }
+            ]
+          },
+          "seconds": 0.0019654000061564147
+        },
+        {
+          "kind": "tool",
+          "name": "incident_changes",
+          "arguments": {
+            "service": "holdout-recommend-cache"
+          },
+          "output": {
+            "service": "holdout-recommend-cache",
+            "available": true,
+            "changes": [
+              {
+                "kind": "telemetry",
+                "minute": 58,
+                "summary": "The metric exporter stopped and current request/error samples are missing. Dependency health cannot substitute for service metrics.",
+                "status": "missing",
+                "evidence_id": "chg-f490e8804d702913c478"
+              },
+              {
+                "kind": "dependency",
+                "minute": 55,
+                "summary": "embedding-store probes are healthy but service request counts are unknown.",
+                "status": "healthy",
+                "evidence_id": "chg-2d35fbaeff3c65b3c4bf"
+              }
+            ],
+            "evidence": [
+              {
+                "id": "chg-f490e8804d702913c478",
+                "source": "changes/holdout-recommend-cache",
+                "text": "telemetry at minute 58 (missing): The metric exporter stopped and current request/error samples are missing. Dependency health cannot substitute for service metrics.",
+                "kind": "telemetry",
+                "status": "missing",
+                "minute": 58
+              },
+              {
+                "id": "chg-2d35fbaeff3c65b3c4bf",
+                "source": "changes/holdout-recommend-cache",
+                "text": "dependency at minute 55 (healthy): embedding-store probes are healthy but service request counts are unknown.",
+                "kind": "dependency",
+                "status": "healthy",
+                "minute": 55
+              }
+            ],
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.0032670000073267147
+        }
+      ],
+      "tokens": 607,
+      "unknown_usage": 0,
+      "fixture": false
+    },
+    "wall_seconds": 3.872506899992004,
+    "decoder": "greedy one-of-nine original LM vocabulary tokens",
+    "stage": "sft"
+  }
+}

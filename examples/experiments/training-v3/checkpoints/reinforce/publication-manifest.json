@@ -1,0 +1,256 @@
+{
+  "binary": {
+    "repository_path": "examples/experiments/training-v3/checkpoints/reinforce/adapter_model.safetensors",
+    "bytes": 937056,
+    "sha256": "80e0d44a3be4b7ada64024ba8b57c11a3acb09a4159894a50cf0d132f63927b0",
+    "expected_git_blob_sha1": "ccfe6be3cdd8be3750d6cfdd44c4bb00f53021e2",
+    "encoding": "base64",
+    "chunk_payload_characters": 64000,
+    "packet_limit_bytes": 65536,
+    "chunks": [
+      {
+        "file": "byte-publication/v3-binary/byte-agent-eval/release-training-v3/reinforce/part-000.json",
+        "index": 0,
+        "offset": 0,
+        "bytes": 48000,
+        "base64_characters": 64000,
+        "raw_sha256": "a415ae33127058ee12efafed20c7b2b3becf3b33b9e2ed3a13123074e1baeb6d",
+        "packet_sha256": "a59b6e305cec7418e1b0dfe644ecb0cc0d4166cd21c96baba28625f7098e9cf8"
+      },
+      {
+        "file": "byte-publication/v3-binary/byte-agent-eval/release-training-v3/reinforce/part-001.json",
+        "index": 1,
+        "offset": 48000,
+        "bytes": 48000,
+        "base64_characters": 64000,
+        "raw_sha256": "00e71ee0a9a4ad0f0aa85816ca2eab3a0c418f000c55dea2741c5600604cd914",
+        "packet_sha256": "86669558eeeef6481ddd5b605d771e83a89ed6ae16b6d13869c160ad042dd530"
+      },
+      {
+        "file": "byte-publication/v3-binary/byte-agent-eval/release-training-v3/reinforce/part-002.json",
+        "index": 2,
+        "offset": 96000,
+        "bytes": 48000,
+        "base64_characters": 64000,
+        "raw_sha256": "4f6447af9fed6f3959ff55f3c1bfafa98ca37a97ea00bb475fc34081da1434dd",
+        "packet_sha256": "e056cb252374849e97e456bac47cfe6c016a0294b277a61006a3b7675e4a57e4"
+      },
+      {
+        "file": "byte-publication/v3-binary/byte-agent-eval/release-training-v3/reinforce/part-003.json",
+        "index": 3,
+        "offset": 144000,
+        "bytes": 48000,
+        "base64_characters": 64000,
+        "raw_sha256": "c57047e696f252c69bcf77c2fe40ed8089bff2d48e415160b5d50c7f57babdca",
+        "packet_sha256": "91963dd28ab9c2c2fd932ccedb1bfa593915b2b8be6cdbfd6dc074446da3aaea"
+      },
+      {
+        "file": "byte-publication/v3-binary/byte-agent-eval/release-training-v3/reinforce/part-004.json",
+        "index": 4,
+        "offset": 192000,
+        "bytes": 48000,
+        "base64_characters": 64000,
+        "raw_sha256": "8622cdd4b8fa4ca0b66859f19f6a1126b05fb0916c05a4ed6999e71b862eaa4e",
+        "packet_sha256": "660545d289fa5f5e5aa7cd311cb49cf0a90be0c7f1961acec3b1d9ffee1af8a7"
+      },
+      {
+        "file": "byte-publication/v3-binary/byte-agent-eval/release-training-v3/reinforce/part-005.json",
+        "index": 5,
+        "offset": 240000,
+        "bytes": 48000,
+        "base64_characters": 64000,
+        "raw_sha256": "1299783ad631de8771c9e9e5b030ccf253be51846cacb34ec11334e608e739e7",
+        "packet_sha256": "9ca4122dfadcf8c8aea80d2d6140777029b4a5fecf222e88a7a35b5b68f8938b"
+      },
+      {
+        "file": "byte-publication/v3-binary/byte-agent-eval/release-training-v3/reinforce/part-006.json",
+        "index": 6,
+        "offset": 288000,
+        "bytes": 48000,
+        "base64_characters": 64000,
+        "raw_sha256": "97ba59ca41799fe35b4ec082f6a66de93cf6a1d5eff6582faa9fa36a193d4c1b",
+        "packet_sha256": "0842517c985e855551707cc29f1b39e35db27350fa60797d7452f5430a85576f"
+      },
+      {
+        "file": "byte-publication/v3-binary/byte-agent-eval/release-training-v3/reinforce/part-007.json",
+        "index": 7,
+        "offset": 336000,
+        "bytes": 48000,
+        "base64_characters": 64000,
+        "raw_sha256": "fc47d07f5bef0852b467f2635c8800ddb231188ab49dcd18abeb0ce27a4b3927",
+        "packet_sha256": "45ee8c81f963a74578ff7e2842d148a58e2e279edc62777254bd305564cea471"
+      },
+      {
+        "file": "byte-publication/v3-binary/byte-agent-eval/release-training-v3/reinforce/part-008.json",
+        "index": 8,
+        "offset": 384000,
+        "bytes": 48000,
+        "base64_characters": 64000,
+        "raw_sha256": "4483b2638040f5a7f951fc41e62b3b5039732bc30019703374f4d941240a74b2",
+        "packet_sha256": "a056bec600308f3e127569a3f9593e8fd5c76f3a79b2da85456f61b7eeb73a3c"
+      },
+      {
+        "file": "byte-publication/v3-binary/byte-agent-eval/release-training-v3/reinforce/part-009.json",
+        "index": 9,
+        "offset": 432000,
+        "bytes": 48000,
+        "base64_characters": 64000,
+        "raw_sha256": "9e80a8d38c0e3d4936a214640e8876ed01d0a7f455cae5fd596b02a953185dce",
+        "packet_sha256": "ff81e66ecb55ac3e849301397a1f991dd24b0c8cbeb8d6f231f56c3939ef5b91"
+      },
+      {
+        "file": "byte-publication/v3-binary/byte-agent-eval/release-training-v3/reinforce/part-010.json",
+        "index": 10,
+        "offset": 480000,
+        "bytes": 48000,
+        "base64_characters": 64000,
+        "raw_sha256": "df20839af4ead259327b3741efd0629faccd2672c7cd20e213e783975e68b357",
+        "packet_sha256": "b35eaf64f5519038eb4d20ea6a646f0d1227365af05ba3d0211f8fc1f4e520ea"
+      },
+      {
+        "file": "byte-publication/v3-binary/byte-agent-eval/release-training-v3/reinforce/part-011.json",
+        "index": 11,
+        "offset": 528000,
+        "bytes": 48000,
+        "base64_characters": 64000,
+        "raw_sha256": "3eaf92590cd0b21912a10d3efe5b8a316e5b40801295fce5649ff34af67a38f9",
+        "packet_sha256": "441bd9d79fbc1a729a87dca0b8488ccccf97c15f5a550015f1e03be366997009"
+      },
+      {
+        "file": "byte-publication/v3-binary/byte-agent-eval/release-training-v3/reinforce/part-012.json",
+        "index": 12,
+        "offset": 576000,
+        "bytes": 48000,
+        "base64_characters": 64000,
+        "raw_sha256": "72e18afb1d9b032ba648cd99147129503e88c7fbd103c68de4076099c30e67de",
+        "packet_sha256": "00c0676218ae613e7dfbc8dae999f86f5e17f641ab0b5aab2a56f5ec395a521f"
+      },
+      {
+        "file": "byte-publication/v3-binary/byte-agent-eval/release-training-v3/reinforce/part-013.json",
+        "index": 13,
+        "offset": 624000,
+        "bytes": 48000,
+        "base64_characters": 64000,
+        "raw_sha256": "4d394f18305d09ddeaca15b9424390949bbfdb19293f0851de226a0c8e67ec38",
+        "packet_sha256": "df2982e878ffa86e2afb154f011b8b248cd3b0e350fe2076d7fc21484bc75de3"
+      },
+      {
+        "file": "byte-publication/v3-binary/byte-agent-eval/release-training-v3/reinforce/part-014.json",
+        "index": 14,
+        "offset": 672000,
+        "bytes": 48000,
+        "base64_characters": 64000,
+        "raw_sha256": "e391581275f0915cc303247e3ca9c36e17390d4b6336f525763f23464a6a1736",
+        "packet_sha256": "26727185215ccf490faa919107a8fb7db989979735a4122a6f2f31582215da2f"
+      },
+      {
+        "file": "byte-publication/v3-binary/byte-agent-eval/release-training-v3/reinforce/part-015.json",
+        "index": 15,
+        "offset": 720000,
+        "bytes": 48000,
+        "base64_characters": 64000,
+        "raw_sha256": "f7433cf451a8aed5ed04d26a9831147d350ed132d1ea2394e431c4957228a7c1",
+        "packet_sha256": "e51b6fa324c4c9e2db4350cf53b3dc074ad347232e86dd2785482acb2792a33f"
+      },
+      {
+        "file": "byte-publication/v3-binary/byte-agent-eval/release-training-v3/reinforce/part-016.json",
+        "index": 16,
+        "offset": 768000,
+        "bytes": 48000,
+        "base64_characters": 64000,
+        "raw_sha256": "00c6e5904bfe9c25f17c914d6943450eee40cbc20992619adefc78325ca28928",
+        "packet_sha256": "5e0391d2e8e03d80b16b684d2172e7d916a5ecdf366542e4d90284ebcfd1e926"
+      },
+      {
+        "file": "byte-publication/v3-binary/byte-agent-eval/release-training-v3/reinforce/part-017.json",
+        "index": 17,
+        "offset": 816000,
+        "bytes": 48000,
+        "base64_characters": 64000,
+        "raw_sha256": "93f4a8bcf8d516babd149279fbb0aae94ffeab302bf34f83a30affb36aef4319",
+        "packet_sha256": "b05360e73d5803240d48977b84d91d4787878dd2e43326d5908cab827a377308"
+      },
+      {
+        "file": "byte-publication/v3-binary/byte-agent-eval/release-training-v3/reinforce/part-018.json",
+        "index": 18,
+        "offset": 864000,
+        "bytes": 48000,
+        "base64_characters": 64000,
+        "raw_sha256": "f4937501f81a58f352a256a8e95a9196e767db2f96ddc5cc9bd0cf46099d08de",
+        "packet_sha256": "7facab47c0f77e8c87565fd189f4ef3bd34427ca78ef33d7701c53b5aec512ec"
+      },
+      {
+        "file": "byte-publication/v3-binary/byte-agent-eval/release-training-v3/reinforce/part-019.json",
+        "index": 19,
+        "offset": 912000,
+        "bytes": 25056,
+        "base64_characters": 33408,
+        "raw_sha256": "26797b7083b22c35245d509b44dcb3323e754b1cefd25bfcc37656de4c6f4b16",
+        "packet_sha256": "83760deb3d73cb9d3d81cafa17d60e655b50f3998748d1de116d90252244771a"
+      }
+    ]
+  },
+  "omitted_original_saved_files": {
+    "chat_template.jinja": {
+      "sha256": "d1c0ce73f56a3eb57c157fec6019c9a9812d60f6d67078a0f375e0d90a7dddaf",
+      "bytes": 373
+    },
+    "merges.txt": {
+      "sha256": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+      "bytes": 466391
+    },
+    "special_tokens_map.json": {
+      "sha256": "68d920624c05998fa87a133555aff625768fc69f1b41baf0592f8d09b60896b3",
+      "bytes": 689
+    },
+    "tokenizer.json": {
+      "sha256": "7d27c493c729a66ecefc837280b05d948b1ed50d130eebdbf911b1b36cf38ed7",
+      "bytes": 3522656
+    },
+    "tokenizer_config.json": {
+      "sha256": "2cc400b5016d790d4123eb95d6cf5af17a9c1fa874564414f2eb034b0b4c6969",
+      "bytes": 3552
+    },
+    "vocab.json": {
+      "sha256": "82b84012e3add4d01d12ba14442026e49b8cbbaead1f79ecf3d919784f82dc79",
+      "bytes": 800662
+    }
+  },
+  "preserved_original_saved_files": {
+    "adapter_model.safetensors": {
+      "sha256": "80e0d44a3be4b7ada64024ba8b57c11a3acb09a4159894a50cf0d132f63927b0",
+      "bytes": 937056
+    },
+    "adapter_config.json": {
+      "sha256": "f5796a035ba40ca9fb52c580dc5d1a69a9c72c94d036ff07ae610eec064dfad8",
+      "bytes": 1194
+    },
+    "README.md": {
+      "sha256": "f7ee41cb128c896930e93692187ee652d65cd2a0e0b3cc7a344a6a65a06bd57c",
+      "bytes": 5336
+    }
+  },
+  "publication_documents": {
+    "PUBLICATION.md": {
+      "sha256": "a7151d49ccb8dcb75946842004163adb67a928a07bfc6740d8410d1ae2287e71",
+      "bytes": 1775
+    },
+    "MODEL_CARD.md": {
+      "sha256": "22e5f1e8fa1b4ae46118aacf47c761ff7b3f0297629457d64a1be5cbeb733e16",
+      "bytes": 1969
+    },
+    "NOTICE": {
+      "sha256": "5e701c3d930c78148242d5d9a7e799a3e8982145e8fbe495f01e58c445dc6c28",
+      "bytes": 516
+    },
+    "LICENSE": {
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "bytes": 11358
+    }
+  },
+  "original_weights_manifest_sha256": "e167ffae52767dae805e54bab1e6217119154228934aed4dc16dae5a2ed671fb",
+  "tokenizer_source": {
+    "repository": "HuggingFaceTB/SmolLM2-135M-Instruct",
+    "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac"
+  }
+}

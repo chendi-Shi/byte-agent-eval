@@ -1,0 +1,88 @@
+{
+  "states": [
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=holdout-content-export. Actions=\nNext action:",
+      "action": "I",
+      "input_tokens": 87,
+      "probabilities": [
+        0.2897241711616516,
+        0.0688798651099205,
+        0.03448290377855301,
+        0.06053692474961281,
+        0.08348418027162552,
+        0.026649346575140953,
+        0.016633007675409317,
+        0.11177971214056015,
+        0.30783000588417053
+      ],
+      "context": {
+        "input_tokens": 87,
+        "original_tokens": 87,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    }
+  ],
+  "episode": {
+    "task_id": "holdout-content-export",
+    "split": "holdout",
+    "actions": [
+      "I"
+    ],
+    "reward": -0.3,
+    "score": {
+      "success": false,
+      "decision_correct": false,
+      "checks": {
+        "completed": true,
+        "structured_answer": true,
+        "service_answer": true,
+        "metrics_observed": false,
+        "current_metrics": false,
+        "metric_status_consistency": false,
+        "numeric_answer": false,
+        "status_answer": true,
+        "cause_answer": false,
+        "recommendation_answer": false,
+        "uncertainty_answer": false,
+        "citation_ids": false,
+        "runbook_evidence": false,
+        "current_change_evidence": false,
+        "required_tools": false,
+        "allowed_tools": true,
+        "no_tool_errors": true,
+        "service_scoped_calls": true
+      },
+      "failure": "metrics_observed",
+      "answer_parse_error": null,
+      "parsed_answer": {
+        "service": "holdout-content-export",
+        "error_rate": null,
+        "status": "incident",
+        "likely_cause": "conflicting_evidence",
+        "recommendation": "verify_changes",
+        "uncertainty": "conflicting_evidence",
+        "citations": []
+      },
+      "tool_execution_accuracy": null,
+      "citation_precision": null,
+      "tool_calls": 0,
+      "latency_seconds": 0,
+      "known_tokens": 88,
+      "unknown_usage": 0,
+      "fixture": false
+    },
+    "trace": {
+      "status": "completed",
+      "answer": "{\"service\": \"holdout-content-export\", \"error_rate\": null, \"status\": \"incident\", \"likely_cause\": \"conflicting_evidence\", \"recommendation\": \"verify_changes\", \"uncertainty\": \"conflicting_evidence\", \"citations\": []}",
+      "events": [],
+      "tokens": 88,
+      "unknown_usage": 0,
+      "fixture": false
+    },
+    "wall_seconds": 0.5560675000015181,
+    "decoder": "greedy one-of-nine original LM vocabulary tokens",
+    "stage": "base"
+  }
+}

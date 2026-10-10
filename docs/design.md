@@ -69,3 +69,33 @@ trial 按 `(task_id, trial, config_hash)` 配对。同一任务的重复 trial �
 2026-10-08 阅读 [AgentBench](https://github.com/THUDM/AgentBench) README（blob `dce14d556dceb75d9c55e8e6196608d39ec92efc`）和 [AgentDojo](https://github.com/ethz-spylab/agentdojo) README（blob `81d78d00c68d614b9e3c40e1b4dad56d8c74ced1`）。只参考架构与评价设计，没有复制源码、任务、论文表格或实验结果。本仓库 MIT 许可证仅覆盖原创内容。
 
 可进一步研究 [THUDM/AgentRL](https://github.com/THUDM/AgentRL) 的工具环境多轮训练流程；本项目没有集成它，也没有宣称上述官方 benchmark 分数。初版 3 dev / 2 holdout 微型套件与超时记录属于历史工程检查，不代表当前 32 案例模型实验结果。
+
+## V3：独立的 CPU 小语言模型训练
+
+V3 增加 `byte_eval.training`，使用官方固定 revision 的 SmolLM2-135M-Instruct
+完成 LoRA SFT 和真实工具 episode 的 REINFORCE。它是独立受约束任务：
+原 LM 词表里的 9 个动作 token 决定工具或诊断，操作者固定工具参数，机械
+渲染器复制实际指标与引用。结果必须标为“受约束策略加渲染器”，不能与
+上面的 Qwen3 4B 自由 JSON 任务作同口径提升比较。
+
+训练前固定 18 个开发训练服务、6 个开发验证服务和 8 个公开留出服务。
+72 条 SFT 动作监督标为 `synthetic-supervised`，开发 oracle 只供教师标签
+和终端奖励使用，不进入模型状态。8 条已有 Qwen 候选被技术重验且保留
+人工审查标记，不直接进入这个小模型训练。训练与评测都实际调用相同
+三种只读工具；模型状态只有 service、历史动作与工具返回的摘要。
+
+SFT 以合法原词表 token 的条件交叉熵更新 attention q/v LoRA。RL 使用
+当前策略采样多步 episode，奖励来自独立完整验收、有效工具覆盖、重复
+工具与预算终止；leave-one-out 组奖励基线降低方差，固定 episode 数作为
+归一化分母。RL 前重置优化器清除 SFT 动量，默认熵项为零，完成检查要求
+奖励 advantage 非零、梯度非零且实际参数改变。
+
+Base、SFT、SFT+RL 同用冻结的 6+8 评测服务、greedy 解码和 renderer。
+参数变化与能力提升是两项独立结论。实际 loss、reward、失败、动作概率、
+源码／配置／基础权重哈希及三个 checkpoint 的加载验证随实验保存；重新
+加载前故意扰动 adapter，必须完整恢复保存的参数。
+
+完整流程见 [训练说明](training.md)。实测仅引用
+[V3 训练报告](../examples/experiments/training-v3/report.md) 和
+[summary](../examples/experiments/training-v3/summary.json)，不根据代码实现
+预填分数。原 Qwen 记录仍单独保留于 [模型实测](../examples/model-results.md)。

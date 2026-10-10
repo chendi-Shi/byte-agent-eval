@@ -1,0 +1,88 @@
+{
+  "states": [
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=holdout-recommend-cache. Actions=\nNext action:",
+      "action": "I",
+      "input_tokens": 88,
+      "probabilities": [
+        0.28977254033088684,
+        0.06214173138141632,
+        0.04483069106936455,
+        0.06682199984788895,
+        0.0673675462603569,
+        0.025493185967206955,
+        0.017760878428816795,
+        0.12073758989572525,
+        0.3050737977027893
+      ],
+      "context": {
+        "input_tokens": 88,
+        "original_tokens": 88,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    }
+  ],
+  "episode": {
+    "task_id": "holdout-recommend-cache",
+    "split": "holdout",
+    "actions": [
+      "I"
+    ],
+    "reward": -0.3,
+    "score": {
+      "success": false,
+      "decision_correct": false,
+      "checks": {
+        "completed": true,
+        "structured_answer": true,
+        "service_answer": true,
+        "metrics_observed": false,
+        "current_metrics": false,
+        "metric_status_consistency": false,
+        "numeric_answer": true,
+        "status_answer": false,
+        "cause_answer": false,
+        "recommendation_answer": false,
+        "uncertainty_answer": false,
+        "citation_ids": false,
+        "runbook_evidence": false,
+        "current_change_evidence": false,
+        "required_tools": false,
+        "allowed_tools": true,
+        "no_tool_errors": true,
+        "service_scoped_calls": true
+      },
+      "failure": "metrics_observed",
+      "answer_parse_error": null,
+      "parsed_answer": {
+        "service": "holdout-recommend-cache",
+        "error_rate": null,
+        "status": "incident",
+        "likely_cause": "conflicting_evidence",
+        "recommendation": "verify_changes",
+        "uncertainty": "conflicting_evidence",
+        "citations": []
+      },
+      "tool_execution_accuracy": null,
+      "citation_precision": null,
+      "tool_calls": 0,
+      "latency_seconds": 0,
+      "known_tokens": 89,
+      "unknown_usage": 0,
+      "fixture": false
+    },
+    "trace": {
+      "status": "completed",
+      "answer": "{\"service\": \"holdout-recommend-cache\", \"error_rate\": null, \"status\": \"incident\", \"likely_cause\": \"conflicting_evidence\", \"recommendation\": \"verify_changes\", \"uncertainty\": \"conflicting_evidence\", \"citations\": []}",
+      "events": [],
+      "tokens": 89,
+      "unknown_usage": 0,
+      "fixture": false
+    },
+    "wall_seconds": 0.616777599992929,
+    "decoder": "greedy one-of-nine original LM vocabulary tokens",
+    "stage": "base"
+  }
+}

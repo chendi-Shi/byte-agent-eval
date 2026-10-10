@@ -1,0 +1,257 @@
+{
+  "states": [
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=video-playback. Actions=\nNext action:",
+      "action": "A",
+      "input_tokens": 85,
+      "probabilities": [
+        0.3378289043903351,
+        0.0816616341471672,
+        0.056025002151727676,
+        0.097956582903862,
+        0.04883093759417534,
+        0.02207065559923649,
+        0.01633734256029129,
+        0.04569575935602188,
+        0.2935931384563446
+      ],
+      "context": {
+        "input_tokens": 85,
+        "original_tokens": 85,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=video-playback. Actions=A\nMetrics={\"samples\":30,\"error_rate\":0.036506566516597075,\"recent_error_rate\":0.07072955799823756,\"baseline_error_rate\":0.0018772292096865028,\"recent_max_p95_ms\":1062.37,\"baseline_requests\":21308,\"recent_requests\":21561}\nNext action:",
+      "action": "A",
+      "input_tokens": 212,
+      "probabilities": [
+        0.6370351314544678,
+        0.08249883353710175,
+        0.04058549180626869,
+        0.08711186796426773,
+        0.06574470549821854,
+        0.01302324328571558,
+        0.014245814643800259,
+        0.023556560277938843,
+        0.03619828447699547
+      ],
+      "context": {
+        "input_tokens": 212,
+        "original_tokens": 212,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=video-playback. Actions=AA\nMetrics={\"samples\":30,\"error_rate\":0.036506566516597075,\"recent_error_rate\":0.07072955799823756,\"baseline_error_rate\":0.0018772292096865028,\"recent_max_p95_ms\":1062.37,\"baseline_requests\":21308,\"recent_requests\":21561}\nNext action:",
+      "action": "A",
+      "input_tokens": 212,
+      "probabilities": [
+        0.6543906331062317,
+        0.05778654292225838,
+        0.032247886061668396,
+        0.05902515724301338,
+        0.08379491418600082,
+        0.024296870455145836,
+        0.020404132083058357,
+        0.027554655447602272,
+        0.0404992438852787
+      ],
+      "context": {
+        "input_tokens": 212,
+        "original_tokens": 212,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=video-playback. Actions=AAA\nMetrics={\"samples\":30,\"error_rate\":0.036506566516597075,\"recent_error_rate\":0.07072955799823756,\"baseline_error_rate\":0.0018772292096865028,\"recent_max_p95_ms\":1062.37,\"baseline_requests\":21308,\"recent_requests\":21561}\nNext action:",
+      "action": "A",
+      "input_tokens": 213,
+      "probabilities": [
+        0.6576634645462036,
+        0.05618685111403465,
+        0.03192433342337608,
+        0.059120435267686844,
+        0.07990226149559021,
+        0.024120857939124107,
+        0.02057633176445961,
+        0.028088029474020004,
+        0.04241732135415077
+      ],
+      "context": {
+        "input_tokens": 213,
+        "original_tokens": 213,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    }
+  ],
+  "episode": {
+    "task_id": "video-playback",
+    "split": "dev",
+    "actions": [
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "reward": -0.7,
+    "score": {
+      "success": false,
+      "decision_correct": false,
+      "checks": {
+        "completed": false,
+        "structured_answer": false,
+        "service_answer": false,
+        "metrics_observed": true,
+        "current_metrics": true,
+        "metric_status_consistency": true,
+        "numeric_answer": false,
+        "status_answer": false,
+        "cause_answer": false,
+        "recommendation_answer": false,
+        "uncertainty_answer": false,
+        "citation_ids": false,
+        "runbook_evidence": false,
+        "current_change_evidence": false,
+        "required_tools": false,
+        "allowed_tools": true,
+        "no_tool_errors": true,
+        "service_scoped_calls": true
+      },
+      "failure": "completed",
+      "answer_parse_error": "invalid JSON: Expecting value: line 1 column 1 (char 0)",
+      "parsed_answer": null,
+      "tool_execution_accuracy": 1.0,
+      "citation_precision": null,
+      "tool_calls": 4,
+      "latency_seconds": 0.011709700003848411,
+      "known_tokens": 726,
+      "unknown_usage": 0,
+      "fixture": false
+    },
+    "trace": {
+      "status": "budget_exceeded",
+      "answer": "",
+      "events": [
+        {
+          "kind": "tool",
+          "name": "service_metrics",
+          "arguments": {
+            "service": "video-playback",
+            "window_minutes": 30
+          },
+          "output": {
+            "service": "video-playback",
+            "samples": 30,
+            "error_rate": 0.036506566516597075,
+            "max_p95_ms": 1062.37,
+            "requests": 42869,
+            "window_minutes": 30,
+            "as_of_minute": 59,
+            "status": "observed",
+            "baseline_error_rate": 0.0018772292096865028,
+            "baseline_max_p95_ms": 413.54,
+            "baseline_requests": 21308,
+            "recent_error_rate": 0.07072955799823756,
+            "recent_max_p95_ms": 1062.37,
+            "recent_requests": 21561,
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.002663299994310364
+        },
+        {
+          "kind": "tool",
+          "name": "service_metrics",
+          "arguments": {
+            "service": "video-playback",
+            "window_minutes": 30
+          },
+          "output": {
+            "service": "video-playback",
+            "samples": 30,
+            "error_rate": 0.036506566516597075,
+            "max_p95_ms": 1062.37,
+            "requests": 42869,
+            "window_minutes": 30,
+            "as_of_minute": 59,
+            "status": "observed",
+            "baseline_error_rate": 0.0018772292096865028,
+            "baseline_max_p95_ms": 413.54,
+            "baseline_requests": 21308,
+            "recent_error_rate": 0.07072955799823756,
+            "recent_max_p95_ms": 1062.37,
+            "recent_requests": 21561,
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.0025931000127457082
+        },
+        {
+          "kind": "tool",
+          "name": "service_metrics",
+          "arguments": {
+            "service": "video-playback",
+            "window_minutes": 30
+          },
+          "output": {
+            "service": "video-playback",
+            "samples": 30,
+            "error_rate": 0.036506566516597075,
+            "max_p95_ms": 1062.37,
+            "requests": 42869,
+            "window_minutes": 30,
+            "as_of_minute": 59,
+            "status": "observed",
+            "baseline_error_rate": 0.0018772292096865028,
+            "baseline_max_p95_ms": 413.54,
+            "baseline_requests": 21308,
+            "recent_error_rate": 0.07072955799823756,
+            "recent_max_p95_ms": 1062.37,
+            "recent_requests": 21561,
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.002718000003369525
+        },
+        {
+          "kind": "tool",
+          "name": "service_metrics",
+          "arguments": {
+            "service": "video-playback",
+            "window_minutes": 30
+          },
+          "output": {
+            "service": "video-playback",
+            "samples": 30,
+            "error_rate": 0.036506566516597075,
+            "max_p95_ms": 1062.37,
+            "requests": 42869,
+            "window_minutes": 30,
+            "as_of_minute": 59,
+            "status": "observed",
+            "baseline_error_rate": 0.0018772292096865028,
+            "baseline_max_p95_ms": 413.54,
+            "baseline_requests": 21308,
+            "recent_error_rate": 0.07072955799823756,
+            "recent_max_p95_ms": 1062.37,
+            "recent_requests": 21561,
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.0037352999934228137
+        }
+      ],
+      "tokens": 726,
+      "unknown_usage": 0,
+      "fixture": false
+    },
+    "wall_seconds": 4.825201100000413,
+    "decoder": "greedy one-of-nine original LM vocabulary tokens",
+    "stage": "base"
+  }
+}

@@ -1,0 +1,309 @@
+{
+  "states": [
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=commerce-checkout. Actions=\nNext action:",
+      "action": "A",
+      "input_tokens": 85,
+      "probabilities": [
+        0.998603880405426,
+        0.00014234975969884545,
+        0.00014158412523102015,
+        0.0003466065099928528,
+        6.626239337492734e-05,
+        0.00019006385991815478,
+        0.00010723758168751374,
+        4.922409061691724e-05,
+        0.00035278298310004175
+      ],
+      "context": {
+        "input_tokens": 85,
+        "original_tokens": 85,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=commerce-checkout. Actions=A\nMetrics={\"samples\":30,\"error_rate\":0.06079793350029139,\"recent_error_rate\":0.08030636869163782,\"baseline_error_rate\":0.002084122773777946,\"recent_max_p95_ms\":1712.88,\"baseline_requests\":15834,\"recent_requests\":47655}\nNext action:",
+      "action": "B",
+      "input_tokens": 210,
+      "probabilities": [
+        9.323070116806775e-05,
+        0.9982317090034485,
+        0.0013919905759394169,
+        9.885834879241884e-05,
+        0.00010759685392258689,
+        2.763848169706762e-05,
+        9.92603600025177e-06,
+        3.7696117942687124e-06,
+        3.5365264920983464e-05
+      ],
+      "context": {
+        "input_tokens": 210,
+        "original_tokens": 210,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=commerce-checkout. Actions=AB\nMetrics={\"samples\":30,\"error_rate\":0.06079793350029139,\"recent_error_rate\":0.08030636869163782,\"baseline_error_rate\":0.002084122773777946,\"recent_max_p95_ms\":1712.88,\"baseline_requests\":15834,\"recent_requests\":47655}\nPolicy={\"found\":true,\"error_limit\":0.017,\"latency_limit\":793}\nNext action:",
+      "action": "C",
+      "input_tokens": 236,
+      "probabilities": [
+        9.187062096316367e-05,
+        5.4922635172260925e-05,
+        0.9992150068283081,
+        0.00018679439381230623,
+        4.052653821418062e-05,
+        0.00025249668397009373,
+        2.7199308533454314e-05,
+        5.031435648561455e-05,
+        8.095779048744589e-05
+      ],
+      "context": {
+        "input_tokens": 236,
+        "original_tokens": 236,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=commerce-checkout. Actions=ABC\nMetrics={\"samples\":30,\"error_rate\":0.06079793350029139,\"recent_error_rate\":0.08030636869163782,\"baseline_error_rate\":0.002084122773777946,\"recent_max_p95_ms\":1712.88,\"baseline_requests\":15834,\"recent_requests\":47655}\nPolicy={\"found\":true,\"error_limit\":0.017,\"latency_limit\":793}\nChanges=[{\"kind\":\"dependency\",\"status\":\"healthy\",\"minute\":47},{\"kind\":\"traffic\",\"status\":\"active\",\"minute\":44},{\"kind\":\"release\",\"status\":\"stale\",\"minute\":8}]\nNext action:",
+      "action": "I",
+      "input_tokens": 281,
+      "probabilities": [
+        0.002022403758019209,
+        0.0003759511455427855,
+        0.004254443570971489,
+        0.17243540287017822,
+        0.17734839022159576,
+        0.2133106142282486,
+        0.07392924278974533,
+        0.09334273636341095,
+        0.26298075914382935
+      ],
+      "context": {
+        "input_tokens": 281,
+        "original_tokens": 281,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    }
+  ],
+  "episode": {
+    "task_id": "commerce-checkout",
+    "split": "dev",
+    "actions": [
+      "A",
+      "B",
+      "C",
+      "I"
+    ],
+    "reward": 0.3,
+    "score": {
+      "success": false,
+      "decision_correct": false,
+      "checks": {
+        "completed": true,
+        "structured_answer": true,
+        "service_answer": true,
+        "metrics_observed": true,
+        "current_metrics": true,
+        "metric_status_consistency": true,
+        "numeric_answer": true,
+        "status_answer": true,
+        "cause_answer": false,
+        "recommendation_answer": false,
+        "uncertainty_answer": false,
+        "citation_ids": true,
+        "runbook_evidence": true,
+        "current_change_evidence": true,
+        "required_tools": true,
+        "allowed_tools": true,
+        "no_tool_errors": true,
+        "service_scoped_calls": true
+      },
+      "failure": "cause_answer",
+      "answer_parse_error": null,
+      "parsed_answer": {
+        "service": "commerce-checkout",
+        "error_rate": 0.06079793350029139,
+        "status": "incident",
+        "likely_cause": "conflicting_evidence",
+        "recommendation": "verify_changes",
+        "uncertainty": "conflicting_evidence",
+        "citations": [
+          "2d7ee051941c0f31a630",
+          "3fb396b0bc4c0ae7665a",
+          "3c37072360269e511fb1",
+          "c6a4b15f1d5750edb9e7",
+          "556481f51583d749de57",
+          "chg-f1068840f82f091462b2",
+          "chg-33867c1000a24232dc7a",
+          "chg-e4a7e3fc0fbe166672ae"
+        ]
+      },
+      "tool_execution_accuracy": 1.0,
+      "citation_precision": 1.0,
+      "tool_calls": 3,
+      "latency_seconds": 0.008579399989685044,
+      "known_tokens": 816,
+      "unknown_usage": 0,
+      "fixture": false
+    },
+    "trace": {
+      "status": "completed",
+      "answer": "{\"service\": \"commerce-checkout\", \"error_rate\": 0.06079793350029139, \"status\": \"incident\", \"likely_cause\": \"conflicting_evidence\", \"recommendation\": \"verify_changes\", \"uncertainty\": \"conflicting_evidence\", \"citations\": [\"2d7ee051941c0f31a630\", \"3fb396b0bc4c0ae7665a\", \"3c37072360269e511fb1\", \"c6a4b15f1d5750edb9e7\", \"556481f51583d749de57\", \"chg-f1068840f82f091462b2\", \"chg-33867c1000a24232dc7a\", \"chg-e4a7e3fc0fbe166672ae\"]}",
+      "events": [
+        {
+          "kind": "tool",
+          "name": "service_metrics",
+          "arguments": {
+            "service": "commerce-checkout",
+            "window_minutes": 30
+          },
+          "output": {
+            "service": "commerce-checkout",
+            "samples": 30,
+            "error_rate": 0.06079793350029139,
+            "max_p95_ms": 1712.88,
+            "requests": 63489,
+            "window_minutes": 30,
+            "as_of_minute": 59,
+            "status": "observed",
+            "baseline_error_rate": 0.002084122773777946,
+            "baseline_max_p95_ms": 459.94,
+            "baseline_requests": 15834,
+            "recent_error_rate": 0.08030636869163782,
+            "recent_max_p95_ms": 1712.88,
+            "recent_requests": 47655,
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.00308690000383649
+        },
+        {
+          "kind": "tool",
+          "name": "knowledge_search",
+          "arguments": {
+            "service": "commerce-checkout",
+            "query": "incident policy observation window status diagnostic evidence uncertainty commerce-checkout",
+            "limit": 5
+          },
+          "output": {
+            "service": "commerce-checkout",
+            "source": null,
+            "evidence": [
+              {
+                "id": "2d7ee051941c0f31a630",
+                "source": "commerce-checkout/runbook.md",
+                "text": "# commerce-checkout: checkout requests incident policy",
+                "score": 0.01639344262295082,
+                "trust": "untrusted_evidence"
+              },
+              {
+                "id": "3fb396b0bc4c0ae7665a",
+                "source": "commerce-checkout/runbook.md",
+                "text": "Use the exact service filter when retrieving this runbook. Evidence from another\nservice has different limits and cannot establish the status of commerce-checkout.",
+                "score": 0.016129032258064516,
+                "trust": "untrusted_evidence"
+              },
+              {
+                "id": "3c37072360269e511fb1",
+                "source": "commerce-checkout/runbook.md",
+                "text": "## Observation window and status\nRequest service_metrics for the latest 30 minutes. Its recent fields summarize\nthe newest 15 samples, and baseline fields summarize the earlier 15 samples.\nThe final error_rate must be the complete 30-minute error_rate, as a decimal.\nAn incident exists if recent_error_rate >= 0.0170 or\nrecent_max_p95_ms > 793 milliseconds. Both conditions below those\nlimits imply healthy, provided current metric samples and this policy exist.\nMissing metrics or a missing runbook imply insufficient_data: do not infer\nhealthy from a null error_rate or borrow a different service's thresholds.",
+                "score": 0.015873015873015872,
+                "trust": "untrusted_evidence"
+              },
+              {
+                "id": "c6a4b15f1d5750edb9e7",
+                "source": "commerce-checkout/runbook.md",
+                "text": "## Uncertainty and citations\nUse uncertainty=causality_unproven for evidence-supported incident hypotheses;\nnone_detected for healthy observations; insufficient_data for missing required\nevidence; conflicting_evidence for unresolved conflicts. Correlation does not\nprove causation. Cite this runbook and current incident_changes evidence ids.",
+                "score": 0.015625,
+                "trust": "untrusted_evidence"
+              },
+              {
+                "id": "556481f51583d749de57",
+                "source": "commerce-checkout/runbook.md",
+                "text": "## Diagnostic evidence rules\nThe serving dependency for checkout requests is payment-router. Obtain incident_changes:\nthe runbook contains policies, not the service's current change history.\nAn active release before the metric deterioration, stable demand and a healthy\ndependency support likely_cause=release_regression and recommendation=rollback_review.\nAn active dependency failure before deterioration takes priority over a stale,\naborted or later unrelated release: dependency_outage / dependency_escalation.\nAn active traffic surge with a higher recent/baseline request ratio and healthy\ndependency supports capacity_pressure / capacity_review. Error rates alone do\nnot distinguish these causes. Cite the relevant current change evidence id.\nConflicting health probes or two unresolved competing change explanations require\nconflicting_evidence / verify_changes. A current incident without sufficient\ncausal evidence requires insufficient_evidence / collect_evidence.\nA healthy service require",
+                "score": 0.015384615384615385,
+                "trust": "untrusted_evidence"
+              }
+            ]
+          },
+          "seconds": 0.0025107999972533435
+        },
+        {
+          "kind": "tool",
+          "name": "incident_changes",
+          "arguments": {
+            "service": "commerce-checkout"
+          },
+          "output": {
+            "service": "commerce-checkout",
+            "available": true,
+            "changes": [
+              {
+                "kind": "dependency",
+                "minute": 47,
+                "summary": "payment-router remains healthy across both probes.",
+                "status": "healthy",
+                "evidence_id": "chg-f1068840f82f091462b2"
+              },
+              {
+                "kind": "traffic",
+                "minute": 44,
+                "summary": "Demand increased about threefold; queue depth and worker saturation rose together, without a serving release.",
+                "status": "active",
+                "evidence_id": "chg-33867c1000a24232dc7a"
+              },
+              {
+                "kind": "release",
+                "minute": 8,
+                "summary": "The last serving release predates the current window.",
+                "status": "stale",
+                "evidence_id": "chg-e4a7e3fc0fbe166672ae"
+              }
+            ],
+            "evidence": [
+              {
+                "id": "chg-f1068840f82f091462b2",
+                "source": "changes/commerce-checkout",
+                "text": "dependency at minute 47 (healthy): payment-router remains healthy across both probes.",
+                "kind": "dependency",
+                "status": "healthy",
+                "minute": 47
+              },
+              {
+                "id": "chg-33867c1000a24232dc7a",
+                "source": "changes/commerce-checkout",
+                "text": "traffic at minute 44 (active): Demand increased about threefold; queue depth and worker saturation rose together, without a serving release.",
+                "kind": "traffic",
+                "status": "active",
+                "minute": 44
+              },
+              {
+                "id": "chg-e4a7e3fc0fbe166672ae",
+                "source": "changes/commerce-checkout",
+                "text": "release at minute 8 (stale): The last serving release predates the current window.",
+                "kind": "release",
+                "status": "stale",
+                "minute": 8
+              }
+            ],
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.00298169998859521
+        }
+      ],
+      "tokens": 816,
+      "unknown_usage": 0,
+      "fixture": false
+    },
+    "wall_seconds": 4.737016500002937,
+    "decoder": "greedy one-of-nine original LM vocabulary tokens",
+    "stage": "sft"
+  }
+}

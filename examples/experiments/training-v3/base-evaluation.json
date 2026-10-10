@@ -1,0 +1,1715 @@
+{
+  "stage": "base",
+  "groups": {
+    "dev": {
+      "episodes": 6,
+      "full_contract_successes_with_renderer": 0,
+      "full_contract_success_rate_with_renderer": 0.0,
+      "decision_correct": 0,
+      "all_three_tools_observed": 0,
+      "mean_reward": -0.6333333333333333,
+      "wilson95_descriptive": [
+        0,
+        0.3903430336530645
+      ],
+      "interpretation": "constrained decoder plus mechanical numeric/citation/schema renderer; not free-form Qwen task performance"
+    },
+    "holdout": {
+      "episodes": 8,
+      "full_contract_successes_with_renderer": 0,
+      "full_contract_success_rate_with_renderer": 0.0,
+      "decision_correct": 0,
+      "all_three_tools_observed": 0,
+      "mean_reward": -0.44999999999999996,
+      "wilson95_descriptive": [
+        0,
+        0.3244156195108769
+      ],
+      "interpretation": "constrained decoder plus mechanical numeric/citation/schema renderer; not free-form Qwen task performance"
+    }
+  },
+  "results": [
+    {
+      "task_id": "social-notify",
+      "split": "dev",
+      "actions": [
+        "A",
+        "A",
+        "A",
+        "A"
+      ],
+      "reward": -0.7,
+      "score": {
+        "success": false,
+        "decision_correct": false,
+        "checks": {
+          "completed": false,
+          "structured_answer": false,
+          "service_answer": false,
+          "metrics_observed": true,
+          "current_metrics": true,
+          "metric_status_consistency": true,
+          "numeric_answer": false,
+          "status_answer": false,
+          "cause_answer": false,
+          "recommendation_answer": false,
+          "uncertainty_answer": false,
+          "citation_ids": false,
+          "runbook_evidence": false,
+          "current_change_evidence": false,
+          "required_tools": false,
+          "allowed_tools": true,
+          "no_tool_errors": true,
+          "service_scoped_calls": true
+        },
+        "failure": "completed",
+        "answer_parse_error": "invalid JSON: Expecting value: line 1 column 1 (char 0)",
+        "parsed_answer": null,
+        "tool_execution_accuracy": 1.0,
+        "citation_precision": null,
+        "tool_calls": 4,
+        "latency_seconds": 0.012621999994735233,
+        "known_tokens": 707,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "trace": {
+        "status": "budget_exceeded",
+        "answer": "",
+        "events": [
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "social-notify",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "social-notify",
+              "samples": 30,
+              "error_rate": 0.03143341593843746,
+              "max_p95_ms": 549.81,
+              "requests": 23001,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.00130718954248366,
+              "baseline_max_p95_ms": 214.02,
+              "baseline_requests": 11475,
+              "recent_error_rate": 0.0614263404476835,
+              "recent_max_p95_ms": 549.81,
+              "recent_requests": 11526,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0028175000043120235
+          },
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "social-notify",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "social-notify",
+              "samples": 30,
+              "error_rate": 0.03143341593843746,
+              "max_p95_ms": 549.81,
+              "requests": 23001,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.00130718954248366,
+              "baseline_max_p95_ms": 214.02,
+              "baseline_requests": 11475,
+              "recent_error_rate": 0.0614263404476835,
+              "recent_max_p95_ms": 549.81,
+              "recent_requests": 11526,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.003066299992497079
+          },
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "social-notify",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "social-notify",
+              "samples": 30,
+              "error_rate": 0.03143341593843746,
+              "max_p95_ms": 549.81,
+              "requests": 23001,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.00130718954248366,
+              "baseline_max_p95_ms": 214.02,
+              "baseline_requests": 11475,
+              "recent_error_rate": 0.0614263404476835,
+              "recent_max_p95_ms": 549.81,
+              "recent_requests": 11526,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0032809999975143
+          },
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "social-notify",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "social-notify",
+              "samples": 30,
+              "error_rate": 0.03143341593843746,
+              "max_p95_ms": 549.81,
+              "requests": 23001,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.00130718954248366,
+              "baseline_max_p95_ms": 214.02,
+              "baseline_requests": 11475,
+              "recent_error_rate": 0.0614263404476835,
+              "recent_max_p95_ms": 549.81,
+              "recent_requests": 11526,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.003457200000411831
+          }
+        ],
+        "tokens": 707,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "wall_seconds": 4.213359099987429,
+      "decoder": "greedy one-of-nine original LM vocabulary tokens",
+      "stage": "base",
+      "trace_path": "traces/base/social-notify.json",
+      "trace_sha256": "a54e27b3b2592b2f27225ff42aff65d2903852321a6cd99033391a37d27a6e7b"
+    },
+    {
+      "task_id": "ads-auction",
+      "split": "dev",
+      "actions": [
+        "A",
+        "A",
+        "A",
+        "A"
+      ],
+      "reward": -0.7,
+      "score": {
+        "success": false,
+        "decision_correct": false,
+        "checks": {
+          "completed": false,
+          "structured_answer": false,
+          "service_answer": false,
+          "metrics_observed": true,
+          "current_metrics": true,
+          "metric_status_consistency": true,
+          "numeric_answer": false,
+          "status_answer": false,
+          "cause_answer": false,
+          "recommendation_answer": false,
+          "uncertainty_answer": false,
+          "citation_ids": false,
+          "runbook_evidence": false,
+          "current_change_evidence": false,
+          "required_tools": false,
+          "allowed_tools": true,
+          "no_tool_errors": true,
+          "service_scoped_calls": true
+        },
+        "failure": "completed",
+        "answer_parse_error": "invalid JSON: Expecting value: line 1 column 1 (char 0)",
+        "parsed_answer": null,
+        "tool_execution_accuracy": 1.0,
+        "citation_precision": null,
+        "tool_calls": 4,
+        "latency_seconds": 0.012341300011030398,
+        "known_tokens": 714,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "trace": {
+        "status": "budget_exceeded",
+        "answer": "",
+        "events": [
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "ads-auction",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "ads-auction",
+              "samples": 30,
+              "error_rate": 0.09192251461988304,
+              "max_p95_ms": 865.69,
+              "requests": 27360,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.04787773431841229,
+              "baseline_max_p95_ms": 865.69,
+              "baseline_requests": 13806,
+              "recent_error_rate": 0.13678618857901725,
+              "recent_max_p95_ms": 865.69,
+              "recent_requests": 13554,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0030897000106051564
+          },
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "ads-auction",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "ads-auction",
+              "samples": 30,
+              "error_rate": 0.09192251461988304,
+              "max_p95_ms": 865.69,
+              "requests": 27360,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.04787773431841229,
+              "baseline_max_p95_ms": 865.69,
+              "baseline_requests": 13806,
+              "recent_error_rate": 0.13678618857901725,
+              "recent_max_p95_ms": 865.69,
+              "recent_requests": 13554,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.003100400004768744
+          },
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "ads-auction",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "ads-auction",
+              "samples": 30,
+              "error_rate": 0.09192251461988304,
+              "max_p95_ms": 865.69,
+              "requests": 27360,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.04787773431841229,
+              "baseline_max_p95_ms": 865.69,
+              "baseline_requests": 13806,
+              "recent_error_rate": 0.13678618857901725,
+              "recent_max_p95_ms": 865.69,
+              "recent_requests": 13554,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.003318299990496598
+          },
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "ads-auction",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "ads-auction",
+              "samples": 30,
+              "error_rate": 0.09192251461988304,
+              "max_p95_ms": 865.69,
+              "requests": 27360,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.04787773431841229,
+              "baseline_max_p95_ms": 865.69,
+              "baseline_requests": 13806,
+              "recent_error_rate": 0.13678618857901725,
+              "recent_max_p95_ms": 865.69,
+              "recent_requests": 13554,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0028329000051598996
+          }
+        ],
+        "tokens": 714,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "wall_seconds": 4.521002100009355,
+      "decoder": "greedy one-of-nine original LM vocabulary tokens",
+      "stage": "base",
+      "trace_path": "traces/base/ads-auction.json",
+      "trace_sha256": "fc4f95b954dc3a973359da8c31ce403028e8684371e8d46d170658c0347f38da"
+    },
+    {
+      "task_id": "commerce-checkout",
+      "split": "dev",
+      "actions": [
+        "A",
+        "A",
+        "A",
+        "A"
+      ],
+      "reward": -0.7,
+      "score": {
+        "success": false,
+        "decision_correct": false,
+        "checks": {
+          "completed": false,
+          "structured_answer": false,
+          "service_answer": false,
+          "metrics_observed": true,
+          "current_metrics": true,
+          "metric_status_consistency": true,
+          "numeric_answer": false,
+          "status_answer": false,
+          "cause_answer": false,
+          "recommendation_answer": false,
+          "uncertainty_answer": false,
+          "citation_ids": false,
+          "runbook_evidence": false,
+          "current_change_evidence": false,
+          "required_tools": false,
+          "allowed_tools": true,
+          "no_tool_errors": true,
+          "service_scoped_calls": true
+        },
+        "failure": "completed",
+        "answer_parse_error": "invalid JSON: Expecting value: line 1 column 1 (char 0)",
+        "parsed_answer": null,
+        "tool_execution_accuracy": 1.0,
+        "citation_precision": null,
+        "tool_calls": 4,
+        "latency_seconds": 0.011620200020843185,
+        "known_tokens": 720,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "trace": {
+        "status": "budget_exceeded",
+        "answer": "",
+        "events": [
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "commerce-checkout",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "commerce-checkout",
+              "samples": 30,
+              "error_rate": 0.06079793350029139,
+              "max_p95_ms": 1712.88,
+              "requests": 63489,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.002084122773777946,
+              "baseline_max_p95_ms": 459.94,
+              "baseline_requests": 15834,
+              "recent_error_rate": 0.08030636869163782,
+              "recent_max_p95_ms": 1712.88,
+              "recent_requests": 47655,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0030255000019678846
+          },
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "commerce-checkout",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "commerce-checkout",
+              "samples": 30,
+              "error_rate": 0.06079793350029139,
+              "max_p95_ms": 1712.88,
+              "requests": 63489,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.002084122773777946,
+              "baseline_max_p95_ms": 459.94,
+              "baseline_requests": 15834,
+              "recent_error_rate": 0.08030636869163782,
+              "recent_max_p95_ms": 1712.88,
+              "recent_requests": 47655,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.002912000010837801
+          },
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "commerce-checkout",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "commerce-checkout",
+              "samples": 30,
+              "error_rate": 0.06079793350029139,
+              "max_p95_ms": 1712.88,
+              "requests": 63489,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.002084122773777946,
+              "baseline_max_p95_ms": 459.94,
+              "baseline_requests": 15834,
+              "recent_error_rate": 0.08030636869163782,
+              "recent_max_p95_ms": 1712.88,
+              "recent_requests": 47655,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0028711000049952418
+          },
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "commerce-checkout",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "commerce-checkout",
+              "samples": 30,
+              "error_rate": 0.06079793350029139,
+              "max_p95_ms": 1712.88,
+              "requests": 63489,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.002084122773777946,
+              "baseline_max_p95_ms": 459.94,
+              "baseline_requests": 15834,
+              "recent_error_rate": 0.08030636869163782,
+              "recent_max_p95_ms": 1712.88,
+              "recent_requests": 47655,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0028116000030422583
+          }
+        ],
+        "tokens": 720,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "wall_seconds": 6.353727600013372,
+      "decoder": "greedy one-of-nine original LM vocabulary tokens",
+      "stage": "base",
+      "trace_path": "traces/base/commerce-checkout.json",
+      "trace_sha256": "314aff6421f0dc18edca5836fd5b1d03d6c05c5eb76a2b215d7924d73b251589"
+    },
+    {
+      "task_id": "live-gifts",
+      "split": "dev",
+      "actions": [
+        "I"
+      ],
+      "reward": -0.3,
+      "score": {
+        "success": false,
+        "decision_correct": false,
+        "checks": {
+          "completed": true,
+          "structured_answer": true,
+          "service_answer": true,
+          "metrics_observed": false,
+          "current_metrics": false,
+          "metric_status_consistency": false,
+          "numeric_answer": false,
+          "status_answer": false,
+          "cause_answer": false,
+          "recommendation_answer": false,
+          "uncertainty_answer": false,
+          "citation_ids": false,
+          "runbook_evidence": false,
+          "current_change_evidence": false,
+          "required_tools": false,
+          "allowed_tools": true,
+          "no_tool_errors": true,
+          "service_scoped_calls": true
+        },
+        "failure": "metrics_observed",
+        "answer_parse_error": null,
+        "parsed_answer": {
+          "service": "live-gifts",
+          "error_rate": null,
+          "status": "incident",
+          "likely_cause": "conflicting_evidence",
+          "recommendation": "verify_changes",
+          "uncertainty": "conflicting_evidence",
+          "citations": []
+        },
+        "tool_execution_accuracy": null,
+        "citation_precision": null,
+        "tool_calls": 0,
+        "latency_seconds": 0,
+        "known_tokens": 86,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "trace": {
+        "status": "completed",
+        "answer": "{\"service\": \"live-gifts\", \"error_rate\": null, \"status\": \"incident\", \"likely_cause\": \"conflicting_evidence\", \"recommendation\": \"verify_changes\", \"uncertainty\": \"conflicting_evidence\", \"citations\": []}",
+        "events": [],
+        "tokens": 86,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "wall_seconds": 1.0241828999860445,
+      "decoder": "greedy one-of-nine original LM vocabulary tokens",
+      "stage": "base",
+      "trace_path": "traces/base/live-gifts.json",
+      "trace_sha256": "45b1fec24bb64d0ea0088c330d6112f0db706215df50b8ed4f69ebe48e5b3f40"
+    },
+    {
+      "task_id": "message-presence",
+      "split": "dev",
+      "actions": [
+        "A",
+        "A",
+        "A",
+        "A"
+      ],
+      "reward": -0.7,
+      "score": {
+        "success": false,
+        "decision_correct": false,
+        "checks": {
+          "completed": false,
+          "structured_answer": false,
+          "service_answer": false,
+          "metrics_observed": true,
+          "current_metrics": true,
+          "metric_status_consistency": true,
+          "numeric_answer": false,
+          "status_answer": false,
+          "cause_answer": false,
+          "recommendation_answer": false,
+          "uncertainty_answer": false,
+          "citation_ids": false,
+          "runbook_evidence": false,
+          "current_change_evidence": false,
+          "required_tools": false,
+          "allowed_tools": true,
+          "no_tool_errors": true,
+          "service_scoped_calls": true
+        },
+        "failure": "completed",
+        "answer_parse_error": "invalid JSON: Expecting value: line 1 column 1 (char 0)",
+        "parsed_answer": null,
+        "tool_execution_accuracy": 1.0,
+        "citation_precision": null,
+        "tool_calls": 4,
+        "latency_seconds": 0.010546299992711283,
+        "known_tokens": 510,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "trace": {
+        "status": "budget_exceeded",
+        "answer": "",
+        "events": [
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "message-presence",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "message-presence",
+              "samples": 0,
+              "error_rate": null,
+              "max_p95_ms": null,
+              "requests": 0,
+              "window_minutes": 30,
+              "as_of_minute": null,
+              "status": "missing",
+              "baseline_error_rate": null,
+              "baseline_max_p95_ms": null,
+              "baseline_requests": 0,
+              "recent_error_rate": null,
+              "recent_max_p95_ms": null,
+              "recent_requests": 0,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.002513799990992993
+          },
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "message-presence",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "message-presence",
+              "samples": 0,
+              "error_rate": null,
+              "max_p95_ms": null,
+              "requests": 0,
+              "window_minutes": 30,
+              "as_of_minute": null,
+              "status": "missing",
+              "baseline_error_rate": null,
+              "baseline_max_p95_ms": null,
+              "baseline_requests": 0,
+              "recent_error_rate": null,
+              "recent_max_p95_ms": null,
+              "recent_requests": 0,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0030107000056887046
+          },
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "message-presence",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "message-presence",
+              "samples": 0,
+              "error_rate": null,
+              "max_p95_ms": null,
+              "requests": 0,
+              "window_minutes": 30,
+              "as_of_minute": null,
+              "status": "missing",
+              "baseline_error_rate": null,
+              "baseline_max_p95_ms": null,
+              "baseline_requests": 0,
+              "recent_error_rate": null,
+              "recent_max_p95_ms": null,
+              "recent_requests": 0,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0024489999923389405
+          },
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "message-presence",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "message-presence",
+              "samples": 0,
+              "error_rate": null,
+              "max_p95_ms": null,
+              "requests": 0,
+              "window_minutes": 30,
+              "as_of_minute": null,
+              "status": "missing",
+              "baseline_error_rate": null,
+              "baseline_max_p95_ms": null,
+              "baseline_requests": 0,
+              "recent_error_rate": null,
+              "recent_max_p95_ms": null,
+              "recent_requests": 0,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.002572800003690645
+          }
+        ],
+        "tokens": 510,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "wall_seconds": 4.1795659000054,
+      "decoder": "greedy one-of-nine original LM vocabulary tokens",
+      "stage": "base",
+      "trace_path": "traces/base/message-presence.json",
+      "trace_sha256": "453c3ff392c9b376b0d1bea1ab6bb0a5445344f4ee0c4b0ad9e06189fa30f208"
+    },
+    {
+      "task_id": "video-playback",
+      "split": "dev",
+      "actions": [
+        "A",
+        "A",
+        "A",
+        "A"
+      ],
+      "reward": -0.7,
+      "score": {
+        "success": false,
+        "decision_correct": false,
+        "checks": {
+          "completed": false,
+          "structured_answer": false,
+          "service_answer": false,
+          "metrics_observed": true,
+          "current_metrics": true,
+          "metric_status_consistency": true,
+          "numeric_answer": false,
+          "status_answer": false,
+          "cause_answer": false,
+          "recommendation_answer": false,
+          "uncertainty_answer": false,
+          "citation_ids": false,
+          "runbook_evidence": false,
+          "current_change_evidence": false,
+          "required_tools": false,
+          "allowed_tools": true,
+          "no_tool_errors": true,
+          "service_scoped_calls": true
+        },
+        "failure": "completed",
+        "answer_parse_error": "invalid JSON: Expecting value: line 1 column 1 (char 0)",
+        "parsed_answer": null,
+        "tool_execution_accuracy": 1.0,
+        "citation_precision": null,
+        "tool_calls": 4,
+        "latency_seconds": 0.011709700003848411,
+        "known_tokens": 726,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "trace": {
+        "status": "budget_exceeded",
+        "answer": "",
+        "events": [
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "video-playback",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "video-playback",
+              "samples": 30,
+              "error_rate": 0.036506566516597075,
+              "max_p95_ms": 1062.37,
+              "requests": 42869,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.0018772292096865028,
+              "baseline_max_p95_ms": 413.54,
+              "baseline_requests": 21308,
+              "recent_error_rate": 0.07072955799823756,
+              "recent_max_p95_ms": 1062.37,
+              "recent_requests": 21561,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.002663299994310364
+          },
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "video-playback",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "video-playback",
+              "samples": 30,
+              "error_rate": 0.036506566516597075,
+              "max_p95_ms": 1062.37,
+              "requests": 42869,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.0018772292096865028,
+              "baseline_max_p95_ms": 413.54,
+              "baseline_requests": 21308,
+              "recent_error_rate": 0.07072955799823756,
+              "recent_max_p95_ms": 1062.37,
+              "recent_requests": 21561,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0025931000127457082
+          },
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "video-playback",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "video-playback",
+              "samples": 30,
+              "error_rate": 0.036506566516597075,
+              "max_p95_ms": 1062.37,
+              "requests": 42869,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.0018772292096865028,
+              "baseline_max_p95_ms": 413.54,
+              "baseline_requests": 21308,
+              "recent_error_rate": 0.07072955799823756,
+              "recent_max_p95_ms": 1062.37,
+              "recent_requests": 21561,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.002718000003369525
+          },
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "video-playback",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "video-playback",
+              "samples": 30,
+              "error_rate": 0.036506566516597075,
+              "max_p95_ms": 1062.37,
+              "requests": 42869,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.0018772292096865028,
+              "baseline_max_p95_ms": 413.54,
+              "baseline_requests": 21308,
+              "recent_error_rate": 0.07072955799823756,
+              "recent_max_p95_ms": 1062.37,
+              "recent_requests": 21561,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0037352999934228137
+          }
+        ],
+        "tokens": 726,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "wall_seconds": 4.825201100000413,
+      "decoder": "greedy one-of-nine original LM vocabulary tokens",
+      "stage": "base",
+      "trace_path": "traces/base/video-playback.json",
+      "trace_sha256": "8be0ef34a01fc6938b8de167b1d183d0821eaab287dfc2f385f019289774ce48"
+    },
+    {
+      "task_id": "holdout-comment",
+      "split": "holdout",
+      "actions": [
+        "I"
+      ],
+      "reward": -0.3,
+      "score": {
+        "success": false,
+        "decision_correct": false,
+        "checks": {
+          "completed": true,
+          "structured_answer": true,
+          "service_answer": true,
+          "metrics_observed": false,
+          "current_metrics": false,
+          "metric_status_consistency": false,
+          "numeric_answer": false,
+          "status_answer": true,
+          "cause_answer": false,
+          "recommendation_answer": false,
+          "uncertainty_answer": false,
+          "citation_ids": false,
+          "runbook_evidence": false,
+          "current_change_evidence": false,
+          "required_tools": false,
+          "allowed_tools": true,
+          "no_tool_errors": true,
+          "service_scoped_calls": true
+        },
+        "failure": "metrics_observed",
+        "answer_parse_error": null,
+        "parsed_answer": {
+          "service": "holdout-comment",
+          "error_rate": null,
+          "status": "incident",
+          "likely_cause": "conflicting_evidence",
+          "recommendation": "verify_changes",
+          "uncertainty": "conflicting_evidence",
+          "citations": []
+        },
+        "tool_execution_accuracy": null,
+        "citation_precision": null,
+        "tool_calls": 0,
+        "latency_seconds": 0,
+        "known_tokens": 86,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "trace": {
+        "status": "completed",
+        "answer": "{\"service\": \"holdout-comment\", \"error_rate\": null, \"status\": \"incident\", \"likely_cause\": \"conflicting_evidence\", \"recommendation\": \"verify_changes\", \"uncertainty\": \"conflicting_evidence\", \"citations\": []}",
+        "events": [],
+        "tokens": 86,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "wall_seconds": 1.2642312000098173,
+      "decoder": "greedy one-of-nine original LM vocabulary tokens",
+      "stage": "base",
+      "trace_path": "traces/base/holdout-comment.json",
+      "trace_sha256": "c31f12c0a63e28b6bdc3350807f4810afb8900b79ab46709c5f306dfee4afa8e"
+    },
+    {
+      "task_id": "holdout-local-order",
+      "split": "holdout",
+      "actions": [
+        "A",
+        "A",
+        "A",
+        "A"
+      ],
+      "reward": -0.7,
+      "score": {
+        "success": false,
+        "decision_correct": false,
+        "checks": {
+          "completed": false,
+          "structured_answer": false,
+          "service_answer": false,
+          "metrics_observed": true,
+          "current_metrics": true,
+          "metric_status_consistency": true,
+          "numeric_answer": false,
+          "status_answer": false,
+          "cause_answer": false,
+          "recommendation_answer": false,
+          "uncertainty_answer": false,
+          "citation_ids": false,
+          "runbook_evidence": false,
+          "current_change_evidence": false,
+          "required_tools": false,
+          "allowed_tools": true,
+          "no_tool_errors": true,
+          "service_scoped_calls": true
+        },
+        "failure": "completed",
+        "answer_parse_error": "invalid JSON: Expecting value: line 1 column 1 (char 0)",
+        "parsed_answer": null,
+        "tool_execution_accuracy": 1.0,
+        "citation_precision": null,
+        "tool_calls": 4,
+        "latency_seconds": 0.011034600014681928,
+        "known_tokens": 728,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "trace": {
+        "status": "budget_exceeded",
+        "answer": "",
+        "events": [
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "holdout-local-order",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "holdout-local-order",
+              "samples": 30,
+              "error_rate": 0.049165749131870926,
+              "max_p95_ms": 557.26,
+              "requests": 47228,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.025212572443842802,
+              "baseline_max_p95_ms": 557.26,
+              "baseline_requests": 23639,
+              "recent_error_rate": 0.07316969774047226,
+              "recent_max_p95_ms": 557.26,
+              "recent_requests": 23589,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0026230999937979504
+          },
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "holdout-local-order",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "holdout-local-order",
+              "samples": 30,
+              "error_rate": 0.049165749131870926,
+              "max_p95_ms": 557.26,
+              "requests": 47228,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.025212572443842802,
+              "baseline_max_p95_ms": 557.26,
+              "baseline_requests": 23639,
+              "recent_error_rate": 0.07316969774047226,
+              "recent_max_p95_ms": 557.26,
+              "recent_requests": 23589,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0026960000104736537
+          },
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "holdout-local-order",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "holdout-local-order",
+              "samples": 30,
+              "error_rate": 0.049165749131870926,
+              "max_p95_ms": 557.26,
+              "requests": 47228,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.025212572443842802,
+              "baseline_max_p95_ms": 557.26,
+              "baseline_requests": 23639,
+              "recent_error_rate": 0.07316969774047226,
+              "recent_max_p95_ms": 557.26,
+              "recent_requests": 23589,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0029421000072034076
+          },
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "holdout-local-order",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "holdout-local-order",
+              "samples": 30,
+              "error_rate": 0.049165749131870926,
+              "max_p95_ms": 557.26,
+              "requests": 47228,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.025212572443842802,
+              "baseline_max_p95_ms": 557.26,
+              "baseline_requests": 23639,
+              "recent_error_rate": 0.07316969774047226,
+              "recent_max_p95_ms": 557.26,
+              "recent_requests": 23589,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.002773400003206916
+          }
+        ],
+        "tokens": 728,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "wall_seconds": 6.8106904000014765,
+      "decoder": "greedy one-of-nine original LM vocabulary tokens",
+      "stage": "base",
+      "trace_path": "traces/base/holdout-local-order.json",
+      "trace_sha256": "71c818acbc02bf1b7d7d01fe8ceed7cf8ec16ff2813921e7c396b1dc741c7649"
+    },
+    {
+      "task_id": "holdout-live-caption",
+      "split": "holdout",
+      "actions": [
+        "I"
+      ],
+      "reward": -0.3,
+      "score": {
+        "success": false,
+        "decision_correct": false,
+        "checks": {
+          "completed": true,
+          "structured_answer": true,
+          "service_answer": true,
+          "metrics_observed": false,
+          "current_metrics": false,
+          "metric_status_consistency": false,
+          "numeric_answer": false,
+          "status_answer": true,
+          "cause_answer": false,
+          "recommendation_answer": false,
+          "uncertainty_answer": false,
+          "citation_ids": false,
+          "runbook_evidence": false,
+          "current_change_evidence": false,
+          "required_tools": false,
+          "allowed_tools": true,
+          "no_tool_errors": true,
+          "service_scoped_calls": true
+        },
+        "failure": "metrics_observed",
+        "answer_parse_error": null,
+        "parsed_answer": {
+          "service": "holdout-live-caption",
+          "error_rate": null,
+          "status": "incident",
+          "likely_cause": "conflicting_evidence",
+          "recommendation": "verify_changes",
+          "uncertainty": "conflicting_evidence",
+          "citations": []
+        },
+        "tool_execution_accuracy": null,
+        "citation_precision": null,
+        "tool_calls": 0,
+        "latency_seconds": 0,
+        "known_tokens": 88,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "trace": {
+        "status": "completed",
+        "answer": "{\"service\": \"holdout-live-caption\", \"error_rate\": null, \"status\": \"incident\", \"likely_cause\": \"conflicting_evidence\", \"recommendation\": \"verify_changes\", \"uncertainty\": \"conflicting_evidence\", \"citations\": []}",
+        "events": [],
+        "tokens": 88,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "wall_seconds": 0.9824782000068808,
+      "decoder": "greedy one-of-nine original LM vocabulary tokens",
+      "stage": "base",
+      "trace_path": "traces/base/holdout-live-caption.json",
+      "trace_sha256": "253bc704fd717bddf96bf9d17f988666c72b55766e65d0d6a702b8da2dacf186"
+    },
+    {
+      "task_id": "holdout-creator-stats",
+      "split": "holdout",
+      "actions": [
+        "A",
+        "A",
+        "A",
+        "A"
+      ],
+      "reward": -0.7,
+      "score": {
+        "success": false,
+        "decision_correct": false,
+        "checks": {
+          "completed": false,
+          "structured_answer": false,
+          "service_answer": false,
+          "metrics_observed": true,
+          "current_metrics": true,
+          "metric_status_consistency": true,
+          "numeric_answer": false,
+          "status_answer": false,
+          "cause_answer": false,
+          "recommendation_answer": false,
+          "uncertainty_answer": false,
+          "citation_ids": false,
+          "runbook_evidence": false,
+          "current_change_evidence": false,
+          "required_tools": false,
+          "allowed_tools": true,
+          "no_tool_errors": true,
+          "service_scoped_calls": true
+        },
+        "failure": "completed",
+        "answer_parse_error": "invalid JSON: Expecting value: line 1 column 1 (char 0)",
+        "parsed_answer": null,
+        "tool_execution_accuracy": 1.0,
+        "citation_precision": null,
+        "tool_calls": 4,
+        "latency_seconds": 0.01275369999348186,
+        "known_tokens": 737,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "trace": {
+        "status": "budget_exceeded",
+        "answer": "",
+        "events": [
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "holdout-creator-stats",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "holdout-creator-stats",
+              "samples": 30,
+              "error_rate": 0.0029258056054399808,
+              "max_p95_ms": 271.44,
+              "requests": 49559,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.0028799740396706283,
+              "baseline_max_p95_ms": 271.44,
+              "baseline_requests": 24653,
+              "recent_error_rate": 0.002971171605235686,
+              "recent_max_p95_ms": 271.44,
+              "recent_requests": 24906,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0029150999907869846
+          },
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "holdout-creator-stats",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "holdout-creator-stats",
+              "samples": 30,
+              "error_rate": 0.0029258056054399808,
+              "max_p95_ms": 271.44,
+              "requests": 49559,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.0028799740396706283,
+              "baseline_max_p95_ms": 271.44,
+              "baseline_requests": 24653,
+              "recent_error_rate": 0.002971171605235686,
+              "recent_max_p95_ms": 271.44,
+              "recent_requests": 24906,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0027913000085391104
+          },
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "holdout-creator-stats",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "holdout-creator-stats",
+              "samples": 30,
+              "error_rate": 0.0029258056054399808,
+              "max_p95_ms": 271.44,
+              "requests": 49559,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.0028799740396706283,
+              "baseline_max_p95_ms": 271.44,
+              "baseline_requests": 24653,
+              "recent_error_rate": 0.002971171605235686,
+              "recent_max_p95_ms": 271.44,
+              "recent_requests": 24906,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.002978200005600229
+          },
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "holdout-creator-stats",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "holdout-creator-stats",
+              "samples": 30,
+              "error_rate": 0.0029258056054399808,
+              "max_p95_ms": 271.44,
+              "requests": 49559,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.0028799740396706283,
+              "baseline_max_p95_ms": 271.44,
+              "baseline_requests": 24653,
+              "recent_error_rate": 0.002971171605235686,
+              "recent_max_p95_ms": 271.44,
+              "recent_requests": 24906,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.004069099988555536
+          }
+        ],
+        "tokens": 737,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "wall_seconds": 3.719098000001395,
+      "decoder": "greedy one-of-nine original LM vocabulary tokens",
+      "stage": "base",
+      "trace_path": "traces/base/holdout-creator-stats.json",
+      "trace_sha256": "b649142051d4ef4423e4523b1b80d78bfdd3851b7628fa17c7308861968d3f93"
+    },
+    {
+      "task_id": "holdout-recommend-cache",
+      "split": "holdout",
+      "actions": [
+        "I"
+      ],
+      "reward": -0.3,
+      "score": {
+        "success": false,
+        "decision_correct": false,
+        "checks": {
+          "completed": true,
+          "structured_answer": true,
+          "service_answer": true,
+          "metrics_observed": false,
+          "current_metrics": false,
+          "metric_status_consistency": false,
+          "numeric_answer": true,
+          "status_answer": false,
+          "cause_answer": false,
+          "recommendation_answer": false,
+          "uncertainty_answer": false,
+          "citation_ids": false,
+          "runbook_evidence": false,
+          "current_change_evidence": false,
+          "required_tools": false,
+          "allowed_tools": true,
+          "no_tool_errors": true,
+          "service_scoped_calls": true
+        },
+        "failure": "metrics_observed",
+        "answer_parse_error": null,
+        "parsed_answer": {
+          "service": "holdout-recommend-cache",
+          "error_rate": null,
+          "status": "incident",
+          "likely_cause": "conflicting_evidence",
+          "recommendation": "verify_changes",
+          "uncertainty": "conflicting_evidence",
+          "citations": []
+        },
+        "tool_execution_accuracy": null,
+        "citation_precision": null,
+        "tool_calls": 0,
+        "latency_seconds": 0,
+        "known_tokens": 89,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "trace": {
+        "status": "completed",
+        "answer": "{\"service\": \"holdout-recommend-cache\", \"error_rate\": null, \"status\": \"incident\", \"likely_cause\": \"conflicting_evidence\", \"recommendation\": \"verify_changes\", \"uncertainty\": \"conflicting_evidence\", \"citations\": []}",
+        "events": [],
+        "tokens": 89,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "wall_seconds": 0.616777599992929,
+      "decoder": "greedy one-of-nine original LM vocabulary tokens",
+      "stage": "base",
+      "trace_path": "traces/base/holdout-recommend-cache.json",
+      "trace_sha256": "c760389d73524e57dc6cd73774964a2a561d15e1624d8b4f40f2bc8d71c9d21b"
+    },
+    {
+      "task_id": "holdout-market-tax",
+      "split": "holdout",
+      "actions": [
+        "A",
+        "A",
+        "A",
+        "A"
+      ],
+      "reward": -0.7,
+      "score": {
+        "success": false,
+        "decision_correct": false,
+        "checks": {
+          "completed": false,
+          "structured_answer": false,
+          "service_answer": false,
+          "metrics_observed": true,
+          "current_metrics": true,
+          "metric_status_consistency": true,
+          "numeric_answer": false,
+          "status_answer": false,
+          "cause_answer": false,
+          "recommendation_answer": false,
+          "uncertainty_answer": false,
+          "citation_ids": false,
+          "runbook_evidence": false,
+          "current_change_evidence": false,
+          "required_tools": false,
+          "allowed_tools": true,
+          "no_tool_errors": true,
+          "service_scoped_calls": true
+        },
+        "failure": "completed",
+        "answer_parse_error": "invalid JSON: Expecting value: line 1 column 1 (char 0)",
+        "parsed_answer": null,
+        "tool_execution_accuracy": 1.0,
+        "citation_precision": null,
+        "tool_calls": 4,
+        "latency_seconds": 0.011578900011954829,
+        "known_tokens": 725,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "trace": {
+        "status": "budget_exceeded",
+        "answer": "",
+        "events": [
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "holdout-market-tax",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "holdout-market-tax",
+              "samples": 30,
+              "error_rate": 0.07823676507647276,
+              "max_p95_ms": 837.38,
+              "requests": 51587,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.003997205836696678,
+              "baseline_max_p95_ms": 325.96,
+              "baseline_requests": 25768,
+              "recent_error_rate": 0.15232967969324915,
+              "recent_max_p95_ms": 837.38,
+              "recent_requests": 25819,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0024021999997785315
+          },
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "holdout-market-tax",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "holdout-market-tax",
+              "samples": 30,
+              "error_rate": 0.07823676507647276,
+              "max_p95_ms": 837.38,
+              "requests": 51587,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.003997205836696678,
+              "baseline_max_p95_ms": 325.96,
+              "baseline_requests": 25768,
+              "recent_error_rate": 0.15232967969324915,
+              "recent_max_p95_ms": 837.38,
+              "recent_requests": 25819,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0028221000102348626
+          },
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "holdout-market-tax",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "holdout-market-tax",
+              "samples": 30,
+              "error_rate": 0.07823676507647276,
+              "max_p95_ms": 837.38,
+              "requests": 51587,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.003997205836696678,
+              "baseline_max_p95_ms": 325.96,
+              "baseline_requests": 25768,
+              "recent_error_rate": 0.15232967969324915,
+              "recent_max_p95_ms": 837.38,
+              "recent_requests": 25819,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0031638999935239553
+          },
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "holdout-market-tax",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "holdout-market-tax",
+              "samples": 30,
+              "error_rate": 0.07823676507647276,
+              "max_p95_ms": 837.38,
+              "requests": 51587,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.003997205836696678,
+              "baseline_max_p95_ms": 325.96,
+              "baseline_requests": 25768,
+              "recent_error_rate": 0.15232967969324915,
+              "recent_max_p95_ms": 837.38,
+              "recent_requests": 25819,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0031907000084174797
+          }
+        ],
+        "tokens": 725,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "wall_seconds": 5.5223343999969075,
+      "decoder": "greedy one-of-nine original LM vocabulary tokens",
+      "stage": "base",
+      "trace_path": "traces/base/holdout-market-tax.json",
+      "trace_sha256": "975f5a61e2683d28a4433921577bb847d9a38b4580a31d77986d2921043bd33a"
+    },
+    {
+      "task_id": "holdout-direct-call",
+      "split": "holdout",
+      "actions": [
+        "I"
+      ],
+      "reward": -0.3,
+      "score": {
+        "success": false,
+        "decision_correct": false,
+        "checks": {
+          "completed": true,
+          "structured_answer": true,
+          "service_answer": true,
+          "metrics_observed": false,
+          "current_metrics": false,
+          "metric_status_consistency": false,
+          "numeric_answer": false,
+          "status_answer": true,
+          "cause_answer": true,
+          "recommendation_answer": true,
+          "uncertainty_answer": true,
+          "citation_ids": false,
+          "runbook_evidence": false,
+          "current_change_evidence": false,
+          "required_tools": false,
+          "allowed_tools": true,
+          "no_tool_errors": true,
+          "service_scoped_calls": true
+        },
+        "failure": "metrics_observed",
+        "answer_parse_error": null,
+        "parsed_answer": {
+          "service": "holdout-direct-call",
+          "error_rate": null,
+          "status": "incident",
+          "likely_cause": "conflicting_evidence",
+          "recommendation": "verify_changes",
+          "uncertainty": "conflicting_evidence",
+          "citations": []
+        },
+        "tool_execution_accuracy": null,
+        "citation_precision": null,
+        "tool_calls": 0,
+        "latency_seconds": 0,
+        "known_tokens": 88,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "trace": {
+        "status": "completed",
+        "answer": "{\"service\": \"holdout-direct-call\", \"error_rate\": null, \"status\": \"incident\", \"likely_cause\": \"conflicting_evidence\", \"recommendation\": \"verify_changes\", \"uncertainty\": \"conflicting_evidence\", \"citations\": []}",
+        "events": [],
+        "tokens": 88,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "wall_seconds": 0.8150581999943824,
+      "decoder": "greedy one-of-nine original LM vocabulary tokens",
+      "stage": "base",
+      "trace_path": "traces/base/holdout-direct-call.json",
+      "trace_sha256": "d7f28e5e515c4554d5d1253853e95b43b1b8e73920282f9b8a839210fcea709d"
+    },
+    {
+      "task_id": "holdout-content-export",
+      "split": "holdout",
+      "actions": [
+        "I"
+      ],
+      "reward": -0.3,
+      "score": {
+        "success": false,
+        "decision_correct": false,
+        "checks": {
+          "completed": true,
+          "structured_answer": true,
+          "service_answer": true,
+          "metrics_observed": false,
+          "current_metrics": false,
+          "metric_status_consistency": false,
+          "numeric_answer": false,
+          "status_answer": true,
+          "cause_answer": false,
+          "recommendation_answer": false,
+          "uncertainty_answer": false,
+          "citation_ids": false,
+          "runbook_evidence": false,
+          "current_change_evidence": false,
+          "required_tools": false,
+          "allowed_tools": true,
+          "no_tool_errors": true,
+          "service_scoped_calls": true
+        },
+        "failure": "metrics_observed",
+        "answer_parse_error": null,
+        "parsed_answer": {
+          "service": "holdout-content-export",
+          "error_rate": null,
+          "status": "incident",
+          "likely_cause": "conflicting_evidence",
+          "recommendation": "verify_changes",
+          "uncertainty": "conflicting_evidence",
+          "citations": []
+        },
+        "tool_execution_accuracy": null,
+        "citation_precision": null,
+        "tool_calls": 0,
+        "latency_seconds": 0,
+        "known_tokens": 88,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "trace": {
+        "status": "completed",
+        "answer": "{\"service\": \"holdout-content-export\", \"error_rate\": null, \"status\": \"incident\", \"likely_cause\": \"conflicting_evidence\", \"recommendation\": \"verify_changes\", \"uncertainty\": \"conflicting_evidence\", \"citations\": []}",
+        "events": [],
+        "tokens": 88,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "wall_seconds": 0.5560675000015181,
+      "decoder": "greedy one-of-nine original LM vocabulary tokens",
+      "stage": "base",
+      "trace_path": "traces/base/holdout-content-export.json",
+      "trace_sha256": "2c749358250ca07733d5521fdaf15ae921ec0b76b8c910d81f5782c9ed73f3b6"
+    }
+  ]
+}

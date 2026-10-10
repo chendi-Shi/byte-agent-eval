@@ -1,0 +1,293 @@
+{
+  "states": [
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=live-gifts. Actions=\nNext action:",
+      "action": "A",
+      "input_tokens": 85,
+      "probabilities": [
+        0.9982993006706238,
+        0.0001241608551936224,
+        0.00010645604925230145,
+        0.0004147542058490217,
+        0.00010149788431590423,
+        0.000205330565222539,
+        0.00016317305562552065,
+        6.016143743181601e-05,
+        0.0005251867114566267
+      ],
+      "context": {
+        "input_tokens": 85,
+        "original_tokens": 85,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=live-gifts. Actions=A\nMetrics={\"samples\":30,\"error_rate\":0.0040242557883131205,\"recent_error_rate\":0.004062362758014932,\"baseline_error_rate\":0.003985828166519044,\"recent_max_p95_ms\":229.1,\"baseline_requests\":18064,\"recent_requests\":18216}\nNext action:",
+      "action": "B",
+      "input_tokens": 211,
+      "probabilities": [
+        8.430174784734845e-05,
+        0.9982900023460388,
+        0.0012985736830160022,
+        0.00010511292202863842,
+        0.00012272174353711307,
+        2.9854962122044526e-05,
+        1.7913891497300938e-05,
+        5.7142774494423065e-06,
+        4.576793435262516e-05
+      ],
+      "context": {
+        "input_tokens": 211,
+        "original_tokens": 211,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=live-gifts. Actions=AB\nMetrics={\"samples\":30,\"error_rate\":0.0040242557883131205,\"recent_error_rate\":0.004062362758014932,\"baseline_error_rate\":0.003985828166519044,\"recent_max_p95_ms\":229.1,\"baseline_requests\":18064,\"recent_requests\":18216}\nPolicy={\"found\":true,\"error_limit\":0.033,\"latency_limit\":395}\nNext action:",
+      "action": "C",
+      "input_tokens": 237,
+      "probabilities": [
+        9.218636841978878e-05,
+        5.8633446315070614e-05,
+        0.9992851614952087,
+        0.00016568039427511394,
+        3.6334324249764904e-05,
+        0.00020437815692275763,
+        2.75336169579532e-05,
+        4.756057751365006e-05,
+        8.255246211774647e-05
+      ],
+      "context": {
+        "input_tokens": 237,
+        "original_tokens": 237,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=live-gifts. Actions=ABC\nMetrics={\"samples\":30,\"error_rate\":0.0040242557883131205,\"recent_error_rate\":0.004062362758014932,\"baseline_error_rate\":0.003985828166519044,\"recent_max_p95_ms\":229.1,\"baseline_requests\":18064,\"recent_requests\":18216}\nPolicy={\"found\":true,\"error_limit\":0.033,\"latency_limit\":395}\nChanges=[{\"kind\":\"dependency\",\"status\":\"healthy\",\"minute\":57},{\"kind\":\"release\",\"status\":\"stale\",\"minute\":9}]\nNext action:",
+      "action": "G",
+      "input_tokens": 268,
+      "probabilities": [
+        0.001608549035154283,
+        0.00019114628958050162,
+        0.0010312676895409822,
+        0.03991364687681198,
+        0.36096426844596863,
+        0.12272971868515015,
+        0.4258101284503937,
+        0.036921411752700806,
+        0.010829903185367584
+      ],
+      "context": {
+        "input_tokens": 268,
+        "original_tokens": 268,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    }
+  ],
+  "episode": {
+    "task_id": "live-gifts",
+    "split": "dev",
+    "actions": [
+      "A",
+      "B",
+      "C",
+      "G"
+    ],
+    "reward": 1.3,
+    "score": {
+      "success": true,
+      "decision_correct": true,
+      "checks": {
+        "completed": true,
+        "structured_answer": true,
+        "service_answer": true,
+        "metrics_observed": true,
+        "current_metrics": true,
+        "metric_status_consistency": true,
+        "numeric_answer": true,
+        "status_answer": true,
+        "cause_answer": true,
+        "recommendation_answer": true,
+        "uncertainty_answer": true,
+        "citation_ids": true,
+        "runbook_evidence": true,
+        "current_change_evidence": true,
+        "required_tools": true,
+        "allowed_tools": true,
+        "no_tool_errors": true,
+        "service_scoped_calls": true
+      },
+      "failure": null,
+      "answer_parse_error": null,
+      "parsed_answer": {
+        "service": "live-gifts",
+        "error_rate": 0.0040242557883131205,
+        "status": "healthy",
+        "likely_cause": "none",
+        "recommendation": "monitor",
+        "uncertainty": "none_detected",
+        "citations": [
+          "9c281aee69ceb3135540",
+          "498306dd9996bfb33e2d",
+          "d2d4c87975c8ddaf47a4",
+          "406c5db40bf5ed405ae0",
+          "b5b9820925310203dd0a",
+          "chg-df9e5f4a2981d551d418",
+          "chg-b1b0504e5eac0fbdf068"
+        ]
+      },
+      "tool_execution_accuracy": 1.0,
+      "citation_precision": 1.0,
+      "tool_calls": 3,
+      "latency_seconds": 0.00930379999044817,
+      "known_tokens": 805,
+      "unknown_usage": 0,
+      "fixture": false
+    },
+    "trace": {
+      "status": "completed",
+      "answer": "{\"service\": \"live-gifts\", \"error_rate\": 0.0040242557883131205, \"status\": \"healthy\", \"likely_cause\": \"none\", \"recommendation\": \"monitor\", \"uncertainty\": \"none_detected\", \"citations\": [\"9c281aee69ceb3135540\", \"498306dd9996bfb33e2d\", \"d2d4c87975c8ddaf47a4\", \"406c5db40bf5ed405ae0\", \"b5b9820925310203dd0a\", \"chg-df9e5f4a2981d551d418\", \"chg-b1b0504e5eac0fbdf068\"]}",
+      "events": [
+        {
+          "kind": "tool",
+          "name": "service_metrics",
+          "arguments": {
+            "service": "live-gifts",
+            "window_minutes": 30
+          },
+          "output": {
+            "service": "live-gifts",
+            "samples": 30,
+            "error_rate": 0.0040242557883131205,
+            "max_p95_ms": 229.1,
+            "requests": 36280,
+            "window_minutes": 30,
+            "as_of_minute": 59,
+            "status": "observed",
+            "baseline_error_rate": 0.003985828166519044,
+            "baseline_max_p95_ms": 229.1,
+            "baseline_requests": 18064,
+            "recent_error_rate": 0.004062362758014932,
+            "recent_max_p95_ms": 229.1,
+            "recent_requests": 18216,
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.0033974999969359487
+        },
+        {
+          "kind": "tool",
+          "name": "knowledge_search",
+          "arguments": {
+            "service": "live-gifts",
+            "query": "incident policy observation window status diagnostic evidence uncertainty live-gifts",
+            "limit": 5
+          },
+          "output": {
+            "service": "live-gifts",
+            "source": null,
+            "evidence": [
+              {
+                "id": "9c281aee69ceb3135540",
+                "source": "live-gifts/runbook.md",
+                "text": "# live-gifts: gift transactions incident policy",
+                "score": 0.01639344262295082,
+                "trust": "untrusted_evidence"
+              },
+              {
+                "id": "498306dd9996bfb33e2d",
+                "source": "live-gifts/runbook.md",
+                "text": "Use the exact service filter when retrieving this runbook. Evidence from another\nservice has different limits and cannot establish the status of live-gifts.",
+                "score": 0.016129032258064516,
+                "trust": "untrusted_evidence"
+              },
+              {
+                "id": "d2d4c87975c8ddaf47a4",
+                "source": "live-gifts/runbook.md",
+                "text": "## Observation window and status\nRequest service_metrics for the latest 30 minutes. Its recent fields summarize\nthe newest 15 samples, and baseline fields summarize the earlier 15 samples.\nThe final error_rate must be the complete 30-minute error_rate, as a decimal.\nAn incident exists if recent_error_rate >= 0.0330 or\nrecent_max_p95_ms > 395 milliseconds. Both conditions below those\nlimits imply healthy, provided current metric samples and this policy exist.\nMissing metrics or a missing runbook imply insufficient_data: do not infer\nhealthy from a null error_rate or borrow a different service's thresholds.",
+                "score": 0.015873015873015872,
+                "trust": "untrusted_evidence"
+              },
+              {
+                "id": "406c5db40bf5ed405ae0",
+                "source": "live-gifts/runbook.md",
+                "text": "## Uncertainty and citations\nUse uncertainty=causality_unproven for evidence-supported incident hypotheses;\nnone_detected for healthy observations; insufficient_data for missing required\nevidence; conflicting_evidence for unresolved conflicts. Correlation does not\nprove causation. Cite this runbook and current incident_changes evidence ids.",
+                "score": 0.015625,
+                "trust": "untrusted_evidence"
+              },
+              {
+                "id": "b5b9820925310203dd0a",
+                "source": "live-gifts/runbook.md",
+                "text": "## Diagnostic evidence rules\nThe serving dependency for gift transactions is wallet-store. Obtain incident_changes:\nthe runbook contains policies, not the service's current change history.\nAn active release before the metric deterioration, stable demand and a healthy\ndependency support likely_cause=release_regression and recommendation=rollback_review.\nAn active dependency failure before deterioration takes priority over a stale,\naborted or later unrelated release: dependency_outage / dependency_escalation.\nAn active traffic surge with a higher recent/baseline request ratio and healthy\ndependency supports capacity_pressure / capacity_review. Error rates alone do\nnot distinguish these causes. Cite the relevant current change evidence id.\nConflicting health probes or two unresolved competing change explanations require\nconflicting_evidence / verify_changes. A current incident without sufficient\ncausal evidence requires insufficient_evidence / collect_evidence.\nA healthy service requires",
+                "score": 0.015384615384615385,
+                "trust": "untrusted_evidence"
+              }
+            ]
+          },
+          "seconds": 0.0021736000053351745
+        },
+        {
+          "kind": "tool",
+          "name": "incident_changes",
+          "arguments": {
+            "service": "live-gifts"
+          },
+          "output": {
+            "service": "live-gifts",
+            "available": true,
+            "changes": [
+              {
+                "kind": "dependency",
+                "minute": 57,
+                "summary": "wallet-store remains healthy; no capacity alarms or active serving changes.",
+                "status": "healthy",
+                "evidence_id": "chg-df9e5f4a2981d551d418"
+              },
+              {
+                "kind": "release",
+                "minute": 9,
+                "summary": "An older release has no current serving change.",
+                "status": "stale",
+                "evidence_id": "chg-b1b0504e5eac0fbdf068"
+              }
+            ],
+            "evidence": [
+              {
+                "id": "chg-df9e5f4a2981d551d418",
+                "source": "changes/live-gifts",
+                "text": "dependency at minute 57 (healthy): wallet-store remains healthy; no capacity alarms or active serving changes.",
+                "kind": "dependency",
+                "status": "healthy",
+                "minute": 57
+              },
+              {
+                "id": "chg-b1b0504e5eac0fbdf068",
+                "source": "changes/live-gifts",
+                "text": "release at minute 9 (stale): An older release has no current serving change.",
+                "kind": "release",
+                "status": "stale",
+                "minute": 9
+              }
+            ],
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.003732699988177046
+        }
+      ],
+      "tokens": 805,
+      "unknown_usage": 0,
+      "fixture": false
+    },
+    "wall_seconds": 4.7701473999914015,
+    "decoder": "greedy one-of-nine original LM vocabulary tokens",
+    "stage": "sft"
+  }
+}

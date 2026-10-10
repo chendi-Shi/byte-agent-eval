@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: chendi-Shi/byte-agent-platform
-          ref: a14ea74845dd3e2a3467955bd2d1fd7e6e5bdff2
+          ref: bed2629c1d166986bea73a13afa7e8fe669a642b
           path: byte-agent-platform
       - uses: actions/setup-python@v5
         with:
@@ -39,7 +39,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: chendi-Shi/byte-agent-platform
-          ref: a14ea74845dd3e2a3467955bd2d1fd7e6e5bdff2
+          ref: bed2629c1d166986bea73a13afa7e8fe669a642b
           path: byte-agent-platform
       - uses: actions/setup-python@v5
         with:

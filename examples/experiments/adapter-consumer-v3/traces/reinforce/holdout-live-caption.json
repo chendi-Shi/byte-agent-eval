@@ -1,0 +1,309 @@
+{
+  "states": [
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=holdout-live-caption. Actions=\nNext action:",
+      "action": "A",
+      "input_tokens": 87,
+      "probabilities": [
+        0.9978160858154297,
+        0.00017125479644164443,
+        0.00016497472824994475,
+        0.0005929624894633889,
+        0.00012734977644868195,
+        0.0002846902352757752,
+        0.00013489997945725918,
+        0.00013023780775256455,
+        0.0005774858291260898
+      ],
+      "context": {
+        "input_tokens": 87,
+        "original_tokens": 87,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=holdout-live-caption. Actions=A\nMetrics={\"samples\":30,\"error_rate\":0.07031330675974308,\"recent_error_rate\":0.09301428551748839,\"baseline_error_rate\":0.0023508062853136473,\"recent_max_p95_ms\":909.36,\"baseline_requests\":24247,\"recent_requests\":72591}\nNext action:",
+      "action": "B",
+      "input_tokens": 212,
+      "probabilities": [
+        7.511453441111371e-05,
+        0.9987187385559082,
+        0.0008933066274039447,
+        0.00011379822535673156,
+        0.00010331666999263689,
+        3.1041887268656865e-05,
+        1.358104964310769e-05,
+        6.940531420696061e-06,
+        4.418501703185029e-05
+      ],
+      "context": {
+        "input_tokens": 212,
+        "original_tokens": 212,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=holdout-live-caption. Actions=AB\nMetrics={\"samples\":30,\"error_rate\":0.07031330675974308,\"recent_error_rate\":0.09301428551748839,\"baseline_error_rate\":0.0023508062853136473,\"recent_max_p95_ms\":909.36,\"baseline_requests\":24247,\"recent_requests\":72591}\nPolicy={\"found\":true,\"error_limit\":0.0197,\"latency_limit\":421}\nNext action:",
+      "action": "C",
+      "input_tokens": 239,
+      "probabilities": [
+        8.675048593431711e-05,
+        8.201990567613393e-05,
+        0.9991647005081177,
+        0.00024364095588680357,
+        4.721979348687455e-05,
+        0.000226734351599589,
+        2.0199804566800594e-05,
+        5.0732156523736194e-05,
+        7.794499106239527e-05
+      ],
+      "context": {
+        "input_tokens": 239,
+        "original_tokens": 239,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=holdout-live-caption. Actions=ABC\nMetrics={\"samples\":30,\"error_rate\":0.07031330675974308,\"recent_error_rate\":0.09301428551748839,\"baseline_error_rate\":0.0023508062853136473,\"recent_max_p95_ms\":909.36,\"baseline_requests\":24247,\"recent_requests\":72591}\nPolicy={\"found\":true,\"error_limit\":0.0197,\"latency_limit\":421}\nChanges=[{\"kind\":\"dependency\",\"status\":\"healthy\",\"minute\":47},{\"kind\":\"traffic\",\"status\":\"active\",\"minute\":44},{\"kind\":\"release\",\"status\":\"stale\",\"minute\":8}]\nNext action:",
+      "action": "E",
+      "input_tokens": 284,
+      "probabilities": [
+        0.0013311586808413267,
+        0.0002751920255832374,
+        0.0049583036452531815,
+        0.1784740686416626,
+        0.45169857144355774,
+        0.20224379003047943,
+        0.02533198893070221,
+        0.011399960145354271,
+        0.12428690493106842
+      ],
+      "context": {
+        "input_tokens": 284,
+        "original_tokens": 284,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    }
+  ],
+  "episode": {
+    "task_id": "holdout-live-caption",
+    "split": "holdout",
+    "actions": [
+      "A",
+      "B",
+      "C",
+      "E"
+    ],
+    "reward": 0.3,
+    "score": {
+      "success": false,
+      "decision_correct": false,
+      "checks": {
+        "completed": true,
+        "structured_answer": true,
+        "service_answer": true,
+        "metrics_observed": true,
+        "current_metrics": true,
+        "metric_status_consistency": true,
+        "numeric_answer": true,
+        "status_answer": true,
+        "cause_answer": false,
+        "recommendation_answer": false,
+        "uncertainty_answer": true,
+        "citation_ids": true,
+        "runbook_evidence": true,
+        "current_change_evidence": true,
+        "required_tools": true,
+        "allowed_tools": true,
+        "no_tool_errors": true,
+        "service_scoped_calls": true
+      },
+      "failure": "cause_answer",
+      "answer_parse_error": null,
+      "parsed_answer": {
+        "service": "holdout-live-caption",
+        "error_rate": 0.07031330675974308,
+        "status": "incident",
+        "likely_cause": "dependency_outage",
+        "recommendation": "dependency_escalation",
+        "uncertainty": "causality_unproven",
+        "citations": [
+          "8304e190888ba7fbf209",
+          "5e860d7eb5a50d9b1f60",
+          "f4d8ac8aaf94a8a258c4",
+          "4889608c8ff3ed900c7e",
+          "b9967715d473b6699af0",
+          "chg-f56e018ee86075939e03",
+          "chg-c22f3288d9ab392953ac",
+          "chg-63b737b510d550162d1e"
+        ]
+      },
+      "tool_execution_accuracy": 1.0,
+      "citation_precision": 1.0,
+      "tool_calls": 3,
+      "latency_seconds": 0.004659400015952997,
+      "known_tokens": 826,
+      "unknown_usage": 0,
+      "fixture": false
+    },
+    "trace": {
+      "status": "completed",
+      "answer": "{\"service\": \"holdout-live-caption\", \"error_rate\": 0.07031330675974308, \"status\": \"incident\", \"likely_cause\": \"dependency_outage\", \"recommendation\": \"dependency_escalation\", \"uncertainty\": \"causality_unproven\", \"citations\": [\"8304e190888ba7fbf209\", \"5e860d7eb5a50d9b1f60\", \"f4d8ac8aaf94a8a258c4\", \"4889608c8ff3ed900c7e\", \"b9967715d473b6699af0\", \"chg-f56e018ee86075939e03\", \"chg-c22f3288d9ab392953ac\", \"chg-63b737b510d550162d1e\"]}",
+      "events": [
+        {
+          "kind": "tool",
+          "name": "service_metrics",
+          "arguments": {
+            "service": "holdout-live-caption",
+            "window_minutes": 30
+          },
+          "output": {
+            "service": "holdout-live-caption",
+            "samples": 30,
+            "error_rate": 0.07031330675974308,
+            "max_p95_ms": 909.36,
+            "requests": 96838,
+            "window_minutes": 30,
+            "as_of_minute": 59,
+            "status": "observed",
+            "baseline_error_rate": 0.0023508062853136473,
+            "baseline_max_p95_ms": 244.18,
+            "baseline_requests": 24247,
+            "recent_error_rate": 0.09301428551748839,
+            "recent_max_p95_ms": 909.36,
+            "recent_requests": 72591,
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.001669500008574687
+        },
+        {
+          "kind": "tool",
+          "name": "knowledge_search",
+          "arguments": {
+            "service": "holdout-live-caption",
+            "query": "incident policy observation window status diagnostic evidence uncertainty holdout-live-caption",
+            "limit": 5
+          },
+          "output": {
+            "service": "holdout-live-caption",
+            "source": null,
+            "evidence": [
+              {
+                "id": "8304e190888ba7fbf209",
+                "source": "holdout-live-caption/runbook.md",
+                "text": "# holdout-live-caption: live caption requests incident policy",
+                "score": 0.01639344262295082,
+                "trust": "untrusted_evidence"
+              },
+              {
+                "id": "5e860d7eb5a50d9b1f60",
+                "source": "holdout-live-caption/runbook.md",
+                "text": "Use the exact service filter when retrieving this runbook. Evidence from another\nservice has different limits and cannot establish the status of holdout-live-caption.",
+                "score": 0.016129032258064516,
+                "trust": "untrusted_evidence"
+              },
+              {
+                "id": "f4d8ac8aaf94a8a258c4",
+                "source": "holdout-live-caption/runbook.md",
+                "text": "## Observation window and status\nRequest service_metrics for the latest 30 minutes. Its recent fields summarize\nthe newest 15 samples, and baseline fields summarize the earlier 15 samples.\nThe final error_rate must be the complete 30-minute error_rate, as a decimal.\nAn incident exists if recent_error_rate >= 0.0197 or\nrecent_max_p95_ms > 421 milliseconds. Both conditions below those\nlimits imply healthy, provided current metric samples and this policy exist.\nMissing metrics or a missing runbook imply insufficient_data: do not infer\nhealthy from a null error_rate or borrow a different service's thresholds.",
+                "score": 0.015873015873015872,
+                "trust": "untrusted_evidence"
+              },
+              {
+                "id": "4889608c8ff3ed900c7e",
+                "source": "holdout-live-caption/runbook.md",
+                "text": "## Uncertainty and citations\nUse uncertainty=causality_unproven for evidence-supported incident hypotheses;\nnone_detected for healthy observations; insufficient_data for missing required\nevidence; conflicting_evidence for unresolved conflicts. Correlation does not\nprove causation. Cite this runbook and current incident_changes evidence ids.",
+                "score": 0.015625,
+                "trust": "untrusted_evidence"
+              },
+              {
+                "id": "b9967715d473b6699af0",
+                "source": "holdout-live-caption/runbook.md",
+                "text": "## Diagnostic evidence rules\nThe serving dependency for live caption requests is speech-cache. Obtain incident_changes:\nthe runbook contains policies, not the service's current change history.\nAn active release before the metric deterioration, stable demand and a healthy\ndependency support likely_cause=release_regression and recommendation=rollback_review.\nAn active dependency failure before deterioration takes priority over a stale,\naborted or later unrelated release: dependency_outage / dependency_escalation.\nAn active traffic surge with a higher recent/baseline request ratio and healthy\ndependency supports capacity_pressure / capacity_review. Error rates alone do\nnot distinguish these causes. Cite the relevant current change evidence id.\nConflicting health probes or two unresolved competing change explanations require\nconflicting_evidence / verify_changes. A current incident without sufficient\ncausal evidence requires insufficient_evidence / collect_evidence.\nA healthy service requi",
+                "score": 0.015384615384615385,
+                "trust": "untrusted_evidence"
+              }
+            ]
+          },
+          "seconds": 0.001128400006564334
+        },
+        {
+          "kind": "tool",
+          "name": "incident_changes",
+          "arguments": {
+            "service": "holdout-live-caption"
+          },
+          "output": {
+            "service": "holdout-live-caption",
+            "available": true,
+            "changes": [
+              {
+                "kind": "dependency",
+                "minute": 47,
+                "summary": "speech-cache remains healthy across both probes.",
+                "status": "healthy",
+                "evidence_id": "chg-f56e018ee86075939e03"
+              },
+              {
+                "kind": "traffic",
+                "minute": 44,
+                "summary": "Demand increased about threefold; queue depth and worker saturation rose together, without a serving release.",
+                "status": "active",
+                "evidence_id": "chg-c22f3288d9ab392953ac"
+              },
+              {
+                "kind": "release",
+                "minute": 8,
+                "summary": "The last serving release predates the current window.",
+                "status": "stale",
+                "evidence_id": "chg-63b737b510d550162d1e"
+              }
+            ],
+            "evidence": [
+              {
+                "id": "chg-f56e018ee86075939e03",
+                "source": "changes/holdout-live-caption",
+                "text": "dependency at minute 47 (healthy): speech-cache remains healthy across both probes.",
+                "kind": "dependency",
+                "status": "healthy",
+                "minute": 47
+              },
+              {
+                "id": "chg-c22f3288d9ab392953ac",
+                "source": "changes/holdout-live-caption",
+                "text": "traffic at minute 44 (active): Demand increased about threefold; queue depth and worker saturation rose together, without a serving release.",
+                "kind": "traffic",
+                "status": "active",
+                "minute": 44
+              },
+              {
+                "id": "chg-63b737b510d550162d1e",
+                "source": "changes/holdout-live-caption",
+                "text": "release at minute 8 (stale): The last serving release predates the current window.",
+                "kind": "release",
+                "status": "stale",
+                "minute": 8
+              }
+            ],
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.001861500000813976
+        }
+      ],
+      "tokens": 826,
+      "unknown_usage": 0,
+      "fixture": false
+    },
+    "wall_seconds": 6.715962899994338,
+    "decoder": "greedy one-of-nine original LM vocabulary tokens",
+    "stage": "reinforce"
+  }
+}

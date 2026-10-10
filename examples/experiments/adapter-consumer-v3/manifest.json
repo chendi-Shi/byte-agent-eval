@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "kind": "saved adapter consumer, evaluation only",
+  "started_at": "2026-10-09T07:44:54.489234+00:00",
+  "model_id": "HuggingFaceTB/SmolLM2-135M-Instruct",
+  "model_revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+  "base_model_provenance": {
+    "status": "local pinned-download receipt verified; not a publisher signature",
+    "repository": "HuggingFaceTB/SmolLM2-135M-Instruct",
+    "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+    "source": "https://huggingface.co/HuggingFaceTB/SmolLM2-135M-Instruct",
+    "receipt_sha256": "c20347eaa163a34dc55c2669c1e8256c27648941f64ba106d31e852c27350ada",
+    "verified_files": 7,
+    "model_safetensors_sha256": "5af571cbf074e6d21a03528d2330792e532ca608f24ac70a143f6b369968ab8c"
+  },
+  "checkpoint_stage": "reinforce",
+  "checkpoint_checks": {
+    "configuration_matches": true,
+    "file_checksums_match": true,
+    "expected_parameter_sha256": "a4fd3641e75d2f4b4188289794431be654ec37e4cd2d13e57ae83fb7c84ac6e2",
+    "files": {
+      "adapter_model.safetensors": {
+        "sha256": "80e0d44a3be4b7ada64024ba8b57c11a3acb09a4159894a50cf0d132f63927b0",
+        "bytes": 937056
+      },
+      "adapter_config.json": {
+        "sha256": "f5796a035ba40ca9fb52c580dc5d1a69a9c72c94d036ff07ae610eec064dfad8",
+        "bytes": 1194
+      }
+    },
+    "weights_metadata_sha256": "e167ffae52767dae805e54bab1e6217119154228934aed4dc16dae5a2ed671fb",
+    "loaded_parameter_sha256": "a4fd3641e75d2f4b4188289794431be654ec37e4cd2d13e57ae83fb7c84ac6e2",
+    "loaded_parameter_hash_matches": true
+  },
+  "partition": {
+    "schema_version": 1,
+    "task_manifest_sha256": "233daa2e0e5f94a9d1bd5dde97869d927957a16d289db66c338b5125c98321ee",
+    "training_ids": [
+      "growth-feed",
+      "creator-upload",
+      "commerce-cart",
+      "live-session",
+      "search-suggest",
+      "message-inbox",
+      "discovery-nearby",
+      "video-transcode",
+      "profile-lookup",
+      "social-follow",
+      "content-tag",
+      "growth-referral",
+      "search-reindex",
+      "creator-draft",
+      "ads-attribution",
+      "commerce-stock",
+      "growth-invite",
+      "social-share"
+    ],
+    "validation_ids": [
+      "social-notify",
+      "ads-auction",
+      "commerce-checkout",
+      "live-gifts",
+      "message-presence",
+      "video-playback"
+    ],
+    "public_holdout_ids": [
+      "holdout-comment",
+      "holdout-local-order",
+      "holdout-live-caption",
+      "holdout-creator-stats",
+      "holdout-recommend-cache",
+      "holdout-market-tax",
+      "holdout-direct-call",
+      "holdout-content-export"
+    ],
+    "source_synthetic": true,
+    "training_label": "synthetic-supervised tool-action demonstrations, not model-generated agent trajectories",
+    "heldout_use": "evaluation only; public suite is not an unseen benchmark",
+    "partition_hash": "5463d4e505cd8236378e77e22a01d4365f764a7cece0a4c7d7f31475c3cc24be"
+  },
+  "config": {
+    "split": "all",
+    "task_ids": [
+      "social-notify",
+      "ads-auction",
+      "commerce-checkout",
+      "live-gifts",
+      "message-presence",
+      "video-playback",
+      "holdout-comment",
+      "holdout-local-order",
+      "holdout-live-caption",
+      "holdout-creator-stats",
+      "holdout-recommend-cache",
+      "holdout-market-tax",
+      "holdout-direct-call",
+      "holdout-content-export"
+    ],
+    "max_length": 384,
+    "rank": 4,
+    "threads": 4,
+    "seed": 42,
+    "decoder": "greedy",
+    "optimizer_steps": 0,
+    "max_episode_actions": 4
+  },
+  "source_hashes": {
+    "platform/__init__.py": "eab3240f5d540fedad11626a369b58ced442679453194dce08696eb1f70ad234",
+    "platform/__main__.py": "cf7390a2508a0fcad4777a4a629fc5212ab655cb45845975995f835676a834e3",
+    "platform/cli.py": "b8ca78905811e4b448399c3d6076c9507716011ab6a0a2348605cafcd91cafa1",
+    "platform/connectors.py": "edda3ead7cdf14bc38fa5b7c9721fbfc5fd5b70fe3208c8ee3d93b9774f865ef",
+    "platform/distributed.py": "b5809522f1928d095ca4c2afcc3f711e396dd827226405916ef36b0e4a4b8ef7",
+    "platform/domain.py": "0ef6321bd0fbf635ec822b9553419c3c8555a558a2ac4a9a28adb1c4feb41ae8",
+    "platform/jobs.py": "b33b6fdefaa812f0d20a4def836c9721cd919a35840df2321b4bf633cb2e7b32",
+    "platform/knowledge.py": "864eb3543e95b961ce1a5f121a9c3c15b4990f6eceb8b259118100f1766a6492",
+    "platform/mcp.py": "c9c00cd09e844c06b1667f6cb0f342664f783072c9e796e499b54f82fd2b28a7",
+    "platform/mcp_client.py": "e92d94264b7b1f811f4272032cb8d67cdddf85c2c2cff2c06b57972df82eb6dc",
+    "platform/model.py": "5c2afbc484122c5aac080d2256a326ddb6e24ee749d26b93bec99fcfc7a8965b",
+    "platform/multiagent.py": "d2e171b30352d35428d27ceb588ade843a51e4a2508a65cbd0d0046cf48c46c3",
+    "platform/runtime.py": "8559ca29a41a46de452452524c063b549b05fce4f8613f855c146a2b1f089bd2",
+    "platform/skills.py": "c9d00a62859d849cf961ff2b20b191643449d039f82e1d116b4d8d12392c4704",
+    "platform/tools.py": "4375e5f974262960407b68fb00171693aee095ca417328c2e654b1b86d97c677",
+    "platform/verification.py": "11fb147ce0c679ea1a53885d24d00dd880f3fdfe3ec7fe362bd9f30adb7bcc7e",
+    "eval/__init__.py": "f7d576f45406403b231fda1af8688f37a214c88e91aee860cb88f4743390cc77",
+    "eval/__main__.py": "cf7390a2508a0fcad4777a4a629fc5212ab655cb45845975995f835676a834e3",
+    "eval/cli.py": "4281d6cce3a0eef13e6a040699a172652e63aabfed64a358f897069e3a38a262",
+    "eval/experiment.py": "f34ec4a67ee2a41d2f1b67819b3841d0eefafa3a48800ef2835122e09f80d124",
+    "eval/scoring.py": "c90c2fd5e45d4ee6127b6da2747d93a294c02e61c90d3d8a6d2c8b6dbcf41428",
+    "eval/training/__init__.py": "40a2b677956fb48e1a5f74a7eacaeb34ddf1694423d6bc419f5caeedff1079ff",
+    "eval/training/environment.py": "3c4d043a778723923b98a34f17be3910502a231bcf92a090e3af78d6153bf279",
+    "eval/training/policy.py": "9f4fc6e434888cd61d4289c42f921d4bccc37761c44a88fe8e9cbe718c768447",
+    "eval/training/review.py": "d315b27ac2d7ef6e54d8650b23c6a5030ae015deb635701ae13755be18f7b600",
+    "eval/training/runner.py": "18704e6223efcd182ccf3a1bc243301b57914ce6df9b36167111586d1780a607"
+  },
+  "consumer_script_sha256": "9f410045bdd9d99a342e34adc9c5dd536eadea75162ee6df0d1843c6254a463c",
+  "python": "3.12.14"
+}

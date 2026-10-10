@@ -1,0 +1,309 @@
+{
+  "states": [
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=video-playback. Actions=\nNext action:",
+      "action": "A",
+      "input_tokens": 85,
+      "probabilities": [
+        0.9983353018760681,
+        0.00013443423085846007,
+        0.0001287883351324126,
+        0.0004780879826284945,
+        7.728704804321751e-05,
+        0.00026453135069459677,
+        0.00011663197801681235,
+        6.064849003450945e-05,
+        0.00040430185617879033
+      ],
+      "context": {
+        "input_tokens": 85,
+        "original_tokens": 85,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=video-playback. Actions=A\nMetrics={\"samples\":30,\"error_rate\":0.036506566516597075,\"recent_error_rate\":0.07072955799823756,\"baseline_error_rate\":0.0018772292096865028,\"recent_max_p95_ms\":1062.37,\"baseline_requests\":21308,\"recent_requests\":21561}\nNext action:",
+      "action": "B",
+      "input_tokens": 212,
+      "probabilities": [
+        7.981564704095945e-05,
+        0.9985153079032898,
+        0.0011298814788460732,
+        0.00010897006723098457,
+        9.466888150200248e-05,
+        2.6303894628654234e-05,
+        9.058242540049832e-06,
+        3.3532028282934334e-06,
+        3.2783591450424865e-05
+      ],
+      "context": {
+        "input_tokens": 212,
+        "original_tokens": 212,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=video-playback. Actions=AB\nMetrics={\"samples\":30,\"error_rate\":0.036506566516597075,\"recent_error_rate\":0.07072955799823756,\"baseline_error_rate\":0.0018772292096865028,\"recent_max_p95_ms\":1062.37,\"baseline_requests\":21308,\"recent_requests\":21561}\nPolicy={\"found\":true,\"error_limit\":0.015,\"latency_limit\":713}\nNext action:",
+      "action": "C",
+      "input_tokens": 238,
+      "probabilities": [
+        9.103306365432218e-05,
+        6.812901119701564e-05,
+        0.9992708563804626,
+        0.00021506805205717683,
+        3.258749711676501e-05,
+        0.00019742229778785259,
+        2.2476720914710313e-05,
+        3.410401404835284e-05,
+        6.835614476585761e-05
+      ],
+      "context": {
+        "input_tokens": 238,
+        "original_tokens": 238,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=video-playback. Actions=ABC\nMetrics={\"samples\":30,\"error_rate\":0.036506566516597075,\"recent_error_rate\":0.07072955799823756,\"baseline_error_rate\":0.0018772292096865028,\"recent_max_p95_ms\":1062.37,\"baseline_requests\":21308,\"recent_requests\":21561}\nPolicy={\"found\":true,\"error_limit\":0.015,\"latency_limit\":713}\nChanges=[{\"kind\":\"telemetry\",\"status\":\"active\",\"minute\":57},{\"kind\":\"dependency\",\"status\":\"conflicting\",\"minute\":46},{\"kind\":\"release\",\"status\":\"active\",\"minute\":44}]\nNext action:",
+      "action": "E",
+      "input_tokens": 285,
+      "probabilities": [
+        0.0011937092058360577,
+        0.0002744208904914558,
+        0.010522201657295227,
+        0.1907671093940735,
+        0.5061137080192566,
+        0.15432503819465637,
+        0.026503821834921837,
+        0.016652679070830345,
+        0.09364734590053558
+      ],
+      "context": {
+        "input_tokens": 285,
+        "original_tokens": 285,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    }
+  ],
+  "episode": {
+    "task_id": "video-playback",
+    "split": "dev",
+    "actions": [
+      "A",
+      "B",
+      "C",
+      "E"
+    ],
+    "reward": 0.3,
+    "score": {
+      "success": false,
+      "decision_correct": false,
+      "checks": {
+        "completed": true,
+        "structured_answer": true,
+        "service_answer": true,
+        "metrics_observed": true,
+        "current_metrics": true,
+        "metric_status_consistency": true,
+        "numeric_answer": true,
+        "status_answer": true,
+        "cause_answer": false,
+        "recommendation_answer": false,
+        "uncertainty_answer": false,
+        "citation_ids": true,
+        "runbook_evidence": true,
+        "current_change_evidence": true,
+        "required_tools": true,
+        "allowed_tools": true,
+        "no_tool_errors": true,
+        "service_scoped_calls": true
+      },
+      "failure": "cause_answer",
+      "answer_parse_error": null,
+      "parsed_answer": {
+        "service": "video-playback",
+        "error_rate": 0.036506566516597075,
+        "status": "incident",
+        "likely_cause": "dependency_outage",
+        "recommendation": "dependency_escalation",
+        "uncertainty": "causality_unproven",
+        "citations": [
+          "7548e80688ab5e6ded33",
+          "7a21ca5880f8880c17f8",
+          "bef6cfb1ffaf054abd7f",
+          "9b41cfe87d69fa5c5bac",
+          "ac2fbcae592b3b776411",
+          "chg-6ab3f503253d2c99431a",
+          "chg-d6ed82efa6b208be8fd1",
+          "chg-386efbc567618a5d3f6d"
+        ]
+      },
+      "tool_execution_accuracy": 1.0,
+      "citation_precision": 1.0,
+      "tool_calls": 3,
+      "latency_seconds": 0.0045039999968139455,
+      "known_tokens": 824,
+      "unknown_usage": 0,
+      "fixture": false
+    },
+    "trace": {
+      "status": "completed",
+      "answer": "{\"service\": \"video-playback\", \"error_rate\": 0.036506566516597075, \"status\": \"incident\", \"likely_cause\": \"dependency_outage\", \"recommendation\": \"dependency_escalation\", \"uncertainty\": \"causality_unproven\", \"citations\": [\"7548e80688ab5e6ded33\", \"7a21ca5880f8880c17f8\", \"bef6cfb1ffaf054abd7f\", \"9b41cfe87d69fa5c5bac\", \"ac2fbcae592b3b776411\", \"chg-6ab3f503253d2c99431a\", \"chg-d6ed82efa6b208be8fd1\", \"chg-386efbc567618a5d3f6d\"]}",
+      "events": [
+        {
+          "kind": "tool",
+          "name": "service_metrics",
+          "arguments": {
+            "service": "video-playback",
+            "window_minutes": 30
+          },
+          "output": {
+            "service": "video-playback",
+            "samples": 30,
+            "error_rate": 0.036506566516597075,
+            "max_p95_ms": 1062.37,
+            "requests": 42869,
+            "window_minutes": 30,
+            "as_of_minute": 59,
+            "status": "observed",
+            "baseline_error_rate": 0.0018772292096865028,
+            "baseline_max_p95_ms": 413.54,
+            "baseline_requests": 21308,
+            "recent_error_rate": 0.07072955799823756,
+            "recent_max_p95_ms": 1062.37,
+            "recent_requests": 21561,
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.001958799999556504
+        },
+        {
+          "kind": "tool",
+          "name": "knowledge_search",
+          "arguments": {
+            "service": "video-playback",
+            "query": "incident policy observation window status diagnostic evidence uncertainty video-playback",
+            "limit": 5
+          },
+          "output": {
+            "service": "video-playback",
+            "source": null,
+            "evidence": [
+              {
+                "id": "7548e80688ab5e6ded33",
+                "source": "video-playback/runbook.md",
+                "text": "# video-playback: playback authorization incident policy",
+                "score": 0.01639344262295082,
+                "trust": "untrusted_evidence"
+              },
+              {
+                "id": "7a21ca5880f8880c17f8",
+                "source": "video-playback/runbook.md",
+                "text": "Use the exact service filter when retrieving this runbook. Evidence from another\nservice has different limits and cannot establish the status of video-playback.",
+                "score": 0.016129032258064516,
+                "trust": "untrusted_evidence"
+              },
+              {
+                "id": "bef6cfb1ffaf054abd7f",
+                "source": "video-playback/runbook.md",
+                "text": "## Observation window and status\nRequest service_metrics for the latest 30 minutes. Its recent fields summarize\nthe newest 15 samples, and baseline fields summarize the earlier 15 samples.\nThe final error_rate must be the complete 30-minute error_rate, as a decimal.\nAn incident exists if recent_error_rate >= 0.0150 or\nrecent_max_p95_ms > 713 milliseconds. Both conditions below those\nlimits imply healthy, provided current metric samples and this policy exist.\nMissing metrics or a missing runbook imply insufficient_data: do not infer\nhealthy from a null error_rate or borrow a different service's thresholds.",
+                "score": 0.015873015873015872,
+                "trust": "untrusted_evidence"
+              },
+              {
+                "id": "9b41cfe87d69fa5c5bac",
+                "source": "video-playback/runbook.md",
+                "text": "## Uncertainty and citations\nUse uncertainty=causality_unproven for evidence-supported incident hypotheses;\nnone_detected for healthy observations; insufficient_data for missing required\nevidence; conflicting_evidence for unresolved conflicts. Correlation does not\nprove causation. Cite this runbook and current incident_changes evidence ids.",
+                "score": 0.015625,
+                "trust": "untrusted_evidence"
+              },
+              {
+                "id": "ac2fbcae592b3b776411",
+                "source": "video-playback/runbook.md",
+                "text": "## Diagnostic evidence rules\nThe serving dependency for playback authorization is rights-store. Obtain incident_changes:\nthe runbook contains policies, not the service's current change history.\nAn active release before the metric deterioration, stable demand and a healthy\ndependency support likely_cause=release_regression and recommendation=rollback_review.\nAn active dependency failure before deterioration takes priority over a stale,\naborted or later unrelated release: dependency_outage / dependency_escalation.\nAn active traffic surge with a higher recent/baseline request ratio and healthy\ndependency supports capacity_pressure / capacity_review. Error rates alone do\nnot distinguish these causes. Cite the relevant current change evidence id.\nConflicting health probes or two unresolved competing change explanations require\nconflicting_evidence / verify_changes. A current incident without sufficient\ncausal evidence requires insufficient_evidence / collect_evidence.\nA healthy service requ",
+                "score": 0.015384615384615385,
+                "trust": "untrusted_evidence"
+              }
+            ]
+          },
+          "seconds": 0.001115499995648861
+        },
+        {
+          "kind": "tool",
+          "name": "incident_changes",
+          "arguments": {
+            "service": "video-playback"
+          },
+          "output": {
+            "service": "video-playback",
+            "available": true,
+            "changes": [
+              {
+                "kind": "telemetry",
+                "minute": 57,
+                "summary": "Error samples are current, but conflicting causal reports remain unresolved; verify independent health signals before intervention.",
+                "status": "active",
+                "evidence_id": "chg-6ab3f503253d2c99431a"
+              },
+              {
+                "kind": "dependency",
+                "minute": 46,
+                "summary": "rights-store probe A reports failure while probe B reports normal; clocks and coverage have not been reconciled.",
+                "status": "conflicting",
+                "evidence_id": "chg-d6ed82efa6b208be8fd1"
+              },
+              {
+                "kind": "release",
+                "minute": 44,
+                "summary": "A serving build changed before deterioration; the release owner attributes the errors to the build.",
+                "status": "active",
+                "evidence_id": "chg-386efbc567618a5d3f6d"
+              }
+            ],
+            "evidence": [
+              {
+                "id": "chg-6ab3f503253d2c99431a",
+                "source": "changes/video-playback",
+                "text": "telemetry at minute 57 (active): Error samples are current, but conflicting causal reports remain unresolved; verify independent health signals before intervention.",
+                "kind": "telemetry",
+                "status": "active",
+                "minute": 57
+              },
+              {
+                "id": "chg-d6ed82efa6b208be8fd1",
+                "source": "changes/video-playback",
+                "text": "dependency at minute 46 (conflicting): rights-store probe A reports failure while probe B reports normal; clocks and coverage have not been reconciled.",
+                "kind": "dependency",
+                "status": "conflicting",
+                "minute": 46
+              },
+              {
+                "id": "chg-386efbc567618a5d3f6d",
+                "source": "changes/video-playback",
+                "text": "release at minute 44 (active): A serving build changed before deterioration; the release owner attributes the errors to the build.",
+                "kind": "release",
+                "status": "active",
+                "minute": 44
+              }
+            ],
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.0014297000016085804
+        }
+      ],
+      "tokens": 824,
+      "unknown_usage": 0,
+      "fixture": false
+    },
+    "wall_seconds": 2.0264373999962118,
+    "decoder": "greedy one-of-nine original LM vocabulary tokens",
+    "stage": "reinforce"
+  }
+}

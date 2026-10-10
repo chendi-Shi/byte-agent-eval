@@ -1,0 +1,8 @@
+HuggingFaceTB / SmolLM2-135M-Instruct
+Base revision: 12fd25f77366fa6b3b4b768ec3050bf629380bac
+Base publisher: HuggingFaceTB
+Base model license: Apache License 2.0
+Source: https://huggingface.co/HuggingFaceTB/SmolLM2-135M-Instruct
+
+This project modified LoRA q_proj/v_proj parameters through synthetic-supervised SFT and executed-tool REINFORCE experiments dated 2026-10-09.
+Base model weights are not included. Repository MIT licensing applies to original application code; these adapter checkpoints are Apache-2.0.

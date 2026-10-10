@@ -1,0 +1,257 @@
+{
+  "states": [
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=message-presence. Actions=\nNext action:",
+      "action": "A",
+      "input_tokens": 85,
+      "probabilities": [
+        0.3444211781024933,
+        0.07074261456727982,
+        0.03603152185678482,
+        0.12218531221151352,
+        0.07095031440258026,
+        0.02551148645579815,
+        0.019935213029384613,
+        0.04060249403119087,
+        0.2696199119091034
+      ],
+      "context": {
+        "input_tokens": 85,
+        "original_tokens": 85,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=message-presence. Actions=A\nMetrics={\"samples\":0,\"error_rate\":null,\"recent_error_rate\":null,\"baseline_error_rate\":null,\"recent_max_p95_ms\":null,\"baseline_requests\":0,\"recent_requests\":0}\nNext action:",
+      "action": "A",
+      "input_tokens": 140,
+      "probabilities": [
+        0.6726016998291016,
+        0.04872942343354225,
+        0.021527091041207314,
+        0.08359506726264954,
+        0.06277099996805191,
+        0.009605041705071926,
+        0.01402504276484251,
+        0.028218138962984085,
+        0.05892741680145264
+      ],
+      "context": {
+        "input_tokens": 140,
+        "original_tokens": 140,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=message-presence. Actions=AA\nMetrics={\"samples\":0,\"error_rate\":null,\"recent_error_rate\":null,\"baseline_error_rate\":null,\"recent_max_p95_ms\":null,\"baseline_requests\":0,\"recent_requests\":0}\nNext action:",
+      "action": "A",
+      "input_tokens": 140,
+      "probabilities": [
+        0.6847845911979675,
+        0.03945852443575859,
+        0.019156618043780327,
+        0.05527768284082413,
+        0.07855808734893799,
+        0.017213625833392143,
+        0.02042841538786888,
+        0.027281183749437332,
+        0.05784130468964577
+      ],
+      "context": {
+        "input_tokens": 140,
+        "original_tokens": 140,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=message-presence. Actions=AAA\nMetrics={\"samples\":0,\"error_rate\":null,\"recent_error_rate\":null,\"baseline_error_rate\":null,\"recent_max_p95_ms\":null,\"baseline_requests\":0,\"recent_requests\":0}\nNext action:",
+      "action": "A",
+      "input_tokens": 141,
+      "probabilities": [
+        0.6812047958374023,
+        0.040653154253959656,
+        0.019651062786579132,
+        0.056190285831689835,
+        0.07877851277589798,
+        0.017853548750281334,
+        0.020855402573943138,
+        0.0263212937861681,
+        0.058491989970207214
+      ],
+      "context": {
+        "input_tokens": 141,
+        "original_tokens": 141,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    }
+  ],
+  "episode": {
+    "task_id": "message-presence",
+    "split": "dev",
+    "actions": [
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "reward": -0.7,
+    "score": {
+      "success": false,
+      "decision_correct": false,
+      "checks": {
+        "completed": false,
+        "structured_answer": false,
+        "service_answer": false,
+        "metrics_observed": true,
+        "current_metrics": true,
+        "metric_status_consistency": true,
+        "numeric_answer": false,
+        "status_answer": false,
+        "cause_answer": false,
+        "recommendation_answer": false,
+        "uncertainty_answer": false,
+        "citation_ids": false,
+        "runbook_evidence": false,
+        "current_change_evidence": false,
+        "required_tools": false,
+        "allowed_tools": true,
+        "no_tool_errors": true,
+        "service_scoped_calls": true
+      },
+      "failure": "completed",
+      "answer_parse_error": "invalid JSON: Expecting value: line 1 column 1 (char 0)",
+      "parsed_answer": null,
+      "tool_execution_accuracy": 1.0,
+      "citation_precision": null,
+      "tool_calls": 4,
+      "latency_seconds": 0.010546299992711283,
+      "known_tokens": 510,
+      "unknown_usage": 0,
+      "fixture": false
+    },
+    "trace": {
+      "status": "budget_exceeded",
+      "answer": "",
+      "events": [
+        {
+          "kind": "tool",
+          "name": "service_metrics",
+          "arguments": {
+            "service": "message-presence",
+            "window_minutes": 30
+          },
+          "output": {
+            "service": "message-presence",
+            "samples": 0,
+            "error_rate": null,
+            "max_p95_ms": null,
+            "requests": 0,
+            "window_minutes": 30,
+            "as_of_minute": null,
+            "status": "missing",
+            "baseline_error_rate": null,
+            "baseline_max_p95_ms": null,
+            "baseline_requests": 0,
+            "recent_error_rate": null,
+            "recent_max_p95_ms": null,
+            "recent_requests": 0,
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.002513799990992993
+        },
+        {
+          "kind": "tool",
+          "name": "service_metrics",
+          "arguments": {
+            "service": "message-presence",
+            "window_minutes": 30
+          },
+          "output": {
+            "service": "message-presence",
+            "samples": 0,
+            "error_rate": null,
+            "max_p95_ms": null,
+            "requests": 0,
+            "window_minutes": 30,
+            "as_of_minute": null,
+            "status": "missing",
+            "baseline_error_rate": null,
+            "baseline_max_p95_ms": null,
+            "baseline_requests": 0,
+            "recent_error_rate": null,
+            "recent_max_p95_ms": null,
+            "recent_requests": 0,
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.0030107000056887046
+        },
+        {
+          "kind": "tool",
+          "name": "service_metrics",
+          "arguments": {
+            "service": "message-presence",
+            "window_minutes": 30
+          },
+          "output": {
+            "service": "message-presence",
+            "samples": 0,
+            "error_rate": null,
+            "max_p95_ms": null,
+            "requests": 0,
+            "window_minutes": 30,
+            "as_of_minute": null,
+            "status": "missing",
+            "baseline_error_rate": null,
+            "baseline_max_p95_ms": null,
+            "baseline_requests": 0,
+            "recent_error_rate": null,
+            "recent_max_p95_ms": null,
+            "recent_requests": 0,
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.0024489999923389405
+        },
+        {
+          "kind": "tool",
+          "name": "service_metrics",
+          "arguments": {
+            "service": "message-presence",
+            "window_minutes": 30
+          },
+          "output": {
+            "service": "message-presence",
+            "samples": 0,
+            "error_rate": null,
+            "max_p95_ms": null,
+            "requests": 0,
+            "window_minutes": 30,
+            "as_of_minute": null,
+            "status": "missing",
+            "baseline_error_rate": null,
+            "baseline_max_p95_ms": null,
+            "baseline_requests": 0,
+            "recent_error_rate": null,
+            "recent_max_p95_ms": null,
+            "recent_requests": 0,
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.002572800003690645
+        }
+      ],
+      "tokens": 510,
+      "unknown_usage": 0,
+      "fixture": false
+    },
+    "wall_seconds": 4.1795659000054,
+    "decoder": "greedy one-of-nine original LM vocabulary tokens",
+    "stage": "base"
+  }
+}

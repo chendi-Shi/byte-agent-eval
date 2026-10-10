@@ -1,0 +1,3330 @@
+[
+  {
+    "phase": "sft",
+    "step": 1,
+    "seconds": 15.443958699994255,
+    "task_ids": [
+      "search-reindex",
+      "search-suggest",
+      "video-transcode",
+      "growth-referral"
+    ],
+    "loss": 3.449237823486328,
+    "gradient_norm": 2.5867726802825928,
+    "contexts": [
+      {
+        "input_tokens": 140,
+        "original_tokens": 140,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 232,
+        "original_tokens": 232,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 237,
+        "original_tokens": 237,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 240,
+        "original_tokens": 240,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 2,
+    "seconds": 19.15726700000232,
+    "task_ids": [
+      "creator-upload",
+      "message-inbox",
+      "live-session",
+      "profile-lookup"
+    ],
+    "loss": 1.973402500152588,
+    "gradient_norm": 1.2424335479736328,
+    "contexts": [
+      {
+        "input_tokens": 281,
+        "original_tokens": 281,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 85,
+        "original_tokens": 85,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 265,
+        "original_tokens": 265,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 207,
+        "original_tokens": 207,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 3,
+    "seconds": 12.687502600005246,
+    "task_ids": [
+      "creator-draft",
+      "creator-upload",
+      "social-follow",
+      "content-tag"
+    ],
+    "loss": 1.6160154342651367,
+    "gradient_norm": 1.4463282823562622,
+    "contexts": [
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 238,
+        "original_tokens": 238,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 4,
+    "seconds": 17.856434200002695,
+    "task_ids": [
+      "content-tag",
+      "search-reindex",
+      "search-suggest",
+      "ads-attribution"
+    ],
+    "loss": 1.930459976196289,
+    "gradient_norm": 1.589236855506897,
+    "contexts": [
+      {
+        "input_tokens": 269,
+        "original_tokens": 269,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 85,
+        "original_tokens": 85,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 210,
+        "original_tokens": 210,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 5,
+    "seconds": 15.146874999991269,
+    "task_ids": [
+      "video-transcode",
+      "ads-attribution",
+      "social-share",
+      "commerce-stock"
+    ],
+    "loss": 1.3667678833007812,
+    "gradient_norm": 1.2903951406478882,
+    "contexts": [
+      {
+        "input_tokens": 211,
+        "original_tokens": 211,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 85,
+        "original_tokens": 85,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 233,
+        "original_tokens": 233,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 6,
+    "seconds": 53.88457070000004,
+    "task_ids": [
+      "creator-draft",
+      "social-share",
+      "social-follow",
+      "growth-referral"
+    ],
+    "loss": 2.5240468978881836,
+    "gradient_norm": 3.0808463096618652,
+    "contexts": [
+      {
+        "input_tokens": 139,
+        "original_tokens": 139,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 233,
+        "original_tokens": 233,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 268,
+        "original_tokens": 268,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 271,
+        "original_tokens": 271,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 7,
+    "seconds": 66.90387470000132,
+    "task_ids": [
+      "message-inbox",
+      "creator-draft",
+      "discovery-nearby",
+      "commerce-cart"
+    ],
+    "loss": 2.1200685501098633,
+    "gradient_norm": 1.5550122261047363,
+    "contexts": [
+      {
+        "input_tokens": 267,
+        "original_tokens": 267,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 197,
+        "original_tokens": 197,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 212,
+        "original_tokens": 212,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 8,
+    "seconds": 53.10061290000158,
+    "task_ids": [
+      "search-suggest",
+      "growth-invite",
+      "search-reindex",
+      "message-inbox"
+    ],
+    "loss": 2.211803913116455,
+    "gradient_norm": 1.7309608459472656,
+    "contexts": [
+      {
+        "input_tokens": 264,
+        "original_tokens": 264,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 85,
+        "original_tokens": 85,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 198,
+        "original_tokens": 198,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 235,
+        "original_tokens": 235,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 9,
+    "seconds": 40.963730100003886,
+    "task_ids": [
+      "commerce-stock",
+      "discovery-nearby",
+      "commerce-stock",
+      "creator-upload"
+    ],
+    "loss": 2.012481212615967,
+    "gradient_norm": 2.143172025680542,
+    "contexts": [
+      {
+        "input_tokens": 280,
+        "original_tokens": 280,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 85,
+        "original_tokens": 85,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 235,
+        "original_tokens": 235,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 10,
+    "seconds": 43.65634349999891,
+    "task_ids": [
+      "content-tag",
+      "ads-attribution",
+      "commerce-cart",
+      "search-reindex"
+    ],
+    "loss": 1.9446659088134766,
+    "gradient_norm": 1.9898004531860352,
+    "contexts": [
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 283,
+        "original_tokens": 283,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 209,
+        "original_tokens": 209,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 166,
+        "original_tokens": 166,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 11,
+    "seconds": 44.96997170000395,
+    "task_ids": [
+      "message-inbox",
+      "discovery-nearby",
+      "commerce-cart",
+      "growth-feed"
+    ],
+    "loss": 1.3308463096618652,
+    "gradient_norm": 1.6782883405685425,
+    "contexts": [
+      {
+        "input_tokens": 209,
+        "original_tokens": 209,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 283,
+        "original_tokens": 283,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 234,
+        "original_tokens": 234,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 12,
+    "seconds": 37.014439400008996,
+    "task_ids": [
+      "growth-invite",
+      "social-follow",
+      "growth-invite",
+      "ads-attribution"
+    ],
+    "loss": 1.2946715354919434,
+    "gradient_norm": 2.4921534061431885,
+    "contexts": [
+      {
+        "input_tokens": 236,
+        "original_tokens": 236,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 211,
+        "original_tokens": 211,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 282,
+        "original_tokens": 282,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 236,
+        "original_tokens": 236,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 13,
+    "seconds": 32.56444960000226,
+    "task_ids": [
+      "discovery-nearby",
+      "profile-lookup",
+      "growth-referral",
+      "content-tag"
+    ],
+    "loss": 0.8125815391540527,
+    "gradient_norm": 2.158076047897339,
+    "contexts": [
+      {
+        "input_tokens": 238,
+        "original_tokens": 238,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 233,
+        "original_tokens": 233,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 86,
+        "original_tokens": 86,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 212,
+        "original_tokens": 212,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 14,
+    "seconds": 25.147975400002906,
+    "task_ids": [
+      "growth-referral",
+      "live-session",
+      "social-share",
+      "commerce-stock"
+    ],
+    "loss": 0.4575815200805664,
+    "gradient_norm": 1.9655972719192505,
+    "contexts": [
+      {
+        "input_tokens": 214,
+        "original_tokens": 214,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 207,
+        "original_tokens": 207,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 207,
+        "original_tokens": 207,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 15,
+    "seconds": 128.0194283000019,
+    "task_ids": [
+      "social-follow",
+      "profile-lookup",
+      "social-share",
+      "growth-invite"
+    ],
+    "loss": 0.795008659362793,
+    "gradient_norm": 1.7420854568481445,
+    "contexts": [
+      {
+        "input_tokens": 237,
+        "original_tokens": 237,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 265,
+        "original_tokens": 265,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 210,
+        "original_tokens": 210,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 16,
+    "seconds": 85.83957809999993,
+    "task_ids": [
+      "creator-upload",
+      "growth-feed",
+      "growth-feed",
+      "creator-draft"
+    ],
+    "loss": 0.4425506591796875,
+    "gradient_norm": 1.3193302154541016,
+    "contexts": [
+      {
+        "input_tokens": 209,
+        "original_tokens": 209,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 206,
+        "original_tokens": 206,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 232,
+        "original_tokens": 232,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 165,
+        "original_tokens": 165,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 17,
+    "seconds": 42.54026540000632,
+    "task_ids": [
+      "commerce-cart",
+      "live-session",
+      "search-suggest",
+      "video-transcode"
+    ],
+    "loss": 0.804222583770752,
+    "gradient_norm": 3.0467212200164795,
+    "contexts": [
+      {
+        "input_tokens": 280,
+        "original_tokens": 280,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 207,
+        "original_tokens": 207,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 206,
+        "original_tokens": 206,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 85,
+        "original_tokens": 85,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 18,
+    "seconds": 50.59696779999649,
+    "task_ids": [
+      "video-transcode",
+      "profile-lookup",
+      "growth-feed",
+      "live-session"
+    ],
+    "loss": 2.686617374420166,
+    "gradient_norm": 10.374502182006836,
+    "contexts": [
+      {
+        "input_tokens": 282,
+        "original_tokens": 282,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 278,
+        "original_tokens": 278,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 278,
+        "original_tokens": 278,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 233,
+        "original_tokens": 233,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 19,
+    "seconds": 39.20050930000434,
+    "task_ids": [
+      "discovery-nearby",
+      "growth-referral",
+      "profile-lookup",
+      "content-tag"
+    ],
+    "loss": 2.679591178894043,
+    "gradient_norm": 13.503694534301758,
+    "contexts": [
+      {
+        "input_tokens": 283,
+        "original_tokens": 283,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 271,
+        "original_tokens": 271,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 278,
+        "original_tokens": 278,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 212,
+        "original_tokens": 212,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 20,
+    "seconds": 21.69115040000179,
+    "task_ids": [
+      "growth-feed",
+      "social-follow",
+      "ads-attribution",
+      "live-session"
+    ],
+    "loss": 1.2294888496398926,
+    "gradient_norm": 3.0078041553497314,
+    "contexts": [
+      {
+        "input_tokens": 206,
+        "original_tokens": 206,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 283,
+        "original_tokens": 283,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 207,
+        "original_tokens": 207,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 21,
+    "seconds": 31.40756110000075,
+    "task_ids": [
+      "search-reindex",
+      "search-reindex",
+      "commerce-stock",
+      "video-transcode"
+    ],
+    "loss": 0.1868119239807129,
+    "gradient_norm": 1.3186720609664917,
+    "contexts": [
+      {
+        "input_tokens": 140,
+        "original_tokens": 140,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 166,
+        "original_tokens": 166,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 233,
+        "original_tokens": 233,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 85,
+        "original_tokens": 85,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 22,
+    "seconds": 32.99177079999936,
+    "task_ids": [
+      "video-transcode",
+      "commerce-cart",
+      "live-session",
+      "search-reindex"
+    ],
+    "loss": 1.8485283851623535,
+    "gradient_norm": 7.918165683746338,
+    "contexts": [
+      {
+        "input_tokens": 282,
+        "original_tokens": 282,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 234,
+        "original_tokens": 234,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 265,
+        "original_tokens": 265,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 198,
+        "original_tokens": 198,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 23,
+    "seconds": 36.2239072000084,
+    "task_ids": [
+      "social-follow",
+      "social-share",
+      "message-inbox",
+      "commerce-cart"
+    ],
+    "loss": 0.634768009185791,
+    "gradient_norm": 1.7305043935775757,
+    "contexts": [
+      {
+        "input_tokens": 268,
+        "original_tokens": 268,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 265,
+        "original_tokens": 265,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 85,
+        "original_tokens": 85,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 209,
+        "original_tokens": 209,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 24,
+    "seconds": 98.15615650000109,
+    "task_ids": [
+      "growth-referral",
+      "search-suggest",
+      "discovery-nearby",
+      "discovery-nearby"
+    ],
+    "loss": 0.13969182968139648,
+    "gradient_norm": 2.4587457180023193,
+    "contexts": [
+      {
+        "input_tokens": 86,
+        "original_tokens": 86,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 232,
+        "original_tokens": 232,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 238,
+        "original_tokens": 238,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 85,
+        "original_tokens": 85,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 25,
+    "seconds": 48.63753169999109,
+    "task_ids": [
+      "commerce-stock",
+      "profile-lookup",
+      "profile-lookup",
+      "content-tag"
+    ],
+    "loss": 0.8332781791687012,
+    "gradient_norm": 3.4932174682617188,
+    "contexts": [
+      {
+        "input_tokens": 280,
+        "original_tokens": 280,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 207,
+        "original_tokens": 207,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 238,
+        "original_tokens": 238,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 26,
+    "seconds": 24.512200199998915,
+    "task_ids": [
+      "content-tag",
+      "social-share",
+      "search-suggest",
+      "commerce-cart"
+    ],
+    "loss": 0.6034407615661621,
+    "gradient_norm": 1.818543791770935,
+    "contexts": [
+      {
+        "input_tokens": 269,
+        "original_tokens": 269,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 264,
+        "original_tokens": 264,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 27,
+    "seconds": 58.95493049999641,
+    "task_ids": [
+      "social-follow",
+      "ads-attribution",
+      "creator-draft",
+      "video-transcode"
+    ],
+    "loss": 0.12192726135253906,
+    "gradient_norm": 2.9485793113708496,
+    "contexts": [
+      {
+        "input_tokens": 237,
+        "original_tokens": 237,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 210,
+        "original_tokens": 210,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 211,
+        "original_tokens": 211,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 28,
+    "seconds": 24.70986260000791,
+    "task_ids": [
+      "search-suggest",
+      "growth-feed",
+      "growth-invite",
+      "commerce-cart"
+    ],
+    "loss": 2.5241236686706543,
+    "gradient_norm": 7.846145153045654,
+    "contexts": [
+      {
+        "input_tokens": 206,
+        "original_tokens": 206,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 232,
+        "original_tokens": 232,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 282,
+        "original_tokens": 282,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 280,
+        "original_tokens": 280,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 29,
+    "seconds": 72.37713120000262,
+    "task_ids": [
+      "social-share",
+      "growth-feed",
+      "content-tag",
+      "search-reindex"
+    ],
+    "loss": 1.2133564949035645,
+    "gradient_norm": 3.796740770339966,
+    "contexts": [
+      {
+        "input_tokens": 207,
+        "original_tokens": 207,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 278,
+        "original_tokens": 278,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 85,
+        "original_tokens": 85,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 30,
+    "seconds": 200.34036560000095,
+    "task_ids": [
+      "creator-upload",
+      "creator-upload",
+      "creator-draft",
+      "live-session"
+    ],
+    "loss": 1.521951675415039,
+    "gradient_norm": 4.191446781158447,
+    "contexts": [
+      {
+        "input_tokens": 281,
+        "original_tokens": 281,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 209,
+        "original_tokens": 209,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 197,
+        "original_tokens": 197,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 31,
+    "seconds": 58.87079870000889,
+    "task_ids": [
+      "video-transcode",
+      "commerce-stock",
+      "growth-referral",
+      "growth-referral"
+    ],
+    "loss": 0.029015541076660156,
+    "gradient_norm": 0.6046013236045837,
+    "contexts": [
+      {
+        "input_tokens": 237,
+        "original_tokens": 237,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 207,
+        "original_tokens": 207,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 240,
+        "original_tokens": 240,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 214,
+        "original_tokens": 214,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 32,
+    "seconds": 23.523157899995567,
+    "task_ids": [
+      "profile-lookup",
+      "creator-draft",
+      "growth-feed",
+      "search-suggest"
+    ],
+    "loss": 0.03728055953979492,
+    "gradient_norm": 0.3676038980484009,
+    "contexts": [
+      {
+        "input_tokens": 233,
+        "original_tokens": 233,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 165,
+        "original_tokens": 165,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 33,
+    "seconds": 48.18945770000573,
+    "task_ids": [
+      "creator-upload",
+      "growth-invite",
+      "message-inbox",
+      "growth-invite"
+    ],
+    "loss": 0.015309810638427734,
+    "gradient_norm": 0.1501317024230957,
+    "contexts": [
+      {
+        "input_tokens": 235,
+        "original_tokens": 235,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 236,
+        "original_tokens": 236,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 209,
+        "original_tokens": 209,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 210,
+        "original_tokens": 210,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 34,
+    "seconds": 84.34289509999508,
+    "task_ids": [
+      "ads-attribution",
+      "message-inbox",
+      "growth-invite",
+      "live-session"
+    ],
+    "loss": 0.29733848571777344,
+    "gradient_norm": 1.6090202331542969,
+    "contexts": [
+      {
+        "input_tokens": 85,
+        "original_tokens": 85,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 267,
+        "original_tokens": 267,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 85,
+        "original_tokens": 85,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 233,
+        "original_tokens": 233,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 35,
+    "seconds": 53.82046800000535,
+    "task_ids": [
+      "message-inbox",
+      "social-share",
+      "creator-upload",
+      "commerce-stock"
+    ],
+    "loss": 0.028784751892089844,
+    "gradient_norm": 0.27643561363220215,
+    "contexts": [
+      {
+        "input_tokens": 235,
+        "original_tokens": 235,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 233,
+        "original_tokens": 233,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 36,
+    "seconds": 32.86147360000177,
+    "task_ids": [
+      "discovery-nearby",
+      "social-follow",
+      "ads-attribution",
+      "creator-draft"
+    ],
+    "loss": 0.01768350601196289,
+    "gradient_norm": 0.2273503988981247,
+    "contexts": [
+      {
+        "input_tokens": 212,
+        "original_tokens": 212,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 211,
+        "original_tokens": 211,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 236,
+        "original_tokens": 236,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 139,
+        "original_tokens": 139,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 37,
+    "seconds": 75.00725640000019,
+    "task_ids": [
+      "message-inbox",
+      "growth-feed",
+      "profile-lookup",
+      "social-share"
+    ],
+    "loss": 1.178633689880371,
+    "gradient_norm": 2.785670757293701,
+    "contexts": [
+      {
+        "input_tokens": 85,
+        "original_tokens": 85,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 278,
+        "original_tokens": 278,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 278,
+        "original_tokens": 278,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 233,
+        "original_tokens": 233,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 38,
+    "seconds": 26.50707959999272,
+    "task_ids": [
+      "creator-upload",
+      "search-suggest",
+      "live-session",
+      "profile-lookup"
+    ],
+    "loss": 0.1755213737487793,
+    "gradient_norm": 1.1485023498535156,
+    "contexts": [
+      {
+        "input_tokens": 209,
+        "original_tokens": 209,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 264,
+        "original_tokens": 264,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 207,
+        "original_tokens": 207,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 39,
+    "seconds": 24.56425749999471,
+    "task_ids": [
+      "commerce-stock",
+      "growth-referral",
+      "creator-draft",
+      "search-reindex"
+    ],
+    "loss": 1.55322265625,
+    "gradient_norm": 7.1016950607299805,
+    "contexts": [
+      {
+        "input_tokens": 280,
+        "original_tokens": 280,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 214,
+        "original_tokens": 214,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 197,
+        "original_tokens": 197,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 85,
+        "original_tokens": 85,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 40,
+    "seconds": 39.76276959999814,
+    "task_ids": [
+      "content-tag",
+      "profile-lookup",
+      "content-tag",
+      "live-session"
+    ],
+    "loss": 0.6683940887451172,
+    "gradient_norm": 2.6388018131256104,
+    "contexts": [
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 269,
+        "original_tokens": 269,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 265,
+        "original_tokens": 265,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 41,
+    "seconds": 7.105552000008174,
+    "task_ids": [
+      "video-transcode",
+      "growth-invite",
+      "growth-feed",
+      "social-share"
+    ],
+    "loss": 0.01782989501953125,
+    "gradient_norm": 0.21896463632583618,
+    "contexts": [
+      {
+        "input_tokens": 85,
+        "original_tokens": 85,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 85,
+        "original_tokens": 85,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 42,
+    "seconds": 45.64054589999432,
+    "task_ids": [
+      "content-tag",
+      "ads-attribution",
+      "live-session",
+      "social-follow"
+    ],
+    "loss": 0.5705256462097168,
+    "gradient_norm": 4.129646301269531,
+    "contexts": [
+      {
+        "input_tokens": 238,
+        "original_tokens": 238,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 283,
+        "original_tokens": 283,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 233,
+        "original_tokens": 233,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 211,
+        "original_tokens": 211,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 43,
+    "seconds": 78.85063079999236,
+    "task_ids": [
+      "social-follow",
+      "profile-lookup",
+      "growth-referral",
+      "social-share"
+    ],
+    "loss": 0.5827322006225586,
+    "gradient_norm": 2.2852418422698975,
+    "contexts": [
+      {
+        "input_tokens": 268,
+        "original_tokens": 268,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 233,
+        "original_tokens": 233,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 240,
+        "original_tokens": 240,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 265,
+        "original_tokens": 265,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 44,
+    "seconds": 48.10292499999923,
+    "task_ids": [
+      "growth-feed",
+      "search-suggest",
+      "growth-invite",
+      "search-reindex"
+    ],
+    "loss": 0.005654335021972656,
+    "gradient_norm": 0.08162892609834671,
+    "contexts": [
+      {
+        "input_tokens": 232,
+        "original_tokens": 232,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 232,
+        "original_tokens": 232,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 236,
+        "original_tokens": 236,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 140,
+        "original_tokens": 140,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 45,
+    "seconds": 79.99559560000489,
+    "task_ids": [
+      "growth-feed",
+      "creator-upload",
+      "video-transcode",
+      "social-follow"
+    ],
+    "loss": 0.4989008903503418,
+    "gradient_norm": 2.5360074043273926,
+    "contexts": [
+      {
+        "input_tokens": 206,
+        "original_tokens": 206,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 281,
+        "original_tokens": 281,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 211,
+        "original_tokens": 211,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 46,
+    "seconds": 36.733297799990396,
+    "task_ids": [
+      "search-suggest",
+      "commerce-cart",
+      "content-tag",
+      "search-reindex"
+    ],
+    "loss": 1.0250163078308105,
+    "gradient_norm": 3.656297206878662,
+    "contexts": [
+      {
+        "input_tokens": 206,
+        "original_tokens": 206,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 280,
+        "original_tokens": 280,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 212,
+        "original_tokens": 212,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 198,
+        "original_tokens": 198,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 47,
+    "seconds": 36.602891800008365,
+    "task_ids": [
+      "ads-attribution",
+      "growth-invite",
+      "live-session",
+      "growth-referral"
+    ],
+    "loss": 0.2611522674560547,
+    "gradient_norm": 2.018064022064209,
+    "contexts": [
+      {
+        "input_tokens": 85,
+        "original_tokens": 85,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 210,
+        "original_tokens": 210,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 207,
+        "original_tokens": 207,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 271,
+        "original_tokens": 271,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 48,
+    "seconds": 29.379266999996617,
+    "task_ids": [
+      "commerce-cart",
+      "ads-attribution",
+      "creator-upload",
+      "discovery-nearby"
+    ],
+    "loss": 0.0029044151306152344,
+    "gradient_norm": 0.02951675094664097,
+    "contexts": [
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 236,
+        "original_tokens": 236,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 235,
+        "original_tokens": 235,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 212,
+        "original_tokens": 212,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 49,
+    "seconds": 58.99368790000153,
+    "task_ids": [
+      "commerce-stock",
+      "commerce-stock",
+      "creator-draft",
+      "commerce-stock"
+    ],
+    "loss": 0.0032243728637695312,
+    "gradient_norm": 0.03627784550189972,
+    "contexts": [
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 207,
+        "original_tokens": 207,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 233,
+        "original_tokens": 233,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 50,
+    "seconds": 98.53400759999931,
+    "task_ids": [
+      "video-transcode",
+      "discovery-nearby",
+      "search-reindex",
+      "video-transcode"
+    ],
+    "loss": 0.7955083847045898,
+    "gradient_norm": 3.743018388748169,
+    "contexts": [
+      {
+        "input_tokens": 237,
+        "original_tokens": 237,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 85,
+        "original_tokens": 85,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 166,
+        "original_tokens": 166,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 282,
+        "original_tokens": 282,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 51,
+    "seconds": 19.532804600006784,
+    "task_ids": [
+      "growth-invite",
+      "social-follow",
+      "message-inbox",
+      "creator-draft"
+    ],
+    "loss": 0.9451117515563965,
+    "gradient_norm": 4.5837931632995605,
+    "contexts": [
+      {
+        "input_tokens": 282,
+        "original_tokens": 282,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 237,
+        "original_tokens": 237,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 267,
+        "original_tokens": 267,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 165,
+        "original_tokens": 165,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 52,
+    "seconds": 167.93260210000153,
+    "task_ids": [
+      "commerce-cart",
+      "social-share",
+      "creator-draft",
+      "commerce-cart"
+    ],
+    "loss": 0.0018672943115234375,
+    "gradient_norm": 0.025501245632767677,
+    "contexts": [
+      {
+        "input_tokens": 209,
+        "original_tokens": 209,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 207,
+        "original_tokens": 207,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 139,
+        "original_tokens": 139,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 234,
+        "original_tokens": 234,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 53,
+    "seconds": 81.66259430001082,
+    "task_ids": [
+      "creator-upload",
+      "discovery-nearby",
+      "message-inbox",
+      "ads-attribution"
+    ],
+    "loss": 0.0022187232971191406,
+    "gradient_norm": 0.027320055291056633,
+    "contexts": [
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 238,
+        "original_tokens": 238,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 235,
+        "original_tokens": 235,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 210,
+        "original_tokens": 210,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 54,
+    "seconds": 53.85765470001206,
+    "task_ids": [
+      "discovery-nearby",
+      "message-inbox",
+      "growth-referral",
+      "search-suggest"
+    ],
+    "loss": 0.580047607421875,
+    "gradient_norm": 2.86824369430542,
+    "contexts": [
+      {
+        "input_tokens": 283,
+        "original_tokens": 283,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 209,
+        "original_tokens": 209,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 86,
+        "original_tokens": 86,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 55,
+    "seconds": 48.21548110000731,
+    "task_ids": [
+      "search-reindex",
+      "growth-feed",
+      "growth-invite",
+      "growth-feed"
+    ],
+    "loss": 0.0027899742126464844,
+    "gradient_norm": 0.031865280121564865,
+    "contexts": [
+      {
+        "input_tokens": 85,
+        "original_tokens": 85,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 232,
+        "original_tokens": 232,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 210,
+        "original_tokens": 210,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 56,
+    "seconds": 35.732502300001215,
+    "task_ids": [
+      "video-transcode",
+      "search-reindex",
+      "creator-draft",
+      "ads-attribution"
+    ],
+    "loss": 0.3174595832824707,
+    "gradient_norm": 2.2452473640441895,
+    "contexts": [
+      {
+        "input_tokens": 85,
+        "original_tokens": 85,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 166,
+        "original_tokens": 166,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 197,
+        "original_tokens": 197,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 236,
+        "original_tokens": 236,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 57,
+    "seconds": 25.104677600000286,
+    "task_ids": [
+      "creator-upload",
+      "social-follow",
+      "message-inbox",
+      "creator-upload"
+    ],
+    "loss": 0.8632965087890625,
+    "gradient_norm": 3.3949429988861084,
+    "contexts": [
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 211,
+        "original_tokens": 211,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 267,
+        "original_tokens": 267,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 281,
+        "original_tokens": 281,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 58,
+    "seconds": 34.13019090000307,
+    "task_ids": [
+      "social-share",
+      "commerce-cart",
+      "social-follow",
+      "growth-referral"
+    ],
+    "loss": 0.2461705207824707,
+    "gradient_norm": 1.9297727346420288,
+    "contexts": [
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 209,
+        "original_tokens": 209,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 271,
+        "original_tokens": 271,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 59,
+    "seconds": 48.720066699999734,
+    "task_ids": [
+      "search-suggest",
+      "content-tag",
+      "growth-feed",
+      "commerce-cart"
+    ],
+    "loss": 0.613771915435791,
+    "gradient_norm": 4.214648246765137,
+    "contexts": [
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 238,
+        "original_tokens": 238,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 278,
+        "original_tokens": 278,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 280,
+        "original_tokens": 280,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 60,
+    "seconds": 145.59083990000363,
+    "task_ids": [
+      "commerce-stock",
+      "social-follow",
+      "profile-lookup",
+      "message-inbox"
+    ],
+    "loss": 0.6517186164855957,
+    "gradient_norm": 1.8574389219284058,
+    "contexts": [
+      {
+        "input_tokens": 233,
+        "original_tokens": 233,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 268,
+        "original_tokens": 268,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 278,
+        "original_tokens": 278,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 209,
+        "original_tokens": 209,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 61,
+    "seconds": 39.24891680000292,
+    "task_ids": [
+      "ads-attribution",
+      "social-follow",
+      "search-suggest",
+      "creator-draft"
+    ],
+    "loss": 0.3861551284790039,
+    "gradient_norm": 2.2148425579071045,
+    "contexts": [
+      {
+        "input_tokens": 85,
+        "original_tokens": 85,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 237,
+        "original_tokens": 237,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 264,
+        "original_tokens": 264,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 165,
+        "original_tokens": 165,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 62,
+    "seconds": 207.7467084999953,
+    "task_ids": [
+      "message-inbox",
+      "content-tag",
+      "creator-draft",
+      "growth-feed"
+    ],
+    "loss": 0.18070363998413086,
+    "gradient_norm": 1.5121301412582397,
+    "contexts": [
+      {
+        "input_tokens": 235,
+        "original_tokens": 235,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 269,
+        "original_tokens": 269,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 139,
+        "original_tokens": 139,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 206,
+        "original_tokens": 206,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 63,
+    "seconds": 196.11821529999725,
+    "task_ids": [
+      "commerce-stock",
+      "video-transcode",
+      "content-tag",
+      "ads-attribution"
+    ],
+    "loss": 0.6878628730773926,
+    "gradient_norm": 4.671308517456055,
+    "contexts": [
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 237,
+        "original_tokens": 237,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 212,
+        "original_tokens": 212,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 283,
+        "original_tokens": 283,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 64,
+    "seconds": 33.742795600002864,
+    "task_ids": [
+      "profile-lookup",
+      "search-reindex",
+      "growth-invite",
+      "social-share"
+    ],
+    "loss": 0.4837765693664551,
+    "gradient_norm": 2.4468092918395996,
+    "contexts": [
+      {
+        "input_tokens": 233,
+        "original_tokens": 233,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 198,
+        "original_tokens": 198,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 282,
+        "original_tokens": 282,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 233,
+        "original_tokens": 233,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 65,
+    "seconds": 30.403685999990557,
+    "task_ids": [
+      "discovery-nearby",
+      "commerce-stock",
+      "commerce-cart",
+      "live-session"
+    ],
+    "loss": 0.39012718200683594,
+    "gradient_norm": 2.3210055828094482,
+    "contexts": [
+      {
+        "input_tokens": 283,
+        "original_tokens": 283,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 207,
+        "original_tokens": 207,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 233,
+        "original_tokens": 233,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 66,
+    "seconds": 326.83758579999267,
+    "task_ids": [
+      "social-share",
+      "social-share",
+      "discovery-nearby",
+      "live-session"
+    ],
+    "loss": 0.21849822998046875,
+    "gradient_norm": 2.0184743404388428,
+    "contexts": [
+      {
+        "input_tokens": 265,
+        "original_tokens": 265,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 207,
+        "original_tokens": 207,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 212,
+        "original_tokens": 212,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 67,
+    "seconds": 305.8709753000003,
+    "task_ids": [
+      "content-tag",
+      "growth-referral",
+      "discovery-nearby",
+      "creator-draft"
+    ],
+    "loss": 0.0020494461059570312,
+    "gradient_norm": 0.02620498649775982,
+    "contexts": [
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 240,
+        "original_tokens": 240,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 85,
+        "original_tokens": 85,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 68,
+    "seconds": 134.40259589999914,
+    "task_ids": [
+      "live-session",
+      "commerce-cart",
+      "video-transcode",
+      "search-suggest"
+    ],
+    "loss": 0.5627398490905762,
+    "gradient_norm": 2.8742332458496094,
+    "contexts": [
+      {
+        "input_tokens": 265,
+        "original_tokens": 265,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 234,
+        "original_tokens": 234,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 282,
+        "original_tokens": 282,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 206,
+        "original_tokens": 206,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 69,
+    "seconds": 46.03743530000793,
+    "task_ids": [
+      "creator-upload",
+      "ads-attribution",
+      "video-transcode",
+      "profile-lookup"
+    ],
+    "loss": 0.0014696121215820312,
+    "gradient_norm": 0.018967196345329285,
+    "contexts": [
+      {
+        "input_tokens": 235,
+        "original_tokens": 235,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 210,
+        "original_tokens": 210,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 211,
+        "original_tokens": 211,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 84,
+        "original_tokens": 84,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 70,
+    "seconds": 27.013055000003078,
+    "task_ids": [
+      "search-reindex",
+      "discovery-nearby",
+      "growth-invite",
+      "growth-invite"
+    ],
+    "loss": 0.002040386199951172,
+    "gradient_norm": 0.027954241260886192,
+    "contexts": [
+      {
+        "input_tokens": 140,
+        "original_tokens": 140,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 238,
+        "original_tokens": 238,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 85,
+        "original_tokens": 85,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 236,
+        "original_tokens": 236,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 71,
+    "seconds": 16.51615049999964,
+    "task_ids": [
+      "growth-referral",
+      "live-session",
+      "creator-upload",
+      "commerce-stock"
+    ],
+    "loss": 0.5044984817504883,
+    "gradient_norm": 5.0361480712890625,
+    "contexts": [
+      {
+        "input_tokens": 86,
+        "original_tokens": 86,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 207,
+        "original_tokens": 207,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 209,
+        "original_tokens": 209,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 280,
+        "original_tokens": 280,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "sft",
+    "step": 72,
+    "seconds": 14.512256000001798,
+    "task_ids": [
+      "search-suggest",
+      "profile-lookup",
+      "growth-referral",
+      "message-inbox"
+    ],
+    "loss": 0.0019207000732421875,
+    "gradient_norm": 0.031071603298187256,
+    "contexts": [
+      {
+        "input_tokens": 232,
+        "original_tokens": 232,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 207,
+        "original_tokens": 207,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 214,
+        "original_tokens": 214,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      },
+      {
+        "input_tokens": 85,
+        "original_tokens": 85,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    ]
+  },
+  {
+    "phase": "reinforce",
+    "step": 1,
+    "task_id": "growth-feed",
+    "seconds": 106.8827816999983,
+    "loss": 0.06104087084531784,
+    "entropy": 0.4508691430091858,
+    "gradient_norm": 3.6792654991149902,
+    "rewards": [
+      0.3,
+      0.3,
+      1.3,
+      0.3
+    ],
+    "advantages": [
+      -0.3333333333333334,
+      -0.3333333333333334,
+      1.0,
+      -0.3333333333333334
+    ],
+    "states": 16,
+    "parameter_sha256_before": "f744026542e6676fac01dae20087246bc1b78530386ead9a5b37c8858052c4c9",
+    "parameter_sha256_after": "1d71a1d36a058d04f26ca2aefdd12e5407a1363b932f310b8d8e6bb1e774c5ab",
+    "parameters_changed": true,
+    "reward_gradient_active": true,
+    "entropy_weight": 0.0,
+    "loss_normalization": "fixed episode count",
+    "episodes": 4
+  },
+  {
+    "phase": "reinforce",
+    "step": 2,
+    "task_id": "creator-upload",
+    "seconds": 106.17112790000101,
+    "loss": 0.0,
+    "entropy": 0.4397166669368744,
+    "gradient_norm": 0.0,
+    "rewards": [
+      0.3,
+      0.3,
+      0.3,
+      0.3
+    ],
+    "advantages": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "states": 16,
+    "parameter_sha256_before": "1d71a1d36a058d04f26ca2aefdd12e5407a1363b932f310b8d8e6bb1e774c5ab",
+    "parameter_sha256_after": "0e1eafca6702a378c840748366e3e6d4b89d733c63ee8f4cedfefdcbde757385",
+    "parameters_changed": true,
+    "reward_gradient_active": false,
+    "entropy_weight": 0.0,
+    "loss_normalization": "fixed episode count",
+    "episodes": 4
+  },
+  {
+    "phase": "reinforce",
+    "step": 3,
+    "task_id": "commerce-cart",
+    "seconds": 70.82003180000174,
+    "loss": -0.18905547261238098,
+    "entropy": 0.4460805654525757,
+    "gradient_norm": 4.10197639465332,
+    "rewards": [
+      0.3,
+      0.3,
+      1.3,
+      0.3
+    ],
+    "advantages": [
+      -0.3333333333333334,
+      -0.3333333333333334,
+      1.0,
+      -0.3333333333333334
+    ],
+    "states": 16,
+    "parameter_sha256_before": "0e1eafca6702a378c840748366e3e6d4b89d733c63ee8f4cedfefdcbde757385",
+    "parameter_sha256_after": "88c1d6be912d17d8545137da5f17c5e2f4fb2f3d6060b5db348683f9e48949a6",
+    "parameters_changed": true,
+    "reward_gradient_active": true,
+    "entropy_weight": 0.0,
+    "loss_normalization": "fixed episode count",
+    "episodes": 4
+  },
+  {
+    "phase": "reinforce",
+    "step": 4,
+    "task_id": "live-session",
+    "seconds": 62.75559310000972,
+    "loss": -0.7173109035938978,
+    "entropy": 0.18161341547966003,
+    "gradient_norm": 4.453699111938477,
+    "rewards": [
+      1.3,
+      1.3,
+      0.3,
+      1.3
+    ],
+    "advantages": [
+      0.33333333333333326,
+      0.33333333333333326,
+      -1.0,
+      0.33333333333333326
+    ],
+    "states": 16,
+    "parameter_sha256_before": "88c1d6be912d17d8545137da5f17c5e2f4fb2f3d6060b5db348683f9e48949a6",
+    "parameter_sha256_after": "30bf0240346b33f34e1e8a3bbf1146a4f80c3bef1fa5a1e0f544011a2af5a865",
+    "parameters_changed": true,
+    "reward_gradient_active": true,
+    "entropy_weight": 0.0,
+    "loss_normalization": "fixed episode count",
+    "episodes": 4
+  },
+  {
+    "phase": "reinforce",
+    "step": 5,
+    "task_id": "search-suggest",
+    "seconds": 55.811683499996434,
+    "loss": 0.0,
+    "entropy": 0.19630761444568634,
+    "gradient_norm": 0.0,
+    "rewards": [
+      1.3,
+      1.3,
+      1.3,
+      1.3
+    ],
+    "advantages": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "states": 16,
+    "parameter_sha256_before": "30bf0240346b33f34e1e8a3bbf1146a4f80c3bef1fa5a1e0f544011a2af5a865",
+    "parameter_sha256_after": "f15a7f28012eeee7eb405fae9d93b865ea126dcdabd6097fe71aac32cf72c724",
+    "parameters_changed": true,
+    "reward_gradient_active": false,
+    "entropy_weight": 0.0,
+    "loss_normalization": "fixed episode count",
+    "episodes": 4
+  },
+  {
+    "phase": "reinforce",
+    "step": 6,
+    "task_id": "message-inbox",
+    "seconds": 55.773382300001686,
+    "loss": -0.632891945540905,
+    "entropy": 0.271417498588562,
+    "gradient_norm": 5.003964424133301,
+    "rewards": [
+      1.3,
+      1.3,
+      0.3,
+      0.3
+    ],
+    "advantages": [
+      0.6666666666666666,
+      0.6666666666666666,
+      -0.6666666666666667,
+      -0.6666666666666667
+    ],
+    "states": 16,
+    "parameter_sha256_before": "f15a7f28012eeee7eb405fae9d93b865ea126dcdabd6097fe71aac32cf72c724",
+    "parameter_sha256_after": "d5fc29fc73b95dabfb5520094bf3fcd3c0e378cefe6596f3f7da7c80c1f877b2",
+    "parameters_changed": true,
+    "reward_gradient_active": true,
+    "entropy_weight": 0.0,
+    "loss_normalization": "fixed episode count",
+    "episodes": 4
+  },
+  {
+    "phase": "reinforce",
+    "step": 7,
+    "task_id": "discovery-nearby",
+    "seconds": 49.199022000000696,
+    "loss": -0.017216674983501434,
+    "entropy": 0.3894897699356079,
+    "gradient_norm": 3.7431061267852783,
+    "rewards": [
+      1.3,
+      0.3,
+      0.3,
+      0.3
+    ],
+    "advantages": [
+      1.0,
+      -0.3333333333333334,
+      -0.3333333333333334,
+      -0.3333333333333334
+    ],
+    "states": 16,
+    "parameter_sha256_before": "d5fc29fc73b95dabfb5520094bf3fcd3c0e378cefe6596f3f7da7c80c1f877b2",
+    "parameter_sha256_after": "0ae0ab2f9b1fef4297725fe7320f67664e715e7520a0c938316a5803cc6d76a2",
+    "parameters_changed": true,
+    "reward_gradient_active": true,
+    "entropy_weight": 0.0,
+    "loss_normalization": "fixed episode count",
+    "episodes": 4
+  },
+  {
+    "phase": "reinforce",
+    "step": 8,
+    "task_id": "video-transcode",
+    "seconds": 45.907442299998365,
+    "loss": 0.0,
+    "entropy": 0.39906325936317444,
+    "gradient_norm": 0.0,
+    "rewards": [
+      0.3,
+      0.3,
+      0.3,
+      0.3
+    ],
+    "advantages": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "states": 16,
+    "parameter_sha256_before": "0ae0ab2f9b1fef4297725fe7320f67664e715e7520a0c938316a5803cc6d76a2",
+    "parameter_sha256_after": "a4fd3641e75d2f4b4188289794431be654ec37e4cd2d13e57ae83fb7c84ac6e2",
+    "parameters_changed": true,
+    "reward_gradient_active": false,
+    "entropy_weight": 0.0,
+    "loss_normalization": "fixed episode count",
+    "episodes": 4
+  }
+]

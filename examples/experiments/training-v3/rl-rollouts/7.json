@@ -1,0 +1,1230 @@
+[
+  {
+    "states": [
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=discovery-nearby. Actions=\nNext action:",
+        "action": "A",
+        "input_tokens": 85,
+        "probabilities": [
+          0.9984676241874695,
+          0.00011220024316571653,
+          9.519124432699755e-05,
+          0.00039752424345351756,
+          8.66360860527493e-05,
+          0.00023594866797793657,
+          8.852523023961112e-05,
+          6.32991359452717e-05,
+          0.00045286654494702816
+        ],
+        "context": {
+          "input_tokens": 85,
+          "original_tokens": 85,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=discovery-nearby. Actions=A\nMetrics={\"samples\":30,\"error_rate\":0.042823380013404355,\"recent_error_rate\":0.05667749376265123,\"baseline_error_rate\":0.0014072614691809737,\"recent_max_p95_ms\":1369.44,\"baseline_requests\":14212,\"recent_requests\":42486}\nNext action:",
+        "action": "B",
+        "input_tokens": 212,
+        "probabilities": [
+          0.0001036471949191764,
+          0.9983484745025635,
+          0.0011777568142861128,
+          0.0001204288491862826,
+          0.00014330742124002427,
+          3.9279606426134706e-05,
+          1.783196239557583e-05,
+          7.1302038122667e-06,
+          4.207436359138228e-05
+        ],
+        "context": {
+          "input_tokens": 212,
+          "original_tokens": 212,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=discovery-nearby. Actions=AB\nMetrics={\"samples\":30,\"error_rate\":0.042823380013404355,\"recent_error_rate\":0.05667749376265123,\"baseline_error_rate\":0.0014072614691809737,\"recent_max_p95_ms\":1369.44,\"baseline_requests\":14212,\"recent_requests\":42486}\nPolicy={\"found\":true,\"error_limit\":0.012,\"latency_limit\":634}\nNext action:",
+        "action": "C",
+        "input_tokens": 238,
+        "probabilities": [
+          0.00011086698941653594,
+          6.827568722655997e-05,
+          0.9991328120231628,
+          0.00020924083946738392,
+          5.3563631809083745e-05,
+          0.0002694418653845787,
+          2.5835121050477028e-05,
+          4.9071535613620654e-05,
+          8.092349889921024e-05
+        ],
+        "context": {
+          "input_tokens": 238,
+          "original_tokens": 238,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=discovery-nearby. Actions=ABC\nMetrics={\"samples\":30,\"error_rate\":0.042823380013404355,\"recent_error_rate\":0.05667749376265123,\"baseline_error_rate\":0.0014072614691809737,\"recent_max_p95_ms\":1369.44,\"baseline_requests\":14212,\"recent_requests\":42486}\nPolicy={\"found\":true,\"error_limit\":0.012,\"latency_limit\":634}\nChanges=[{\"kind\":\"dependency\",\"status\":\"healthy\",\"minute\":47},{\"kind\":\"traffic\",\"status\":\"active\",\"minute\":44},{\"kind\":\"release\",\"status\":\"stale\",\"minute\":8}]\nNext action:",
+        "action": "F",
+        "input_tokens": 283,
+        "probabilities": [
+          0.0017140290001407266,
+          0.0003564541111700237,
+          0.003173679579049349,
+          0.13676239550113678,
+          0.38454851508140564,
+          0.23003076016902924,
+          0.03274362161755562,
+          0.022430462762713432,
+          0.18824009597301483
+        ],
+        "context": {
+          "input_tokens": 283,
+          "original_tokens": 283,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      }
+    ],
+    "episode": {
+      "task_id": "discovery-nearby",
+      "split": "dev",
+      "actions": [
+        "A",
+        "B",
+        "C",
+        "F"
+      ],
+      "reward": 1.3,
+      "score": {
+        "success": true,
+        "decision_correct": true,
+        "checks": {
+          "completed": true,
+          "structured_answer": true,
+          "service_answer": true,
+          "metrics_observed": true,
+          "current_metrics": true,
+          "metric_status_consistency": true,
+          "numeric_answer": true,
+          "status_answer": true,
+          "cause_answer": true,
+          "recommendation_answer": true,
+          "uncertainty_answer": true,
+          "citation_ids": true,
+          "runbook_evidence": true,
+          "current_change_evidence": true,
+          "required_tools": true,
+          "allowed_tools": true,
+          "no_tool_errors": true,
+          "service_scoped_calls": true
+        },
+        "failure": null,
+        "answer_parse_error": null,
+        "parsed_answer": {
+          "service": "discovery-nearby",
+          "error_rate": 0.042823380013404355,
+          "status": "incident",
+          "likely_cause": "capacity_pressure",
+          "recommendation": "capacity_review",
+          "uncertainty": "causality_unproven",
+          "citations": [
+            "8dfa76e4d0fca4043239",
+            "683364d0ec3299f3dc19",
+            "1089f303df3dca562e2c",
+            "579e3ba55a8e7b5160d2",
+            "db55bb6431693ab67705",
+            "chg-4ac676fa0379a2df5379",
+            "chg-c71fa013410eeba481ad",
+            "chg-69be7999e9b6101bdd6d"
+          ]
+        },
+        "tool_execution_accuracy": 1.0,
+        "citation_precision": 1.0,
+        "tool_calls": 3,
+        "latency_seconds": 0.007434600003762171,
+        "known_tokens": 822,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "trace": {
+        "status": "completed",
+        "answer": "{\"service\": \"discovery-nearby\", \"error_rate\": 0.042823380013404355, \"status\": \"incident\", \"likely_cause\": \"capacity_pressure\", \"recommendation\": \"capacity_review\", \"uncertainty\": \"causality_unproven\", \"citations\": [\"8dfa76e4d0fca4043239\", \"683364d0ec3299f3dc19\", \"1089f303df3dca562e2c\", \"579e3ba55a8e7b5160d2\", \"db55bb6431693ab67705\", \"chg-4ac676fa0379a2df5379\", \"chg-c71fa013410eeba481ad\", \"chg-69be7999e9b6101bdd6d\"]}",
+        "events": [
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "discovery-nearby",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "discovery-nearby",
+              "samples": 30,
+              "error_rate": 0.042823380013404355,
+              "max_p95_ms": 1369.44,
+              "requests": 56698,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.0014072614691809737,
+              "baseline_max_p95_ms": 367.72,
+              "baseline_requests": 14212,
+              "recent_error_rate": 0.05667749376265123,
+              "recent_max_p95_ms": 1369.44,
+              "recent_requests": 42486,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0037373999948613346
+          },
+          {
+            "kind": "tool",
+            "name": "knowledge_search",
+            "arguments": {
+              "service": "discovery-nearby",
+              "query": "incident policy observation window status diagnostic evidence uncertainty discovery-nearby",
+              "limit": 5
+            },
+            "output": {
+              "service": "discovery-nearby",
+              "source": null,
+              "evidence": [
+                {
+                  "id": "8dfa76e4d0fca4043239",
+                  "source": "discovery-nearby/runbook.md",
+                  "text": "# discovery-nearby: nearby discovery incident policy",
+                  "score": 0.01639344262295082,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "683364d0ec3299f3dc19",
+                  "source": "discovery-nearby/runbook.md",
+                  "text": "## Observation window and status\nRequest service_metrics for the latest 30 minutes. Its recent fields summarize\nthe newest 15 samples, and baseline fields summarize the earlier 15 samples.\nThe final error_rate must be the complete 30-minute error_rate, as a decimal.\nAn incident exists if recent_error_rate >= 0.0120 or\nrecent_max_p95_ms > 634 milliseconds. Both conditions below those\nlimits imply healthy, provided current metric samples and this policy exist.\nMissing metrics or a missing runbook imply insufficient_data: do not infer\nhealthy from a null error_rate or borrow a different service's thresholds.",
+                  "score": 0.016129032258064516,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "1089f303df3dca562e2c",
+                  "source": "discovery-nearby/runbook.md",
+                  "text": "Use the exact service filter when retrieving this runbook. Evidence from another\nservice has different limits and cannot establish the status of discovery-nearby.",
+                  "score": 0.015873015873015872,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "579e3ba55a8e7b5160d2",
+                  "source": "discovery-nearby/runbook.md",
+                  "text": "## Uncertainty and citations\nUse uncertainty=causality_unproven for evidence-supported incident hypotheses;\nnone_detected for healthy observations; insufficient_data for missing required\nevidence; conflicting_evidence for unresolved conflicts. Correlation does not\nprove causation. Cite this runbook and current incident_changes evidence ids.",
+                  "score": 0.015625,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "db55bb6431693ab67705",
+                  "source": "discovery-nearby/runbook.md",
+                  "text": "## Diagnostic evidence rules\nThe serving dependency for nearby discovery is geo-index. Obtain incident_changes:\nthe runbook contains policies, not the service's current change history.\nAn active release before the metric deterioration, stable demand and a healthy\ndependency support likely_cause=release_regression and recommendation=rollback_review.\nAn active dependency failure before deterioration takes priority over a stale,\naborted or later unrelated release: dependency_outage / dependency_escalation.\nAn active traffic surge with a higher recent/baseline request ratio and healthy\ndependency supports capacity_pressure / capacity_review. Error rates alone do\nnot distinguish these causes. Cite the relevant current change evidence id.\nConflicting health probes or two unresolved competing change explanations require\nconflicting_evidence / verify_changes. A current incident without sufficient\ncausal evidence requires insufficient_evidence / collect_evidence.\nA healthy service requires none",
+                  "score": 0.015384615384615385,
+                  "trust": "untrusted_evidence"
+                }
+              ]
+            },
+            "seconds": 0.0011030000023311004
+          },
+          {
+            "kind": "tool",
+            "name": "incident_changes",
+            "arguments": {
+              "service": "discovery-nearby"
+            },
+            "output": {
+              "service": "discovery-nearby",
+              "available": true,
+              "changes": [
+                {
+                  "kind": "dependency",
+                  "minute": 47,
+                  "summary": "geo-index remains healthy across both probes.",
+                  "status": "healthy",
+                  "evidence_id": "chg-4ac676fa0379a2df5379"
+                },
+                {
+                  "kind": "traffic",
+                  "minute": 44,
+                  "summary": "Demand increased about threefold; queue depth and worker saturation rose together, without a serving release.",
+                  "status": "active",
+                  "evidence_id": "chg-c71fa013410eeba481ad"
+                },
+                {
+                  "kind": "release",
+                  "minute": 8,
+                  "summary": "The last serving release predates the current window.",
+                  "status": "stale",
+                  "evidence_id": "chg-69be7999e9b6101bdd6d"
+                }
+              ],
+              "evidence": [
+                {
+                  "id": "chg-4ac676fa0379a2df5379",
+                  "source": "changes/discovery-nearby",
+                  "text": "dependency at minute 47 (healthy): geo-index remains healthy across both probes.",
+                  "kind": "dependency",
+                  "status": "healthy",
+                  "minute": 47
+                },
+                {
+                  "id": "chg-c71fa013410eeba481ad",
+                  "source": "changes/discovery-nearby",
+                  "text": "traffic at minute 44 (active): Demand increased about threefold; queue depth and worker saturation rose together, without a serving release.",
+                  "kind": "traffic",
+                  "status": "active",
+                  "minute": 44
+                },
+                {
+                  "id": "chg-69be7999e9b6101bdd6d",
+                  "source": "changes/discovery-nearby",
+                  "text": "release at minute 8 (stale): The last serving release predates the current window.",
+                  "kind": "release",
+                  "status": "stale",
+                  "minute": 8
+                }
+              ],
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0025942000065697357
+          }
+        ],
+        "tokens": 822,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "wall_seconds": 2.514888500008965
+    }
+  },
+  {
+    "states": [
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=discovery-nearby. Actions=\nNext action:",
+        "action": "A",
+        "input_tokens": 85,
+        "probabilities": [
+          0.9984676241874695,
+          0.00011220024316571653,
+          9.519124432699755e-05,
+          0.00039752424345351756,
+          8.66360860527493e-05,
+          0.00023594866797793657,
+          8.852523023961112e-05,
+          6.32991359452717e-05,
+          0.00045286654494702816
+        ],
+        "context": {
+          "input_tokens": 85,
+          "original_tokens": 85,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=discovery-nearby. Actions=A\nMetrics={\"samples\":30,\"error_rate\":0.042823380013404355,\"recent_error_rate\":0.05667749376265123,\"baseline_error_rate\":0.0014072614691809737,\"recent_max_p95_ms\":1369.44,\"baseline_requests\":14212,\"recent_requests\":42486}\nNext action:",
+        "action": "B",
+        "input_tokens": 212,
+        "probabilities": [
+          0.0001036471949191764,
+          0.9983484745025635,
+          0.0011777568142861128,
+          0.0001204288491862826,
+          0.00014330742124002427,
+          3.9279606426134706e-05,
+          1.783196239557583e-05,
+          7.1302038122667e-06,
+          4.207436359138228e-05
+        ],
+        "context": {
+          "input_tokens": 212,
+          "original_tokens": 212,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=discovery-nearby. Actions=AB\nMetrics={\"samples\":30,\"error_rate\":0.042823380013404355,\"recent_error_rate\":0.05667749376265123,\"baseline_error_rate\":0.0014072614691809737,\"recent_max_p95_ms\":1369.44,\"baseline_requests\":14212,\"recent_requests\":42486}\nPolicy={\"found\":true,\"error_limit\":0.012,\"latency_limit\":634}\nNext action:",
+        "action": "C",
+        "input_tokens": 238,
+        "probabilities": [
+          0.00011086698941653594,
+          6.827568722655997e-05,
+          0.9991328120231628,
+          0.00020924083946738392,
+          5.3563631809083745e-05,
+          0.0002694418653845787,
+          2.5835121050477028e-05,
+          4.9071535613620654e-05,
+          8.092349889921024e-05
+        ],
+        "context": {
+          "input_tokens": 238,
+          "original_tokens": 238,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=discovery-nearby. Actions=ABC\nMetrics={\"samples\":30,\"error_rate\":0.042823380013404355,\"recent_error_rate\":0.05667749376265123,\"baseline_error_rate\":0.0014072614691809737,\"recent_max_p95_ms\":1369.44,\"baseline_requests\":14212,\"recent_requests\":42486}\nPolicy={\"found\":true,\"error_limit\":0.012,\"latency_limit\":634}\nChanges=[{\"kind\":\"dependency\",\"status\":\"healthy\",\"minute\":47},{\"kind\":\"traffic\",\"status\":\"active\",\"minute\":44},{\"kind\":\"release\",\"status\":\"stale\",\"minute\":8}]\nNext action:",
+        "action": "E",
+        "input_tokens": 283,
+        "probabilities": [
+          0.0017140290001407266,
+          0.0003564541111700237,
+          0.003173679579049349,
+          0.13676239550113678,
+          0.38454851508140564,
+          0.23003076016902924,
+          0.03274362161755562,
+          0.022430462762713432,
+          0.18824009597301483
+        ],
+        "context": {
+          "input_tokens": 283,
+          "original_tokens": 283,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      }
+    ],
+    "episode": {
+      "task_id": "discovery-nearby",
+      "split": "dev",
+      "actions": [
+        "A",
+        "B",
+        "C",
+        "E"
+      ],
+      "reward": 0.3,
+      "score": {
+        "success": false,
+        "decision_correct": false,
+        "checks": {
+          "completed": true,
+          "structured_answer": true,
+          "service_answer": true,
+          "metrics_observed": true,
+          "current_metrics": true,
+          "metric_status_consistency": true,
+          "numeric_answer": true,
+          "status_answer": true,
+          "cause_answer": false,
+          "recommendation_answer": false,
+          "uncertainty_answer": true,
+          "citation_ids": true,
+          "runbook_evidence": true,
+          "current_change_evidence": true,
+          "required_tools": true,
+          "allowed_tools": true,
+          "no_tool_errors": true,
+          "service_scoped_calls": true
+        },
+        "failure": "cause_answer",
+        "answer_parse_error": null,
+        "parsed_answer": {
+          "service": "discovery-nearby",
+          "error_rate": 0.042823380013404355,
+          "status": "incident",
+          "likely_cause": "dependency_outage",
+          "recommendation": "dependency_escalation",
+          "uncertainty": "causality_unproven",
+          "citations": [
+            "8dfa76e4d0fca4043239",
+            "683364d0ec3299f3dc19",
+            "1089f303df3dca562e2c",
+            "579e3ba55a8e7b5160d2",
+            "db55bb6431693ab67705",
+            "chg-4ac676fa0379a2df5379",
+            "chg-c71fa013410eeba481ad",
+            "chg-69be7999e9b6101bdd6d"
+          ]
+        },
+        "tool_execution_accuracy": 1.0,
+        "citation_precision": 1.0,
+        "tool_calls": 3,
+        "latency_seconds": 0.006283800001256168,
+        "known_tokens": 822,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "trace": {
+        "status": "completed",
+        "answer": "{\"service\": \"discovery-nearby\", \"error_rate\": 0.042823380013404355, \"status\": \"incident\", \"likely_cause\": \"dependency_outage\", \"recommendation\": \"dependency_escalation\", \"uncertainty\": \"causality_unproven\", \"citations\": [\"8dfa76e4d0fca4043239\", \"683364d0ec3299f3dc19\", \"1089f303df3dca562e2c\", \"579e3ba55a8e7b5160d2\", \"db55bb6431693ab67705\", \"chg-4ac676fa0379a2df5379\", \"chg-c71fa013410eeba481ad\", \"chg-69be7999e9b6101bdd6d\"]}",
+        "events": [
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "discovery-nearby",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "discovery-nearby",
+              "samples": 30,
+              "error_rate": 0.042823380013404355,
+              "max_p95_ms": 1369.44,
+              "requests": 56698,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.0014072614691809737,
+              "baseline_max_p95_ms": 367.72,
+              "baseline_requests": 14212,
+              "recent_error_rate": 0.05667749376265123,
+              "recent_max_p95_ms": 1369.44,
+              "recent_requests": 42486,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0023763000062899664
+          },
+          {
+            "kind": "tool",
+            "name": "knowledge_search",
+            "arguments": {
+              "service": "discovery-nearby",
+              "query": "incident policy observation window status diagnostic evidence uncertainty discovery-nearby",
+              "limit": 5
+            },
+            "output": {
+              "service": "discovery-nearby",
+              "source": null,
+              "evidence": [
+                {
+                  "id": "8dfa76e4d0fca4043239",
+                  "source": "discovery-nearby/runbook.md",
+                  "text": "# discovery-nearby: nearby discovery incident policy",
+                  "score": 0.01639344262295082,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "683364d0ec3299f3dc19",
+                  "source": "discovery-nearby/runbook.md",
+                  "text": "## Observation window and status\nRequest service_metrics for the latest 30 minutes. Its recent fields summarize\nthe newest 15 samples, and baseline fields summarize the earlier 15 samples.\nThe final error_rate must be the complete 30-minute error_rate, as a decimal.\nAn incident exists if recent_error_rate >= 0.0120 or\nrecent_max_p95_ms > 634 milliseconds. Both conditions below those\nlimits imply healthy, provided current metric samples and this policy exist.\nMissing metrics or a missing runbook imply insufficient_data: do not infer\nhealthy from a null error_rate or borrow a different service's thresholds.",
+                  "score": 0.016129032258064516,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "1089f303df3dca562e2c",
+                  "source": "discovery-nearby/runbook.md",
+                  "text": "Use the exact service filter when retrieving this runbook. Evidence from another\nservice has different limits and cannot establish the status of discovery-nearby.",
+                  "score": 0.015873015873015872,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "579e3ba55a8e7b5160d2",
+                  "source": "discovery-nearby/runbook.md",
+                  "text": "## Uncertainty and citations\nUse uncertainty=causality_unproven for evidence-supported incident hypotheses;\nnone_detected for healthy observations; insufficient_data for missing required\nevidence; conflicting_evidence for unresolved conflicts. Correlation does not\nprove causation. Cite this runbook and current incident_changes evidence ids.",
+                  "score": 0.015625,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "db55bb6431693ab67705",
+                  "source": "discovery-nearby/runbook.md",
+                  "text": "## Diagnostic evidence rules\nThe serving dependency for nearby discovery is geo-index. Obtain incident_changes:\nthe runbook contains policies, not the service's current change history.\nAn active release before the metric deterioration, stable demand and a healthy\ndependency support likely_cause=release_regression and recommendation=rollback_review.\nAn active dependency failure before deterioration takes priority over a stale,\naborted or later unrelated release: dependency_outage / dependency_escalation.\nAn active traffic surge with a higher recent/baseline request ratio and healthy\ndependency supports capacity_pressure / capacity_review. Error rates alone do\nnot distinguish these causes. Cite the relevant current change evidence id.\nConflicting health probes or two unresolved competing change explanations require\nconflicting_evidence / verify_changes. A current incident without sufficient\ncausal evidence requires insufficient_evidence / collect_evidence.\nA healthy service requires none",
+                  "score": 0.015384615384615385,
+                  "trust": "untrusted_evidence"
+                }
+              ]
+            },
+            "seconds": 0.0015782999980729073
+          },
+          {
+            "kind": "tool",
+            "name": "incident_changes",
+            "arguments": {
+              "service": "discovery-nearby"
+            },
+            "output": {
+              "service": "discovery-nearby",
+              "available": true,
+              "changes": [
+                {
+                  "kind": "dependency",
+                  "minute": 47,
+                  "summary": "geo-index remains healthy across both probes.",
+                  "status": "healthy",
+                  "evidence_id": "chg-4ac676fa0379a2df5379"
+                },
+                {
+                  "kind": "traffic",
+                  "minute": 44,
+                  "summary": "Demand increased about threefold; queue depth and worker saturation rose together, without a serving release.",
+                  "status": "active",
+                  "evidence_id": "chg-c71fa013410eeba481ad"
+                },
+                {
+                  "kind": "release",
+                  "minute": 8,
+                  "summary": "The last serving release predates the current window.",
+                  "status": "stale",
+                  "evidence_id": "chg-69be7999e9b6101bdd6d"
+                }
+              ],
+              "evidence": [
+                {
+                  "id": "chg-4ac676fa0379a2df5379",
+                  "source": "changes/discovery-nearby",
+                  "text": "dependency at minute 47 (healthy): geo-index remains healthy across both probes.",
+                  "kind": "dependency",
+                  "status": "healthy",
+                  "minute": 47
+                },
+                {
+                  "id": "chg-c71fa013410eeba481ad",
+                  "source": "changes/discovery-nearby",
+                  "text": "traffic at minute 44 (active): Demand increased about threefold; queue depth and worker saturation rose together, without a serving release.",
+                  "kind": "traffic",
+                  "status": "active",
+                  "minute": 44
+                },
+                {
+                  "id": "chg-69be7999e9b6101bdd6d",
+                  "source": "changes/discovery-nearby",
+                  "text": "release at minute 8 (stale): The last serving release predates the current window.",
+                  "kind": "release",
+                  "status": "stale",
+                  "minute": 8
+                }
+              ],
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.002329199996893294
+          }
+        ],
+        "tokens": 822,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "wall_seconds": 2.5429311000043526
+    }
+  },
+  {
+    "states": [
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=discovery-nearby. Actions=\nNext action:",
+        "action": "A",
+        "input_tokens": 85,
+        "probabilities": [
+          0.9984676241874695,
+          0.00011220024316571653,
+          9.519124432699755e-05,
+          0.00039752424345351756,
+          8.66360860527493e-05,
+          0.00023594866797793657,
+          8.852523023961112e-05,
+          6.32991359452717e-05,
+          0.00045286654494702816
+        ],
+        "context": {
+          "input_tokens": 85,
+          "original_tokens": 85,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=discovery-nearby. Actions=A\nMetrics={\"samples\":30,\"error_rate\":0.042823380013404355,\"recent_error_rate\":0.05667749376265123,\"baseline_error_rate\":0.0014072614691809737,\"recent_max_p95_ms\":1369.44,\"baseline_requests\":14212,\"recent_requests\":42486}\nNext action:",
+        "action": "B",
+        "input_tokens": 212,
+        "probabilities": [
+          0.0001036471949191764,
+          0.9983484745025635,
+          0.0011777568142861128,
+          0.0001204288491862826,
+          0.00014330742124002427,
+          3.9279606426134706e-05,
+          1.783196239557583e-05,
+          7.1302038122667e-06,
+          4.207436359138228e-05
+        ],
+        "context": {
+          "input_tokens": 212,
+          "original_tokens": 212,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=discovery-nearby. Actions=AB\nMetrics={\"samples\":30,\"error_rate\":0.042823380013404355,\"recent_error_rate\":0.05667749376265123,\"baseline_error_rate\":0.0014072614691809737,\"recent_max_p95_ms\":1369.44,\"baseline_requests\":14212,\"recent_requests\":42486}\nPolicy={\"found\":true,\"error_limit\":0.012,\"latency_limit\":634}\nNext action:",
+        "action": "C",
+        "input_tokens": 238,
+        "probabilities": [
+          0.00011086698941653594,
+          6.827568722655997e-05,
+          0.9991328120231628,
+          0.00020924083946738392,
+          5.3563631809083745e-05,
+          0.0002694418653845787,
+          2.5835121050477028e-05,
+          4.9071535613620654e-05,
+          8.092349889921024e-05
+        ],
+        "context": {
+          "input_tokens": 238,
+          "original_tokens": 238,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=discovery-nearby. Actions=ABC\nMetrics={\"samples\":30,\"error_rate\":0.042823380013404355,\"recent_error_rate\":0.05667749376265123,\"baseline_error_rate\":0.0014072614691809737,\"recent_max_p95_ms\":1369.44,\"baseline_requests\":14212,\"recent_requests\":42486}\nPolicy={\"found\":true,\"error_limit\":0.012,\"latency_limit\":634}\nChanges=[{\"kind\":\"dependency\",\"status\":\"healthy\",\"minute\":47},{\"kind\":\"traffic\",\"status\":\"active\",\"minute\":44},{\"kind\":\"release\",\"status\":\"stale\",\"minute\":8}]\nNext action:",
+        "action": "I",
+        "input_tokens": 283,
+        "probabilities": [
+          0.0017140290001407266,
+          0.0003564541111700237,
+          0.003173679579049349,
+          0.13676239550113678,
+          0.38454851508140564,
+          0.23003076016902924,
+          0.03274362161755562,
+          0.022430462762713432,
+          0.18824009597301483
+        ],
+        "context": {
+          "input_tokens": 283,
+          "original_tokens": 283,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      }
+    ],
+    "episode": {
+      "task_id": "discovery-nearby",
+      "split": "dev",
+      "actions": [
+        "A",
+        "B",
+        "C",
+        "I"
+      ],
+      "reward": 0.3,
+      "score": {
+        "success": false,
+        "decision_correct": false,
+        "checks": {
+          "completed": true,
+          "structured_answer": true,
+          "service_answer": true,
+          "metrics_observed": true,
+          "current_metrics": true,
+          "metric_status_consistency": true,
+          "numeric_answer": true,
+          "status_answer": true,
+          "cause_answer": false,
+          "recommendation_answer": false,
+          "uncertainty_answer": false,
+          "citation_ids": true,
+          "runbook_evidence": true,
+          "current_change_evidence": true,
+          "required_tools": true,
+          "allowed_tools": true,
+          "no_tool_errors": true,
+          "service_scoped_calls": true
+        },
+        "failure": "cause_answer",
+        "answer_parse_error": null,
+        "parsed_answer": {
+          "service": "discovery-nearby",
+          "error_rate": 0.042823380013404355,
+          "status": "incident",
+          "likely_cause": "conflicting_evidence",
+          "recommendation": "verify_changes",
+          "uncertainty": "conflicting_evidence",
+          "citations": [
+            "8dfa76e4d0fca4043239",
+            "683364d0ec3299f3dc19",
+            "1089f303df3dca562e2c",
+            "579e3ba55a8e7b5160d2",
+            "db55bb6431693ab67705",
+            "chg-4ac676fa0379a2df5379",
+            "chg-c71fa013410eeba481ad",
+            "chg-69be7999e9b6101bdd6d"
+          ]
+        },
+        "tool_execution_accuracy": 1.0,
+        "citation_precision": 1.0,
+        "tool_calls": 3,
+        "latency_seconds": 0.019123199992463924,
+        "known_tokens": 822,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "trace": {
+        "status": "completed",
+        "answer": "{\"service\": \"discovery-nearby\", \"error_rate\": 0.042823380013404355, \"status\": \"incident\", \"likely_cause\": \"conflicting_evidence\", \"recommendation\": \"verify_changes\", \"uncertainty\": \"conflicting_evidence\", \"citations\": [\"8dfa76e4d0fca4043239\", \"683364d0ec3299f3dc19\", \"1089f303df3dca562e2c\", \"579e3ba55a8e7b5160d2\", \"db55bb6431693ab67705\", \"chg-4ac676fa0379a2df5379\", \"chg-c71fa013410eeba481ad\", \"chg-69be7999e9b6101bdd6d\"]}",
+        "events": [
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "discovery-nearby",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "discovery-nearby",
+              "samples": 30,
+              "error_rate": 0.042823380013404355,
+              "max_p95_ms": 1369.44,
+              "requests": 56698,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.0014072614691809737,
+              "baseline_max_p95_ms": 367.72,
+              "baseline_requests": 14212,
+              "recent_error_rate": 0.05667749376265123,
+              "recent_max_p95_ms": 1369.44,
+              "recent_requests": 42486,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0021524999901885167
+          },
+          {
+            "kind": "tool",
+            "name": "knowledge_search",
+            "arguments": {
+              "service": "discovery-nearby",
+              "query": "incident policy observation window status diagnostic evidence uncertainty discovery-nearby",
+              "limit": 5
+            },
+            "output": {
+              "service": "discovery-nearby",
+              "source": null,
+              "evidence": [
+                {
+                  "id": "8dfa76e4d0fca4043239",
+                  "source": "discovery-nearby/runbook.md",
+                  "text": "# discovery-nearby: nearby discovery incident policy",
+                  "score": 0.01639344262295082,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "683364d0ec3299f3dc19",
+                  "source": "discovery-nearby/runbook.md",
+                  "text": "## Observation window and status\nRequest service_metrics for the latest 30 minutes. Its recent fields summarize\nthe newest 15 samples, and baseline fields summarize the earlier 15 samples.\nThe final error_rate must be the complete 30-minute error_rate, as a decimal.\nAn incident exists if recent_error_rate >= 0.0120 or\nrecent_max_p95_ms > 634 milliseconds. Both conditions below those\nlimits imply healthy, provided current metric samples and this policy exist.\nMissing metrics or a missing runbook imply insufficient_data: do not infer\nhealthy from a null error_rate or borrow a different service's thresholds.",
+                  "score": 0.016129032258064516,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "1089f303df3dca562e2c",
+                  "source": "discovery-nearby/runbook.md",
+                  "text": "Use the exact service filter when retrieving this runbook. Evidence from another\nservice has different limits and cannot establish the status of discovery-nearby.",
+                  "score": 0.015873015873015872,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "579e3ba55a8e7b5160d2",
+                  "source": "discovery-nearby/runbook.md",
+                  "text": "## Uncertainty and citations\nUse uncertainty=causality_unproven for evidence-supported incident hypotheses;\nnone_detected for healthy observations; insufficient_data for missing required\nevidence; conflicting_evidence for unresolved conflicts. Correlation does not\nprove causation. Cite this runbook and current incident_changes evidence ids.",
+                  "score": 0.015625,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "db55bb6431693ab67705",
+                  "source": "discovery-nearby/runbook.md",
+                  "text": "## Diagnostic evidence rules\nThe serving dependency for nearby discovery is geo-index. Obtain incident_changes:\nthe runbook contains policies, not the service's current change history.\nAn active release before the metric deterioration, stable demand and a healthy\ndependency support likely_cause=release_regression and recommendation=rollback_review.\nAn active dependency failure before deterioration takes priority over a stale,\naborted or later unrelated release: dependency_outage / dependency_escalation.\nAn active traffic surge with a higher recent/baseline request ratio and healthy\ndependency supports capacity_pressure / capacity_review. Error rates alone do\nnot distinguish these causes. Cite the relevant current change evidence id.\nConflicting health probes or two unresolved competing change explanations require\nconflicting_evidence / verify_changes. A current incident without sufficient\ncausal evidence requires insufficient_evidence / collect_evidence.\nA healthy service requires none",
+                  "score": 0.015384615384615385,
+                  "trust": "untrusted_evidence"
+                }
+              ]
+            },
+            "seconds": 0.0015829000039957464
+          },
+          {
+            "kind": "tool",
+            "name": "incident_changes",
+            "arguments": {
+              "service": "discovery-nearby"
+            },
+            "output": {
+              "service": "discovery-nearby",
+              "available": true,
+              "changes": [
+                {
+                  "kind": "dependency",
+                  "minute": 47,
+                  "summary": "geo-index remains healthy across both probes.",
+                  "status": "healthy",
+                  "evidence_id": "chg-4ac676fa0379a2df5379"
+                },
+                {
+                  "kind": "traffic",
+                  "minute": 44,
+                  "summary": "Demand increased about threefold; queue depth and worker saturation rose together, without a serving release.",
+                  "status": "active",
+                  "evidence_id": "chg-c71fa013410eeba481ad"
+                },
+                {
+                  "kind": "release",
+                  "minute": 8,
+                  "summary": "The last serving release predates the current window.",
+                  "status": "stale",
+                  "evidence_id": "chg-69be7999e9b6101bdd6d"
+                }
+              ],
+              "evidence": [
+                {
+                  "id": "chg-4ac676fa0379a2df5379",
+                  "source": "changes/discovery-nearby",
+                  "text": "dependency at minute 47 (healthy): geo-index remains healthy across both probes.",
+                  "kind": "dependency",
+                  "status": "healthy",
+                  "minute": 47
+                },
+                {
+                  "id": "chg-c71fa013410eeba481ad",
+                  "source": "changes/discovery-nearby",
+                  "text": "traffic at minute 44 (active): Demand increased about threefold; queue depth and worker saturation rose together, without a serving release.",
+                  "kind": "traffic",
+                  "status": "active",
+                  "minute": 44
+                },
+                {
+                  "id": "chg-69be7999e9b6101bdd6d",
+                  "source": "changes/discovery-nearby",
+                  "text": "release at minute 8 (stale): The last serving release predates the current window.",
+                  "kind": "release",
+                  "status": "stale",
+                  "minute": 8
+                }
+              ],
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.015387799998279661
+          }
+        ],
+        "tokens": 822,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "wall_seconds": 2.516344699994079
+    }
+  },
+  {
+    "states": [
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=discovery-nearby. Actions=\nNext action:",
+        "action": "A",
+        "input_tokens": 85,
+        "probabilities": [
+          0.9984676241874695,
+          0.00011220024316571653,
+          9.519124432699755e-05,
+          0.00039752424345351756,
+          8.66360860527493e-05,
+          0.00023594866797793657,
+          8.852523023961112e-05,
+          6.32991359452717e-05,
+          0.00045286654494702816
+        ],
+        "context": {
+          "input_tokens": 85,
+          "original_tokens": 85,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=discovery-nearby. Actions=A\nMetrics={\"samples\":30,\"error_rate\":0.042823380013404355,\"recent_error_rate\":0.05667749376265123,\"baseline_error_rate\":0.0014072614691809737,\"recent_max_p95_ms\":1369.44,\"baseline_requests\":14212,\"recent_requests\":42486}\nNext action:",
+        "action": "B",
+        "input_tokens": 212,
+        "probabilities": [
+          0.0001036471949191764,
+          0.9983484745025635,
+          0.0011777568142861128,
+          0.0001204288491862826,
+          0.00014330742124002427,
+          3.9279606426134706e-05,
+          1.783196239557583e-05,
+          7.1302038122667e-06,
+          4.207436359138228e-05
+        ],
+        "context": {
+          "input_tokens": 212,
+          "original_tokens": 212,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=discovery-nearby. Actions=AB\nMetrics={\"samples\":30,\"error_rate\":0.042823380013404355,\"recent_error_rate\":0.05667749376265123,\"baseline_error_rate\":0.0014072614691809737,\"recent_max_p95_ms\":1369.44,\"baseline_requests\":14212,\"recent_requests\":42486}\nPolicy={\"found\":true,\"error_limit\":0.012,\"latency_limit\":634}\nNext action:",
+        "action": "C",
+        "input_tokens": 238,
+        "probabilities": [
+          0.00011086698941653594,
+          6.827568722655997e-05,
+          0.9991328120231628,
+          0.00020924083946738392,
+          5.3563631809083745e-05,
+          0.0002694418653845787,
+          2.5835121050477028e-05,
+          4.9071535613620654e-05,
+          8.092349889921024e-05
+        ],
+        "context": {
+          "input_tokens": 238,
+          "original_tokens": 238,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=discovery-nearby. Actions=ABC\nMetrics={\"samples\":30,\"error_rate\":0.042823380013404355,\"recent_error_rate\":0.05667749376265123,\"baseline_error_rate\":0.0014072614691809737,\"recent_max_p95_ms\":1369.44,\"baseline_requests\":14212,\"recent_requests\":42486}\nPolicy={\"found\":true,\"error_limit\":0.012,\"latency_limit\":634}\nChanges=[{\"kind\":\"dependency\",\"status\":\"healthy\",\"minute\":47},{\"kind\":\"traffic\",\"status\":\"active\",\"minute\":44},{\"kind\":\"release\",\"status\":\"stale\",\"minute\":8}]\nNext action:",
+        "action": "D",
+        "input_tokens": 283,
+        "probabilities": [
+          0.0017140290001407266,
+          0.0003564541111700237,
+          0.003173679579049349,
+          0.13676239550113678,
+          0.38454851508140564,
+          0.23003076016902924,
+          0.03274362161755562,
+          0.022430462762713432,
+          0.18824009597301483
+        ],
+        "context": {
+          "input_tokens": 283,
+          "original_tokens": 283,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      }
+    ],
+    "episode": {
+      "task_id": "discovery-nearby",
+      "split": "dev",
+      "actions": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "reward": 0.3,
+      "score": {
+        "success": false,
+        "decision_correct": false,
+        "checks": {
+          "completed": true,
+          "structured_answer": true,
+          "service_answer": true,
+          "metrics_observed": true,
+          "current_metrics": true,
+          "metric_status_consistency": true,
+          "numeric_answer": true,
+          "status_answer": true,
+          "cause_answer": false,
+          "recommendation_answer": false,
+          "uncertainty_answer": true,
+          "citation_ids": true,
+          "runbook_evidence": true,
+          "current_change_evidence": true,
+          "required_tools": true,
+          "allowed_tools": true,
+          "no_tool_errors": true,
+          "service_scoped_calls": true
+        },
+        "failure": "cause_answer",
+        "answer_parse_error": null,
+        "parsed_answer": {
+          "service": "discovery-nearby",
+          "error_rate": 0.042823380013404355,
+          "status": "incident",
+          "likely_cause": "release_regression",
+          "recommendation": "rollback_review",
+          "uncertainty": "causality_unproven",
+          "citations": [
+            "8dfa76e4d0fca4043239",
+            "683364d0ec3299f3dc19",
+            "1089f303df3dca562e2c",
+            "579e3ba55a8e7b5160d2",
+            "db55bb6431693ab67705",
+            "chg-4ac676fa0379a2df5379",
+            "chg-c71fa013410eeba481ad",
+            "chg-69be7999e9b6101bdd6d"
+          ]
+        },
+        "tool_execution_accuracy": 1.0,
+        "citation_precision": 1.0,
+        "tool_calls": 3,
+        "latency_seconds": 0.007055900001432747,
+        "known_tokens": 822,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "trace": {
+        "status": "completed",
+        "answer": "{\"service\": \"discovery-nearby\", \"error_rate\": 0.042823380013404355, \"status\": \"incident\", \"likely_cause\": \"release_regression\", \"recommendation\": \"rollback_review\", \"uncertainty\": \"causality_unproven\", \"citations\": [\"8dfa76e4d0fca4043239\", \"683364d0ec3299f3dc19\", \"1089f303df3dca562e2c\", \"579e3ba55a8e7b5160d2\", \"db55bb6431693ab67705\", \"chg-4ac676fa0379a2df5379\", \"chg-c71fa013410eeba481ad\", \"chg-69be7999e9b6101bdd6d\"]}",
+        "events": [
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "discovery-nearby",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "discovery-nearby",
+              "samples": 30,
+              "error_rate": 0.042823380013404355,
+              "max_p95_ms": 1369.44,
+              "requests": 56698,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.0014072614691809737,
+              "baseline_max_p95_ms": 367.72,
+              "baseline_requests": 14212,
+              "recent_error_rate": 0.05667749376265123,
+              "recent_max_p95_ms": 1369.44,
+              "recent_requests": 42486,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.002246300005936064
+          },
+          {
+            "kind": "tool",
+            "name": "knowledge_search",
+            "arguments": {
+              "service": "discovery-nearby",
+              "query": "incident policy observation window status diagnostic evidence uncertainty discovery-nearby",
+              "limit": 5
+            },
+            "output": {
+              "service": "discovery-nearby",
+              "source": null,
+              "evidence": [
+                {
+                  "id": "8dfa76e4d0fca4043239",
+                  "source": "discovery-nearby/runbook.md",
+                  "text": "# discovery-nearby: nearby discovery incident policy",
+                  "score": 0.01639344262295082,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "683364d0ec3299f3dc19",
+                  "source": "discovery-nearby/runbook.md",
+                  "text": "## Observation window and status\nRequest service_metrics for the latest 30 minutes. Its recent fields summarize\nthe newest 15 samples, and baseline fields summarize the earlier 15 samples.\nThe final error_rate must be the complete 30-minute error_rate, as a decimal.\nAn incident exists if recent_error_rate >= 0.0120 or\nrecent_max_p95_ms > 634 milliseconds. Both conditions below those\nlimits imply healthy, provided current metric samples and this policy exist.\nMissing metrics or a missing runbook imply insufficient_data: do not infer\nhealthy from a null error_rate or borrow a different service's thresholds.",
+                  "score": 0.016129032258064516,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "1089f303df3dca562e2c",
+                  "source": "discovery-nearby/runbook.md",
+                  "text": "Use the exact service filter when retrieving this runbook. Evidence from another\nservice has different limits and cannot establish the status of discovery-nearby.",
+                  "score": 0.015873015873015872,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "579e3ba55a8e7b5160d2",
+                  "source": "discovery-nearby/runbook.md",
+                  "text": "## Uncertainty and citations\nUse uncertainty=causality_unproven for evidence-supported incident hypotheses;\nnone_detected for healthy observations; insufficient_data for missing required\nevidence; conflicting_evidence for unresolved conflicts. Correlation does not\nprove causation. Cite this runbook and current incident_changes evidence ids.",
+                  "score": 0.015625,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "db55bb6431693ab67705",
+                  "source": "discovery-nearby/runbook.md",
+                  "text": "## Diagnostic evidence rules\nThe serving dependency for nearby discovery is geo-index. Obtain incident_changes:\nthe runbook contains policies, not the service's current change history.\nAn active release before the metric deterioration, stable demand and a healthy\ndependency support likely_cause=release_regression and recommendation=rollback_review.\nAn active dependency failure before deterioration takes priority over a stale,\naborted or later unrelated release: dependency_outage / dependency_escalation.\nAn active traffic surge with a higher recent/baseline request ratio and healthy\ndependency supports capacity_pressure / capacity_review. Error rates alone do\nnot distinguish these causes. Cite the relevant current change evidence id.\nConflicting health probes or two unresolved competing change explanations require\nconflicting_evidence / verify_changes. A current incident without sufficient\ncausal evidence requires insufficient_evidence / collect_evidence.\nA healthy service requires none",
+                  "score": 0.015384615384615385,
+                  "trust": "untrusted_evidence"
+                }
+              ]
+            },
+            "seconds": 0.0016139999934239313
+          },
+          {
+            "kind": "tool",
+            "name": "incident_changes",
+            "arguments": {
+              "service": "discovery-nearby"
+            },
+            "output": {
+              "service": "discovery-nearby",
+              "available": true,
+              "changes": [
+                {
+                  "kind": "dependency",
+                  "minute": 47,
+                  "summary": "geo-index remains healthy across both probes.",
+                  "status": "healthy",
+                  "evidence_id": "chg-4ac676fa0379a2df5379"
+                },
+                {
+                  "kind": "traffic",
+                  "minute": 44,
+                  "summary": "Demand increased about threefold; queue depth and worker saturation rose together, without a serving release.",
+                  "status": "active",
+                  "evidence_id": "chg-c71fa013410eeba481ad"
+                },
+                {
+                  "kind": "release",
+                  "minute": 8,
+                  "summary": "The last serving release predates the current window.",
+                  "status": "stale",
+                  "evidence_id": "chg-69be7999e9b6101bdd6d"
+                }
+              ],
+              "evidence": [
+                {
+                  "id": "chg-4ac676fa0379a2df5379",
+                  "source": "changes/discovery-nearby",
+                  "text": "dependency at minute 47 (healthy): geo-index remains healthy across both probes.",
+                  "kind": "dependency",
+                  "status": "healthy",
+                  "minute": 47
+                },
+                {
+                  "id": "chg-c71fa013410eeba481ad",
+                  "source": "changes/discovery-nearby",
+                  "text": "traffic at minute 44 (active): Demand increased about threefold; queue depth and worker saturation rose together, without a serving release.",
+                  "kind": "traffic",
+                  "status": "active",
+                  "minute": 44
+                },
+                {
+                  "id": "chg-69be7999e9b6101bdd6d",
+                  "source": "changes/discovery-nearby",
+                  "text": "release at minute 8 (stale): The last serving release predates the current window.",
+                  "kind": "release",
+                  "status": "stale",
+                  "minute": 8
+                }
+              ],
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0031956000020727515
+          }
+        ],
+        "tokens": 822,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "wall_seconds": 2.4208326999942074
+    }
+  }
+]

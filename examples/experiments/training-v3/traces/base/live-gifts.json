@@ -1,0 +1,88 @@
+{
+  "states": [
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=live-gifts. Actions=\nNext action:",
+      "action": "I",
+      "input_tokens": 85,
+      "probabilities": [
+        0.3502757251262665,
+        0.07134786993265152,
+        0.028919335454702377,
+        0.07022798806428909,
+        0.04584187641739845,
+        0.012872651219367981,
+        0.03438887000083923,
+        0.03437640890479088,
+        0.3517493009567261
+      ],
+      "context": {
+        "input_tokens": 85,
+        "original_tokens": 85,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    }
+  ],
+  "episode": {
+    "task_id": "live-gifts",
+    "split": "dev",
+    "actions": [
+      "I"
+    ],
+    "reward": -0.3,
+    "score": {
+      "success": false,
+      "decision_correct": false,
+      "checks": {
+        "completed": true,
+        "structured_answer": true,
+        "service_answer": true,
+        "metrics_observed": false,
+        "current_metrics": false,
+        "metric_status_consistency": false,
+        "numeric_answer": false,
+        "status_answer": false,
+        "cause_answer": false,
+        "recommendation_answer": false,
+        "uncertainty_answer": false,
+        "citation_ids": false,
+        "runbook_evidence": false,
+        "current_change_evidence": false,
+        "required_tools": false,
+        "allowed_tools": true,
+        "no_tool_errors": true,
+        "service_scoped_calls": true
+      },
+      "failure": "metrics_observed",
+      "answer_parse_error": null,
+      "parsed_answer": {
+        "service": "live-gifts",
+        "error_rate": null,
+        "status": "incident",
+        "likely_cause": "conflicting_evidence",
+        "recommendation": "verify_changes",
+        "uncertainty": "conflicting_evidence",
+        "citations": []
+      },
+      "tool_execution_accuracy": null,
+      "citation_precision": null,
+      "tool_calls": 0,
+      "latency_seconds": 0,
+      "known_tokens": 86,
+      "unknown_usage": 0,
+      "fixture": false
+    },
+    "trace": {
+      "status": "completed",
+      "answer": "{\"service\": \"live-gifts\", \"error_rate\": null, \"status\": \"incident\", \"likely_cause\": \"conflicting_evidence\", \"recommendation\": \"verify_changes\", \"uncertainty\": \"conflicting_evidence\", \"citations\": []}",
+      "events": [],
+      "tokens": 86,
+      "unknown_usage": 0,
+      "fixture": false
+    },
+    "wall_seconds": 1.0241828999860445,
+    "decoder": "greedy one-of-nine original LM vocabulary tokens",
+    "stage": "base"
+  }
+}

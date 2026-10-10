@@ -1,0 +1,257 @@
+{
+  "states": [
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=ads-auction. Actions=\nNext action:",
+      "action": "A",
+      "input_tokens": 85,
+      "probabilities": [
+        0.4790950119495392,
+        0.07770233601331711,
+        0.02581007592380047,
+        0.08250745385885239,
+        0.03169209510087967,
+        0.016144171357154846,
+        0.011657079681754112,
+        0.02813529409468174,
+        0.24725636839866638
+      ],
+      "context": {
+        "input_tokens": 85,
+        "original_tokens": 85,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=ads-auction. Actions=A\nMetrics={\"samples\":30,\"error_rate\":0.09192251461988304,\"recent_error_rate\":0.13678618857901725,\"baseline_error_rate\":0.04787773431841229,\"recent_max_p95_ms\":865.69,\"baseline_requests\":13806,\"recent_requests\":13554}\nNext action:",
+      "action": "A",
+      "input_tokens": 208,
+      "probabilities": [
+        0.6828634738922119,
+        0.06415688991546631,
+        0.024738691747188568,
+        0.09718187153339386,
+        0.04944637045264244,
+        0.012307541444897652,
+        0.011846798472106457,
+        0.020043177530169487,
+        0.03741510212421417
+      ],
+      "context": {
+        "input_tokens": 208,
+        "original_tokens": 208,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=ads-auction. Actions=AA\nMetrics={\"samples\":30,\"error_rate\":0.09192251461988304,\"recent_error_rate\":0.13678618857901725,\"baseline_error_rate\":0.04787773431841229,\"recent_max_p95_ms\":865.69,\"baseline_requests\":13806,\"recent_requests\":13554}\nNext action:",
+      "action": "A",
+      "input_tokens": 208,
+      "probabilities": [
+        0.6984895467758179,
+        0.05178602412343025,
+        0.022685471922159195,
+        0.053033556789159775,
+        0.06741795688867569,
+        0.023092277348041534,
+        0.016972607001662254,
+        0.021687809377908707,
+        0.044834721833467484
+      ],
+      "context": {
+        "input_tokens": 208,
+        "original_tokens": 208,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=ads-auction. Actions=AAA\nMetrics={\"samples\":30,\"error_rate\":0.09192251461988304,\"recent_error_rate\":0.13678618857901725,\"baseline_error_rate\":0.04787773431841229,\"recent_max_p95_ms\":865.69,\"baseline_requests\":13806,\"recent_requests\":13554}\nNext action:",
+      "action": "A",
+      "input_tokens": 209,
+      "probabilities": [
+        0.7072231769561768,
+        0.050898946821689606,
+        0.02201217971742153,
+        0.05270219221711159,
+        0.06127990782260895,
+        0.021655147895216942,
+        0.016719158738851547,
+        0.02200099267065525,
+        0.045508407056331635
+      ],
+      "context": {
+        "input_tokens": 209,
+        "original_tokens": 209,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    }
+  ],
+  "episode": {
+    "task_id": "ads-auction",
+    "split": "dev",
+    "actions": [
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "reward": -0.7,
+    "score": {
+      "success": false,
+      "decision_correct": false,
+      "checks": {
+        "completed": false,
+        "structured_answer": false,
+        "service_answer": false,
+        "metrics_observed": true,
+        "current_metrics": true,
+        "metric_status_consistency": true,
+        "numeric_answer": false,
+        "status_answer": false,
+        "cause_answer": false,
+        "recommendation_answer": false,
+        "uncertainty_answer": false,
+        "citation_ids": false,
+        "runbook_evidence": false,
+        "current_change_evidence": false,
+        "required_tools": false,
+        "allowed_tools": true,
+        "no_tool_errors": true,
+        "service_scoped_calls": true
+      },
+      "failure": "completed",
+      "answer_parse_error": "invalid JSON: Expecting value: line 1 column 1 (char 0)",
+      "parsed_answer": null,
+      "tool_execution_accuracy": 1.0,
+      "citation_precision": null,
+      "tool_calls": 4,
+      "latency_seconds": 0.012341300011030398,
+      "known_tokens": 714,
+      "unknown_usage": 0,
+      "fixture": false
+    },
+    "trace": {
+      "status": "budget_exceeded",
+      "answer": "",
+      "events": [
+        {
+          "kind": "tool",
+          "name": "service_metrics",
+          "arguments": {
+            "service": "ads-auction",
+            "window_minutes": 30
+          },
+          "output": {
+            "service": "ads-auction",
+            "samples": 30,
+            "error_rate": 0.09192251461988304,
+            "max_p95_ms": 865.69,
+            "requests": 27360,
+            "window_minutes": 30,
+            "as_of_minute": 59,
+            "status": "observed",
+            "baseline_error_rate": 0.04787773431841229,
+            "baseline_max_p95_ms": 865.69,
+            "baseline_requests": 13806,
+            "recent_error_rate": 0.13678618857901725,
+            "recent_max_p95_ms": 865.69,
+            "recent_requests": 13554,
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.0030897000106051564
+        },
+        {
+          "kind": "tool",
+          "name": "service_metrics",
+          "arguments": {
+            "service": "ads-auction",
+            "window_minutes": 30
+          },
+          "output": {
+            "service": "ads-auction",
+            "samples": 30,
+            "error_rate": 0.09192251461988304,
+            "max_p95_ms": 865.69,
+            "requests": 27360,
+            "window_minutes": 30,
+            "as_of_minute": 59,
+            "status": "observed",
+            "baseline_error_rate": 0.04787773431841229,
+            "baseline_max_p95_ms": 865.69,
+            "baseline_requests": 13806,
+            "recent_error_rate": 0.13678618857901725,
+            "recent_max_p95_ms": 865.69,
+            "recent_requests": 13554,
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.003100400004768744
+        },
+        {
+          "kind": "tool",
+          "name": "service_metrics",
+          "arguments": {
+            "service": "ads-auction",
+            "window_minutes": 30
+          },
+          "output": {
+            "service": "ads-auction",
+            "samples": 30,
+            "error_rate": 0.09192251461988304,
+            "max_p95_ms": 865.69,
+            "requests": 27360,
+            "window_minutes": 30,
+            "as_of_minute": 59,
+            "status": "observed",
+            "baseline_error_rate": 0.04787773431841229,
+            "baseline_max_p95_ms": 865.69,
+            "baseline_requests": 13806,
+            "recent_error_rate": 0.13678618857901725,
+            "recent_max_p95_ms": 865.69,
+            "recent_requests": 13554,
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.003318299990496598
+        },
+        {
+          "kind": "tool",
+          "name": "service_metrics",
+          "arguments": {
+            "service": "ads-auction",
+            "window_minutes": 30
+          },
+          "output": {
+            "service": "ads-auction",
+            "samples": 30,
+            "error_rate": 0.09192251461988304,
+            "max_p95_ms": 865.69,
+            "requests": 27360,
+            "window_minutes": 30,
+            "as_of_minute": 59,
+            "status": "observed",
+            "baseline_error_rate": 0.04787773431841229,
+            "baseline_max_p95_ms": 865.69,
+            "baseline_requests": 13806,
+            "recent_error_rate": 0.13678618857901725,
+            "recent_max_p95_ms": 865.69,
+            "recent_requests": 13554,
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.0028329000051598996
+        }
+      ],
+      "tokens": 714,
+      "unknown_usage": 0,
+      "fixture": false
+    },
+    "wall_seconds": 4.521002100009355,
+    "decoder": "greedy one-of-nine original LM vocabulary tokens",
+    "stage": "base"
+  }
+}

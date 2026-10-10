@@ -1,0 +1,152 @@
+{
+  "candidates": [
+    {
+      "task_id": "growth-feed",
+      "source_trace_sha256": "985d6214881449bf89ed9d081ab4552bba46b26684566ce34de5ec1621cac845",
+      "checks": {
+        "development_only": true,
+        "not_fixture": true,
+        "complete_trace": true,
+        "trace_checksum": true,
+        "messages_unchanged": true,
+        "config_match": true,
+        "independent_rescore": true,
+        "human_review_marker_preserved": true
+      },
+      "technical_checks_passed": true,
+      "human_review_required": true,
+      "included_in_tiny_policy_training": false,
+      "review_kind": "automated mechanical provenance and independent oracle audit"
+    },
+    {
+      "task_id": "growth-feed",
+      "source_trace_sha256": "78a344f514bfc5feebf2037e8681b29f06f09e12f491a460f9db0c71990c92fa",
+      "checks": {
+        "development_only": true,
+        "not_fixture": true,
+        "complete_trace": true,
+        "trace_checksum": true,
+        "messages_unchanged": true,
+        "config_match": true,
+        "independent_rescore": true,
+        "human_review_marker_preserved": true
+      },
+      "technical_checks_passed": true,
+      "human_review_required": true,
+      "included_in_tiny_policy_training": false,
+      "review_kind": "automated mechanical provenance and independent oracle audit"
+    },
+    {
+      "task_id": "discovery-nearby",
+      "source_trace_sha256": "1697bd94a8dae62c9c1e2ec8f1a96876852bc5bf14d49b129d911fe2f96ef613",
+      "checks": {
+        "development_only": true,
+        "not_fixture": true,
+        "complete_trace": true,
+        "trace_checksum": true,
+        "messages_unchanged": true,
+        "config_match": true,
+        "independent_rescore": true,
+        "human_review_marker_preserved": true
+      },
+      "technical_checks_passed": true,
+      "human_review_required": true,
+      "included_in_tiny_policy_training": false,
+      "review_kind": "automated mechanical provenance and independent oracle audit"
+    },
+    {
+      "task_id": "search-reindex",
+      "source_trace_sha256": "fd3ba320f12c24c701a5c90e6a8c4f9c8d7a32ea9accfd73b03faa5cada31b44",
+      "checks": {
+        "development_only": true,
+        "not_fixture": true,
+        "complete_trace": true,
+        "trace_checksum": true,
+        "messages_unchanged": true,
+        "config_match": true,
+        "independent_rescore": true,
+        "human_review_marker_preserved": true
+      },
+      "technical_checks_passed": true,
+      "human_review_required": true,
+      "included_in_tiny_policy_training": false,
+      "review_kind": "automated mechanical provenance and independent oracle audit"
+    },
+    {
+      "task_id": "search-reindex",
+      "source_trace_sha256": "1bfd4977bbbb6228e09b31358b21c30141ba2d0aa61118592ce65f1db81a1f67",
+      "checks": {
+        "development_only": true,
+        "not_fixture": true,
+        "complete_trace": true,
+        "trace_checksum": true,
+        "messages_unchanged": true,
+        "config_match": true,
+        "independent_rescore": true,
+        "human_review_marker_preserved": true
+      },
+      "technical_checks_passed": true,
+      "human_review_required": true,
+      "included_in_tiny_policy_training": false,
+      "review_kind": "automated mechanical provenance and independent oracle audit"
+    },
+    {
+      "task_id": "ads-attribution",
+      "source_trace_sha256": "d42da908a5e8975d927c6650f043675ac0cb210f54120156b39d1ccd055c5d7a",
+      "checks": {
+        "development_only": true,
+        "not_fixture": true,
+        "complete_trace": true,
+        "trace_checksum": true,
+        "messages_unchanged": true,
+        "config_match": true,
+        "independent_rescore": true,
+        "human_review_marker_preserved": true
+      },
+      "technical_checks_passed": true,
+      "human_review_required": true,
+      "included_in_tiny_policy_training": false,
+      "review_kind": "automated mechanical provenance and independent oracle audit"
+    },
+    {
+      "task_id": "creator-upload",
+      "source_trace_sha256": "7da865ff84e1e43cb8b78b6273edf6dee512175689c969b05d585ad1c99694d9",
+      "checks": {
+        "development_only": true,
+        "not_fixture": true,
+        "complete_trace": true,
+        "trace_checksum": true,
+        "messages_unchanged": true,
+        "config_match": true,
+        "independent_rescore": true,
+        "human_review_marker_preserved": true
+      },
+      "technical_checks_passed": true,
+      "human_review_required": true,
+      "included_in_tiny_policy_training": false,
+      "review_kind": "automated mechanical provenance and independent oracle audit"
+    },
+    {
+      "task_id": "live-session",
+      "source_trace_sha256": "00cd5ecf9229729f356ec5a15e4c21f20ede202ba2b71a09ef5026ba9dcebba7",
+      "checks": {
+        "development_only": true,
+        "not_fixture": true,
+        "complete_trace": true,
+        "trace_checksum": true,
+        "messages_unchanged": true,
+        "config_match": true,
+        "independent_rescore": true,
+        "human_review_marker_preserved": true
+      },
+      "technical_checks_passed": true,
+      "human_review_required": true,
+      "included_in_tiny_policy_training": false,
+      "review_kind": "automated mechanical provenance and independent oracle audit"
+    }
+  ],
+  "technical_passes": 8,
+  "count": 8,
+  "human_review_complete": false,
+  "training_use": "None: new 18-task synthetic-supervised demonstrations are separately identified."
+}

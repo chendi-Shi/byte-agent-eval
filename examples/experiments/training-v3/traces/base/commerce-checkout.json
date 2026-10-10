@@ -1,0 +1,257 @@
+{
+  "states": [
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=commerce-checkout. Actions=\nNext action:",
+      "action": "A",
+      "input_tokens": 85,
+      "probabilities": [
+        0.31083500385284424,
+        0.14008735120296478,
+        0.07067053020000458,
+        0.07175228744745255,
+        0.06885802000761032,
+        0.022132232785224915,
+        0.02906271256506443,
+        0.021663770079612732,
+        0.2649380564689636
+      ],
+      "context": {
+        "input_tokens": 85,
+        "original_tokens": 85,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=commerce-checkout. Actions=A\nMetrics={\"samples\":30,\"error_rate\":0.06079793350029139,\"recent_error_rate\":0.08030636869163782,\"baseline_error_rate\":0.002084122773777946,\"recent_max_p95_ms\":1712.88,\"baseline_requests\":15834,\"recent_requests\":47655}\nNext action:",
+      "action": "A",
+      "input_tokens": 210,
+      "probabilities": [
+        0.6460264325141907,
+        0.10590559244155884,
+        0.042140476405620575,
+        0.06808029860258102,
+        0.06310837715864182,
+        0.00999208353459835,
+        0.016399934887886047,
+        0.014666668139398098,
+        0.03368014842271805
+      ],
+      "context": {
+        "input_tokens": 210,
+        "original_tokens": 210,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=commerce-checkout. Actions=AA\nMetrics={\"samples\":30,\"error_rate\":0.06079793350029139,\"recent_error_rate\":0.08030636869163782,\"baseline_error_rate\":0.002084122773777946,\"recent_max_p95_ms\":1712.88,\"baseline_requests\":15834,\"recent_requests\":47655}\nNext action:",
+      "action": "A",
+      "input_tokens": 210,
+      "probabilities": [
+        0.6700361967086792,
+        0.06371492892503738,
+        0.03183934465050697,
+        0.04446576535701752,
+        0.08549056947231293,
+        0.02451222389936447,
+        0.023136857897043228,
+        0.017368663102388382,
+        0.039435457438230515
+      ],
+      "context": {
+        "input_tokens": 210,
+        "original_tokens": 210,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=commerce-checkout. Actions=AAA\nMetrics={\"samples\":30,\"error_rate\":0.06079793350029139,\"recent_error_rate\":0.08030636869163782,\"baseline_error_rate\":0.002084122773777946,\"recent_max_p95_ms\":1712.88,\"baseline_requests\":15834,\"recent_requests\":47655}\nNext action:",
+      "action": "A",
+      "input_tokens": 211,
+      "probabilities": [
+        0.6688812375068665,
+        0.06505461037158966,
+        0.0314217135310173,
+        0.045952264219522476,
+        0.08304819464683533,
+        0.02467857301235199,
+        0.02316991426050663,
+        0.01745718903839588,
+        0.040336351841688156
+      ],
+      "context": {
+        "input_tokens": 211,
+        "original_tokens": 211,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    }
+  ],
+  "episode": {
+    "task_id": "commerce-checkout",
+    "split": "dev",
+    "actions": [
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "reward": -0.7,
+    "score": {
+      "success": false,
+      "decision_correct": false,
+      "checks": {
+        "completed": false,
+        "structured_answer": false,
+        "service_answer": false,
+        "metrics_observed": true,
+        "current_metrics": true,
+        "metric_status_consistency": true,
+        "numeric_answer": false,
+        "status_answer": false,
+        "cause_answer": false,
+        "recommendation_answer": false,
+        "uncertainty_answer": false,
+        "citation_ids": false,
+        "runbook_evidence": false,
+        "current_change_evidence": false,
+        "required_tools": false,
+        "allowed_tools": true,
+        "no_tool_errors": true,
+        "service_scoped_calls": true
+      },
+      "failure": "completed",
+      "answer_parse_error": "invalid JSON: Expecting value: line 1 column 1 (char 0)",
+      "parsed_answer": null,
+      "tool_execution_accuracy": 1.0,
+      "citation_precision": null,
+      "tool_calls": 4,
+      "latency_seconds": 0.011620200020843185,
+      "known_tokens": 720,
+      "unknown_usage": 0,
+      "fixture": false
+    },
+    "trace": {
+      "status": "budget_exceeded",
+      "answer": "",
+      "events": [
+        {
+          "kind": "tool",
+          "name": "service_metrics",
+          "arguments": {
+            "service": "commerce-checkout",
+            "window_minutes": 30
+          },
+          "output": {
+            "service": "commerce-checkout",
+            "samples": 30,
+            "error_rate": 0.06079793350029139,
+            "max_p95_ms": 1712.88,
+            "requests": 63489,
+            "window_minutes": 30,
+            "as_of_minute": 59,
+            "status": "observed",
+            "baseline_error_rate": 0.002084122773777946,
+            "baseline_max_p95_ms": 459.94,
+            "baseline_requests": 15834,
+            "recent_error_rate": 0.08030636869163782,
+            "recent_max_p95_ms": 1712.88,
+            "recent_requests": 47655,
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.0030255000019678846
+        },
+        {
+          "kind": "tool",
+          "name": "service_metrics",
+          "arguments": {
+            "service": "commerce-checkout",
+            "window_minutes": 30
+          },
+          "output": {
+            "service": "commerce-checkout",
+            "samples": 30,
+            "error_rate": 0.06079793350029139,
+            "max_p95_ms": 1712.88,
+            "requests": 63489,
+            "window_minutes": 30,
+            "as_of_minute": 59,
+            "status": "observed",
+            "baseline_error_rate": 0.002084122773777946,
+            "baseline_max_p95_ms": 459.94,
+            "baseline_requests": 15834,
+            "recent_error_rate": 0.08030636869163782,
+            "recent_max_p95_ms": 1712.88,
+            "recent_requests": 47655,
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.002912000010837801
+        },
+        {
+          "kind": "tool",
+          "name": "service_metrics",
+          "arguments": {
+            "service": "commerce-checkout",
+            "window_minutes": 30
+          },
+          "output": {
+            "service": "commerce-checkout",
+            "samples": 30,
+            "error_rate": 0.06079793350029139,
+            "max_p95_ms": 1712.88,
+            "requests": 63489,
+            "window_minutes": 30,
+            "as_of_minute": 59,
+            "status": "observed",
+            "baseline_error_rate": 0.002084122773777946,
+            "baseline_max_p95_ms": 459.94,
+            "baseline_requests": 15834,
+            "recent_error_rate": 0.08030636869163782,
+            "recent_max_p95_ms": 1712.88,
+            "recent_requests": 47655,
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.0028711000049952418
+        },
+        {
+          "kind": "tool",
+          "name": "service_metrics",
+          "arguments": {
+            "service": "commerce-checkout",
+            "window_minutes": 30
+          },
+          "output": {
+            "service": "commerce-checkout",
+            "samples": 30,
+            "error_rate": 0.06079793350029139,
+            "max_p95_ms": 1712.88,
+            "requests": 63489,
+            "window_minutes": 30,
+            "as_of_minute": 59,
+            "status": "observed",
+            "baseline_error_rate": 0.002084122773777946,
+            "baseline_max_p95_ms": 459.94,
+            "baseline_requests": 15834,
+            "recent_error_rate": 0.08030636869163782,
+            "recent_max_p95_ms": 1712.88,
+            "recent_requests": 47655,
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.0028116000030422583
+        }
+      ],
+      "tokens": 720,
+      "unknown_usage": 0,
+      "fixture": false
+    },
+    "wall_seconds": 6.353727600013372,
+    "decoder": "greedy one-of-nine original LM vocabulary tokens",
+    "stage": "base"
+  }
+}

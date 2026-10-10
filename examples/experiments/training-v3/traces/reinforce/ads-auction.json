@@ -1,0 +1,293 @@
+{
+  "states": [
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=ads-auction. Actions=\nNext action:",
+      "action": "A",
+      "input_tokens": 85,
+      "probabilities": [
+        0.998290479183197,
+        0.00014487921725958586,
+        9.431597572984174e-05,
+        0.0006637296173721552,
+        5.6641500123078004e-05,
+        0.00021653743169736117,
+        8.350340067408979e-05,
+        5.419846638687886e-05,
+        0.000395681505324319
+      ],
+      "context": {
+        "input_tokens": 85,
+        "original_tokens": 85,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=ads-auction. Actions=A\nMetrics={\"samples\":30,\"error_rate\":0.09192251461988304,\"recent_error_rate\":0.13678618857901725,\"baseline_error_rate\":0.04787773431841229,\"recent_max_p95_ms\":865.69,\"baseline_requests\":13806,\"recent_requests\":13554}\nNext action:",
+      "action": "B",
+      "input_tokens": 208,
+      "probabilities": [
+        0.00019671351765282452,
+        0.9978868365287781,
+        0.0015562603948637843,
+        0.00013228956959210336,
+        0.00012888637138530612,
+        3.446434493525885e-05,
+        1.077830711437855e-05,
+        4.8710139708418865e-06,
+        4.8815636546351016e-05
+      ],
+      "context": {
+        "input_tokens": 208,
+        "original_tokens": 208,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=ads-auction. Actions=AB\nMetrics={\"samples\":30,\"error_rate\":0.09192251461988304,\"recent_error_rate\":0.13678618857901725,\"baseline_error_rate\":0.04787773431841229,\"recent_max_p95_ms\":865.69,\"baseline_requests\":13806,\"recent_requests\":13554}\nPolicy={\"found\":true,\"error_limit\":0.029,\"latency_limit\":581}\nNext action:",
+      "action": "C",
+      "input_tokens": 234,
+      "probabilities": [
+        0.00010315044346498325,
+        7.411997648887336e-05,
+        0.9990860223770142,
+        0.0002095053787343204,
+        4.8430549213662744e-05,
+        0.000314112170599401,
+        2.8938125979038887e-05,
+        4.812208135263063e-05,
+        8.769287524046376e-05
+      ],
+      "context": {
+        "input_tokens": 234,
+        "original_tokens": 234,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=ads-auction. Actions=ABC\nMetrics={\"samples\":30,\"error_rate\":0.09192251461988304,\"recent_error_rate\":0.13678618857901725,\"baseline_error_rate\":0.04787773431841229,\"recent_max_p95_ms\":865.69,\"baseline_requests\":13806,\"recent_requests\":13554}\nPolicy={\"found\":true,\"error_limit\":0.029,\"latency_limit\":581}\nChanges=[{\"kind\":\"release\",\"status\":\"stale\",\"minute\":54},{\"kind\":\"dependency\",\"status\":\"active\",\"minute\":39}]\nNext action:",
+      "action": "E",
+      "input_tokens": 266,
+      "probabilities": [
+        0.0007479463238269091,
+        0.00012198249896755442,
+        0.0007178785162977874,
+        0.029909908771514893,
+        0.8276497721672058,
+        0.07015492767095566,
+        0.05038047209382057,
+        0.014015845023095608,
+        0.006301250774413347
+      ],
+      "context": {
+        "input_tokens": 266,
+        "original_tokens": 266,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    }
+  ],
+  "episode": {
+    "task_id": "ads-auction",
+    "split": "dev",
+    "actions": [
+      "A",
+      "B",
+      "C",
+      "E"
+    ],
+    "reward": 1.3,
+    "score": {
+      "success": true,
+      "decision_correct": true,
+      "checks": {
+        "completed": true,
+        "structured_answer": true,
+        "service_answer": true,
+        "metrics_observed": true,
+        "current_metrics": true,
+        "metric_status_consistency": true,
+        "numeric_answer": true,
+        "status_answer": true,
+        "cause_answer": true,
+        "recommendation_answer": true,
+        "uncertainty_answer": true,
+        "citation_ids": true,
+        "runbook_evidence": true,
+        "current_change_evidence": true,
+        "required_tools": true,
+        "allowed_tools": true,
+        "no_tool_errors": true,
+        "service_scoped_calls": true
+      },
+      "failure": null,
+      "answer_parse_error": null,
+      "parsed_answer": {
+        "service": "ads-auction",
+        "error_rate": 0.09192251461988304,
+        "status": "incident",
+        "likely_cause": "dependency_outage",
+        "recommendation": "dependency_escalation",
+        "uncertainty": "causality_unproven",
+        "citations": [
+          "71360786a331a76dab8a",
+          "0d71981ba76e5da7d63f",
+          "7b4115f9dcc54e713719",
+          "5d5b396af4c56da5941a",
+          "583703715a2ddd0e734a",
+          "chg-2c54a59a3e858fabcac4",
+          "chg-7e2a18d98831a3d33ddc"
+        ]
+      },
+      "tool_execution_accuracy": 1.0,
+      "citation_precision": 1.0,
+      "tool_calls": 3,
+      "latency_seconds": 0.004853599981288426,
+      "known_tokens": 797,
+      "unknown_usage": 0,
+      "fixture": false
+    },
+    "trace": {
+      "status": "completed",
+      "answer": "{\"service\": \"ads-auction\", \"error_rate\": 0.09192251461988304, \"status\": \"incident\", \"likely_cause\": \"dependency_outage\", \"recommendation\": \"dependency_escalation\", \"uncertainty\": \"causality_unproven\", \"citations\": [\"71360786a331a76dab8a\", \"0d71981ba76e5da7d63f\", \"7b4115f9dcc54e713719\", \"5d5b396af4c56da5941a\", \"583703715a2ddd0e734a\", \"chg-2c54a59a3e858fabcac4\", \"chg-7e2a18d98831a3d33ddc\"]}",
+      "events": [
+        {
+          "kind": "tool",
+          "name": "service_metrics",
+          "arguments": {
+            "service": "ads-auction",
+            "window_minutes": 30
+          },
+          "output": {
+            "service": "ads-auction",
+            "samples": 30,
+            "error_rate": 0.09192251461988304,
+            "max_p95_ms": 865.69,
+            "requests": 27360,
+            "window_minutes": 30,
+            "as_of_minute": 59,
+            "status": "observed",
+            "baseline_error_rate": 0.04787773431841229,
+            "baseline_max_p95_ms": 865.69,
+            "baseline_requests": 13806,
+            "recent_error_rate": 0.13678618857901725,
+            "recent_max_p95_ms": 865.69,
+            "recent_requests": 13554,
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.0024316999915754423
+        },
+        {
+          "kind": "tool",
+          "name": "knowledge_search",
+          "arguments": {
+            "service": "ads-auction",
+            "query": "incident policy observation window status diagnostic evidence uncertainty ads-auction",
+            "limit": 5
+          },
+          "output": {
+            "service": "ads-auction",
+            "source": null,
+            "evidence": [
+              {
+                "id": "71360786a331a76dab8a",
+                "source": "ads-auction/runbook.md",
+                "text": "# ads-auction: ad candidate retrieval incident policy",
+                "score": 0.01639344262295082,
+                "trust": "untrusted_evidence"
+              },
+              {
+                "id": "0d71981ba76e5da7d63f",
+                "source": "ads-auction/runbook.md",
+                "text": "Use the exact service filter when retrieving this runbook. Evidence from another\nservice has different limits and cannot establish the status of ads-auction.",
+                "score": 0.016129032258064516,
+                "trust": "untrusted_evidence"
+              },
+              {
+                "id": "7b4115f9dcc54e713719",
+                "source": "ads-auction/runbook.md",
+                "text": "## Observation window and status\nRequest service_metrics for the latest 30 minutes. Its recent fields summarize\nthe newest 15 samples, and baseline fields summarize the earlier 15 samples.\nThe final error_rate must be the complete 30-minute error_rate, as a decimal.\nAn incident exists if recent_error_rate >= 0.0290 or\nrecent_max_p95_ms > 581 milliseconds. Both conditions below those\nlimits imply healthy, provided current metric samples and this policy exist.\nMissing metrics or a missing runbook imply insufficient_data: do not infer\nhealthy from a null error_rate or borrow a different service's thresholds.",
+                "score": 0.015873015873015872,
+                "trust": "untrusted_evidence"
+              },
+              {
+                "id": "5d5b396af4c56da5941a",
+                "source": "ads-auction/runbook.md",
+                "text": "## Uncertainty and citations\nUse uncertainty=causality_unproven for evidence-supported incident hypotheses;\nnone_detected for healthy observations; insufficient_data for missing required\nevidence; conflicting_evidence for unresolved conflicts. Correlation does not\nprove causation. Cite this runbook and current incident_changes evidence ids.",
+                "score": 0.015625,
+                "trust": "untrusted_evidence"
+              },
+              {
+                "id": "583703715a2ddd0e734a",
+                "source": "ads-auction/runbook.md",
+                "text": "## Diagnostic evidence rules\nThe serving dependency for ad candidate retrieval is budget-ledger. Obtain incident_changes:\nthe runbook contains policies, not the service's current change history.\nAn active release before the metric deterioration, stable demand and a healthy\ndependency support likely_cause=release_regression and recommendation=rollback_review.\nAn active dependency failure before deterioration takes priority over a stale,\naborted or later unrelated release: dependency_outage / dependency_escalation.\nAn active traffic surge with a higher recent/baseline request ratio and healthy\ndependency supports capacity_pressure / capacity_review. Error rates alone do\nnot distinguish these causes. Cite the relevant current change evidence id.\nConflicting health probes or two unresolved competing change explanations require\nconflicting_evidence / verify_changes. A current incident without sufficient\ncausal evidence requires insufficient_evidence / collect_evidence.\nA healthy service req",
+                "score": 0.015384615384615385,
+                "trust": "untrusted_evidence"
+              }
+            ]
+          },
+          "seconds": 0.0008819999929983169
+        },
+        {
+          "kind": "tool",
+          "name": "incident_changes",
+          "arguments": {
+            "service": "ads-auction"
+          },
+          "output": {
+            "service": "ads-auction",
+            "available": true,
+            "changes": [
+              {
+                "kind": "release",
+                "minute": 54,
+                "summary": "A proposed rollout was aborted before serving traffic; it did not change live replicas.",
+                "status": "stale",
+                "evidence_id": "chg-2c54a59a3e858fabcac4"
+              },
+              {
+                "kind": "dependency",
+                "minute": 39,
+                "summary": "budget-ledger connection failures started before the service deterioration; two probes agree.",
+                "status": "active",
+                "evidence_id": "chg-7e2a18d98831a3d33ddc"
+              }
+            ],
+            "evidence": [
+              {
+                "id": "chg-2c54a59a3e858fabcac4",
+                "source": "changes/ads-auction",
+                "text": "release at minute 54 (stale): A proposed rollout was aborted before serving traffic; it did not change live replicas.",
+                "kind": "release",
+                "status": "stale",
+                "minute": 54
+              },
+              {
+                "id": "chg-7e2a18d98831a3d33ddc",
+                "source": "changes/ads-auction",
+                "text": "dependency at minute 39 (active): budget-ledger connection failures started before the service deterioration; two probes agree.",
+                "kind": "dependency",
+                "status": "active",
+                "minute": 39
+              }
+            ],
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.0015398999967146665
+        }
+      ],
+      "tokens": 797,
+      "unknown_usage": 0,
+      "fixture": false
+    },
+    "wall_seconds": 2.20528340000601,
+    "decoder": "greedy one-of-nine original LM vocabulary tokens",
+    "stage": "reinforce"
+  }
+}

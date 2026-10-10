@@ -1,0 +1,46 @@
+{
+  "parameter_sha256": "f744026542e6676fac01dae20087246bc1b78530386ead9a5b37c8858052c4c9",
+  "files": {
+    "adapter_config.json": {
+      "sha256": "f5796a035ba40ca9fb52c580dc5d1a69a9c72c94d036ff07ae610eec064dfad8",
+      "bytes": 1194
+    },
+    "adapter_model.safetensors": {
+      "sha256": "2d4fd5e972e04ca7b1c0279bd0877095985fd0b208635665eda75cb4c7c6f2fd",
+      "bytes": 937056
+    },
+    "chat_template.jinja": {
+      "sha256": "d1c0ce73f56a3eb57c157fec6019c9a9812d60f6d67078a0f375e0d90a7dddaf",
+      "bytes": 373
+    },
+    "merges.txt": {
+      "sha256": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+      "bytes": 466391
+    },
+    "README.md": {
+      "sha256": "f7ee41cb128c896930e93692187ee652d65cd2a0e0b3cc7a344a6a65a06bd57c",
+      "bytes": 5336
+    },
+    "special_tokens_map.json": {
+      "sha256": "68d920624c05998fa87a133555aff625768fc69f1b41baf0592f8d09b60896b3",
+      "bytes": 689
+    },
+    "tokenizer.json": {
+      "sha256": "7d27c493c729a66ecefc837280b05d948b1ed50d130eebdbf911b1b36cf38ed7",
+      "bytes": 3522656
+    },
+    "tokenizer_config.json": {
+      "sha256": "2cc400b5016d790d4123eb95d6cf5af17a9c1fa874564414f2eb034b0b4c6969",
+      "bytes": 3552
+    },
+    "vocab.json": {
+      "sha256": "82b84012e3add4d01d12ba14442026e49b8cbbaead1f79ecf3d919784f82dc79",
+      "bytes": 800662
+    }
+  },
+  "trainable_parameters": 230400,
+  "format": "PEFT LoRA adapter; load with the pinned SmolLM2 base model",
+  "reload_parameter_sha256": "f744026542e6676fac01dae20087246bc1b78530386ead9a5b37c8858052c4c9",
+  "reload_exact": true,
+  "changed_from_initial": true
+}

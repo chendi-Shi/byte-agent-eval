@@ -1,0 +1,1230 @@
+[
+  {
+    "states": [
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=creator-upload. Actions=\nNext action:",
+        "action": "A",
+        "input_tokens": 84,
+        "probabilities": [
+          0.9984174966812134,
+          9.204687376040965e-05,
+          0.00013281195424497128,
+          0.00036279886262491345,
+          8.856604836182669e-05,
+          0.0003074491396546364,
+          0.00011287707457086071,
+          6.46587141091004e-05,
+          0.00042141429730691016
+        ],
+        "context": {
+          "input_tokens": 84,
+          "original_tokens": 84,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=creator-upload. Actions=A\nMetrics={\"samples\":30,\"error_rate\":0.045476536042573776,\"recent_error_rate\":0.08972475266921344,\"baseline_error_rate\":0.002294235732721537,\"recent_max_p95_ms\":391.87,\"baseline_requests\":10461,\"recent_requests\":10209}\nNext action:",
+        "action": "B",
+        "input_tokens": 209,
+        "probabilities": [
+          0.0001151397664216347,
+          0.9980723857879639,
+          0.0014566758181899786,
+          0.0001141583634307608,
+          0.0001281826407648623,
+          4.6201628720154986e-05,
+          1.6661051631672308e-05,
+          7.105278200469911e-06,
+          4.352983887656592e-05
+        ],
+        "context": {
+          "input_tokens": 209,
+          "original_tokens": 209,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=creator-upload. Actions=AB\nMetrics={\"samples\":30,\"error_rate\":0.045476536042573776,\"recent_error_rate\":0.08972475266921344,\"baseline_error_rate\":0.002294235732721537,\"recent_max_p95_ms\":391.87,\"baseline_requests\":10461,\"recent_requests\":10209}\nPolicy={\"found\":true,\"error_limit\":0.019,\"latency_limit\":263}\nNext action:",
+        "action": "C",
+        "input_tokens": 235,
+        "probabilities": [
+          7.525520777562633e-05,
+          3.902617754647508e-05,
+          0.9992960691452026,
+          0.0001679648703429848,
+          3.734993515536189e-05,
+          0.0002333941520191729,
+          2.3073300326359458e-05,
+          5.0189137255074456e-05,
+          7.77045133872889e-05
+        ],
+        "context": {
+          "input_tokens": 235,
+          "original_tokens": 235,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=creator-upload. Actions=ABC\nMetrics={\"samples\":30,\"error_rate\":0.045476536042573776,\"recent_error_rate\":0.08972475266921344,\"baseline_error_rate\":0.002294235732721537,\"recent_max_p95_ms\":391.87,\"baseline_requests\":10461,\"recent_requests\":10209}\nPolicy={\"found\":true,\"error_limit\":0.019,\"latency_limit\":263}\nChanges=[{\"kind\":\"dependency\",\"status\":\"healthy\",\"minute\":47},{\"kind\":\"release\",\"status\":\"active\",\"minute\":44},{\"kind\":\"release\",\"status\":\"stale\",\"minute\":10}]\nNext action:",
+        "action": "F",
+        "input_tokens": 281,
+        "probabilities": [
+          0.0027327220886945724,
+          0.0004985701525583863,
+          0.00443717697635293,
+          0.18706218898296356,
+          0.15558040142059326,
+          0.2184372991323471,
+          0.05789027735590935,
+          0.09259013086557388,
+          0.28077128529548645
+        ],
+        "context": {
+          "input_tokens": 281,
+          "original_tokens": 281,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      }
+    ],
+    "episode": {
+      "task_id": "creator-upload",
+      "split": "dev",
+      "actions": [
+        "A",
+        "B",
+        "C",
+        "F"
+      ],
+      "reward": 0.3,
+      "score": {
+        "success": false,
+        "decision_correct": false,
+        "checks": {
+          "completed": true,
+          "structured_answer": true,
+          "service_answer": true,
+          "metrics_observed": true,
+          "current_metrics": true,
+          "metric_status_consistency": true,
+          "numeric_answer": true,
+          "status_answer": true,
+          "cause_answer": false,
+          "recommendation_answer": false,
+          "uncertainty_answer": true,
+          "citation_ids": true,
+          "runbook_evidence": true,
+          "current_change_evidence": true,
+          "required_tools": true,
+          "allowed_tools": true,
+          "no_tool_errors": true,
+          "service_scoped_calls": true
+        },
+        "failure": "cause_answer",
+        "answer_parse_error": null,
+        "parsed_answer": {
+          "service": "creator-upload",
+          "error_rate": 0.045476536042573776,
+          "status": "incident",
+          "likely_cause": "capacity_pressure",
+          "recommendation": "capacity_review",
+          "uncertainty": "causality_unproven",
+          "citations": [
+            "12ae16d128802f626a25",
+            "e98ef5581958a3a0889f",
+            "b27bc734cc5c57382656",
+            "0158844fc279de87ec30",
+            "1b30ebcf4be8f017698d",
+            "chg-329f01d2c44b3eda009c",
+            "chg-4c5889ebdca97072ccff",
+            "chg-fad455dd61d05a54c8b4"
+          ]
+        },
+        "tool_execution_accuracy": 1.0,
+        "citation_precision": 1.0,
+        "tool_calls": 3,
+        "latency_seconds": 0.015139999988605268,
+        "known_tokens": 813,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "trace": {
+        "status": "completed",
+        "answer": "{\"service\": \"creator-upload\", \"error_rate\": 0.045476536042573776, \"status\": \"incident\", \"likely_cause\": \"capacity_pressure\", \"recommendation\": \"capacity_review\", \"uncertainty\": \"causality_unproven\", \"citations\": [\"12ae16d128802f626a25\", \"e98ef5581958a3a0889f\", \"b27bc734cc5c57382656\", \"0158844fc279de87ec30\", \"1b30ebcf4be8f017698d\", \"chg-329f01d2c44b3eda009c\", \"chg-4c5889ebdca97072ccff\", \"chg-fad455dd61d05a54c8b4\"]}",
+        "events": [
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "creator-upload",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "creator-upload",
+              "samples": 30,
+              "error_rate": 0.045476536042573776,
+              "max_p95_ms": 391.87,
+              "requests": 20670,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.002294235732721537,
+              "baseline_max_p95_ms": 152.54,
+              "baseline_requests": 10461,
+              "recent_error_rate": 0.08972475266921344,
+              "recent_max_p95_ms": 391.87,
+              "recent_requests": 10209,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.009401699993759394
+          },
+          {
+            "kind": "tool",
+            "name": "knowledge_search",
+            "arguments": {
+              "service": "creator-upload",
+              "query": "incident policy observation window status diagnostic evidence uncertainty creator-upload",
+              "limit": 5
+            },
+            "output": {
+              "service": "creator-upload",
+              "source": null,
+              "evidence": [
+                {
+                  "id": "12ae16d128802f626a25",
+                  "source": "creator-upload/runbook.md",
+                  "text": "# creator-upload: video upload incident policy",
+                  "score": 0.01639344262295082,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "e98ef5581958a3a0889f",
+                  "source": "creator-upload/runbook.md",
+                  "text": "Use the exact service filter when retrieving this runbook. Evidence from another\nservice has different limits and cannot establish the status of creator-upload.",
+                  "score": 0.016129032258064516,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "b27bc734cc5c57382656",
+                  "source": "creator-upload/runbook.md",
+                  "text": "## Observation window and status\nRequest service_metrics for the latest 30 minutes. Its recent fields summarize\nthe newest 15 samples, and baseline fields summarize the earlier 15 samples.\nThe final error_rate must be the complete 30-minute error_rate, as a decimal.\nAn incident exists if recent_error_rate >= 0.0190 or\nrecent_max_p95_ms > 263 milliseconds. Both conditions below those\nlimits imply healthy, provided current metric samples and this policy exist.\nMissing metrics or a missing runbook imply insufficient_data: do not infer\nhealthy from a null error_rate or borrow a different service's thresholds.",
+                  "score": 0.015873015873015872,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "0158844fc279de87ec30",
+                  "source": "creator-upload/runbook.md",
+                  "text": "## Uncertainty and citations\nUse uncertainty=causality_unproven for evidence-supported incident hypotheses;\nnone_detected for healthy observations; insufficient_data for missing required\nevidence; conflicting_evidence for unresolved conflicts. Correlation does not\nprove causation. Cite this runbook and current incident_changes evidence ids.",
+                  "score": 0.015625,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "1b30ebcf4be8f017698d",
+                  "source": "creator-upload/runbook.md",
+                  "text": "## Diagnostic evidence rules\nThe serving dependency for video upload is object-storage. Obtain incident_changes:\nthe runbook contains policies, not the service's current change history.\nAn active release before the metric deterioration, stable demand and a healthy\ndependency support likely_cause=release_regression and recommendation=rollback_review.\nAn active dependency failure before deterioration takes priority over a stale,\naborted or later unrelated release: dependency_outage / dependency_escalation.\nAn active traffic surge with a higher recent/baseline request ratio and healthy\ndependency supports capacity_pressure / capacity_review. Error rates alone do\nnot distinguish these causes. Cite the relevant current change evidence id.\nConflicting health probes or two unresolved competing change explanations require\nconflicting_evidence / verify_changes. A current incident without sufficient\ncausal evidence requires insufficient_evidence / collect_evidence.\nA healthy service requires non",
+                  "score": 0.015384615384615385,
+                  "trust": "untrusted_evidence"
+                }
+              ]
+            },
+            "seconds": 0.0020951999904355034
+          },
+          {
+            "kind": "tool",
+            "name": "incident_changes",
+            "arguments": {
+              "service": "creator-upload"
+            },
+            "output": {
+              "service": "creator-upload",
+              "available": true,
+              "changes": [
+                {
+                  "kind": "dependency",
+                  "minute": 47,
+                  "summary": "object-storage probes agree: normal latency and no upstream failures.",
+                  "status": "healthy",
+                  "evidence_id": "chg-329f01d2c44b3eda009c"
+                },
+                {
+                  "kind": "release",
+                  "minute": 44,
+                  "summary": "A new request-path build reached all replicas before errors increased; demand is unchanged.",
+                  "status": "active",
+                  "evidence_id": "chg-4c5889ebdca97072ccff"
+                },
+                {
+                  "kind": "release",
+                  "minute": 10,
+                  "summary": "Previous deployment is outside the incident window.",
+                  "status": "stale",
+                  "evidence_id": "chg-fad455dd61d05a54c8b4"
+                }
+              ],
+              "evidence": [
+                {
+                  "id": "chg-329f01d2c44b3eda009c",
+                  "source": "changes/creator-upload",
+                  "text": "dependency at minute 47 (healthy): object-storage probes agree: normal latency and no upstream failures.",
+                  "kind": "dependency",
+                  "status": "healthy",
+                  "minute": 47
+                },
+                {
+                  "id": "chg-4c5889ebdca97072ccff",
+                  "source": "changes/creator-upload",
+                  "text": "release at minute 44 (active): A new request-path build reached all replicas before errors increased; demand is unchanged.",
+                  "kind": "release",
+                  "status": "active",
+                  "minute": 44
+                },
+                {
+                  "id": "chg-fad455dd61d05a54c8b4",
+                  "source": "changes/creator-upload",
+                  "text": "release at minute 10 (stale): Previous deployment is outside the incident window.",
+                  "kind": "release",
+                  "status": "stale",
+                  "minute": 10
+                }
+              ],
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.003643100004410371
+          }
+        ],
+        "tokens": 813,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "wall_seconds": 16.85799699999916
+    }
+  },
+  {
+    "states": [
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=creator-upload. Actions=\nNext action:",
+        "action": "A",
+        "input_tokens": 84,
+        "probabilities": [
+          0.9984174966812134,
+          9.204687376040965e-05,
+          0.00013281195424497128,
+          0.00036279886262491345,
+          8.856604836182669e-05,
+          0.0003074491396546364,
+          0.00011287707457086071,
+          6.46587141091004e-05,
+          0.00042141429730691016
+        ],
+        "context": {
+          "input_tokens": 84,
+          "original_tokens": 84,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=creator-upload. Actions=A\nMetrics={\"samples\":30,\"error_rate\":0.045476536042573776,\"recent_error_rate\":0.08972475266921344,\"baseline_error_rate\":0.002294235732721537,\"recent_max_p95_ms\":391.87,\"baseline_requests\":10461,\"recent_requests\":10209}\nNext action:",
+        "action": "B",
+        "input_tokens": 209,
+        "probabilities": [
+          0.0001151397664216347,
+          0.9980723857879639,
+          0.0014566758181899786,
+          0.0001141583634307608,
+          0.0001281826407648623,
+          4.6201628720154986e-05,
+          1.6661051631672308e-05,
+          7.105278200469911e-06,
+          4.352983887656592e-05
+        ],
+        "context": {
+          "input_tokens": 209,
+          "original_tokens": 209,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=creator-upload. Actions=AB\nMetrics={\"samples\":30,\"error_rate\":0.045476536042573776,\"recent_error_rate\":0.08972475266921344,\"baseline_error_rate\":0.002294235732721537,\"recent_max_p95_ms\":391.87,\"baseline_requests\":10461,\"recent_requests\":10209}\nPolicy={\"found\":true,\"error_limit\":0.019,\"latency_limit\":263}\nNext action:",
+        "action": "C",
+        "input_tokens": 235,
+        "probabilities": [
+          7.525520777562633e-05,
+          3.902617754647508e-05,
+          0.9992960691452026,
+          0.0001679648703429848,
+          3.734993515536189e-05,
+          0.0002333941520191729,
+          2.3073300326359458e-05,
+          5.0189137255074456e-05,
+          7.77045133872889e-05
+        ],
+        "context": {
+          "input_tokens": 235,
+          "original_tokens": 235,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=creator-upload. Actions=ABC\nMetrics={\"samples\":30,\"error_rate\":0.045476536042573776,\"recent_error_rate\":0.08972475266921344,\"baseline_error_rate\":0.002294235732721537,\"recent_max_p95_ms\":391.87,\"baseline_requests\":10461,\"recent_requests\":10209}\nPolicy={\"found\":true,\"error_limit\":0.019,\"latency_limit\":263}\nChanges=[{\"kind\":\"dependency\",\"status\":\"healthy\",\"minute\":47},{\"kind\":\"release\",\"status\":\"active\",\"minute\":44},{\"kind\":\"release\",\"status\":\"stale\",\"minute\":10}]\nNext action:",
+        "action": "F",
+        "input_tokens": 281,
+        "probabilities": [
+          0.0027327220886945724,
+          0.0004985701525583863,
+          0.00443717697635293,
+          0.18706218898296356,
+          0.15558040142059326,
+          0.2184372991323471,
+          0.05789027735590935,
+          0.09259013086557388,
+          0.28077128529548645
+        ],
+        "context": {
+          "input_tokens": 281,
+          "original_tokens": 281,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      }
+    ],
+    "episode": {
+      "task_id": "creator-upload",
+      "split": "dev",
+      "actions": [
+        "A",
+        "B",
+        "C",
+        "F"
+      ],
+      "reward": 0.3,
+      "score": {
+        "success": false,
+        "decision_correct": false,
+        "checks": {
+          "completed": true,
+          "structured_answer": true,
+          "service_answer": true,
+          "metrics_observed": true,
+          "current_metrics": true,
+          "metric_status_consistency": true,
+          "numeric_answer": true,
+          "status_answer": true,
+          "cause_answer": false,
+          "recommendation_answer": false,
+          "uncertainty_answer": true,
+          "citation_ids": true,
+          "runbook_evidence": true,
+          "current_change_evidence": true,
+          "required_tools": true,
+          "allowed_tools": true,
+          "no_tool_errors": true,
+          "service_scoped_calls": true
+        },
+        "failure": "cause_answer",
+        "answer_parse_error": null,
+        "parsed_answer": {
+          "service": "creator-upload",
+          "error_rate": 0.045476536042573776,
+          "status": "incident",
+          "likely_cause": "capacity_pressure",
+          "recommendation": "capacity_review",
+          "uncertainty": "causality_unproven",
+          "citations": [
+            "12ae16d128802f626a25",
+            "e98ef5581958a3a0889f",
+            "b27bc734cc5c57382656",
+            "0158844fc279de87ec30",
+            "1b30ebcf4be8f017698d",
+            "chg-329f01d2c44b3eda009c",
+            "chg-4c5889ebdca97072ccff",
+            "chg-fad455dd61d05a54c8b4"
+          ]
+        },
+        "tool_execution_accuracy": 1.0,
+        "citation_precision": 1.0,
+        "tool_calls": 3,
+        "latency_seconds": 0.009715800013509579,
+        "known_tokens": 813,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "trace": {
+        "status": "completed",
+        "answer": "{\"service\": \"creator-upload\", \"error_rate\": 0.045476536042573776, \"status\": \"incident\", \"likely_cause\": \"capacity_pressure\", \"recommendation\": \"capacity_review\", \"uncertainty\": \"causality_unproven\", \"citations\": [\"12ae16d128802f626a25\", \"e98ef5581958a3a0889f\", \"b27bc734cc5c57382656\", \"0158844fc279de87ec30\", \"1b30ebcf4be8f017698d\", \"chg-329f01d2c44b3eda009c\", \"chg-4c5889ebdca97072ccff\", \"chg-fad455dd61d05a54c8b4\"]}",
+        "events": [
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "creator-upload",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "creator-upload",
+              "samples": 30,
+              "error_rate": 0.045476536042573776,
+              "max_p95_ms": 391.87,
+              "requests": 20670,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.002294235732721537,
+              "baseline_max_p95_ms": 152.54,
+              "baseline_requests": 10461,
+              "recent_error_rate": 0.08972475266921344,
+              "recent_max_p95_ms": 391.87,
+              "recent_requests": 10209,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.00307510000129696
+          },
+          {
+            "kind": "tool",
+            "name": "knowledge_search",
+            "arguments": {
+              "service": "creator-upload",
+              "query": "incident policy observation window status diagnostic evidence uncertainty creator-upload",
+              "limit": 5
+            },
+            "output": {
+              "service": "creator-upload",
+              "source": null,
+              "evidence": [
+                {
+                  "id": "12ae16d128802f626a25",
+                  "source": "creator-upload/runbook.md",
+                  "text": "# creator-upload: video upload incident policy",
+                  "score": 0.01639344262295082,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "e98ef5581958a3a0889f",
+                  "source": "creator-upload/runbook.md",
+                  "text": "Use the exact service filter when retrieving this runbook. Evidence from another\nservice has different limits and cannot establish the status of creator-upload.",
+                  "score": 0.016129032258064516,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "b27bc734cc5c57382656",
+                  "source": "creator-upload/runbook.md",
+                  "text": "## Observation window and status\nRequest service_metrics for the latest 30 minutes. Its recent fields summarize\nthe newest 15 samples, and baseline fields summarize the earlier 15 samples.\nThe final error_rate must be the complete 30-minute error_rate, as a decimal.\nAn incident exists if recent_error_rate >= 0.0190 or\nrecent_max_p95_ms > 263 milliseconds. Both conditions below those\nlimits imply healthy, provided current metric samples and this policy exist.\nMissing metrics or a missing runbook imply insufficient_data: do not infer\nhealthy from a null error_rate or borrow a different service's thresholds.",
+                  "score": 0.015873015873015872,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "0158844fc279de87ec30",
+                  "source": "creator-upload/runbook.md",
+                  "text": "## Uncertainty and citations\nUse uncertainty=causality_unproven for evidence-supported incident hypotheses;\nnone_detected for healthy observations; insufficient_data for missing required\nevidence; conflicting_evidence for unresolved conflicts. Correlation does not\nprove causation. Cite this runbook and current incident_changes evidence ids.",
+                  "score": 0.015625,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "1b30ebcf4be8f017698d",
+                  "source": "creator-upload/runbook.md",
+                  "text": "## Diagnostic evidence rules\nThe serving dependency for video upload is object-storage. Obtain incident_changes:\nthe runbook contains policies, not the service's current change history.\nAn active release before the metric deterioration, stable demand and a healthy\ndependency support likely_cause=release_regression and recommendation=rollback_review.\nAn active dependency failure before deterioration takes priority over a stale,\naborted or later unrelated release: dependency_outage / dependency_escalation.\nAn active traffic surge with a higher recent/baseline request ratio and healthy\ndependency supports capacity_pressure / capacity_review. Error rates alone do\nnot distinguish these causes. Cite the relevant current change evidence id.\nConflicting health probes or two unresolved competing change explanations require\nconflicting_evidence / verify_changes. A current incident without sufficient\ncausal evidence requires insufficient_evidence / collect_evidence.\nA healthy service requires non",
+                  "score": 0.015384615384615385,
+                  "trust": "untrusted_evidence"
+                }
+              ]
+            },
+            "seconds": 0.002322900007129647
+          },
+          {
+            "kind": "tool",
+            "name": "incident_changes",
+            "arguments": {
+              "service": "creator-upload"
+            },
+            "output": {
+              "service": "creator-upload",
+              "available": true,
+              "changes": [
+                {
+                  "kind": "dependency",
+                  "minute": 47,
+                  "summary": "object-storage probes agree: normal latency and no upstream failures.",
+                  "status": "healthy",
+                  "evidence_id": "chg-329f01d2c44b3eda009c"
+                },
+                {
+                  "kind": "release",
+                  "minute": 44,
+                  "summary": "A new request-path build reached all replicas before errors increased; demand is unchanged.",
+                  "status": "active",
+                  "evidence_id": "chg-4c5889ebdca97072ccff"
+                },
+                {
+                  "kind": "release",
+                  "minute": 10,
+                  "summary": "Previous deployment is outside the incident window.",
+                  "status": "stale",
+                  "evidence_id": "chg-fad455dd61d05a54c8b4"
+                }
+              ],
+              "evidence": [
+                {
+                  "id": "chg-329f01d2c44b3eda009c",
+                  "source": "changes/creator-upload",
+                  "text": "dependency at minute 47 (healthy): object-storage probes agree: normal latency and no upstream failures.",
+                  "kind": "dependency",
+                  "status": "healthy",
+                  "minute": 47
+                },
+                {
+                  "id": "chg-4c5889ebdca97072ccff",
+                  "source": "changes/creator-upload",
+                  "text": "release at minute 44 (active): A new request-path build reached all replicas before errors increased; demand is unchanged.",
+                  "kind": "release",
+                  "status": "active",
+                  "minute": 44
+                },
+                {
+                  "id": "chg-fad455dd61d05a54c8b4",
+                  "source": "changes/creator-upload",
+                  "text": "release at minute 10 (stale): Previous deployment is outside the incident window.",
+                  "kind": "release",
+                  "status": "stale",
+                  "minute": 10
+                }
+              ],
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.004317800005082972
+          }
+        ],
+        "tokens": 813,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "wall_seconds": 7.0364861999987625
+    }
+  },
+  {
+    "states": [
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=creator-upload. Actions=\nNext action:",
+        "action": "A",
+        "input_tokens": 84,
+        "probabilities": [
+          0.9984174966812134,
+          9.204687376040965e-05,
+          0.00013281195424497128,
+          0.00036279886262491345,
+          8.856604836182669e-05,
+          0.0003074491396546364,
+          0.00011287707457086071,
+          6.46587141091004e-05,
+          0.00042141429730691016
+        ],
+        "context": {
+          "input_tokens": 84,
+          "original_tokens": 84,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=creator-upload. Actions=A\nMetrics={\"samples\":30,\"error_rate\":0.045476536042573776,\"recent_error_rate\":0.08972475266921344,\"baseline_error_rate\":0.002294235732721537,\"recent_max_p95_ms\":391.87,\"baseline_requests\":10461,\"recent_requests\":10209}\nNext action:",
+        "action": "B",
+        "input_tokens": 209,
+        "probabilities": [
+          0.0001151397664216347,
+          0.9980723857879639,
+          0.0014566758181899786,
+          0.0001141583634307608,
+          0.0001281826407648623,
+          4.6201628720154986e-05,
+          1.6661051631672308e-05,
+          7.105278200469911e-06,
+          4.352983887656592e-05
+        ],
+        "context": {
+          "input_tokens": 209,
+          "original_tokens": 209,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=creator-upload. Actions=AB\nMetrics={\"samples\":30,\"error_rate\":0.045476536042573776,\"recent_error_rate\":0.08972475266921344,\"baseline_error_rate\":0.002294235732721537,\"recent_max_p95_ms\":391.87,\"baseline_requests\":10461,\"recent_requests\":10209}\nPolicy={\"found\":true,\"error_limit\":0.019,\"latency_limit\":263}\nNext action:",
+        "action": "C",
+        "input_tokens": 235,
+        "probabilities": [
+          7.525520777562633e-05,
+          3.902617754647508e-05,
+          0.9992960691452026,
+          0.0001679648703429848,
+          3.734993515536189e-05,
+          0.0002333941520191729,
+          2.3073300326359458e-05,
+          5.0189137255074456e-05,
+          7.77045133872889e-05
+        ],
+        "context": {
+          "input_tokens": 235,
+          "original_tokens": 235,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=creator-upload. Actions=ABC\nMetrics={\"samples\":30,\"error_rate\":0.045476536042573776,\"recent_error_rate\":0.08972475266921344,\"baseline_error_rate\":0.002294235732721537,\"recent_max_p95_ms\":391.87,\"baseline_requests\":10461,\"recent_requests\":10209}\nPolicy={\"found\":true,\"error_limit\":0.019,\"latency_limit\":263}\nChanges=[{\"kind\":\"dependency\",\"status\":\"healthy\",\"minute\":47},{\"kind\":\"release\",\"status\":\"active\",\"minute\":44},{\"kind\":\"release\",\"status\":\"stale\",\"minute\":10}]\nNext action:",
+        "action": "E",
+        "input_tokens": 281,
+        "probabilities": [
+          0.0027327220886945724,
+          0.0004985701525583863,
+          0.00443717697635293,
+          0.18706218898296356,
+          0.15558040142059326,
+          0.2184372991323471,
+          0.05789027735590935,
+          0.09259013086557388,
+          0.28077128529548645
+        ],
+        "context": {
+          "input_tokens": 281,
+          "original_tokens": 281,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      }
+    ],
+    "episode": {
+      "task_id": "creator-upload",
+      "split": "dev",
+      "actions": [
+        "A",
+        "B",
+        "C",
+        "E"
+      ],
+      "reward": 0.3,
+      "score": {
+        "success": false,
+        "decision_correct": false,
+        "checks": {
+          "completed": true,
+          "structured_answer": true,
+          "service_answer": true,
+          "metrics_observed": true,
+          "current_metrics": true,
+          "metric_status_consistency": true,
+          "numeric_answer": true,
+          "status_answer": true,
+          "cause_answer": false,
+          "recommendation_answer": false,
+          "uncertainty_answer": true,
+          "citation_ids": true,
+          "runbook_evidence": true,
+          "current_change_evidence": true,
+          "required_tools": true,
+          "allowed_tools": true,
+          "no_tool_errors": true,
+          "service_scoped_calls": true
+        },
+        "failure": "cause_answer",
+        "answer_parse_error": null,
+        "parsed_answer": {
+          "service": "creator-upload",
+          "error_rate": 0.045476536042573776,
+          "status": "incident",
+          "likely_cause": "dependency_outage",
+          "recommendation": "dependency_escalation",
+          "uncertainty": "causality_unproven",
+          "citations": [
+            "12ae16d128802f626a25",
+            "e98ef5581958a3a0889f",
+            "b27bc734cc5c57382656",
+            "0158844fc279de87ec30",
+            "1b30ebcf4be8f017698d",
+            "chg-329f01d2c44b3eda009c",
+            "chg-4c5889ebdca97072ccff",
+            "chg-fad455dd61d05a54c8b4"
+          ]
+        },
+        "tool_execution_accuracy": 1.0,
+        "citation_precision": 1.0,
+        "tool_calls": 3,
+        "latency_seconds": 0.007852800001273863,
+        "known_tokens": 813,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "trace": {
+        "status": "completed",
+        "answer": "{\"service\": \"creator-upload\", \"error_rate\": 0.045476536042573776, \"status\": \"incident\", \"likely_cause\": \"dependency_outage\", \"recommendation\": \"dependency_escalation\", \"uncertainty\": \"causality_unproven\", \"citations\": [\"12ae16d128802f626a25\", \"e98ef5581958a3a0889f\", \"b27bc734cc5c57382656\", \"0158844fc279de87ec30\", \"1b30ebcf4be8f017698d\", \"chg-329f01d2c44b3eda009c\", \"chg-4c5889ebdca97072ccff\", \"chg-fad455dd61d05a54c8b4\"]}",
+        "events": [
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "creator-upload",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "creator-upload",
+              "samples": 30,
+              "error_rate": 0.045476536042573776,
+              "max_p95_ms": 391.87,
+              "requests": 20670,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.002294235732721537,
+              "baseline_max_p95_ms": 152.54,
+              "baseline_requests": 10461,
+              "recent_error_rate": 0.08972475266921344,
+              "recent_max_p95_ms": 391.87,
+              "recent_requests": 10209,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0028705000004265457
+          },
+          {
+            "kind": "tool",
+            "name": "knowledge_search",
+            "arguments": {
+              "service": "creator-upload",
+              "query": "incident policy observation window status diagnostic evidence uncertainty creator-upload",
+              "limit": 5
+            },
+            "output": {
+              "service": "creator-upload",
+              "source": null,
+              "evidence": [
+                {
+                  "id": "12ae16d128802f626a25",
+                  "source": "creator-upload/runbook.md",
+                  "text": "# creator-upload: video upload incident policy",
+                  "score": 0.01639344262295082,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "e98ef5581958a3a0889f",
+                  "source": "creator-upload/runbook.md",
+                  "text": "Use the exact service filter when retrieving this runbook. Evidence from another\nservice has different limits and cannot establish the status of creator-upload.",
+                  "score": 0.016129032258064516,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "b27bc734cc5c57382656",
+                  "source": "creator-upload/runbook.md",
+                  "text": "## Observation window and status\nRequest service_metrics for the latest 30 minutes. Its recent fields summarize\nthe newest 15 samples, and baseline fields summarize the earlier 15 samples.\nThe final error_rate must be the complete 30-minute error_rate, as a decimal.\nAn incident exists if recent_error_rate >= 0.0190 or\nrecent_max_p95_ms > 263 milliseconds. Both conditions below those\nlimits imply healthy, provided current metric samples and this policy exist.\nMissing metrics or a missing runbook imply insufficient_data: do not infer\nhealthy from a null error_rate or borrow a different service's thresholds.",
+                  "score": 0.015873015873015872,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "0158844fc279de87ec30",
+                  "source": "creator-upload/runbook.md",
+                  "text": "## Uncertainty and citations\nUse uncertainty=causality_unproven for evidence-supported incident hypotheses;\nnone_detected for healthy observations; insufficient_data for missing required\nevidence; conflicting_evidence for unresolved conflicts. Correlation does not\nprove causation. Cite this runbook and current incident_changes evidence ids.",
+                  "score": 0.015625,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "1b30ebcf4be8f017698d",
+                  "source": "creator-upload/runbook.md",
+                  "text": "## Diagnostic evidence rules\nThe serving dependency for video upload is object-storage. Obtain incident_changes:\nthe runbook contains policies, not the service's current change history.\nAn active release before the metric deterioration, stable demand and a healthy\ndependency support likely_cause=release_regression and recommendation=rollback_review.\nAn active dependency failure before deterioration takes priority over a stale,\naborted or later unrelated release: dependency_outage / dependency_escalation.\nAn active traffic surge with a higher recent/baseline request ratio and healthy\ndependency supports capacity_pressure / capacity_review. Error rates alone do\nnot distinguish these causes. Cite the relevant current change evidence id.\nConflicting health probes or two unresolved competing change explanations require\nconflicting_evidence / verify_changes. A current incident without sufficient\ncausal evidence requires insufficient_evidence / collect_evidence.\nA healthy service requires non",
+                  "score": 0.015384615384615385,
+                  "trust": "untrusted_evidence"
+                }
+              ]
+            },
+            "seconds": 0.0018027000041911379
+          },
+          {
+            "kind": "tool",
+            "name": "incident_changes",
+            "arguments": {
+              "service": "creator-upload"
+            },
+            "output": {
+              "service": "creator-upload",
+              "available": true,
+              "changes": [
+                {
+                  "kind": "dependency",
+                  "minute": 47,
+                  "summary": "object-storage probes agree: normal latency and no upstream failures.",
+                  "status": "healthy",
+                  "evidence_id": "chg-329f01d2c44b3eda009c"
+                },
+                {
+                  "kind": "release",
+                  "minute": 44,
+                  "summary": "A new request-path build reached all replicas before errors increased; demand is unchanged.",
+                  "status": "active",
+                  "evidence_id": "chg-4c5889ebdca97072ccff"
+                },
+                {
+                  "kind": "release",
+                  "minute": 10,
+                  "summary": "Previous deployment is outside the incident window.",
+                  "status": "stale",
+                  "evidence_id": "chg-fad455dd61d05a54c8b4"
+                }
+              ],
+              "evidence": [
+                {
+                  "id": "chg-329f01d2c44b3eda009c",
+                  "source": "changes/creator-upload",
+                  "text": "dependency at minute 47 (healthy): object-storage probes agree: normal latency and no upstream failures.",
+                  "kind": "dependency",
+                  "status": "healthy",
+                  "minute": 47
+                },
+                {
+                  "id": "chg-4c5889ebdca97072ccff",
+                  "source": "changes/creator-upload",
+                  "text": "release at minute 44 (active): A new request-path build reached all replicas before errors increased; demand is unchanged.",
+                  "kind": "release",
+                  "status": "active",
+                  "minute": 44
+                },
+                {
+                  "id": "chg-fad455dd61d05a54c8b4",
+                  "source": "changes/creator-upload",
+                  "text": "release at minute 10 (stale): Previous deployment is outside the incident window.",
+                  "kind": "release",
+                  "status": "stale",
+                  "minute": 10
+                }
+              ],
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0031795999966561794
+          }
+        ],
+        "tokens": 813,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "wall_seconds": 6.405091399996309
+    }
+  },
+  {
+    "states": [
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=creator-upload. Actions=\nNext action:",
+        "action": "A",
+        "input_tokens": 84,
+        "probabilities": [
+          0.9984174966812134,
+          9.204687376040965e-05,
+          0.00013281195424497128,
+          0.00036279886262491345,
+          8.856604836182669e-05,
+          0.0003074491396546364,
+          0.00011287707457086071,
+          6.46587141091004e-05,
+          0.00042141429730691016
+        ],
+        "context": {
+          "input_tokens": 84,
+          "original_tokens": 84,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=creator-upload. Actions=A\nMetrics={\"samples\":30,\"error_rate\":0.045476536042573776,\"recent_error_rate\":0.08972475266921344,\"baseline_error_rate\":0.002294235732721537,\"recent_max_p95_ms\":391.87,\"baseline_requests\":10461,\"recent_requests\":10209}\nNext action:",
+        "action": "B",
+        "input_tokens": 209,
+        "probabilities": [
+          0.0001151397664216347,
+          0.9980723857879639,
+          0.0014566758181899786,
+          0.0001141583634307608,
+          0.0001281826407648623,
+          4.6201628720154986e-05,
+          1.6661051631672308e-05,
+          7.105278200469911e-06,
+          4.352983887656592e-05
+        ],
+        "context": {
+          "input_tokens": 209,
+          "original_tokens": 209,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=creator-upload. Actions=AB\nMetrics={\"samples\":30,\"error_rate\":0.045476536042573776,\"recent_error_rate\":0.08972475266921344,\"baseline_error_rate\":0.002294235732721537,\"recent_max_p95_ms\":391.87,\"baseline_requests\":10461,\"recent_requests\":10209}\nPolicy={\"found\":true,\"error_limit\":0.019,\"latency_limit\":263}\nNext action:",
+        "action": "C",
+        "input_tokens": 235,
+        "probabilities": [
+          7.525520777562633e-05,
+          3.902617754647508e-05,
+          0.9992960691452026,
+          0.0001679648703429848,
+          3.734993515536189e-05,
+          0.0002333941520191729,
+          2.3073300326359458e-05,
+          5.0189137255074456e-05,
+          7.77045133872889e-05
+        ],
+        "context": {
+          "input_tokens": 235,
+          "original_tokens": 235,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=creator-upload. Actions=ABC\nMetrics={\"samples\":30,\"error_rate\":0.045476536042573776,\"recent_error_rate\":0.08972475266921344,\"baseline_error_rate\":0.002294235732721537,\"recent_max_p95_ms\":391.87,\"baseline_requests\":10461,\"recent_requests\":10209}\nPolicy={\"found\":true,\"error_limit\":0.019,\"latency_limit\":263}\nChanges=[{\"kind\":\"dependency\",\"status\":\"healthy\",\"minute\":47},{\"kind\":\"release\",\"status\":\"active\",\"minute\":44},{\"kind\":\"release\",\"status\":\"stale\",\"minute\":10}]\nNext action:",
+        "action": "H",
+        "input_tokens": 281,
+        "probabilities": [
+          0.0027327220886945724,
+          0.0004985701525583863,
+          0.00443717697635293,
+          0.18706218898296356,
+          0.15558040142059326,
+          0.2184372991323471,
+          0.05789027735590935,
+          0.09259013086557388,
+          0.28077128529548645
+        ],
+        "context": {
+          "input_tokens": 281,
+          "original_tokens": 281,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      }
+    ],
+    "episode": {
+      "task_id": "creator-upload",
+      "split": "dev",
+      "actions": [
+        "A",
+        "B",
+        "C",
+        "H"
+      ],
+      "reward": 0.3,
+      "score": {
+        "success": false,
+        "decision_correct": false,
+        "checks": {
+          "completed": true,
+          "structured_answer": true,
+          "service_answer": true,
+          "metrics_observed": true,
+          "current_metrics": true,
+          "metric_status_consistency": true,
+          "numeric_answer": true,
+          "status_answer": false,
+          "cause_answer": false,
+          "recommendation_answer": false,
+          "uncertainty_answer": false,
+          "citation_ids": true,
+          "runbook_evidence": true,
+          "current_change_evidence": true,
+          "required_tools": true,
+          "allowed_tools": true,
+          "no_tool_errors": true,
+          "service_scoped_calls": true
+        },
+        "failure": "status_answer",
+        "answer_parse_error": null,
+        "parsed_answer": {
+          "service": "creator-upload",
+          "error_rate": 0.045476536042573776,
+          "status": "insufficient_data",
+          "likely_cause": "insufficient_evidence",
+          "recommendation": "collect_evidence",
+          "uncertainty": "insufficient_data",
+          "citations": [
+            "12ae16d128802f626a25",
+            "e98ef5581958a3a0889f",
+            "b27bc734cc5c57382656",
+            "0158844fc279de87ec30",
+            "1b30ebcf4be8f017698d",
+            "chg-329f01d2c44b3eda009c",
+            "chg-4c5889ebdca97072ccff",
+            "chg-fad455dd61d05a54c8b4"
+          ]
+        },
+        "tool_execution_accuracy": 1.0,
+        "citation_precision": 1.0,
+        "tool_calls": 3,
+        "latency_seconds": 0.00901039999735076,
+        "known_tokens": 813,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "trace": {
+        "status": "completed",
+        "answer": "{\"service\": \"creator-upload\", \"error_rate\": 0.045476536042573776, \"status\": \"insufficient_data\", \"likely_cause\": \"insufficient_evidence\", \"recommendation\": \"collect_evidence\", \"uncertainty\": \"insufficient_data\", \"citations\": [\"12ae16d128802f626a25\", \"e98ef5581958a3a0889f\", \"b27bc734cc5c57382656\", \"0158844fc279de87ec30\", \"1b30ebcf4be8f017698d\", \"chg-329f01d2c44b3eda009c\", \"chg-4c5889ebdca97072ccff\", \"chg-fad455dd61d05a54c8b4\"]}",
+        "events": [
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "creator-upload",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "creator-upload",
+              "samples": 30,
+              "error_rate": 0.045476536042573776,
+              "max_p95_ms": 391.87,
+              "requests": 20670,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.002294235732721537,
+              "baseline_max_p95_ms": 152.54,
+              "baseline_requests": 10461,
+              "recent_error_rate": 0.08972475266921344,
+              "recent_max_p95_ms": 391.87,
+              "recent_requests": 10209,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0030281999934231862
+          },
+          {
+            "kind": "tool",
+            "name": "knowledge_search",
+            "arguments": {
+              "service": "creator-upload",
+              "query": "incident policy observation window status diagnostic evidence uncertainty creator-upload",
+              "limit": 5
+            },
+            "output": {
+              "service": "creator-upload",
+              "source": null,
+              "evidence": [
+                {
+                  "id": "12ae16d128802f626a25",
+                  "source": "creator-upload/runbook.md",
+                  "text": "# creator-upload: video upload incident policy",
+                  "score": 0.01639344262295082,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "e98ef5581958a3a0889f",
+                  "source": "creator-upload/runbook.md",
+                  "text": "Use the exact service filter when retrieving this runbook. Evidence from another\nservice has different limits and cannot establish the status of creator-upload.",
+                  "score": 0.016129032258064516,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "b27bc734cc5c57382656",
+                  "source": "creator-upload/runbook.md",
+                  "text": "## Observation window and status\nRequest service_metrics for the latest 30 minutes. Its recent fields summarize\nthe newest 15 samples, and baseline fields summarize the earlier 15 samples.\nThe final error_rate must be the complete 30-minute error_rate, as a decimal.\nAn incident exists if recent_error_rate >= 0.0190 or\nrecent_max_p95_ms > 263 milliseconds. Both conditions below those\nlimits imply healthy, provided current metric samples and this policy exist.\nMissing metrics or a missing runbook imply insufficient_data: do not infer\nhealthy from a null error_rate or borrow a different service's thresholds.",
+                  "score": 0.015873015873015872,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "0158844fc279de87ec30",
+                  "source": "creator-upload/runbook.md",
+                  "text": "## Uncertainty and citations\nUse uncertainty=causality_unproven for evidence-supported incident hypotheses;\nnone_detected for healthy observations; insufficient_data for missing required\nevidence; conflicting_evidence for unresolved conflicts. Correlation does not\nprove causation. Cite this runbook and current incident_changes evidence ids.",
+                  "score": 0.015625,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "1b30ebcf4be8f017698d",
+                  "source": "creator-upload/runbook.md",
+                  "text": "## Diagnostic evidence rules\nThe serving dependency for video upload is object-storage. Obtain incident_changes:\nthe runbook contains policies, not the service's current change history.\nAn active release before the metric deterioration, stable demand and a healthy\ndependency support likely_cause=release_regression and recommendation=rollback_review.\nAn active dependency failure before deterioration takes priority over a stale,\naborted or later unrelated release: dependency_outage / dependency_escalation.\nAn active traffic surge with a higher recent/baseline request ratio and healthy\ndependency supports capacity_pressure / capacity_review. Error rates alone do\nnot distinguish these causes. Cite the relevant current change evidence id.\nConflicting health probes or two unresolved competing change explanations require\nconflicting_evidence / verify_changes. A current incident without sufficient\ncausal evidence requires insufficient_evidence / collect_evidence.\nA healthy service requires non",
+                  "score": 0.015384615384615385,
+                  "trust": "untrusted_evidence"
+                }
+              ]
+            },
+            "seconds": 0.002773400003206916
+          },
+          {
+            "kind": "tool",
+            "name": "incident_changes",
+            "arguments": {
+              "service": "creator-upload"
+            },
+            "output": {
+              "service": "creator-upload",
+              "available": true,
+              "changes": [
+                {
+                  "kind": "dependency",
+                  "minute": 47,
+                  "summary": "object-storage probes agree: normal latency and no upstream failures.",
+                  "status": "healthy",
+                  "evidence_id": "chg-329f01d2c44b3eda009c"
+                },
+                {
+                  "kind": "release",
+                  "minute": 44,
+                  "summary": "A new request-path build reached all replicas before errors increased; demand is unchanged.",
+                  "status": "active",
+                  "evidence_id": "chg-4c5889ebdca97072ccff"
+                },
+                {
+                  "kind": "release",
+                  "minute": 10,
+                  "summary": "Previous deployment is outside the incident window.",
+                  "status": "stale",
+                  "evidence_id": "chg-fad455dd61d05a54c8b4"
+                }
+              ],
+              "evidence": [
+                {
+                  "id": "chg-329f01d2c44b3eda009c",
+                  "source": "changes/creator-upload",
+                  "text": "dependency at minute 47 (healthy): object-storage probes agree: normal latency and no upstream failures.",
+                  "kind": "dependency",
+                  "status": "healthy",
+                  "minute": 47
+                },
+                {
+                  "id": "chg-4c5889ebdca97072ccff",
+                  "source": "changes/creator-upload",
+                  "text": "release at minute 44 (active): A new request-path build reached all replicas before errors increased; demand is unchanged.",
+                  "kind": "release",
+                  "status": "active",
+                  "minute": 44
+                },
+                {
+                  "id": "chg-fad455dd61d05a54c8b4",
+                  "source": "changes/creator-upload",
+                  "text": "release at minute 10 (stale): Previous deployment is outside the incident window.",
+                  "kind": "release",
+                  "status": "stale",
+                  "minute": 10
+                }
+              ],
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0032088000007206574
+          }
+        ],
+        "tokens": 813,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "wall_seconds": 4.8245836999994935
+    }
+  }
+]

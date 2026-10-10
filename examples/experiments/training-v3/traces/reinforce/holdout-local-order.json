@@ -1,0 +1,293 @@
+{
+  "states": [
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=holdout-local-order. Actions=\nNext action:",
+      "action": "A",
+      "input_tokens": 87,
+      "probabilities": [
+        0.9974608421325684,
+        0.00021510107035283,
+        0.0002045616420218721,
+        0.0006661001243628561,
+        0.0001650898775551468,
+        0.0003637126355897635,
+        0.00016376077837776393,
+        0.00014600675785914063,
+        0.0006148475222289562
+      ],
+      "context": {
+        "input_tokens": 87,
+        "original_tokens": 87,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=holdout-local-order. Actions=A\nMetrics={\"samples\":30,\"error_rate\":0.049165749131870926,\"recent_error_rate\":0.07316969774047226,\"baseline_error_rate\":0.025212572443842802,\"recent_max_p95_ms\":557.26,\"baseline_requests\":23639,\"recent_requests\":23589}\nNext action:",
+      "action": "B",
+      "input_tokens": 212,
+      "probabilities": [
+        6.313812627922744e-05,
+        0.9985299110412598,
+        0.0011053693015128374,
+        0.00011265060311416164,
+        0.00010068278788821772,
+        3.162352732033469e-05,
+        1.4791431567573454e-05,
+        6.681520062556956e-06,
+        3.524369094520807e-05
+      ],
+      "context": {
+        "input_tokens": 212,
+        "original_tokens": 212,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=holdout-local-order. Actions=AB\nMetrics={\"samples\":30,\"error_rate\":0.049165749131870926,\"recent_error_rate\":0.07316969774047226,\"baseline_error_rate\":0.025212572443842802,\"recent_max_p95_ms\":557.26,\"baseline_requests\":23639,\"recent_requests\":23589}\nPolicy={\"found\":true,\"error_limit\":0.0155,\"latency_limit\":374}\nNext action:",
+      "action": "C",
+      "input_tokens": 239,
+      "probabilities": [
+        7.504015957238153e-05,
+        5.87014110351447e-05,
+        0.9993107318878174,
+        0.00020320327894296497,
+        4.356057979748584e-05,
+        0.00017921821563504636,
+        1.902091571537312e-05,
+        3.9580059819854796e-05,
+        7.083132368279621e-05
+      ],
+      "context": {
+        "input_tokens": 239,
+        "original_tokens": 239,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=holdout-local-order. Actions=ABC\nMetrics={\"samples\":30,\"error_rate\":0.049165749131870926,\"recent_error_rate\":0.07316969774047226,\"baseline_error_rate\":0.025212572443842802,\"recent_max_p95_ms\":557.26,\"baseline_requests\":23639,\"recent_requests\":23589}\nPolicy={\"found\":true,\"error_limit\":0.0155,\"latency_limit\":374}\nChanges=[{\"kind\":\"release\",\"status\":\"stale\",\"minute\":54},{\"kind\":\"dependency\",\"status\":\"active\",\"minute\":39}]\nNext action:",
+      "action": "E",
+      "input_tokens": 271,
+      "probabilities": [
+        0.0008670423994772136,
+        0.00021549772645812482,
+        0.0010726923355832696,
+        0.07559226453304291,
+        0.4439665675163269,
+        0.13583412766456604,
+        0.2644157409667969,
+        0.07092640548944473,
+        0.007109703030437231
+      ],
+      "context": {
+        "input_tokens": 271,
+        "original_tokens": 271,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    }
+  ],
+  "episode": {
+    "task_id": "holdout-local-order",
+    "split": "holdout",
+    "actions": [
+      "A",
+      "B",
+      "C",
+      "E"
+    ],
+    "reward": 1.3,
+    "score": {
+      "success": true,
+      "decision_correct": true,
+      "checks": {
+        "completed": true,
+        "structured_answer": true,
+        "service_answer": true,
+        "metrics_observed": true,
+        "current_metrics": true,
+        "metric_status_consistency": true,
+        "numeric_answer": true,
+        "status_answer": true,
+        "cause_answer": true,
+        "recommendation_answer": true,
+        "uncertainty_answer": true,
+        "citation_ids": true,
+        "runbook_evidence": true,
+        "current_change_evidence": true,
+        "required_tools": true,
+        "allowed_tools": true,
+        "no_tool_errors": true,
+        "service_scoped_calls": true
+      },
+      "failure": null,
+      "answer_parse_error": null,
+      "parsed_answer": {
+        "service": "holdout-local-order",
+        "error_rate": 0.049165749131870926,
+        "status": "incident",
+        "likely_cause": "dependency_outage",
+        "recommendation": "dependency_escalation",
+        "uncertainty": "causality_unproven",
+        "citations": [
+          "b7c24572d9f4000f769b",
+          "4cb69378129c4f29d1dd",
+          "ed26ef6fc72239505cd9",
+          "18fb064adb3f5be38999",
+          "b3346801efe59dbbd985",
+          "chg-96061d4bb617a50ae153",
+          "chg-d9388daac144675b3f82"
+        ]
+      },
+      "tool_execution_accuracy": 1.0,
+      "citation_precision": 1.0,
+      "tool_calls": 3,
+      "latency_seconds": 0.005659399990690872,
+      "known_tokens": 813,
+      "unknown_usage": 0,
+      "fixture": false
+    },
+    "trace": {
+      "status": "completed",
+      "answer": "{\"service\": \"holdout-local-order\", \"error_rate\": 0.049165749131870926, \"status\": \"incident\", \"likely_cause\": \"dependency_outage\", \"recommendation\": \"dependency_escalation\", \"uncertainty\": \"causality_unproven\", \"citations\": [\"b7c24572d9f4000f769b\", \"4cb69378129c4f29d1dd\", \"ed26ef6fc72239505cd9\", \"18fb064adb3f5be38999\", \"b3346801efe59dbbd985\", \"chg-96061d4bb617a50ae153\", \"chg-d9388daac144675b3f82\"]}",
+      "events": [
+        {
+          "kind": "tool",
+          "name": "service_metrics",
+          "arguments": {
+            "service": "holdout-local-order",
+            "window_minutes": 30
+          },
+          "output": {
+            "service": "holdout-local-order",
+            "samples": 30,
+            "error_rate": 0.049165749131870926,
+            "max_p95_ms": 557.26,
+            "requests": 47228,
+            "window_minutes": 30,
+            "as_of_minute": 59,
+            "status": "observed",
+            "baseline_error_rate": 0.025212572443842802,
+            "baseline_max_p95_ms": 557.26,
+            "baseline_requests": 23639,
+            "recent_error_rate": 0.07316969774047226,
+            "recent_max_p95_ms": 557.26,
+            "recent_requests": 23589,
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.0024744999973336235
+        },
+        {
+          "kind": "tool",
+          "name": "knowledge_search",
+          "arguments": {
+            "service": "holdout-local-order",
+            "query": "incident policy observation window status diagnostic evidence uncertainty holdout-local-order",
+            "limit": 5
+          },
+          "output": {
+            "service": "holdout-local-order",
+            "source": null,
+            "evidence": [
+              {
+                "id": "b7c24572d9f4000f769b",
+                "source": "holdout-local-order/runbook.md",
+                "text": "# holdout-local-order: local order confirmation incident policy",
+                "score": 0.01639344262295082,
+                "trust": "untrusted_evidence"
+              },
+              {
+                "id": "4cb69378129c4f29d1dd",
+                "source": "holdout-local-order/runbook.md",
+                "text": "Use the exact service filter when retrieving this runbook. Evidence from another\nservice has different limits and cannot establish the status of holdout-local-order.",
+                "score": 0.016129032258064516,
+                "trust": "untrusted_evidence"
+              },
+              {
+                "id": "ed26ef6fc72239505cd9",
+                "source": "holdout-local-order/runbook.md",
+                "text": "## Observation window and status\nRequest service_metrics for the latest 30 minutes. Its recent fields summarize\nthe newest 15 samples, and baseline fields summarize the earlier 15 samples.\nThe final error_rate must be the complete 30-minute error_rate, as a decimal.\nAn incident exists if recent_error_rate >= 0.0155 or\nrecent_max_p95_ms > 374 milliseconds. Both conditions below those\nlimits imply healthy, provided current metric samples and this policy exist.\nMissing metrics or a missing runbook imply insufficient_data: do not infer\nhealthy from a null error_rate or borrow a different service's thresholds.",
+                "score": 0.015873015873015872,
+                "trust": "untrusted_evidence"
+              },
+              {
+                "id": "18fb064adb3f5be38999",
+                "source": "holdout-local-order/runbook.md",
+                "text": "## Uncertainty and citations\nUse uncertainty=causality_unproven for evidence-supported incident hypotheses;\nnone_detected for healthy observations; insufficient_data for missing required\nevidence; conflicting_evidence for unresolved conflicts. Correlation does not\nprove causation. Cite this runbook and current incident_changes evidence ids.",
+                "score": 0.015625,
+                "trust": "untrusted_evidence"
+              },
+              {
+                "id": "b3346801efe59dbbd985",
+                "source": "holdout-local-order/runbook.md",
+                "text": "## Diagnostic evidence rules\nThe serving dependency for local order confirmation is merchant-ledger. Obtain incident_changes:\nthe runbook contains policies, not the service's current change history.\nAn active release before the metric deterioration, stable demand and a healthy\ndependency support likely_cause=release_regression and recommendation=rollback_review.\nAn active dependency failure before deterioration takes priority over a stale,\naborted or later unrelated release: dependency_outage / dependency_escalation.\nAn active traffic surge with a higher recent/baseline request ratio and healthy\ndependency supports capacity_pressure / capacity_review. Error rates alone do\nnot distinguish these causes. Cite the relevant current change evidence id.\nConflicting health probes or two unresolved competing change explanations require\nconflicting_evidence / verify_changes. A current incident without sufficient\ncausal evidence requires insufficient_evidence / collect_evidence.\nA healthy service",
+                "score": 0.015384615384615385,
+                "trust": "untrusted_evidence"
+              }
+            ]
+          },
+          "seconds": 0.001305600002524443
+        },
+        {
+          "kind": "tool",
+          "name": "incident_changes",
+          "arguments": {
+            "service": "holdout-local-order"
+          },
+          "output": {
+            "service": "holdout-local-order",
+            "available": true,
+            "changes": [
+              {
+                "kind": "release",
+                "minute": 54,
+                "summary": "A proposed rollout was aborted before serving traffic; it did not change live replicas.",
+                "status": "stale",
+                "evidence_id": "chg-96061d4bb617a50ae153"
+              },
+              {
+                "kind": "dependency",
+                "minute": 39,
+                "summary": "merchant-ledger connection failures started before the service deterioration; two probes agree.",
+                "status": "active",
+                "evidence_id": "chg-d9388daac144675b3f82"
+              }
+            ],
+            "evidence": [
+              {
+                "id": "chg-96061d4bb617a50ae153",
+                "source": "changes/holdout-local-order",
+                "text": "release at minute 54 (stale): A proposed rollout was aborted before serving traffic; it did not change live replicas.",
+                "kind": "release",
+                "status": "stale",
+                "minute": 54
+              },
+              {
+                "id": "chg-d9388daac144675b3f82",
+                "source": "changes/holdout-local-order",
+                "text": "dependency at minute 39 (active): merchant-ledger connection failures started before the service deterioration; two probes agree.",
+                "kind": "dependency",
+                "status": "active",
+                "minute": 39
+              }
+            ],
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.0018792999908328056
+        }
+      ],
+      "tokens": 813,
+      "unknown_usage": 0,
+      "fixture": false
+    },
+    "wall_seconds": 2.2012276999885216,
+    "decoder": "greedy one-of-nine original LM vocabulary tokens",
+    "stage": "reinforce"
+  }
+}

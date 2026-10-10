@@ -1,0 +1,243 @@
+{
+  "complete": true,
+  "evaluation_only": true,
+  "optimizer_steps": 0,
+  "parameter_hash_unchanged": true,
+  "checkpoint_checks": {
+    "configuration_matches": true,
+    "file_checksums_match": true,
+    "expected_parameter_sha256": "a4fd3641e75d2f4b4188289794431be654ec37e4cd2d13e57ae83fb7c84ac6e2",
+    "files": {
+      "adapter_model.safetensors": {
+        "sha256": "80e0d44a3be4b7ada64024ba8b57c11a3acb09a4159894a50cf0d132f63927b0",
+        "bytes": 937056
+      },
+      "adapter_config.json": {
+        "sha256": "f5796a035ba40ca9fb52c580dc5d1a69a9c72c94d036ff07ae610eec064dfad8",
+        "bytes": 1194
+      }
+    },
+    "weights_metadata_sha256": "e167ffae52767dae805e54bab1e6217119154228934aed4dc16dae5a2ed671fb",
+    "loaded_parameter_sha256": "a4fd3641e75d2f4b4188289794431be654ec37e4cd2d13e57ae83fb7c84ac6e2",
+    "loaded_parameter_hash_matches": true
+  },
+  "groups": {
+    "dev": {
+      "episodes": 6,
+      "full_contract_successes_with_renderer": 2,
+      "full_contract_success_rate_with_renderer": 0.3333333333333333,
+      "decision_correct": 2,
+      "all_three_tools_observed": 6,
+      "mean_reward": 0.6333333333333333,
+      "wilson95_descriptive": [
+        0.09676933255921683,
+        0.7000116786584712
+      ],
+      "interpretation": "constrained decoder plus mechanical numeric/citation/schema renderer; not free-form Qwen task performance"
+    },
+    "holdout": {
+      "episodes": 8,
+      "full_contract_successes_with_renderer": 3,
+      "full_contract_success_rate_with_renderer": 0.375,
+      "decision_correct": 3,
+      "all_three_tools_observed": 8,
+      "mean_reward": 0.675,
+      "wilson95_descriptive": [
+        0.13684175946152105,
+        0.6942621454161981
+      ],
+      "interpretation": "constrained decoder plus mechanical numeric/citation/schema renderer; not free-form Qwen task performance"
+    }
+  },
+  "reference_comparison": {
+    "reference_sha256": "fd6c530219805da84cf7f7932dd31a60f44f5d751e3027c1de2cf1a47ca78f1f",
+    "reference_stage": "reinforce",
+    "task_order_matches": true,
+    "tasks": [
+      {
+        "task_id": "social-notify",
+        "checks": {
+          "task_present": true,
+          "actions_match": true,
+          "parsed_decision_matches": true,
+          "success_matches": true,
+          "decision_accuracy_matches": true,
+          "all_oracle_checks_match": true,
+          "terminal_status_matches": true
+        },
+        "matches": true
+      },
+      {
+        "task_id": "ads-auction",
+        "checks": {
+          "task_present": true,
+          "actions_match": true,
+          "parsed_decision_matches": true,
+          "success_matches": true,
+          "decision_accuracy_matches": true,
+          "all_oracle_checks_match": true,
+          "terminal_status_matches": true
+        },
+        "matches": true
+      },
+      {
+        "task_id": "commerce-checkout",
+        "checks": {
+          "task_present": true,
+          "actions_match": true,
+          "parsed_decision_matches": true,
+          "success_matches": true,
+          "decision_accuracy_matches": true,
+          "all_oracle_checks_match": true,
+          "terminal_status_matches": true
+        },
+        "matches": true
+      },
+      {
+        "task_id": "live-gifts",
+        "checks": {
+          "task_present": true,
+          "actions_match": true,
+          "parsed_decision_matches": true,
+          "success_matches": true,
+          "decision_accuracy_matches": true,
+          "all_oracle_checks_match": true,
+          "terminal_status_matches": true
+        },
+        "matches": true
+      },
+      {
+        "task_id": "message-presence",
+        "checks": {
+          "task_present": true,
+          "actions_match": true,
+          "parsed_decision_matches": true,
+          "success_matches": true,
+          "decision_accuracy_matches": true,
+          "all_oracle_checks_match": true,
+          "terminal_status_matches": true
+        },
+        "matches": true
+      },
+      {
+        "task_id": "video-playback",
+        "checks": {
+          "task_present": true,
+          "actions_match": true,
+          "parsed_decision_matches": true,
+          "success_matches": true,
+          "decision_accuracy_matches": true,
+          "all_oracle_checks_match": true,
+          "terminal_status_matches": true
+        },
+        "matches": true
+      },
+      {
+        "task_id": "holdout-comment",
+        "checks": {
+          "task_present": true,
+          "actions_match": true,
+          "parsed_decision_matches": true,
+          "success_matches": true,
+          "decision_accuracy_matches": true,
+          "all_oracle_checks_match": true,
+          "terminal_status_matches": true
+        },
+        "matches": true
+      },
+      {
+        "task_id": "holdout-local-order",
+        "checks": {
+          "task_present": true,
+          "actions_match": true,
+          "parsed_decision_matches": true,
+          "success_matches": true,
+          "decision_accuracy_matches": true,
+          "all_oracle_checks_match": true,
+          "terminal_status_matches": true
+        },
+        "matches": true
+      },
+      {
+        "task_id": "holdout-live-caption",
+        "checks": {
+          "task_present": true,
+          "actions_match": true,
+          "parsed_decision_matches": true,
+          "success_matches": true,
+          "decision_accuracy_matches": true,
+          "all_oracle_checks_match": true,
+          "terminal_status_matches": true
+        },
+        "matches": true
+      },
+      {
+        "task_id": "holdout-creator-stats",
+        "checks": {
+          "task_present": true,
+          "actions_match": true,
+          "parsed_decision_matches": true,
+          "success_matches": true,
+          "decision_accuracy_matches": true,
+          "all_oracle_checks_match": true,
+          "terminal_status_matches": true
+        },
+        "matches": true
+      },
+      {
+        "task_id": "holdout-recommend-cache",
+        "checks": {
+          "task_present": true,
+          "actions_match": true,
+          "parsed_decision_matches": true,
+          "success_matches": true,
+          "decision_accuracy_matches": true,
+          "all_oracle_checks_match": true,
+          "terminal_status_matches": true
+        },
+        "matches": true
+      },
+      {
+        "task_id": "holdout-market-tax",
+        "checks": {
+          "task_present": true,
+          "actions_match": true,
+          "parsed_decision_matches": true,
+          "success_matches": true,
+          "decision_accuracy_matches": true,
+          "all_oracle_checks_match": true,
+          "terminal_status_matches": true
+        },
+        "matches": true
+      },
+      {
+        "task_id": "holdout-direct-call",
+        "checks": {
+          "task_present": true,
+          "actions_match": true,
+          "parsed_decision_matches": true,
+          "success_matches": true,
+          "decision_accuracy_matches": true,
+          "all_oracle_checks_match": true,
+          "terminal_status_matches": true
+        },
+        "matches": true
+      },
+      {
+        "task_id": "holdout-content-export",
+        "checks": {
+          "task_present": true,
+          "actions_match": true,
+          "parsed_decision_matches": true,
+          "success_matches": true,
+          "decision_accuracy_matches": true,
+          "all_oracle_checks_match": true,
+          "terminal_status_matches": true
+        },
+        "matches": true
+      }
+    ],
+    "complete_match": true,
+    "comparison": "task order, discrete actions, parsed decisions, success and all oracle checks; timing/probabilities excluded"
+  }
+}

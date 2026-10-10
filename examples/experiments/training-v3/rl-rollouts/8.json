@@ -1,0 +1,1230 @@
+[
+  {
+    "states": [
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=video-transcode. Actions=\nNext action:",
+        "action": "A",
+        "input_tokens": 85,
+        "probabilities": [
+          0.998174786567688,
+          0.00021135530550964177,
+          0.00015303863619919866,
+          0.0004690374480560422,
+          8.720027835806832e-05,
+          0.0002854952763300389,
+          0.0001227101602125913,
+          6.546719669131562e-05,
+          0.00043103157076984644
+        ],
+        "context": {
+          "input_tokens": 85,
+          "original_tokens": 85,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=video-transcode. Actions=A\nMetrics={\"samples\":30,\"error_rate\":0.08228274792691971,\"recent_error_rate\":0.10853338712931208,\"baseline_error_rate\":0.0027175759222773286,\"recent_max_p95_ms\":1483.92,\"baseline_requests\":14719,\"recent_requests\":44613}\nNext action:",
+        "action": "B",
+        "input_tokens": 211,
+        "probabilities": [
+          9.342392149847001e-05,
+          0.998524010181427,
+          0.0010705310851335526,
+          0.0001108195137931034,
+          0.00012449796486180276,
+          3.02361004287377e-05,
+          1.0583708899503108e-05,
+          3.540496436471585e-06,
+          3.2230331271421164e-05
+        ],
+        "context": {
+          "input_tokens": 211,
+          "original_tokens": 211,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=video-transcode. Actions=AB\nMetrics={\"samples\":30,\"error_rate\":0.08228274792691971,\"recent_error_rate\":0.10853338712931208,\"baseline_error_rate\":0.0027175759222773286,\"recent_max_p95_ms\":1483.92,\"baseline_requests\":14719,\"recent_requests\":44613}\nPolicy={\"found\":true,\"error_limit\":0.023,\"latency_limit\":687}\nNext action:",
+        "action": "C",
+        "input_tokens": 237,
+        "probabilities": [
+          9.504695481155068e-05,
+          6.348784518195316e-05,
+          0.9991967082023621,
+          0.0002403490070719272,
+          3.7761012208648026e-05,
+          0.00023225281620398164,
+          2.800893344101496e-05,
+          3.832173388218507e-05,
+          6.805304292356595e-05
+        ],
+        "context": {
+          "input_tokens": 237,
+          "original_tokens": 237,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=video-transcode. Actions=ABC\nMetrics={\"samples\":30,\"error_rate\":0.08228274792691971,\"recent_error_rate\":0.10853338712931208,\"baseline_error_rate\":0.0027175759222773286,\"recent_max_p95_ms\":1483.92,\"baseline_requests\":14719,\"recent_requests\":44613}\nPolicy={\"found\":true,\"error_limit\":0.023,\"latency_limit\":687}\nChanges=[{\"kind\":\"dependency\",\"status\":\"healthy\",\"minute\":47},{\"kind\":\"traffic\",\"status\":\"active\",\"minute\":44},{\"kind\":\"release\",\"status\":\"stale\",\"minute\":8}]\nNext action:",
+        "action": "E",
+        "input_tokens": 282,
+        "probabilities": [
+          0.0012729762820526958,
+          0.0002677204320207238,
+          0.0060216221027076244,
+          0.269409716129303,
+          0.2999354898929596,
+          0.23846261203289032,
+          0.03502802550792694,
+          0.02033420093357563,
+          0.1292676329612732
+        ],
+        "context": {
+          "input_tokens": 282,
+          "original_tokens": 282,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      }
+    ],
+    "episode": {
+      "task_id": "video-transcode",
+      "split": "dev",
+      "actions": [
+        "A",
+        "B",
+        "C",
+        "E"
+      ],
+      "reward": 0.3,
+      "score": {
+        "success": false,
+        "decision_correct": false,
+        "checks": {
+          "completed": true,
+          "structured_answer": true,
+          "service_answer": true,
+          "metrics_observed": true,
+          "current_metrics": true,
+          "metric_status_consistency": true,
+          "numeric_answer": true,
+          "status_answer": true,
+          "cause_answer": false,
+          "recommendation_answer": false,
+          "uncertainty_answer": true,
+          "citation_ids": true,
+          "runbook_evidence": true,
+          "current_change_evidence": true,
+          "required_tools": true,
+          "allowed_tools": true,
+          "no_tool_errors": true,
+          "service_scoped_calls": true
+        },
+        "failure": "cause_answer",
+        "answer_parse_error": null,
+        "parsed_answer": {
+          "service": "video-transcode",
+          "error_rate": 0.08228274792691971,
+          "status": "incident",
+          "likely_cause": "dependency_outage",
+          "recommendation": "dependency_escalation",
+          "uncertainty": "causality_unproven",
+          "citations": [
+            "02eacd4f74c69c56efd5",
+            "a5251290b0a4939ba617",
+            "200cb2dd4027e199ffd4",
+            "01f44308d2fb9b11587c",
+            "3ef7f2cc98c43a8c6207",
+            "chg-1183bdbb98adabb5aa05",
+            "chg-4f26d6f10152bd5d89d1",
+            "chg-0e54bfca901f6e157e70"
+          ]
+        },
+        "tool_execution_accuracy": 1.0,
+        "citation_precision": 1.0,
+        "tool_calls": 3,
+        "latency_seconds": 0.006349599992972799,
+        "known_tokens": 819,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "trace": {
+        "status": "completed",
+        "answer": "{\"service\": \"video-transcode\", \"error_rate\": 0.08228274792691971, \"status\": \"incident\", \"likely_cause\": \"dependency_outage\", \"recommendation\": \"dependency_escalation\", \"uncertainty\": \"causality_unproven\", \"citations\": [\"02eacd4f74c69c56efd5\", \"a5251290b0a4939ba617\", \"200cb2dd4027e199ffd4\", \"01f44308d2fb9b11587c\", \"3ef7f2cc98c43a8c6207\", \"chg-1183bdbb98adabb5aa05\", \"chg-4f26d6f10152bd5d89d1\", \"chg-0e54bfca901f6e157e70\"]}",
+        "events": [
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "video-transcode",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "video-transcode",
+              "samples": 30,
+              "error_rate": 0.08228274792691971,
+              "max_p95_ms": 1483.92,
+              "requests": 59332,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.0027175759222773286,
+              "baseline_max_p95_ms": 398.46,
+              "baseline_requests": 14719,
+              "recent_error_rate": 0.10853338712931208,
+              "recent_max_p95_ms": 1483.92,
+              "recent_requests": 44613,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0026643000019248575
+          },
+          {
+            "kind": "tool",
+            "name": "knowledge_search",
+            "arguments": {
+              "service": "video-transcode",
+              "query": "incident policy observation window status diagnostic evidence uncertainty video-transcode",
+              "limit": 5
+            },
+            "output": {
+              "service": "video-transcode",
+              "source": null,
+              "evidence": [
+                {
+                  "id": "02eacd4f74c69c56efd5",
+                  "source": "video-transcode/runbook.md",
+                  "text": "# video-transcode: transcoding jobs incident policy",
+                  "score": 0.01639344262295082,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "a5251290b0a4939ba617",
+                  "source": "video-transcode/runbook.md",
+                  "text": "Use the exact service filter when retrieving this runbook. Evidence from another\nservice has different limits and cannot establish the status of video-transcode.",
+                  "score": 0.016129032258064516,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "200cb2dd4027e199ffd4",
+                  "source": "video-transcode/runbook.md",
+                  "text": "## Observation window and status\nRequest service_metrics for the latest 30 minutes. Its recent fields summarize\nthe newest 15 samples, and baseline fields summarize the earlier 15 samples.\nThe final error_rate must be the complete 30-minute error_rate, as a decimal.\nAn incident exists if recent_error_rate >= 0.0230 or\nrecent_max_p95_ms > 687 milliseconds. Both conditions below those\nlimits imply healthy, provided current metric samples and this policy exist.\nMissing metrics or a missing runbook imply insufficient_data: do not infer\nhealthy from a null error_rate or borrow a different service's thresholds.",
+                  "score": 0.015873015873015872,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "01f44308d2fb9b11587c",
+                  "source": "video-transcode/runbook.md",
+                  "text": "## Uncertainty and citations\nUse uncertainty=causality_unproven for evidence-supported incident hypotheses;\nnone_detected for healthy observations; insufficient_data for missing required\nevidence; conflicting_evidence for unresolved conflicts. Correlation does not\nprove causation. Cite this runbook and current incident_changes evidence ids.",
+                  "score": 0.015625,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "3ef7f2cc98c43a8c6207",
+                  "source": "video-transcode/runbook.md",
+                  "text": "## Diagnostic evidence rules\nThe serving dependency for transcoding jobs is codec-cache. Obtain incident_changes:\nthe runbook contains policies, not the service's current change history.\nAn active release before the metric deterioration, stable demand and a healthy\ndependency support likely_cause=release_regression and recommendation=rollback_review.\nAn active dependency failure before deterioration takes priority over a stale,\naborted or later unrelated release: dependency_outage / dependency_escalation.\nAn active traffic surge with a higher recent/baseline request ratio and healthy\ndependency supports capacity_pressure / capacity_review. Error rates alone do\nnot distinguish these causes. Cite the relevant current change evidence id.\nConflicting health probes or two unresolved competing change explanations require\nconflicting_evidence / verify_changes. A current incident without sufficient\ncausal evidence requires insufficient_evidence / collect_evidence.\nA healthy service requires no",
+                  "score": 0.015384615384615385,
+                  "trust": "untrusted_evidence"
+                }
+              ]
+            },
+            "seconds": 0.0017851999873528257
+          },
+          {
+            "kind": "tool",
+            "name": "incident_changes",
+            "arguments": {
+              "service": "video-transcode"
+            },
+            "output": {
+              "service": "video-transcode",
+              "available": true,
+              "changes": [
+                {
+                  "kind": "dependency",
+                  "minute": 47,
+                  "summary": "codec-cache remains healthy across both probes.",
+                  "status": "healthy",
+                  "evidence_id": "chg-1183bdbb98adabb5aa05"
+                },
+                {
+                  "kind": "traffic",
+                  "minute": 44,
+                  "summary": "Demand increased about threefold; queue depth and worker saturation rose together, without a serving release.",
+                  "status": "active",
+                  "evidence_id": "chg-4f26d6f10152bd5d89d1"
+                },
+                {
+                  "kind": "release",
+                  "minute": 8,
+                  "summary": "The last serving release predates the current window.",
+                  "status": "stale",
+                  "evidence_id": "chg-0e54bfca901f6e157e70"
+                }
+              ],
+              "evidence": [
+                {
+                  "id": "chg-1183bdbb98adabb5aa05",
+                  "source": "changes/video-transcode",
+                  "text": "dependency at minute 47 (healthy): codec-cache remains healthy across both probes.",
+                  "kind": "dependency",
+                  "status": "healthy",
+                  "minute": 47
+                },
+                {
+                  "id": "chg-4f26d6f10152bd5d89d1",
+                  "source": "changes/video-transcode",
+                  "text": "traffic at minute 44 (active): Demand increased about threefold; queue depth and worker saturation rose together, without a serving release.",
+                  "kind": "traffic",
+                  "status": "active",
+                  "minute": 44
+                },
+                {
+                  "id": "chg-0e54bfca901f6e157e70",
+                  "source": "changes/video-transcode",
+                  "text": "release at minute 8 (stale): The last serving release predates the current window.",
+                  "kind": "release",
+                  "status": "stale",
+                  "minute": 8
+                }
+              ],
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0019001000036951154
+          }
+        ],
+        "tokens": 819,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "wall_seconds": 2.396814899999299
+    }
+  },
+  {
+    "states": [
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=video-transcode. Actions=\nNext action:",
+        "action": "A",
+        "input_tokens": 85,
+        "probabilities": [
+          0.998174786567688,
+          0.00021135530550964177,
+          0.00015303863619919866,
+          0.0004690374480560422,
+          8.720027835806832e-05,
+          0.0002854952763300389,
+          0.0001227101602125913,
+          6.546719669131562e-05,
+          0.00043103157076984644
+        ],
+        "context": {
+          "input_tokens": 85,
+          "original_tokens": 85,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=video-transcode. Actions=A\nMetrics={\"samples\":30,\"error_rate\":0.08228274792691971,\"recent_error_rate\":0.10853338712931208,\"baseline_error_rate\":0.0027175759222773286,\"recent_max_p95_ms\":1483.92,\"baseline_requests\":14719,\"recent_requests\":44613}\nNext action:",
+        "action": "B",
+        "input_tokens": 211,
+        "probabilities": [
+          9.342392149847001e-05,
+          0.998524010181427,
+          0.0010705310851335526,
+          0.0001108195137931034,
+          0.00012449796486180276,
+          3.02361004287377e-05,
+          1.0583708899503108e-05,
+          3.540496436471585e-06,
+          3.2230331271421164e-05
+        ],
+        "context": {
+          "input_tokens": 211,
+          "original_tokens": 211,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=video-transcode. Actions=AB\nMetrics={\"samples\":30,\"error_rate\":0.08228274792691971,\"recent_error_rate\":0.10853338712931208,\"baseline_error_rate\":0.0027175759222773286,\"recent_max_p95_ms\":1483.92,\"baseline_requests\":14719,\"recent_requests\":44613}\nPolicy={\"found\":true,\"error_limit\":0.023,\"latency_limit\":687}\nNext action:",
+        "action": "C",
+        "input_tokens": 237,
+        "probabilities": [
+          9.504695481155068e-05,
+          6.348784518195316e-05,
+          0.9991967082023621,
+          0.0002403490070719272,
+          3.7761012208648026e-05,
+          0.00023225281620398164,
+          2.800893344101496e-05,
+          3.832173388218507e-05,
+          6.805304292356595e-05
+        ],
+        "context": {
+          "input_tokens": 237,
+          "original_tokens": 237,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=video-transcode. Actions=ABC\nMetrics={\"samples\":30,\"error_rate\":0.08228274792691971,\"recent_error_rate\":0.10853338712931208,\"baseline_error_rate\":0.0027175759222773286,\"recent_max_p95_ms\":1483.92,\"baseline_requests\":14719,\"recent_requests\":44613}\nPolicy={\"found\":true,\"error_limit\":0.023,\"latency_limit\":687}\nChanges=[{\"kind\":\"dependency\",\"status\":\"healthy\",\"minute\":47},{\"kind\":\"traffic\",\"status\":\"active\",\"minute\":44},{\"kind\":\"release\",\"status\":\"stale\",\"minute\":8}]\nNext action:",
+        "action": "H",
+        "input_tokens": 282,
+        "probabilities": [
+          0.0012729762820526958,
+          0.0002677204320207238,
+          0.0060216221027076244,
+          0.269409716129303,
+          0.2999354898929596,
+          0.23846261203289032,
+          0.03502802550792694,
+          0.02033420093357563,
+          0.1292676329612732
+        ],
+        "context": {
+          "input_tokens": 282,
+          "original_tokens": 282,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      }
+    ],
+    "episode": {
+      "task_id": "video-transcode",
+      "split": "dev",
+      "actions": [
+        "A",
+        "B",
+        "C",
+        "H"
+      ],
+      "reward": 0.3,
+      "score": {
+        "success": false,
+        "decision_correct": false,
+        "checks": {
+          "completed": true,
+          "structured_answer": true,
+          "service_answer": true,
+          "metrics_observed": true,
+          "current_metrics": true,
+          "metric_status_consistency": true,
+          "numeric_answer": true,
+          "status_answer": false,
+          "cause_answer": false,
+          "recommendation_answer": false,
+          "uncertainty_answer": false,
+          "citation_ids": true,
+          "runbook_evidence": true,
+          "current_change_evidence": true,
+          "required_tools": true,
+          "allowed_tools": true,
+          "no_tool_errors": true,
+          "service_scoped_calls": true
+        },
+        "failure": "status_answer",
+        "answer_parse_error": null,
+        "parsed_answer": {
+          "service": "video-transcode",
+          "error_rate": 0.08228274792691971,
+          "status": "insufficient_data",
+          "likely_cause": "insufficient_evidence",
+          "recommendation": "collect_evidence",
+          "uncertainty": "insufficient_data",
+          "citations": [
+            "02eacd4f74c69c56efd5",
+            "a5251290b0a4939ba617",
+            "200cb2dd4027e199ffd4",
+            "01f44308d2fb9b11587c",
+            "3ef7f2cc98c43a8c6207",
+            "chg-1183bdbb98adabb5aa05",
+            "chg-4f26d6f10152bd5d89d1",
+            "chg-0e54bfca901f6e157e70"
+          ]
+        },
+        "tool_execution_accuracy": 1.0,
+        "citation_precision": 1.0,
+        "tool_calls": 3,
+        "latency_seconds": 0.005275300005450845,
+        "known_tokens": 819,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "trace": {
+        "status": "completed",
+        "answer": "{\"service\": \"video-transcode\", \"error_rate\": 0.08228274792691971, \"status\": \"insufficient_data\", \"likely_cause\": \"insufficient_evidence\", \"recommendation\": \"collect_evidence\", \"uncertainty\": \"insufficient_data\", \"citations\": [\"02eacd4f74c69c56efd5\", \"a5251290b0a4939ba617\", \"200cb2dd4027e199ffd4\", \"01f44308d2fb9b11587c\", \"3ef7f2cc98c43a8c6207\", \"chg-1183bdbb98adabb5aa05\", \"chg-4f26d6f10152bd5d89d1\", \"chg-0e54bfca901f6e157e70\"]}",
+        "events": [
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "video-transcode",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "video-transcode",
+              "samples": 30,
+              "error_rate": 0.08228274792691971,
+              "max_p95_ms": 1483.92,
+              "requests": 59332,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.0027175759222773286,
+              "baseline_max_p95_ms": 398.46,
+              "baseline_requests": 14719,
+              "recent_error_rate": 0.10853338712931208,
+              "recent_max_p95_ms": 1483.92,
+              "recent_requests": 44613,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0014999999984866008
+          },
+          {
+            "kind": "tool",
+            "name": "knowledge_search",
+            "arguments": {
+              "service": "video-transcode",
+              "query": "incident policy observation window status diagnostic evidence uncertainty video-transcode",
+              "limit": 5
+            },
+            "output": {
+              "service": "video-transcode",
+              "source": null,
+              "evidence": [
+                {
+                  "id": "02eacd4f74c69c56efd5",
+                  "source": "video-transcode/runbook.md",
+                  "text": "# video-transcode: transcoding jobs incident policy",
+                  "score": 0.01639344262295082,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "a5251290b0a4939ba617",
+                  "source": "video-transcode/runbook.md",
+                  "text": "Use the exact service filter when retrieving this runbook. Evidence from another\nservice has different limits and cannot establish the status of video-transcode.",
+                  "score": 0.016129032258064516,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "200cb2dd4027e199ffd4",
+                  "source": "video-transcode/runbook.md",
+                  "text": "## Observation window and status\nRequest service_metrics for the latest 30 minutes. Its recent fields summarize\nthe newest 15 samples, and baseline fields summarize the earlier 15 samples.\nThe final error_rate must be the complete 30-minute error_rate, as a decimal.\nAn incident exists if recent_error_rate >= 0.0230 or\nrecent_max_p95_ms > 687 milliseconds. Both conditions below those\nlimits imply healthy, provided current metric samples and this policy exist.\nMissing metrics or a missing runbook imply insufficient_data: do not infer\nhealthy from a null error_rate or borrow a different service's thresholds.",
+                  "score": 0.015873015873015872,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "01f44308d2fb9b11587c",
+                  "source": "video-transcode/runbook.md",
+                  "text": "## Uncertainty and citations\nUse uncertainty=causality_unproven for evidence-supported incident hypotheses;\nnone_detected for healthy observations; insufficient_data for missing required\nevidence; conflicting_evidence for unresolved conflicts. Correlation does not\nprove causation. Cite this runbook and current incident_changes evidence ids.",
+                  "score": 0.015625,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "3ef7f2cc98c43a8c6207",
+                  "source": "video-transcode/runbook.md",
+                  "text": "## Diagnostic evidence rules\nThe serving dependency for transcoding jobs is codec-cache. Obtain incident_changes:\nthe runbook contains policies, not the service's current change history.\nAn active release before the metric deterioration, stable demand and a healthy\ndependency support likely_cause=release_regression and recommendation=rollback_review.\nAn active dependency failure before deterioration takes priority over a stale,\naborted or later unrelated release: dependency_outage / dependency_escalation.\nAn active traffic surge with a higher recent/baseline request ratio and healthy\ndependency supports capacity_pressure / capacity_review. Error rates alone do\nnot distinguish these causes. Cite the relevant current change evidence id.\nConflicting health probes or two unresolved competing change explanations require\nconflicting_evidence / verify_changes. A current incident without sufficient\ncausal evidence requires insufficient_evidence / collect_evidence.\nA healthy service requires no",
+                  "score": 0.015384615384615385,
+                  "trust": "untrusted_evidence"
+                }
+              ]
+            },
+            "seconds": 0.0014140999992378056
+          },
+          {
+            "kind": "tool",
+            "name": "incident_changes",
+            "arguments": {
+              "service": "video-transcode"
+            },
+            "output": {
+              "service": "video-transcode",
+              "available": true,
+              "changes": [
+                {
+                  "kind": "dependency",
+                  "minute": 47,
+                  "summary": "codec-cache remains healthy across both probes.",
+                  "status": "healthy",
+                  "evidence_id": "chg-1183bdbb98adabb5aa05"
+                },
+                {
+                  "kind": "traffic",
+                  "minute": 44,
+                  "summary": "Demand increased about threefold; queue depth and worker saturation rose together, without a serving release.",
+                  "status": "active",
+                  "evidence_id": "chg-4f26d6f10152bd5d89d1"
+                },
+                {
+                  "kind": "release",
+                  "minute": 8,
+                  "summary": "The last serving release predates the current window.",
+                  "status": "stale",
+                  "evidence_id": "chg-0e54bfca901f6e157e70"
+                }
+              ],
+              "evidence": [
+                {
+                  "id": "chg-1183bdbb98adabb5aa05",
+                  "source": "changes/video-transcode",
+                  "text": "dependency at minute 47 (healthy): codec-cache remains healthy across both probes.",
+                  "kind": "dependency",
+                  "status": "healthy",
+                  "minute": 47
+                },
+                {
+                  "id": "chg-4f26d6f10152bd5d89d1",
+                  "source": "changes/video-transcode",
+                  "text": "traffic at minute 44 (active): Demand increased about threefold; queue depth and worker saturation rose together, without a serving release.",
+                  "kind": "traffic",
+                  "status": "active",
+                  "minute": 44
+                },
+                {
+                  "id": "chg-0e54bfca901f6e157e70",
+                  "source": "changes/video-transcode",
+                  "text": "release at minute 8 (stale): The last serving release predates the current window.",
+                  "kind": "release",
+                  "status": "stale",
+                  "minute": 8
+                }
+              ],
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0023612000077264383
+          }
+        ],
+        "tokens": 819,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "wall_seconds": 2.236956000007922
+    }
+  },
+  {
+    "states": [
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=video-transcode. Actions=\nNext action:",
+        "action": "A",
+        "input_tokens": 85,
+        "probabilities": [
+          0.998174786567688,
+          0.00021135530550964177,
+          0.00015303863619919866,
+          0.0004690374480560422,
+          8.720027835806832e-05,
+          0.0002854952763300389,
+          0.0001227101602125913,
+          6.546719669131562e-05,
+          0.00043103157076984644
+        ],
+        "context": {
+          "input_tokens": 85,
+          "original_tokens": 85,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=video-transcode. Actions=A\nMetrics={\"samples\":30,\"error_rate\":0.08228274792691971,\"recent_error_rate\":0.10853338712931208,\"baseline_error_rate\":0.0027175759222773286,\"recent_max_p95_ms\":1483.92,\"baseline_requests\":14719,\"recent_requests\":44613}\nNext action:",
+        "action": "B",
+        "input_tokens": 211,
+        "probabilities": [
+          9.342392149847001e-05,
+          0.998524010181427,
+          0.0010705310851335526,
+          0.0001108195137931034,
+          0.00012449796486180276,
+          3.02361004287377e-05,
+          1.0583708899503108e-05,
+          3.540496436471585e-06,
+          3.2230331271421164e-05
+        ],
+        "context": {
+          "input_tokens": 211,
+          "original_tokens": 211,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=video-transcode. Actions=AB\nMetrics={\"samples\":30,\"error_rate\":0.08228274792691971,\"recent_error_rate\":0.10853338712931208,\"baseline_error_rate\":0.0027175759222773286,\"recent_max_p95_ms\":1483.92,\"baseline_requests\":14719,\"recent_requests\":44613}\nPolicy={\"found\":true,\"error_limit\":0.023,\"latency_limit\":687}\nNext action:",
+        "action": "C",
+        "input_tokens": 237,
+        "probabilities": [
+          9.504695481155068e-05,
+          6.348784518195316e-05,
+          0.9991967082023621,
+          0.0002403490070719272,
+          3.7761012208648026e-05,
+          0.00023225281620398164,
+          2.800893344101496e-05,
+          3.832173388218507e-05,
+          6.805304292356595e-05
+        ],
+        "context": {
+          "input_tokens": 237,
+          "original_tokens": 237,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=video-transcode. Actions=ABC\nMetrics={\"samples\":30,\"error_rate\":0.08228274792691971,\"recent_error_rate\":0.10853338712931208,\"baseline_error_rate\":0.0027175759222773286,\"recent_max_p95_ms\":1483.92,\"baseline_requests\":14719,\"recent_requests\":44613}\nPolicy={\"found\":true,\"error_limit\":0.023,\"latency_limit\":687}\nChanges=[{\"kind\":\"dependency\",\"status\":\"healthy\",\"minute\":47},{\"kind\":\"traffic\",\"status\":\"active\",\"minute\":44},{\"kind\":\"release\",\"status\":\"stale\",\"minute\":8}]\nNext action:",
+        "action": "D",
+        "input_tokens": 282,
+        "probabilities": [
+          0.0012729762820526958,
+          0.0002677204320207238,
+          0.0060216221027076244,
+          0.269409716129303,
+          0.2999354898929596,
+          0.23846261203289032,
+          0.03502802550792694,
+          0.02033420093357563,
+          0.1292676329612732
+        ],
+        "context": {
+          "input_tokens": 282,
+          "original_tokens": 282,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      }
+    ],
+    "episode": {
+      "task_id": "video-transcode",
+      "split": "dev",
+      "actions": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "reward": 0.3,
+      "score": {
+        "success": false,
+        "decision_correct": false,
+        "checks": {
+          "completed": true,
+          "structured_answer": true,
+          "service_answer": true,
+          "metrics_observed": true,
+          "current_metrics": true,
+          "metric_status_consistency": true,
+          "numeric_answer": true,
+          "status_answer": true,
+          "cause_answer": false,
+          "recommendation_answer": false,
+          "uncertainty_answer": true,
+          "citation_ids": true,
+          "runbook_evidence": true,
+          "current_change_evidence": true,
+          "required_tools": true,
+          "allowed_tools": true,
+          "no_tool_errors": true,
+          "service_scoped_calls": true
+        },
+        "failure": "cause_answer",
+        "answer_parse_error": null,
+        "parsed_answer": {
+          "service": "video-transcode",
+          "error_rate": 0.08228274792691971,
+          "status": "incident",
+          "likely_cause": "release_regression",
+          "recommendation": "rollback_review",
+          "uncertainty": "causality_unproven",
+          "citations": [
+            "02eacd4f74c69c56efd5",
+            "a5251290b0a4939ba617",
+            "200cb2dd4027e199ffd4",
+            "01f44308d2fb9b11587c",
+            "3ef7f2cc98c43a8c6207",
+            "chg-1183bdbb98adabb5aa05",
+            "chg-4f26d6f10152bd5d89d1",
+            "chg-0e54bfca901f6e157e70"
+          ]
+        },
+        "tool_execution_accuracy": 1.0,
+        "citation_precision": 1.0,
+        "tool_calls": 3,
+        "latency_seconds": 0.004249999998137355,
+        "known_tokens": 819,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "trace": {
+        "status": "completed",
+        "answer": "{\"service\": \"video-transcode\", \"error_rate\": 0.08228274792691971, \"status\": \"incident\", \"likely_cause\": \"release_regression\", \"recommendation\": \"rollback_review\", \"uncertainty\": \"causality_unproven\", \"citations\": [\"02eacd4f74c69c56efd5\", \"a5251290b0a4939ba617\", \"200cb2dd4027e199ffd4\", \"01f44308d2fb9b11587c\", \"3ef7f2cc98c43a8c6207\", \"chg-1183bdbb98adabb5aa05\", \"chg-4f26d6f10152bd5d89d1\", \"chg-0e54bfca901f6e157e70\"]}",
+        "events": [
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "video-transcode",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "video-transcode",
+              "samples": 30,
+              "error_rate": 0.08228274792691971,
+              "max_p95_ms": 1483.92,
+              "requests": 59332,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.0027175759222773286,
+              "baseline_max_p95_ms": 398.46,
+              "baseline_requests": 14719,
+              "recent_error_rate": 0.10853338712931208,
+              "recent_max_p95_ms": 1483.92,
+              "recent_requests": 44613,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0016860999894561246
+          },
+          {
+            "kind": "tool",
+            "name": "knowledge_search",
+            "arguments": {
+              "service": "video-transcode",
+              "query": "incident policy observation window status diagnostic evidence uncertainty video-transcode",
+              "limit": 5
+            },
+            "output": {
+              "service": "video-transcode",
+              "source": null,
+              "evidence": [
+                {
+                  "id": "02eacd4f74c69c56efd5",
+                  "source": "video-transcode/runbook.md",
+                  "text": "# video-transcode: transcoding jobs incident policy",
+                  "score": 0.01639344262295082,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "a5251290b0a4939ba617",
+                  "source": "video-transcode/runbook.md",
+                  "text": "Use the exact service filter when retrieving this runbook. Evidence from another\nservice has different limits and cannot establish the status of video-transcode.",
+                  "score": 0.016129032258064516,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "200cb2dd4027e199ffd4",
+                  "source": "video-transcode/runbook.md",
+                  "text": "## Observation window and status\nRequest service_metrics for the latest 30 minutes. Its recent fields summarize\nthe newest 15 samples, and baseline fields summarize the earlier 15 samples.\nThe final error_rate must be the complete 30-minute error_rate, as a decimal.\nAn incident exists if recent_error_rate >= 0.0230 or\nrecent_max_p95_ms > 687 milliseconds. Both conditions below those\nlimits imply healthy, provided current metric samples and this policy exist.\nMissing metrics or a missing runbook imply insufficient_data: do not infer\nhealthy from a null error_rate or borrow a different service's thresholds.",
+                  "score": 0.015873015873015872,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "01f44308d2fb9b11587c",
+                  "source": "video-transcode/runbook.md",
+                  "text": "## Uncertainty and citations\nUse uncertainty=causality_unproven for evidence-supported incident hypotheses;\nnone_detected for healthy observations; insufficient_data for missing required\nevidence; conflicting_evidence for unresolved conflicts. Correlation does not\nprove causation. Cite this runbook and current incident_changes evidence ids.",
+                  "score": 0.015625,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "3ef7f2cc98c43a8c6207",
+                  "source": "video-transcode/runbook.md",
+                  "text": "## Diagnostic evidence rules\nThe serving dependency for transcoding jobs is codec-cache. Obtain incident_changes:\nthe runbook contains policies, not the service's current change history.\nAn active release before the metric deterioration, stable demand and a healthy\ndependency support likely_cause=release_regression and recommendation=rollback_review.\nAn active dependency failure before deterioration takes priority over a stale,\naborted or later unrelated release: dependency_outage / dependency_escalation.\nAn active traffic surge with a higher recent/baseline request ratio and healthy\ndependency supports capacity_pressure / capacity_review. Error rates alone do\nnot distinguish these causes. Cite the relevant current change evidence id.\nConflicting health probes or two unresolved competing change explanations require\nconflicting_evidence / verify_changes. A current incident without sufficient\ncausal evidence requires insufficient_evidence / collect_evidence.\nA healthy service requires no",
+                  "score": 0.015384615384615385,
+                  "trust": "untrusted_evidence"
+                }
+              ]
+            },
+            "seconds": 0.0009164000075543299
+          },
+          {
+            "kind": "tool",
+            "name": "incident_changes",
+            "arguments": {
+              "service": "video-transcode"
+            },
+            "output": {
+              "service": "video-transcode",
+              "available": true,
+              "changes": [
+                {
+                  "kind": "dependency",
+                  "minute": 47,
+                  "summary": "codec-cache remains healthy across both probes.",
+                  "status": "healthy",
+                  "evidence_id": "chg-1183bdbb98adabb5aa05"
+                },
+                {
+                  "kind": "traffic",
+                  "minute": 44,
+                  "summary": "Demand increased about threefold; queue depth and worker saturation rose together, without a serving release.",
+                  "status": "active",
+                  "evidence_id": "chg-4f26d6f10152bd5d89d1"
+                },
+                {
+                  "kind": "release",
+                  "minute": 8,
+                  "summary": "The last serving release predates the current window.",
+                  "status": "stale",
+                  "evidence_id": "chg-0e54bfca901f6e157e70"
+                }
+              ],
+              "evidence": [
+                {
+                  "id": "chg-1183bdbb98adabb5aa05",
+                  "source": "changes/video-transcode",
+                  "text": "dependency at minute 47 (healthy): codec-cache remains healthy across both probes.",
+                  "kind": "dependency",
+                  "status": "healthy",
+                  "minute": 47
+                },
+                {
+                  "id": "chg-4f26d6f10152bd5d89d1",
+                  "source": "changes/video-transcode",
+                  "text": "traffic at minute 44 (active): Demand increased about threefold; queue depth and worker saturation rose together, without a serving release.",
+                  "kind": "traffic",
+                  "status": "active",
+                  "minute": 44
+                },
+                {
+                  "id": "chg-0e54bfca901f6e157e70",
+                  "source": "changes/video-transcode",
+                  "text": "release at minute 8 (stale): The last serving release predates the current window.",
+                  "kind": "release",
+                  "status": "stale",
+                  "minute": 8
+                }
+              ],
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0016475000011269003
+          }
+        ],
+        "tokens": 819,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "wall_seconds": 2.351904499999364
+    }
+  },
+  {
+    "states": [
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=video-transcode. Actions=\nNext action:",
+        "action": "A",
+        "input_tokens": 85,
+        "probabilities": [
+          0.998174786567688,
+          0.00021135530550964177,
+          0.00015303863619919866,
+          0.0004690374480560422,
+          8.720027835806832e-05,
+          0.0002854952763300389,
+          0.0001227101602125913,
+          6.546719669131562e-05,
+          0.00043103157076984644
+        ],
+        "context": {
+          "input_tokens": 85,
+          "original_tokens": 85,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=video-transcode. Actions=A\nMetrics={\"samples\":30,\"error_rate\":0.08228274792691971,\"recent_error_rate\":0.10853338712931208,\"baseline_error_rate\":0.0027175759222773286,\"recent_max_p95_ms\":1483.92,\"baseline_requests\":14719,\"recent_requests\":44613}\nNext action:",
+        "action": "B",
+        "input_tokens": 211,
+        "probabilities": [
+          9.342392149847001e-05,
+          0.998524010181427,
+          0.0010705310851335526,
+          0.0001108195137931034,
+          0.00012449796486180276,
+          3.02361004287377e-05,
+          1.0583708899503108e-05,
+          3.540496436471585e-06,
+          3.2230331271421164e-05
+        ],
+        "context": {
+          "input_tokens": 211,
+          "original_tokens": 211,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=video-transcode. Actions=AB\nMetrics={\"samples\":30,\"error_rate\":0.08228274792691971,\"recent_error_rate\":0.10853338712931208,\"baseline_error_rate\":0.0027175759222773286,\"recent_max_p95_ms\":1483.92,\"baseline_requests\":14719,\"recent_requests\":44613}\nPolicy={\"found\":true,\"error_limit\":0.023,\"latency_limit\":687}\nNext action:",
+        "action": "C",
+        "input_tokens": 237,
+        "probabilities": [
+          9.504695481155068e-05,
+          6.348784518195316e-05,
+          0.9991967082023621,
+          0.0002403490070719272,
+          3.7761012208648026e-05,
+          0.00023225281620398164,
+          2.800893344101496e-05,
+          3.832173388218507e-05,
+          6.805304292356595e-05
+        ],
+        "context": {
+          "input_tokens": 237,
+          "original_tokens": 237,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=video-transcode. Actions=ABC\nMetrics={\"samples\":30,\"error_rate\":0.08228274792691971,\"recent_error_rate\":0.10853338712931208,\"baseline_error_rate\":0.0027175759222773286,\"recent_max_p95_ms\":1483.92,\"baseline_requests\":14719,\"recent_requests\":44613}\nPolicy={\"found\":true,\"error_limit\":0.023,\"latency_limit\":687}\nChanges=[{\"kind\":\"dependency\",\"status\":\"healthy\",\"minute\":47},{\"kind\":\"traffic\",\"status\":\"active\",\"minute\":44},{\"kind\":\"release\",\"status\":\"stale\",\"minute\":8}]\nNext action:",
+        "action": "D",
+        "input_tokens": 282,
+        "probabilities": [
+          0.0012729762820526958,
+          0.0002677204320207238,
+          0.0060216221027076244,
+          0.269409716129303,
+          0.2999354898929596,
+          0.23846261203289032,
+          0.03502802550792694,
+          0.02033420093357563,
+          0.1292676329612732
+        ],
+        "context": {
+          "input_tokens": 282,
+          "original_tokens": 282,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      }
+    ],
+    "episode": {
+      "task_id": "video-transcode",
+      "split": "dev",
+      "actions": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "reward": 0.3,
+      "score": {
+        "success": false,
+        "decision_correct": false,
+        "checks": {
+          "completed": true,
+          "structured_answer": true,
+          "service_answer": true,
+          "metrics_observed": true,
+          "current_metrics": true,
+          "metric_status_consistency": true,
+          "numeric_answer": true,
+          "status_answer": true,
+          "cause_answer": false,
+          "recommendation_answer": false,
+          "uncertainty_answer": true,
+          "citation_ids": true,
+          "runbook_evidence": true,
+          "current_change_evidence": true,
+          "required_tools": true,
+          "allowed_tools": true,
+          "no_tool_errors": true,
+          "service_scoped_calls": true
+        },
+        "failure": "cause_answer",
+        "answer_parse_error": null,
+        "parsed_answer": {
+          "service": "video-transcode",
+          "error_rate": 0.08228274792691971,
+          "status": "incident",
+          "likely_cause": "release_regression",
+          "recommendation": "rollback_review",
+          "uncertainty": "causality_unproven",
+          "citations": [
+            "02eacd4f74c69c56efd5",
+            "a5251290b0a4939ba617",
+            "200cb2dd4027e199ffd4",
+            "01f44308d2fb9b11587c",
+            "3ef7f2cc98c43a8c6207",
+            "chg-1183bdbb98adabb5aa05",
+            "chg-4f26d6f10152bd5d89d1",
+            "chg-0e54bfca901f6e157e70"
+          ]
+        },
+        "tool_execution_accuracy": 1.0,
+        "citation_precision": 1.0,
+        "tool_calls": 3,
+        "latency_seconds": 0.00436930000432767,
+        "known_tokens": 819,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "trace": {
+        "status": "completed",
+        "answer": "{\"service\": \"video-transcode\", \"error_rate\": 0.08228274792691971, \"status\": \"incident\", \"likely_cause\": \"release_regression\", \"recommendation\": \"rollback_review\", \"uncertainty\": \"causality_unproven\", \"citations\": [\"02eacd4f74c69c56efd5\", \"a5251290b0a4939ba617\", \"200cb2dd4027e199ffd4\", \"01f44308d2fb9b11587c\", \"3ef7f2cc98c43a8c6207\", \"chg-1183bdbb98adabb5aa05\", \"chg-4f26d6f10152bd5d89d1\", \"chg-0e54bfca901f6e157e70\"]}",
+        "events": [
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "video-transcode",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "video-transcode",
+              "samples": 30,
+              "error_rate": 0.08228274792691971,
+              "max_p95_ms": 1483.92,
+              "requests": 59332,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.0027175759222773286,
+              "baseline_max_p95_ms": 398.46,
+              "baseline_requests": 14719,
+              "recent_error_rate": 0.10853338712931208,
+              "recent_max_p95_ms": 1483.92,
+              "recent_requests": 44613,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0016498000040883198
+          },
+          {
+            "kind": "tool",
+            "name": "knowledge_search",
+            "arguments": {
+              "service": "video-transcode",
+              "query": "incident policy observation window status diagnostic evidence uncertainty video-transcode",
+              "limit": 5
+            },
+            "output": {
+              "service": "video-transcode",
+              "source": null,
+              "evidence": [
+                {
+                  "id": "02eacd4f74c69c56efd5",
+                  "source": "video-transcode/runbook.md",
+                  "text": "# video-transcode: transcoding jobs incident policy",
+                  "score": 0.01639344262295082,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "a5251290b0a4939ba617",
+                  "source": "video-transcode/runbook.md",
+                  "text": "Use the exact service filter when retrieving this runbook. Evidence from another\nservice has different limits and cannot establish the status of video-transcode.",
+                  "score": 0.016129032258064516,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "200cb2dd4027e199ffd4",
+                  "source": "video-transcode/runbook.md",
+                  "text": "## Observation window and status\nRequest service_metrics for the latest 30 minutes. Its recent fields summarize\nthe newest 15 samples, and baseline fields summarize the earlier 15 samples.\nThe final error_rate must be the complete 30-minute error_rate, as a decimal.\nAn incident exists if recent_error_rate >= 0.0230 or\nrecent_max_p95_ms > 687 milliseconds. Both conditions below those\nlimits imply healthy, provided current metric samples and this policy exist.\nMissing metrics or a missing runbook imply insufficient_data: do not infer\nhealthy from a null error_rate or borrow a different service's thresholds.",
+                  "score": 0.015873015873015872,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "01f44308d2fb9b11587c",
+                  "source": "video-transcode/runbook.md",
+                  "text": "## Uncertainty and citations\nUse uncertainty=causality_unproven for evidence-supported incident hypotheses;\nnone_detected for healthy observations; insufficient_data for missing required\nevidence; conflicting_evidence for unresolved conflicts. Correlation does not\nprove causation. Cite this runbook and current incident_changes evidence ids.",
+                  "score": 0.015625,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "3ef7f2cc98c43a8c6207",
+                  "source": "video-transcode/runbook.md",
+                  "text": "## Diagnostic evidence rules\nThe serving dependency for transcoding jobs is codec-cache. Obtain incident_changes:\nthe runbook contains policies, not the service's current change history.\nAn active release before the metric deterioration, stable demand and a healthy\ndependency support likely_cause=release_regression and recommendation=rollback_review.\nAn active dependency failure before deterioration takes priority over a stale,\naborted or later unrelated release: dependency_outage / dependency_escalation.\nAn active traffic surge with a higher recent/baseline request ratio and healthy\ndependency supports capacity_pressure / capacity_review. Error rates alone do\nnot distinguish these causes. Cite the relevant current change evidence id.\nConflicting health probes or two unresolved competing change explanations require\nconflicting_evidence / verify_changes. A current incident without sufficient\ncausal evidence requires insufficient_evidence / collect_evidence.\nA healthy service requires no",
+                  "score": 0.015384615384615385,
+                  "trust": "untrusted_evidence"
+                }
+              ]
+            },
+            "seconds": 0.001077000008081086
+          },
+          {
+            "kind": "tool",
+            "name": "incident_changes",
+            "arguments": {
+              "service": "video-transcode"
+            },
+            "output": {
+              "service": "video-transcode",
+              "available": true,
+              "changes": [
+                {
+                  "kind": "dependency",
+                  "minute": 47,
+                  "summary": "codec-cache remains healthy across both probes.",
+                  "status": "healthy",
+                  "evidence_id": "chg-1183bdbb98adabb5aa05"
+                },
+                {
+                  "kind": "traffic",
+                  "minute": 44,
+                  "summary": "Demand increased about threefold; queue depth and worker saturation rose together, without a serving release.",
+                  "status": "active",
+                  "evidence_id": "chg-4f26d6f10152bd5d89d1"
+                },
+                {
+                  "kind": "release",
+                  "minute": 8,
+                  "summary": "The last serving release predates the current window.",
+                  "status": "stale",
+                  "evidence_id": "chg-0e54bfca901f6e157e70"
+                }
+              ],
+              "evidence": [
+                {
+                  "id": "chg-1183bdbb98adabb5aa05",
+                  "source": "changes/video-transcode",
+                  "text": "dependency at minute 47 (healthy): codec-cache remains healthy across both probes.",
+                  "kind": "dependency",
+                  "status": "healthy",
+                  "minute": 47
+                },
+                {
+                  "id": "chg-4f26d6f10152bd5d89d1",
+                  "source": "changes/video-transcode",
+                  "text": "traffic at minute 44 (active): Demand increased about threefold; queue depth and worker saturation rose together, without a serving release.",
+                  "kind": "traffic",
+                  "status": "active",
+                  "minute": 44
+                },
+                {
+                  "id": "chg-0e54bfca901f6e157e70",
+                  "source": "changes/video-transcode",
+                  "text": "release at minute 8 (stale): The last serving release predates the current window.",
+                  "kind": "release",
+                  "status": "stale",
+                  "minute": 8
+                }
+              ],
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.001642499992158264
+          }
+        ],
+        "tokens": 819,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "wall_seconds": 2.3337261999986367
+    }
+  }
+]

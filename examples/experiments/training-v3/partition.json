@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "task_manifest_sha256": "233daa2e0e5f94a9d1bd5dde97869d927957a16d289db66c338b5125c98321ee",
+  "training_ids": [
+    "growth-feed",
+    "creator-upload",
+    "commerce-cart",
+    "live-session",
+    "search-suggest",
+    "message-inbox",
+    "discovery-nearby",
+    "video-transcode",
+    "profile-lookup",
+    "social-follow",
+    "content-tag",
+    "growth-referral",
+    "search-reindex",
+    "creator-draft",
+    "ads-attribution",
+    "commerce-stock",
+    "growth-invite",
+    "social-share"
+  ],
+  "validation_ids": [
+    "social-notify",
+    "ads-auction",
+    "commerce-checkout",
+    "live-gifts",
+    "message-presence",
+    "video-playback"
+  ],
+  "public_holdout_ids": [
+    "holdout-comment",
+    "holdout-local-order",
+    "holdout-live-caption",
+    "holdout-creator-stats",
+    "holdout-recommend-cache",
+    "holdout-market-tax",
+    "holdout-direct-call",
+    "holdout-content-export"
+  ],
+  "source_synthetic": true,
+  "training_label": "synthetic-supervised tool-action demonstrations, not model-generated agent trajectories",
+  "heldout_use": "evaluation only; public suite is not an unseen benchmark",
+  "partition_hash": "5463d4e505cd8236378e77e22a01d4365f764a7cece0a4c7d7f31475c3cc24be"
+}

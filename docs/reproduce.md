@@ -35,13 +35,15 @@ python -m byte_eval export-sft --output runs/v2-fixture-dev --destination runs/v
 
 ## 模型与运行环境
 
-正式命令使用本地 `qwen3:4b-instruct`。先用 `ollama list` 确认该确切名称和本机模型来源，再用 `ollama show qwen3:4b-instruct --modelfile` 保存其模板配置。这个名称是本地模板版本，不是已训练权重的声明；不能仅根据同名模型假设权重和模板相同。若已安装原始 `qwen3:4b`，可用平台的兼容工具创建另一个标签：
+正式命令使用本地 `qwen3:4b-instruct`。这个名称由平台的 `prepare-model` 创建，不能直接当作公开模型标签下载。首次安装先启动 Ollama，下载官方 [qwen3:4b](https://ollama.com/library/qwen3:4b)，再创建本地模板版本：
 
 ```bash
+ollama pull qwen3:4b
 python -m byte_agent prepare-model --model qwen3:4b --target qwen3:4b-instruct
+ollama show qwen3:4b-instruct --modelfile
 ```
 
-此命令针对旧 Qwen Go 模板的工具 schema 序列化进行兼容修复，保留原权重，不是 SFT/RL。它会创建目标标签；复用已有实验时应保持原标签及 digest，不要覆盖后继续写同一个目录。若原始模型未安装，先按模型提供者和 Ollama 的正式说明准备。替换模型名必须使用新实验目录，并记录替换原因。
+此命令针对旧 Qwen Go 模板的工具 schema 序列化进行兼容修复，保留原权重，不是 SFT/RL。它会创建目标标签；已有标签先用 `ollama list` 与保存的 digest、模板核对，不仅根据名称假设模型相同。复用已有实验时应保持原标签及 digest，不要覆盖后继续写同一个目录。替换模型名必须使用新实验目录，并记录替换原因。
 
 记录 CPU/GPU、可用内存、Ollama 版本、模型 digest、量化、上下文与输出上限。套件通过提供者记录可获取的模型版本和 generation 配置，但硬件资源及服务并发负载仍需另存。模型服务已启动后才运行评测；评测不会自动下载模型或启动训练。
 
@@ -128,3 +130,57 @@ python -m byte_eval report --output runs/v3-verified-holdout-8
 同一目录只允许一个套件进程串行写入。已完成且配置一致的 trial 可被串行续跑复用；运行中避免编辑源码、替换模型或同时生成同目录报告。原样复制整个输出目录后，相对 trace 路径仍可用于导出；改动原始 trace 将使 SHA256 校验失败。
 
 SFT 输出只是成功真实 dev 轨迹的候选 messages，包含 `human_review_required=true`，应人工审阅并转换训练格式。候选数量可能为 0；不能补入 fixture、holdout 或失败轨迹凑数。service scope、模板兼容修复和输出校验也没有改变模型权重，不能把这些工程处理或候选导出表述成已经完成 SFT/RL 训练。
+
+## V3 小模型训练的复现入口
+
+原 Qwen checkpoint 和实验命令用于复现原诊断评测，不能替代新增的小模型
+权重实验。V3 的固定模型 revision 为
+`HuggingFaceTB/SmolLM2-135M-Instruct@12fd25f77366fa6b3b4b768ec3050bf629380bac`，
+完整训练步骤、数据隔离、奖励定义及本地模型加载方式见
+[训练说明](training.md)。实际完整运行选择 72 次 SFT update、8 次 RL group
+update、每组 4 条 sampled episode、batch 4，参数在任何 base／SFT／RL
+评测前固定；不要依据公开留出结果修改超参数。
+
+安装时先从官方 CPU index 安装 PyTorch，再使用
+[实际版本锁定文件](../requirements-training-lock.txt)。该文件排除本地 editable
+路径；重新运行时两个项目用 `pip install -e` 安装到同一环境。
+
+从 eval 根目录使用公开的固定下载器准备基础模型与可校验 receipt：
+
+```bash
+python examples/download_training_model.py
+python examples/download_training_model.py --verify-only
+```
+
+默认写入 `.deps/models/SmolLM2-135M-Instruct/12fd25f77366fa6b3b4b768ec3050bf629380bac`，
+训练或消费者的 `--model` 使用该目录。下载器只访问该 immutable revision
+的七个文件，对照实际实验已记录的 SHA-256 和大小检查，再生成
+`download-manifest.json`；校验是字节来源约束，不是发布者签名。
+`--verify-only` 不联网、不写文件。该公开步骤不依赖私人 helper 或本机路径。
+只演示已保存权重时，按训练说明安装依赖、设置两个 frozen archive 路径，
+再执行 [公开消费者](../examples/evaluate_adapter.py)，无需重新训练。
+
+训练产物的入口是 [report.md](../examples/experiments/training-v3/report.md)、
+[summary.json](../examples/experiments/training-v3/summary.json) 和同目录的
+`manifest.json`／`partition.json`／`training-log.json`。manifest 内的源码和
+基础模型文件 SHA-256 绑定实际运行版本；三个 checkpoint 的 `weights.json`
+列出 adapter 文件哈希；SFT 与 RL checkpoint 另有扰动后重新加载检查。
+恢复 adapter 时应加载相同 revision
+的基础模型和 tokenizer，再使用 `PeftModel.from_pretrained`。
+
+公开的 CPU training CI 使用极小随机 Llama 来验证真实反向传播、策略梯度、
+固定 episode 分母、采样／replay padding 一致性、参数变化与扰动后恢复。
+它不会下载 135M 权重，不产生或代表业务性能分数。核心软件测试在 Ubuntu
+和 Windows 运行，依赖模型效果的实际结果只看上述实验文件。
+
+消费者的 14 条“与原结果匹配”包含原有失败，不能写成 14 条业务任务全通过。
+业务成功另看 `full_contract_successes_with_renderer`；同一份失败结果成功
+复现，只证明保存的权重和执行流程可以复用，不证明诊断能力提升。
+
+独立 RL adapter 消费已完成，结果见
+[消费者报告](../examples/experiments/adapter-consumer-v3/report.md) 和
+[summary.json](../examples/experiments/adapter-consumer-v3/summary.json)：14/14
+原结果匹配、加载参数哈希正确、参数保持不变；业务完整成功仍为验证 2/6、
+公开留出 3/8。若按开发验证选择演示 checkpoint，SFT 的 3/6 优于本次 RL
+的 2/6，应保留 SFT 作为选择，RL 用于如实研究对照，不据此重调留出题。
+

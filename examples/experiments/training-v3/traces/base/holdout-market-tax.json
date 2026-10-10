@@ -1,0 +1,257 @@
+{
+  "states": [
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=holdout-market-tax. Actions=\nNext action:",
+      "action": "A",
+      "input_tokens": 87,
+      "probabilities": [
+        0.3155699372291565,
+        0.05820707231760025,
+        0.032535701990127563,
+        0.06134387105703354,
+        0.0754404291510582,
+        0.022619139403104782,
+        0.018527362495660782,
+        0.10630206018686295,
+        0.30945447087287903
+      ],
+      "context": {
+        "input_tokens": 87,
+        "original_tokens": 87,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=holdout-market-tax. Actions=A\nMetrics={\"samples\":30,\"error_rate\":0.07823676507647276,\"recent_error_rate\":0.15232967969324915,\"baseline_error_rate\":0.003997205836696678,\"recent_max_p95_ms\":837.38,\"baseline_requests\":25768,\"recent_requests\":25819}\nNext action:",
+      "action": "A",
+      "input_tokens": 211,
+      "probabilities": [
+        0.6474123001098633,
+        0.04498112201690674,
+        0.023837586864829063,
+        0.04777359962463379,
+        0.07271291315555573,
+        0.014203686267137527,
+        0.010897116735577583,
+        0.09593109041452408,
+        0.0422506146132946
+      ],
+      "context": {
+        "input_tokens": 211,
+        "original_tokens": 211,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=holdout-market-tax. Actions=AA\nMetrics={\"samples\":30,\"error_rate\":0.07823676507647276,\"recent_error_rate\":0.15232967969324915,\"baseline_error_rate\":0.003997205836696678,\"recent_max_p95_ms\":837.38,\"baseline_requests\":25768,\"recent_requests\":25819}\nNext action:",
+      "action": "A",
+      "input_tokens": 211,
+      "probabilities": [
+        0.6733666062355042,
+        0.04142085090279579,
+        0.0225980281829834,
+        0.036258514970541,
+        0.08747244626283646,
+        0.02379436604678631,
+        0.017384735867381096,
+        0.05254414305090904,
+        0.04516031593084335
+      ],
+      "context": {
+        "input_tokens": 211,
+        "original_tokens": 211,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=holdout-market-tax. Actions=AAA\nMetrics={\"samples\":30,\"error_rate\":0.07823676507647276,\"recent_error_rate\":0.15232967969324915,\"baseline_error_rate\":0.003997205836696678,\"recent_max_p95_ms\":837.38,\"baseline_requests\":25768,\"recent_requests\":25819}\nNext action:",
+      "action": "A",
+      "input_tokens": 212,
+      "probabilities": [
+        0.6708246469497681,
+        0.04220503196120262,
+        0.02326226606965065,
+        0.03674338385462761,
+        0.08674126118421555,
+        0.02499978616833687,
+        0.017784874886274338,
+        0.051238447427749634,
+        0.04620041325688362
+      ],
+      "context": {
+        "input_tokens": 212,
+        "original_tokens": 212,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    }
+  ],
+  "episode": {
+    "task_id": "holdout-market-tax",
+    "split": "holdout",
+    "actions": [
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "reward": -0.7,
+    "score": {
+      "success": false,
+      "decision_correct": false,
+      "checks": {
+        "completed": false,
+        "structured_answer": false,
+        "service_answer": false,
+        "metrics_observed": true,
+        "current_metrics": true,
+        "metric_status_consistency": true,
+        "numeric_answer": false,
+        "status_answer": false,
+        "cause_answer": false,
+        "recommendation_answer": false,
+        "uncertainty_answer": false,
+        "citation_ids": false,
+        "runbook_evidence": false,
+        "current_change_evidence": false,
+        "required_tools": false,
+        "allowed_tools": true,
+        "no_tool_errors": true,
+        "service_scoped_calls": true
+      },
+      "failure": "completed",
+      "answer_parse_error": "invalid JSON: Expecting value: line 1 column 1 (char 0)",
+      "parsed_answer": null,
+      "tool_execution_accuracy": 1.0,
+      "citation_precision": null,
+      "tool_calls": 4,
+      "latency_seconds": 0.011578900011954829,
+      "known_tokens": 725,
+      "unknown_usage": 0,
+      "fixture": false
+    },
+    "trace": {
+      "status": "budget_exceeded",
+      "answer": "",
+      "events": [
+        {
+          "kind": "tool",
+          "name": "service_metrics",
+          "arguments": {
+            "service": "holdout-market-tax",
+            "window_minutes": 30
+          },
+          "output": {
+            "service": "holdout-market-tax",
+            "samples": 30,
+            "error_rate": 0.07823676507647276,
+            "max_p95_ms": 837.38,
+            "requests": 51587,
+            "window_minutes": 30,
+            "as_of_minute": 59,
+            "status": "observed",
+            "baseline_error_rate": 0.003997205836696678,
+            "baseline_max_p95_ms": 325.96,
+            "baseline_requests": 25768,
+            "recent_error_rate": 0.15232967969324915,
+            "recent_max_p95_ms": 837.38,
+            "recent_requests": 25819,
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.0024021999997785315
+        },
+        {
+          "kind": "tool",
+          "name": "service_metrics",
+          "arguments": {
+            "service": "holdout-market-tax",
+            "window_minutes": 30
+          },
+          "output": {
+            "service": "holdout-market-tax",
+            "samples": 30,
+            "error_rate": 0.07823676507647276,
+            "max_p95_ms": 837.38,
+            "requests": 51587,
+            "window_minutes": 30,
+            "as_of_minute": 59,
+            "status": "observed",
+            "baseline_error_rate": 0.003997205836696678,
+            "baseline_max_p95_ms": 325.96,
+            "baseline_requests": 25768,
+            "recent_error_rate": 0.15232967969324915,
+            "recent_max_p95_ms": 837.38,
+            "recent_requests": 25819,
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.0028221000102348626
+        },
+        {
+          "kind": "tool",
+          "name": "service_metrics",
+          "arguments": {
+            "service": "holdout-market-tax",
+            "window_minutes": 30
+          },
+          "output": {
+            "service": "holdout-market-tax",
+            "samples": 30,
+            "error_rate": 0.07823676507647276,
+            "max_p95_ms": 837.38,
+            "requests": 51587,
+            "window_minutes": 30,
+            "as_of_minute": 59,
+            "status": "observed",
+            "baseline_error_rate": 0.003997205836696678,
+            "baseline_max_p95_ms": 325.96,
+            "baseline_requests": 25768,
+            "recent_error_rate": 0.15232967969324915,
+            "recent_max_p95_ms": 837.38,
+            "recent_requests": 25819,
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.0031638999935239553
+        },
+        {
+          "kind": "tool",
+          "name": "service_metrics",
+          "arguments": {
+            "service": "holdout-market-tax",
+            "window_minutes": 30
+          },
+          "output": {
+            "service": "holdout-market-tax",
+            "samples": 30,
+            "error_rate": 0.07823676507647276,
+            "max_p95_ms": 837.38,
+            "requests": 51587,
+            "window_minutes": 30,
+            "as_of_minute": 59,
+            "status": "observed",
+            "baseline_error_rate": 0.003997205836696678,
+            "baseline_max_p95_ms": 325.96,
+            "baseline_requests": 25768,
+            "recent_error_rate": 0.15232967969324915,
+            "recent_max_p95_ms": 837.38,
+            "recent_requests": 25819,
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.0031907000084174797
+        }
+      ],
+      "tokens": 725,
+      "unknown_usage": 0,
+      "fixture": false
+    },
+    "wall_seconds": 5.5223343999969075,
+    "decoder": "greedy one-of-nine original LM vocabulary tokens",
+    "stage": "base"
+  }
+}

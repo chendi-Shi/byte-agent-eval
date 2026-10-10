@@ -1,0 +1,1166 @@
+[
+  {
+    "states": [
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=live-session. Actions=\nNext action:",
+        "action": "A",
+        "input_tokens": 84,
+        "probabilities": [
+          0.9984208345413208,
+          0.00012464831524994224,
+          0.00010727192420745268,
+          0.0004430179833434522,
+          0.00010090055002365261,
+          0.0002187639765907079,
+          0.00010590151214273646,
+          6.250722799450159e-05,
+          0.0004161840188317001
+        ],
+        "context": {
+          "input_tokens": 84,
+          "original_tokens": 84,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=live-session. Actions=A\nMetrics={\"samples\":30,\"error_rate\":0.07602241364890859,\"recent_error_rate\":0.11343804537521815,\"baseline_error_rate\":0.03812810369497517,\"recent_max_p95_ms\":628.78,\"baseline_requests\":11881,\"recent_requests\":12033}\nNext action:",
+        "action": "B",
+        "input_tokens": 207,
+        "probabilities": [
+          8.569344936404377e-05,
+          0.9979674220085144,
+          0.0016613717889413238,
+          9.6933901659213e-05,
+          9.439647692488506e-05,
+          2.6640380383469164e-05,
+          1.3361226592678577e-05,
+          4.887909199169371e-06,
+          4.9313432100461796e-05
+        ],
+        "context": {
+          "input_tokens": 207,
+          "original_tokens": 207,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=live-session. Actions=AB\nMetrics={\"samples\":30,\"error_rate\":0.07602241364890859,\"recent_error_rate\":0.11343804537521815,\"baseline_error_rate\":0.03812810369497517,\"recent_max_p95_ms\":628.78,\"baseline_requests\":11881,\"recent_requests\":12033}\nPolicy={\"found\":true,\"error_limit\":0.024,\"latency_limit\":422}\nNext action:",
+        "action": "C",
+        "input_tokens": 233,
+        "probabilities": [
+          7.083264790708199e-05,
+          6.654910976067185e-05,
+          0.9992778897285461,
+          0.0001713693345664069,
+          3.674139588838443e-05,
+          0.00023226016492117196,
+          2.4035007299971767e-05,
+          3.775897130253725e-05,
+          8.257973240688443e-05
+        ],
+        "context": {
+          "input_tokens": 233,
+          "original_tokens": 233,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=live-session. Actions=ABC\nMetrics={\"samples\":30,\"error_rate\":0.07602241364890859,\"recent_error_rate\":0.11343804537521815,\"baseline_error_rate\":0.03812810369497517,\"recent_max_p95_ms\":628.78,\"baseline_requests\":11881,\"recent_requests\":12033}\nPolicy={\"found\":true,\"error_limit\":0.024,\"latency_limit\":422}\nChanges=[{\"kind\":\"release\",\"status\":\"stale\",\"minute\":54},{\"kind\":\"dependency\",\"status\":\"active\",\"minute\":39}]\nNext action:",
+        "action": "E",
+        "input_tokens": 265,
+        "probabilities": [
+          0.0007673930958844721,
+          0.00012567937665153295,
+          0.0006655360339209437,
+          0.024540437385439873,
+          0.8289886116981506,
+          0.07961998134851456,
+          0.047038331627845764,
+          0.011570633389055729,
+          0.006683297920972109
+        ],
+        "context": {
+          "input_tokens": 265,
+          "original_tokens": 265,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      }
+    ],
+    "episode": {
+      "task_id": "live-session",
+      "split": "dev",
+      "actions": [
+        "A",
+        "B",
+        "C",
+        "E"
+      ],
+      "reward": 1.3,
+      "score": {
+        "success": true,
+        "decision_correct": true,
+        "checks": {
+          "completed": true,
+          "structured_answer": true,
+          "service_answer": true,
+          "metrics_observed": true,
+          "current_metrics": true,
+          "metric_status_consistency": true,
+          "numeric_answer": true,
+          "status_answer": true,
+          "cause_answer": true,
+          "recommendation_answer": true,
+          "uncertainty_answer": true,
+          "citation_ids": true,
+          "runbook_evidence": true,
+          "current_change_evidence": true,
+          "required_tools": true,
+          "allowed_tools": true,
+          "no_tool_errors": true,
+          "service_scoped_calls": true
+        },
+        "failure": null,
+        "answer_parse_error": null,
+        "parsed_answer": {
+          "service": "live-session",
+          "error_rate": 0.07602241364890859,
+          "status": "incident",
+          "likely_cause": "dependency_outage",
+          "recommendation": "dependency_escalation",
+          "uncertainty": "causality_unproven",
+          "citations": [
+            "c46abf6c3140565c14c5",
+            "31e78787f14ed7338f5f",
+            "0ae2ba6514caa261374a",
+            "5997587a1017daa75385",
+            "fcf600ced61a76a80258",
+            "chg-f6ed0429269beddae09f",
+            "chg-fc039d8b6d0e3849b430"
+          ]
+        },
+        "tool_execution_accuracy": 1.0,
+        "citation_precision": 1.0,
+        "tool_calls": 3,
+        "latency_seconds": 0.007906499988166615,
+        "known_tokens": 793,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "trace": {
+        "status": "completed",
+        "answer": "{\"service\": \"live-session\", \"error_rate\": 0.07602241364890859, \"status\": \"incident\", \"likely_cause\": \"dependency_outage\", \"recommendation\": \"dependency_escalation\", \"uncertainty\": \"causality_unproven\", \"citations\": [\"c46abf6c3140565c14c5\", \"31e78787f14ed7338f5f\", \"0ae2ba6514caa261374a\", \"5997587a1017daa75385\", \"fcf600ced61a76a80258\", \"chg-f6ed0429269beddae09f\", \"chg-fc039d8b6d0e3849b430\"]}",
+        "events": [
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "live-session",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "live-session",
+              "samples": 30,
+              "error_rate": 0.07602241364890859,
+              "max_p95_ms": 628.78,
+              "requests": 23914,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.03812810369497517,
+              "baseline_max_p95_ms": 628.78,
+              "baseline_requests": 11881,
+              "recent_error_rate": 0.11343804537521815,
+              "recent_max_p95_ms": 628.78,
+              "recent_requests": 12033,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0030664999940199777
+          },
+          {
+            "kind": "tool",
+            "name": "knowledge_search",
+            "arguments": {
+              "service": "live-session",
+              "query": "incident policy observation window status diagnostic evidence uncertainty live-session",
+              "limit": 5
+            },
+            "output": {
+              "service": "live-session",
+              "source": null,
+              "evidence": [
+                {
+                  "id": "c46abf6c3140565c14c5",
+                  "source": "live-session/runbook.md",
+                  "text": "# live-session: live room admission incident policy",
+                  "score": 0.01639344262295082,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "31e78787f14ed7338f5f",
+                  "source": "live-session/runbook.md",
+                  "text": "## Observation window and status\nRequest service_metrics for the latest 30 minutes. Its recent fields summarize\nthe newest 15 samples, and baseline fields summarize the earlier 15 samples.\nThe final error_rate must be the complete 30-minute error_rate, as a decimal.\nAn incident exists if recent_error_rate >= 0.0240 or\nrecent_max_p95_ms > 422 milliseconds. Both conditions below those\nlimits imply healthy, provided current metric samples and this policy exist.\nMissing metrics or a missing runbook imply insufficient_data: do not infer\nhealthy from a null error_rate or borrow a different service's thresholds.",
+                  "score": 0.016129032258064516,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "0ae2ba6514caa261374a",
+                  "source": "live-session/runbook.md",
+                  "text": "Use the exact service filter when retrieving this runbook. Evidence from another\nservice has different limits and cannot establish the status of live-session.",
+                  "score": 0.015873015873015872,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "5997587a1017daa75385",
+                  "source": "live-session/runbook.md",
+                  "text": "## Uncertainty and citations\nUse uncertainty=causality_unproven for evidence-supported incident hypotheses;\nnone_detected for healthy observations; insufficient_data for missing required\nevidence; conflicting_evidence for unresolved conflicts. Correlation does not\nprove causation. Cite this runbook and current incident_changes evidence ids.",
+                  "score": 0.015625,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "fcf600ced61a76a80258",
+                  "source": "live-session/runbook.md",
+                  "text": "## Diagnostic evidence rules\nThe serving dependency for live room admission is session-store. Obtain incident_changes:\nthe runbook contains policies, not the service's current change history.\nAn active release before the metric deterioration, stable demand and a healthy\ndependency support likely_cause=release_regression and recommendation=rollback_review.\nAn active dependency failure before deterioration takes priority over a stale,\naborted or later unrelated release: dependency_outage / dependency_escalation.\nAn active traffic surge with a higher recent/baseline request ratio and healthy\ndependency supports capacity_pressure / capacity_review. Error rates alone do\nnot distinguish these causes. Cite the relevant current change evidence id.\nConflicting health probes or two unresolved competing change explanations require\nconflicting_evidence / verify_changes. A current incident without sufficient\ncausal evidence requires insufficient_evidence / collect_evidence.\nA healthy service requir",
+                  "score": 0.015384615384615385,
+                  "trust": "untrusted_evidence"
+                }
+              ]
+            },
+            "seconds": 0.0017660000012256205
+          },
+          {
+            "kind": "tool",
+            "name": "incident_changes",
+            "arguments": {
+              "service": "live-session"
+            },
+            "output": {
+              "service": "live-session",
+              "available": true,
+              "changes": [
+                {
+                  "kind": "release",
+                  "minute": 54,
+                  "summary": "A proposed rollout was aborted before serving traffic; it did not change live replicas.",
+                  "status": "stale",
+                  "evidence_id": "chg-f6ed0429269beddae09f"
+                },
+                {
+                  "kind": "dependency",
+                  "minute": 39,
+                  "summary": "session-store connection failures started before the service deterioration; two probes agree.",
+                  "status": "active",
+                  "evidence_id": "chg-fc039d8b6d0e3849b430"
+                }
+              ],
+              "evidence": [
+                {
+                  "id": "chg-f6ed0429269beddae09f",
+                  "source": "changes/live-session",
+                  "text": "release at minute 54 (stale): A proposed rollout was aborted before serving traffic; it did not change live replicas.",
+                  "kind": "release",
+                  "status": "stale",
+                  "minute": 54
+                },
+                {
+                  "id": "chg-fc039d8b6d0e3849b430",
+                  "source": "changes/live-session",
+                  "text": "dependency at minute 39 (active): session-store connection failures started before the service deterioration; two probes agree.",
+                  "kind": "dependency",
+                  "status": "active",
+                  "minute": 39
+                }
+              ],
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.003073999992921017
+          }
+        ],
+        "tokens": 793,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "wall_seconds": 4.307193200002075
+    }
+  },
+  {
+    "states": [
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=live-session. Actions=\nNext action:",
+        "action": "A",
+        "input_tokens": 84,
+        "probabilities": [
+          0.9984208345413208,
+          0.00012464831524994224,
+          0.00010727192420745268,
+          0.0004430179833434522,
+          0.00010090055002365261,
+          0.0002187639765907079,
+          0.00010590151214273646,
+          6.250722799450159e-05,
+          0.0004161840188317001
+        ],
+        "context": {
+          "input_tokens": 84,
+          "original_tokens": 84,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=live-session. Actions=A\nMetrics={\"samples\":30,\"error_rate\":0.07602241364890859,\"recent_error_rate\":0.11343804537521815,\"baseline_error_rate\":0.03812810369497517,\"recent_max_p95_ms\":628.78,\"baseline_requests\":11881,\"recent_requests\":12033}\nNext action:",
+        "action": "B",
+        "input_tokens": 207,
+        "probabilities": [
+          8.569344936404377e-05,
+          0.9979674220085144,
+          0.0016613717889413238,
+          9.6933901659213e-05,
+          9.439647692488506e-05,
+          2.6640380383469164e-05,
+          1.3361226592678577e-05,
+          4.887909199169371e-06,
+          4.9313432100461796e-05
+        ],
+        "context": {
+          "input_tokens": 207,
+          "original_tokens": 207,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=live-session. Actions=AB\nMetrics={\"samples\":30,\"error_rate\":0.07602241364890859,\"recent_error_rate\":0.11343804537521815,\"baseline_error_rate\":0.03812810369497517,\"recent_max_p95_ms\":628.78,\"baseline_requests\":11881,\"recent_requests\":12033}\nPolicy={\"found\":true,\"error_limit\":0.024,\"latency_limit\":422}\nNext action:",
+        "action": "C",
+        "input_tokens": 233,
+        "probabilities": [
+          7.083264790708199e-05,
+          6.654910976067185e-05,
+          0.9992778897285461,
+          0.0001713693345664069,
+          3.674139588838443e-05,
+          0.00023226016492117196,
+          2.4035007299971767e-05,
+          3.775897130253725e-05,
+          8.257973240688443e-05
+        ],
+        "context": {
+          "input_tokens": 233,
+          "original_tokens": 233,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=live-session. Actions=ABC\nMetrics={\"samples\":30,\"error_rate\":0.07602241364890859,\"recent_error_rate\":0.11343804537521815,\"baseline_error_rate\":0.03812810369497517,\"recent_max_p95_ms\":628.78,\"baseline_requests\":11881,\"recent_requests\":12033}\nPolicy={\"found\":true,\"error_limit\":0.024,\"latency_limit\":422}\nChanges=[{\"kind\":\"release\",\"status\":\"stale\",\"minute\":54},{\"kind\":\"dependency\",\"status\":\"active\",\"minute\":39}]\nNext action:",
+        "action": "E",
+        "input_tokens": 265,
+        "probabilities": [
+          0.0007673930958844721,
+          0.00012567937665153295,
+          0.0006655360339209437,
+          0.024540437385439873,
+          0.8289886116981506,
+          0.07961998134851456,
+          0.047038331627845764,
+          0.011570633389055729,
+          0.006683297920972109
+        ],
+        "context": {
+          "input_tokens": 265,
+          "original_tokens": 265,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      }
+    ],
+    "episode": {
+      "task_id": "live-session",
+      "split": "dev",
+      "actions": [
+        "A",
+        "B",
+        "C",
+        "E"
+      ],
+      "reward": 1.3,
+      "score": {
+        "success": true,
+        "decision_correct": true,
+        "checks": {
+          "completed": true,
+          "structured_answer": true,
+          "service_answer": true,
+          "metrics_observed": true,
+          "current_metrics": true,
+          "metric_status_consistency": true,
+          "numeric_answer": true,
+          "status_answer": true,
+          "cause_answer": true,
+          "recommendation_answer": true,
+          "uncertainty_answer": true,
+          "citation_ids": true,
+          "runbook_evidence": true,
+          "current_change_evidence": true,
+          "required_tools": true,
+          "allowed_tools": true,
+          "no_tool_errors": true,
+          "service_scoped_calls": true
+        },
+        "failure": null,
+        "answer_parse_error": null,
+        "parsed_answer": {
+          "service": "live-session",
+          "error_rate": 0.07602241364890859,
+          "status": "incident",
+          "likely_cause": "dependency_outage",
+          "recommendation": "dependency_escalation",
+          "uncertainty": "causality_unproven",
+          "citations": [
+            "c46abf6c3140565c14c5",
+            "31e78787f14ed7338f5f",
+            "0ae2ba6514caa261374a",
+            "5997587a1017daa75385",
+            "fcf600ced61a76a80258",
+            "chg-f6ed0429269beddae09f",
+            "chg-fc039d8b6d0e3849b430"
+          ]
+        },
+        "tool_execution_accuracy": 1.0,
+        "citation_precision": 1.0,
+        "tool_calls": 3,
+        "latency_seconds": 0.007848400011425838,
+        "known_tokens": 793,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "trace": {
+        "status": "completed",
+        "answer": "{\"service\": \"live-session\", \"error_rate\": 0.07602241364890859, \"status\": \"incident\", \"likely_cause\": \"dependency_outage\", \"recommendation\": \"dependency_escalation\", \"uncertainty\": \"causality_unproven\", \"citations\": [\"c46abf6c3140565c14c5\", \"31e78787f14ed7338f5f\", \"0ae2ba6514caa261374a\", \"5997587a1017daa75385\", \"fcf600ced61a76a80258\", \"chg-f6ed0429269beddae09f\", \"chg-fc039d8b6d0e3849b430\"]}",
+        "events": [
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "live-session",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "live-session",
+              "samples": 30,
+              "error_rate": 0.07602241364890859,
+              "max_p95_ms": 628.78,
+              "requests": 23914,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.03812810369497517,
+              "baseline_max_p95_ms": 628.78,
+              "baseline_requests": 11881,
+              "recent_error_rate": 0.11343804537521815,
+              "recent_max_p95_ms": 628.78,
+              "recent_requests": 12033,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0030913000082364306
+          },
+          {
+            "kind": "tool",
+            "name": "knowledge_search",
+            "arguments": {
+              "service": "live-session",
+              "query": "incident policy observation window status diagnostic evidence uncertainty live-session",
+              "limit": 5
+            },
+            "output": {
+              "service": "live-session",
+              "source": null,
+              "evidence": [
+                {
+                  "id": "c46abf6c3140565c14c5",
+                  "source": "live-session/runbook.md",
+                  "text": "# live-session: live room admission incident policy",
+                  "score": 0.01639344262295082,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "31e78787f14ed7338f5f",
+                  "source": "live-session/runbook.md",
+                  "text": "## Observation window and status\nRequest service_metrics for the latest 30 minutes. Its recent fields summarize\nthe newest 15 samples, and baseline fields summarize the earlier 15 samples.\nThe final error_rate must be the complete 30-minute error_rate, as a decimal.\nAn incident exists if recent_error_rate >= 0.0240 or\nrecent_max_p95_ms > 422 milliseconds. Both conditions below those\nlimits imply healthy, provided current metric samples and this policy exist.\nMissing metrics or a missing runbook imply insufficient_data: do not infer\nhealthy from a null error_rate or borrow a different service's thresholds.",
+                  "score": 0.016129032258064516,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "0ae2ba6514caa261374a",
+                  "source": "live-session/runbook.md",
+                  "text": "Use the exact service filter when retrieving this runbook. Evidence from another\nservice has different limits and cannot establish the status of live-session.",
+                  "score": 0.015873015873015872,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "5997587a1017daa75385",
+                  "source": "live-session/runbook.md",
+                  "text": "## Uncertainty and citations\nUse uncertainty=causality_unproven for evidence-supported incident hypotheses;\nnone_detected for healthy observations; insufficient_data for missing required\nevidence; conflicting_evidence for unresolved conflicts. Correlation does not\nprove causation. Cite this runbook and current incident_changes evidence ids.",
+                  "score": 0.015625,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "fcf600ced61a76a80258",
+                  "source": "live-session/runbook.md",
+                  "text": "## Diagnostic evidence rules\nThe serving dependency for live room admission is session-store. Obtain incident_changes:\nthe runbook contains policies, not the service's current change history.\nAn active release before the metric deterioration, stable demand and a healthy\ndependency support likely_cause=release_regression and recommendation=rollback_review.\nAn active dependency failure before deterioration takes priority over a stale,\naborted or later unrelated release: dependency_outage / dependency_escalation.\nAn active traffic surge with a higher recent/baseline request ratio and healthy\ndependency supports capacity_pressure / capacity_review. Error rates alone do\nnot distinguish these causes. Cite the relevant current change evidence id.\nConflicting health probes or two unresolved competing change explanations require\nconflicting_evidence / verify_changes. A current incident without sufficient\ncausal evidence requires insufficient_evidence / collect_evidence.\nA healthy service requir",
+                  "score": 0.015384615384615385,
+                  "trust": "untrusted_evidence"
+                }
+              ]
+            },
+            "seconds": 0.0015419000119436532
+          },
+          {
+            "kind": "tool",
+            "name": "incident_changes",
+            "arguments": {
+              "service": "live-session"
+            },
+            "output": {
+              "service": "live-session",
+              "available": true,
+              "changes": [
+                {
+                  "kind": "release",
+                  "minute": 54,
+                  "summary": "A proposed rollout was aborted before serving traffic; it did not change live replicas.",
+                  "status": "stale",
+                  "evidence_id": "chg-f6ed0429269beddae09f"
+                },
+                {
+                  "kind": "dependency",
+                  "minute": 39,
+                  "summary": "session-store connection failures started before the service deterioration; two probes agree.",
+                  "status": "active",
+                  "evidence_id": "chg-fc039d8b6d0e3849b430"
+                }
+              ],
+              "evidence": [
+                {
+                  "id": "chg-f6ed0429269beddae09f",
+                  "source": "changes/live-session",
+                  "text": "release at minute 54 (stale): A proposed rollout was aborted before serving traffic; it did not change live replicas.",
+                  "kind": "release",
+                  "status": "stale",
+                  "minute": 54
+                },
+                {
+                  "id": "chg-fc039d8b6d0e3849b430",
+                  "source": "changes/live-session",
+                  "text": "dependency at minute 39 (active): session-store connection failures started before the service deterioration; two probes agree.",
+                  "kind": "dependency",
+                  "status": "active",
+                  "minute": 39
+                }
+              ],
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.003215199991245754
+          }
+        ],
+        "tokens": 793,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "wall_seconds": 3.895450099997106
+    }
+  },
+  {
+    "states": [
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=live-session. Actions=\nNext action:",
+        "action": "A",
+        "input_tokens": 84,
+        "probabilities": [
+          0.9984208345413208,
+          0.00012464831524994224,
+          0.00010727192420745268,
+          0.0004430179833434522,
+          0.00010090055002365261,
+          0.0002187639765907079,
+          0.00010590151214273646,
+          6.250722799450159e-05,
+          0.0004161840188317001
+        ],
+        "context": {
+          "input_tokens": 84,
+          "original_tokens": 84,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=live-session. Actions=A\nMetrics={\"samples\":30,\"error_rate\":0.07602241364890859,\"recent_error_rate\":0.11343804537521815,\"baseline_error_rate\":0.03812810369497517,\"recent_max_p95_ms\":628.78,\"baseline_requests\":11881,\"recent_requests\":12033}\nNext action:",
+        "action": "B",
+        "input_tokens": 207,
+        "probabilities": [
+          8.569344936404377e-05,
+          0.9979674220085144,
+          0.0016613717889413238,
+          9.6933901659213e-05,
+          9.439647692488506e-05,
+          2.6640380383469164e-05,
+          1.3361226592678577e-05,
+          4.887909199169371e-06,
+          4.9313432100461796e-05
+        ],
+        "context": {
+          "input_tokens": 207,
+          "original_tokens": 207,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=live-session. Actions=AB\nMetrics={\"samples\":30,\"error_rate\":0.07602241364890859,\"recent_error_rate\":0.11343804537521815,\"baseline_error_rate\":0.03812810369497517,\"recent_max_p95_ms\":628.78,\"baseline_requests\":11881,\"recent_requests\":12033}\nPolicy={\"found\":true,\"error_limit\":0.024,\"latency_limit\":422}\nNext action:",
+        "action": "C",
+        "input_tokens": 233,
+        "probabilities": [
+          7.083264790708199e-05,
+          6.654910976067185e-05,
+          0.9992778897285461,
+          0.0001713693345664069,
+          3.674139588838443e-05,
+          0.00023226016492117196,
+          2.4035007299971767e-05,
+          3.775897130253725e-05,
+          8.257973240688443e-05
+        ],
+        "context": {
+          "input_tokens": 233,
+          "original_tokens": 233,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=live-session. Actions=ABC\nMetrics={\"samples\":30,\"error_rate\":0.07602241364890859,\"recent_error_rate\":0.11343804537521815,\"baseline_error_rate\":0.03812810369497517,\"recent_max_p95_ms\":628.78,\"baseline_requests\":11881,\"recent_requests\":12033}\nPolicy={\"found\":true,\"error_limit\":0.024,\"latency_limit\":422}\nChanges=[{\"kind\":\"release\",\"status\":\"stale\",\"minute\":54},{\"kind\":\"dependency\",\"status\":\"active\",\"minute\":39}]\nNext action:",
+        "action": "G",
+        "input_tokens": 265,
+        "probabilities": [
+          0.0007673930958844721,
+          0.00012567937665153295,
+          0.0006655360339209437,
+          0.024540437385439873,
+          0.8289886116981506,
+          0.07961998134851456,
+          0.047038331627845764,
+          0.011570633389055729,
+          0.006683297920972109
+        ],
+        "context": {
+          "input_tokens": 265,
+          "original_tokens": 265,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      }
+    ],
+    "episode": {
+      "task_id": "live-session",
+      "split": "dev",
+      "actions": [
+        "A",
+        "B",
+        "C",
+        "G"
+      ],
+      "reward": 0.3,
+      "score": {
+        "success": false,
+        "decision_correct": false,
+        "checks": {
+          "completed": true,
+          "structured_answer": true,
+          "service_answer": true,
+          "metrics_observed": true,
+          "current_metrics": true,
+          "metric_status_consistency": true,
+          "numeric_answer": true,
+          "status_answer": false,
+          "cause_answer": false,
+          "recommendation_answer": false,
+          "uncertainty_answer": false,
+          "citation_ids": true,
+          "runbook_evidence": true,
+          "current_change_evidence": true,
+          "required_tools": true,
+          "allowed_tools": true,
+          "no_tool_errors": true,
+          "service_scoped_calls": true
+        },
+        "failure": "status_answer",
+        "answer_parse_error": null,
+        "parsed_answer": {
+          "service": "live-session",
+          "error_rate": 0.07602241364890859,
+          "status": "healthy",
+          "likely_cause": "none",
+          "recommendation": "monitor",
+          "uncertainty": "none_detected",
+          "citations": [
+            "c46abf6c3140565c14c5",
+            "31e78787f14ed7338f5f",
+            "0ae2ba6514caa261374a",
+            "5997587a1017daa75385",
+            "fcf600ced61a76a80258",
+            "chg-f6ed0429269beddae09f",
+            "chg-fc039d8b6d0e3849b430"
+          ]
+        },
+        "tool_execution_accuracy": 1.0,
+        "citation_precision": 1.0,
+        "tool_calls": 3,
+        "latency_seconds": 0.008018299980903976,
+        "known_tokens": 793,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "trace": {
+        "status": "completed",
+        "answer": "{\"service\": \"live-session\", \"error_rate\": 0.07602241364890859, \"status\": \"healthy\", \"likely_cause\": \"none\", \"recommendation\": \"monitor\", \"uncertainty\": \"none_detected\", \"citations\": [\"c46abf6c3140565c14c5\", \"31e78787f14ed7338f5f\", \"0ae2ba6514caa261374a\", \"5997587a1017daa75385\", \"fcf600ced61a76a80258\", \"chg-f6ed0429269beddae09f\", \"chg-fc039d8b6d0e3849b430\"]}",
+        "events": [
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "live-session",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "live-session",
+              "samples": 30,
+              "error_rate": 0.07602241364890859,
+              "max_p95_ms": 628.78,
+              "requests": 23914,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.03812810369497517,
+              "baseline_max_p95_ms": 628.78,
+              "baseline_requests": 11881,
+              "recent_error_rate": 0.11343804537521815,
+              "recent_max_p95_ms": 628.78,
+              "recent_requests": 12033,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.002822299997205846
+          },
+          {
+            "kind": "tool",
+            "name": "knowledge_search",
+            "arguments": {
+              "service": "live-session",
+              "query": "incident policy observation window status diagnostic evidence uncertainty live-session",
+              "limit": 5
+            },
+            "output": {
+              "service": "live-session",
+              "source": null,
+              "evidence": [
+                {
+                  "id": "c46abf6c3140565c14c5",
+                  "source": "live-session/runbook.md",
+                  "text": "# live-session: live room admission incident policy",
+                  "score": 0.01639344262295082,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "31e78787f14ed7338f5f",
+                  "source": "live-session/runbook.md",
+                  "text": "## Observation window and status\nRequest service_metrics for the latest 30 minutes. Its recent fields summarize\nthe newest 15 samples, and baseline fields summarize the earlier 15 samples.\nThe final error_rate must be the complete 30-minute error_rate, as a decimal.\nAn incident exists if recent_error_rate >= 0.0240 or\nrecent_max_p95_ms > 422 milliseconds. Both conditions below those\nlimits imply healthy, provided current metric samples and this policy exist.\nMissing metrics or a missing runbook imply insufficient_data: do not infer\nhealthy from a null error_rate or borrow a different service's thresholds.",
+                  "score": 0.016129032258064516,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "0ae2ba6514caa261374a",
+                  "source": "live-session/runbook.md",
+                  "text": "Use the exact service filter when retrieving this runbook. Evidence from another\nservice has different limits and cannot establish the status of live-session.",
+                  "score": 0.015873015873015872,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "5997587a1017daa75385",
+                  "source": "live-session/runbook.md",
+                  "text": "## Uncertainty and citations\nUse uncertainty=causality_unproven for evidence-supported incident hypotheses;\nnone_detected for healthy observations; insufficient_data for missing required\nevidence; conflicting_evidence for unresolved conflicts. Correlation does not\nprove causation. Cite this runbook and current incident_changes evidence ids.",
+                  "score": 0.015625,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "fcf600ced61a76a80258",
+                  "source": "live-session/runbook.md",
+                  "text": "## Diagnostic evidence rules\nThe serving dependency for live room admission is session-store. Obtain incident_changes:\nthe runbook contains policies, not the service's current change history.\nAn active release before the metric deterioration, stable demand and a healthy\ndependency support likely_cause=release_regression and recommendation=rollback_review.\nAn active dependency failure before deterioration takes priority over a stale,\naborted or later unrelated release: dependency_outage / dependency_escalation.\nAn active traffic surge with a higher recent/baseline request ratio and healthy\ndependency supports capacity_pressure / capacity_review. Error rates alone do\nnot distinguish these causes. Cite the relevant current change evidence id.\nConflicting health probes or two unresolved competing change explanations require\nconflicting_evidence / verify_changes. A current incident without sufficient\ncausal evidence requires insufficient_evidence / collect_evidence.\nA healthy service requir",
+                  "score": 0.015384615384615385,
+                  "trust": "untrusted_evidence"
+                }
+              ]
+            },
+            "seconds": 0.002026199988904409
+          },
+          {
+            "kind": "tool",
+            "name": "incident_changes",
+            "arguments": {
+              "service": "live-session"
+            },
+            "output": {
+              "service": "live-session",
+              "available": true,
+              "changes": [
+                {
+                  "kind": "release",
+                  "minute": 54,
+                  "summary": "A proposed rollout was aborted before serving traffic; it did not change live replicas.",
+                  "status": "stale",
+                  "evidence_id": "chg-f6ed0429269beddae09f"
+                },
+                {
+                  "kind": "dependency",
+                  "minute": 39,
+                  "summary": "session-store connection failures started before the service deterioration; two probes agree.",
+                  "status": "active",
+                  "evidence_id": "chg-fc039d8b6d0e3849b430"
+                }
+              ],
+              "evidence": [
+                {
+                  "id": "chg-f6ed0429269beddae09f",
+                  "source": "changes/live-session",
+                  "text": "release at minute 54 (stale): A proposed rollout was aborted before serving traffic; it did not change live replicas.",
+                  "kind": "release",
+                  "status": "stale",
+                  "minute": 54
+                },
+                {
+                  "id": "chg-fc039d8b6d0e3849b430",
+                  "source": "changes/live-session",
+                  "text": "dependency at minute 39 (active): session-store connection failures started before the service deterioration; two probes agree.",
+                  "kind": "dependency",
+                  "status": "active",
+                  "minute": 39
+                }
+              ],
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0031697999947937205
+          }
+        ],
+        "tokens": 793,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "wall_seconds": 4.332794800007832
+    }
+  },
+  {
+    "states": [
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=live-session. Actions=\nNext action:",
+        "action": "A",
+        "input_tokens": 84,
+        "probabilities": [
+          0.9984208345413208,
+          0.00012464831524994224,
+          0.00010727192420745268,
+          0.0004430179833434522,
+          0.00010090055002365261,
+          0.0002187639765907079,
+          0.00010590151214273646,
+          6.250722799450159e-05,
+          0.0004161840188317001
+        ],
+        "context": {
+          "input_tokens": 84,
+          "original_tokens": 84,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=live-session. Actions=A\nMetrics={\"samples\":30,\"error_rate\":0.07602241364890859,\"recent_error_rate\":0.11343804537521815,\"baseline_error_rate\":0.03812810369497517,\"recent_max_p95_ms\":628.78,\"baseline_requests\":11881,\"recent_requests\":12033}\nNext action:",
+        "action": "B",
+        "input_tokens": 207,
+        "probabilities": [
+          8.569344936404377e-05,
+          0.9979674220085144,
+          0.0016613717889413238,
+          9.6933901659213e-05,
+          9.439647692488506e-05,
+          2.6640380383469164e-05,
+          1.3361226592678577e-05,
+          4.887909199169371e-06,
+          4.9313432100461796e-05
+        ],
+        "context": {
+          "input_tokens": 207,
+          "original_tokens": 207,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=live-session. Actions=AB\nMetrics={\"samples\":30,\"error_rate\":0.07602241364890859,\"recent_error_rate\":0.11343804537521815,\"baseline_error_rate\":0.03812810369497517,\"recent_max_p95_ms\":628.78,\"baseline_requests\":11881,\"recent_requests\":12033}\nPolicy={\"found\":true,\"error_limit\":0.024,\"latency_limit\":422}\nNext action:",
+        "action": "C",
+        "input_tokens": 233,
+        "probabilities": [
+          7.083264790708199e-05,
+          6.654910976067185e-05,
+          0.9992778897285461,
+          0.0001713693345664069,
+          3.674139588838443e-05,
+          0.00023226016492117196,
+          2.4035007299971767e-05,
+          3.775897130253725e-05,
+          8.257973240688443e-05
+        ],
+        "context": {
+          "input_tokens": 233,
+          "original_tokens": 233,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      },
+      {
+        "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=live-session. Actions=ABC\nMetrics={\"samples\":30,\"error_rate\":0.07602241364890859,\"recent_error_rate\":0.11343804537521815,\"baseline_error_rate\":0.03812810369497517,\"recent_max_p95_ms\":628.78,\"baseline_requests\":11881,\"recent_requests\":12033}\nPolicy={\"found\":true,\"error_limit\":0.024,\"latency_limit\":422}\nChanges=[{\"kind\":\"release\",\"status\":\"stale\",\"minute\":54},{\"kind\":\"dependency\",\"status\":\"active\",\"minute\":39}]\nNext action:",
+        "action": "E",
+        "input_tokens": 265,
+        "probabilities": [
+          0.0007673930958844721,
+          0.00012567937665153295,
+          0.0006655360339209437,
+          0.024540437385439873,
+          0.8289886116981506,
+          0.07961998134851456,
+          0.047038331627845764,
+          0.011570633389055729,
+          0.006683297920972109
+        ],
+        "context": {
+          "input_tokens": 265,
+          "original_tokens": 265,
+          "clipped": false,
+          "max_length": 384,
+          "truncation_side": "left"
+        }
+      }
+    ],
+    "episode": {
+      "task_id": "live-session",
+      "split": "dev",
+      "actions": [
+        "A",
+        "B",
+        "C",
+        "E"
+      ],
+      "reward": 1.3,
+      "score": {
+        "success": true,
+        "decision_correct": true,
+        "checks": {
+          "completed": true,
+          "structured_answer": true,
+          "service_answer": true,
+          "metrics_observed": true,
+          "current_metrics": true,
+          "metric_status_consistency": true,
+          "numeric_answer": true,
+          "status_answer": true,
+          "cause_answer": true,
+          "recommendation_answer": true,
+          "uncertainty_answer": true,
+          "citation_ids": true,
+          "runbook_evidence": true,
+          "current_change_evidence": true,
+          "required_tools": true,
+          "allowed_tools": true,
+          "no_tool_errors": true,
+          "service_scoped_calls": true
+        },
+        "failure": null,
+        "answer_parse_error": null,
+        "parsed_answer": {
+          "service": "live-session",
+          "error_rate": 0.07602241364890859,
+          "status": "incident",
+          "likely_cause": "dependency_outage",
+          "recommendation": "dependency_escalation",
+          "uncertainty": "causality_unproven",
+          "citations": [
+            "c46abf6c3140565c14c5",
+            "31e78787f14ed7338f5f",
+            "0ae2ba6514caa261374a",
+            "5997587a1017daa75385",
+            "fcf600ced61a76a80258",
+            "chg-f6ed0429269beddae09f",
+            "chg-fc039d8b6d0e3849b430"
+          ]
+        },
+        "tool_execution_accuracy": 1.0,
+        "citation_precision": 1.0,
+        "tool_calls": 3,
+        "latency_seconds": 0.006607799994526431,
+        "known_tokens": 793,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "trace": {
+        "status": "completed",
+        "answer": "{\"service\": \"live-session\", \"error_rate\": 0.07602241364890859, \"status\": \"incident\", \"likely_cause\": \"dependency_outage\", \"recommendation\": \"dependency_escalation\", \"uncertainty\": \"causality_unproven\", \"citations\": [\"c46abf6c3140565c14c5\", \"31e78787f14ed7338f5f\", \"0ae2ba6514caa261374a\", \"5997587a1017daa75385\", \"fcf600ced61a76a80258\", \"chg-f6ed0429269beddae09f\", \"chg-fc039d8b6d0e3849b430\"]}",
+        "events": [
+          {
+            "kind": "tool",
+            "name": "service_metrics",
+            "arguments": {
+              "service": "live-session",
+              "window_minutes": 30
+            },
+            "output": {
+              "service": "live-session",
+              "samples": 30,
+              "error_rate": 0.07602241364890859,
+              "max_p95_ms": 628.78,
+              "requests": 23914,
+              "window_minutes": 30,
+              "as_of_minute": 59,
+              "status": "observed",
+              "baseline_error_rate": 0.03812810369497517,
+              "baseline_max_p95_ms": 628.78,
+              "baseline_requests": 11881,
+              "recent_error_rate": 0.11343804537521815,
+              "recent_max_p95_ms": 628.78,
+              "recent_requests": 12033,
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0022902000055182725
+          },
+          {
+            "kind": "tool",
+            "name": "knowledge_search",
+            "arguments": {
+              "service": "live-session",
+              "query": "incident policy observation window status diagnostic evidence uncertainty live-session",
+              "limit": 5
+            },
+            "output": {
+              "service": "live-session",
+              "source": null,
+              "evidence": [
+                {
+                  "id": "c46abf6c3140565c14c5",
+                  "source": "live-session/runbook.md",
+                  "text": "# live-session: live room admission incident policy",
+                  "score": 0.01639344262295082,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "31e78787f14ed7338f5f",
+                  "source": "live-session/runbook.md",
+                  "text": "## Observation window and status\nRequest service_metrics for the latest 30 minutes. Its recent fields summarize\nthe newest 15 samples, and baseline fields summarize the earlier 15 samples.\nThe final error_rate must be the complete 30-minute error_rate, as a decimal.\nAn incident exists if recent_error_rate >= 0.0240 or\nrecent_max_p95_ms > 422 milliseconds. Both conditions below those\nlimits imply healthy, provided current metric samples and this policy exist.\nMissing metrics or a missing runbook imply insufficient_data: do not infer\nhealthy from a null error_rate or borrow a different service's thresholds.",
+                  "score": 0.016129032258064516,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "0ae2ba6514caa261374a",
+                  "source": "live-session/runbook.md",
+                  "text": "Use the exact service filter when retrieving this runbook. Evidence from another\nservice has different limits and cannot establish the status of live-session.",
+                  "score": 0.015873015873015872,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "5997587a1017daa75385",
+                  "source": "live-session/runbook.md",
+                  "text": "## Uncertainty and citations\nUse uncertainty=causality_unproven for evidence-supported incident hypotheses;\nnone_detected for healthy observations; insufficient_data for missing required\nevidence; conflicting_evidence for unresolved conflicts. Correlation does not\nprove causation. Cite this runbook and current incident_changes evidence ids.",
+                  "score": 0.015625,
+                  "trust": "untrusted_evidence"
+                },
+                {
+                  "id": "fcf600ced61a76a80258",
+                  "source": "live-session/runbook.md",
+                  "text": "## Diagnostic evidence rules\nThe serving dependency for live room admission is session-store. Obtain incident_changes:\nthe runbook contains policies, not the service's current change history.\nAn active release before the metric deterioration, stable demand and a healthy\ndependency support likely_cause=release_regression and recommendation=rollback_review.\nAn active dependency failure before deterioration takes priority over a stale,\naborted or later unrelated release: dependency_outage / dependency_escalation.\nAn active traffic surge with a higher recent/baseline request ratio and healthy\ndependency supports capacity_pressure / capacity_review. Error rates alone do\nnot distinguish these causes. Cite the relevant current change evidence id.\nConflicting health probes or two unresolved competing change explanations require\nconflicting_evidence / verify_changes. A current incident without sufficient\ncausal evidence requires insufficient_evidence / collect_evidence.\nA healthy service requir",
+                  "score": 0.015384615384615385,
+                  "trust": "untrusted_evidence"
+                }
+              ]
+            },
+            "seconds": 0.0015876999968895689
+          },
+          {
+            "kind": "tool",
+            "name": "incident_changes",
+            "arguments": {
+              "service": "live-session"
+            },
+            "output": {
+              "service": "live-session",
+              "available": true,
+              "changes": [
+                {
+                  "kind": "release",
+                  "minute": 54,
+                  "summary": "A proposed rollout was aborted before serving traffic; it did not change live replicas.",
+                  "status": "stale",
+                  "evidence_id": "chg-f6ed0429269beddae09f"
+                },
+                {
+                  "kind": "dependency",
+                  "minute": 39,
+                  "summary": "session-store connection failures started before the service deterioration; two probes agree.",
+                  "status": "active",
+                  "evidence_id": "chg-fc039d8b6d0e3849b430"
+                }
+              ],
+              "evidence": [
+                {
+                  "id": "chg-f6ed0429269beddae09f",
+                  "source": "changes/live-session",
+                  "text": "release at minute 54 (stale): A proposed rollout was aborted before serving traffic; it did not change live replicas.",
+                  "kind": "release",
+                  "status": "stale",
+                  "minute": 54
+                },
+                {
+                  "id": "chg-fc039d8b6d0e3849b430",
+                  "source": "changes/live-session",
+                  "text": "dependency at minute 39 (active): session-store connection failures started before the service deterioration; two probes agree.",
+                  "kind": "dependency",
+                  "status": "active",
+                  "minute": 39
+                }
+              ],
+              "trust": "untrusted_evidence"
+            },
+            "seconds": 0.0027298999921185896
+          }
+        ],
+        "tokens": 793,
+        "unknown_usage": 0,
+        "fixture": false
+      },
+      "wall_seconds": 4.1204463000030955
+    }
+  }
+]

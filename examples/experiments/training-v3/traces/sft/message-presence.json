@@ -1,0 +1,293 @@
+{
+  "states": [
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=message-presence. Actions=\nNext action:",
+      "action": "A",
+      "input_tokens": 85,
+      "probabilities": [
+        0.9980975985527039,
+        0.00017843683599494398,
+        0.00014237464347388595,
+        0.0005479864776134491,
+        0.00010991445742547512,
+        0.0002859320375137031,
+        0.00015504339535254985,
+        8.001313835848123e-05,
+        0.00040269541204907
+      ],
+      "context": {
+        "input_tokens": 85,
+        "original_tokens": 85,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=message-presence. Actions=A\nMetrics={\"samples\":0,\"error_rate\":null,\"recent_error_rate\":null,\"baseline_error_rate\":null,\"recent_max_p95_ms\":null,\"baseline_requests\":0,\"recent_requests\":0}\nNext action:",
+      "action": "B",
+      "input_tokens": 140,
+      "probabilities": [
+        0.0016452718991786242,
+        0.9950356483459473,
+        0.002234705490991473,
+        0.0003341692790854722,
+        0.00038371424307115376,
+        0.00011374722089385614,
+        8.796429028734565e-05,
+        2.6798747057910077e-05,
+        0.00013800794840790331
+      ],
+      "context": {
+        "input_tokens": 140,
+        "original_tokens": 140,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=message-presence. Actions=AB\nMetrics={\"samples\":0,\"error_rate\":null,\"recent_error_rate\":null,\"baseline_error_rate\":null,\"recent_max_p95_ms\":null,\"baseline_requests\":0,\"recent_requests\":0}\nPolicy={\"found\":true,\"error_limit\":0.01,\"latency_limit\":554}\nNext action:",
+      "action": "C",
+      "input_tokens": 165,
+      "probabilities": [
+        0.00014893808111082762,
+        0.00016152313037309796,
+        0.9982366561889648,
+        0.0003924624470528215,
+        0.00013560111983679235,
+        0.00043477193685248494,
+        6.229124119272456e-05,
+        0.0002326443063793704,
+        0.00019507799879647791
+      ],
+      "context": {
+        "input_tokens": 165,
+        "original_tokens": 165,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    },
+    {
+      "prompt": "Read-only incident diagnosis. Choose ONE action letter. A=read metrics; B=read policy; C=read changes; D=release incident; E=dependency incident; F=capacity incident; G=healthy; H=missing evidence; I=conflicting incident. Inspect A,B,C before diagnosis. Use current evidence only.\n\nService=message-presence. Actions=ABC\nMetrics={\"samples\":0,\"error_rate\":null,\"recent_error_rate\":null,\"baseline_error_rate\":null,\"recent_max_p95_ms\":null,\"baseline_requests\":0,\"recent_requests\":0}\nPolicy={\"found\":true,\"error_limit\":0.01,\"latency_limit\":554}\nChanges=[{\"kind\":\"telemetry\",\"status\":\"missing\",\"minute\":58},{\"kind\":\"dependency\",\"status\":\"healthy\",\"minute\":55}]\nNext action:",
+      "action": "H",
+      "input_tokens": 197,
+      "probabilities": [
+        0.0024401003029197454,
+        0.0005014108028262854,
+        0.0026193640660494566,
+        0.025002408772706985,
+        0.11095603555440903,
+        0.07352906465530396,
+        0.15726928412914276,
+        0.5990611910820007,
+        0.028621094301342964
+      ],
+      "context": {
+        "input_tokens": 197,
+        "original_tokens": 197,
+        "clipped": false,
+        "max_length": 384,
+        "truncation_side": "left"
+      }
+    }
+  ],
+  "episode": {
+    "task_id": "message-presence",
+    "split": "dev",
+    "actions": [
+      "A",
+      "B",
+      "C",
+      "H"
+    ],
+    "reward": 1.3,
+    "score": {
+      "success": true,
+      "decision_correct": true,
+      "checks": {
+        "completed": true,
+        "structured_answer": true,
+        "service_answer": true,
+        "metrics_observed": true,
+        "current_metrics": true,
+        "metric_status_consistency": true,
+        "numeric_answer": true,
+        "status_answer": true,
+        "cause_answer": true,
+        "recommendation_answer": true,
+        "uncertainty_answer": true,
+        "citation_ids": true,
+        "runbook_evidence": true,
+        "current_change_evidence": true,
+        "required_tools": true,
+        "allowed_tools": true,
+        "no_tool_errors": true,
+        "service_scoped_calls": true
+      },
+      "failure": null,
+      "answer_parse_error": null,
+      "parsed_answer": {
+        "service": "message-presence",
+        "error_rate": null,
+        "status": "insufficient_data",
+        "likely_cause": "insufficient_evidence",
+        "recommendation": "collect_evidence",
+        "uncertainty": "insufficient_data",
+        "citations": [
+          "6c1c1cace4b8bc6ed511",
+          "86f98c146bd859773d22",
+          "74fdfbbceb1188369111",
+          "87b9d3e8020209b6d161",
+          "bb2ec9f2a38a5ebd402b",
+          "chg-6012223253a77c59f5aa",
+          "chg-d89e9d767aab667f5b9c"
+        ]
+      },
+      "tool_execution_accuracy": 1.0,
+      "citation_precision": 1.0,
+      "tool_calls": 3,
+      "latency_seconds": 0.008084200002485886,
+      "known_tokens": 591,
+      "unknown_usage": 0,
+      "fixture": false
+    },
+    "trace": {
+      "status": "completed",
+      "answer": "{\"service\": \"message-presence\", \"error_rate\": null, \"status\": \"insufficient_data\", \"likely_cause\": \"insufficient_evidence\", \"recommendation\": \"collect_evidence\", \"uncertainty\": \"insufficient_data\", \"citations\": [\"6c1c1cace4b8bc6ed511\", \"86f98c146bd859773d22\", \"74fdfbbceb1188369111\", \"87b9d3e8020209b6d161\", \"bb2ec9f2a38a5ebd402b\", \"chg-6012223253a77c59f5aa\", \"chg-d89e9d767aab667f5b9c\"]}",
+      "events": [
+        {
+          "kind": "tool",
+          "name": "service_metrics",
+          "arguments": {
+            "service": "message-presence",
+            "window_minutes": 30
+          },
+          "output": {
+            "service": "message-presence",
+            "samples": 0,
+            "error_rate": null,
+            "max_p95_ms": null,
+            "requests": 0,
+            "window_minutes": 30,
+            "as_of_minute": null,
+            "status": "missing",
+            "baseline_error_rate": null,
+            "baseline_max_p95_ms": null,
+            "baseline_requests": 0,
+            "recent_error_rate": null,
+            "recent_max_p95_ms": null,
+            "recent_requests": 0,
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.0027572999970288947
+        },
+        {
+          "kind": "tool",
+          "name": "knowledge_search",
+          "arguments": {
+            "service": "message-presence",
+            "query": "incident policy observation window status diagnostic evidence uncertainty message-presence",
+            "limit": 5
+          },
+          "output": {
+            "service": "message-presence",
+            "source": null,
+            "evidence": [
+              {
+                "id": "6c1c1cace4b8bc6ed511",
+                "source": "message-presence/runbook.md",
+                "text": "# message-presence: presence checks incident policy",
+                "score": 0.01639344262295082,
+                "trust": "untrusted_evidence"
+              },
+              {
+                "id": "86f98c146bd859773d22",
+                "source": "message-presence/runbook.md",
+                "text": "Use the exact service filter when retrieving this runbook. Evidence from another\nservice has different limits and cannot establish the status of message-presence.",
+                "score": 0.016129032258064516,
+                "trust": "untrusted_evidence"
+              },
+              {
+                "id": "74fdfbbceb1188369111",
+                "source": "message-presence/runbook.md",
+                "text": "## Observation window and status\nRequest service_metrics for the latest 30 minutes. Its recent fields summarize\nthe newest 15 samples, and baseline fields summarize the earlier 15 samples.\nThe final error_rate must be the complete 30-minute error_rate, as a decimal.\nAn incident exists if recent_error_rate >= 0.0100 or\nrecent_max_p95_ms > 554 milliseconds. Both conditions below those\nlimits imply healthy, provided current metric samples and this policy exist.\nMissing metrics or a missing runbook imply insufficient_data: do not infer\nhealthy from a null error_rate or borrow a different service's thresholds.",
+                "score": 0.015873015873015872,
+                "trust": "untrusted_evidence"
+              },
+              {
+                "id": "87b9d3e8020209b6d161",
+                "source": "message-presence/runbook.md",
+                "text": "## Uncertainty and citations\nUse uncertainty=causality_unproven for evidence-supported incident hypotheses;\nnone_detected for healthy observations; insufficient_data for missing required\nevidence; conflicting_evidence for unresolved conflicts. Correlation does not\nprove causation. Cite this runbook and current incident_changes evidence ids.",
+                "score": 0.015625,
+                "trust": "untrusted_evidence"
+              },
+              {
+                "id": "bb2ec9f2a38a5ebd402b",
+                "source": "message-presence/runbook.md",
+                "text": "## Diagnostic evidence rules\nThe serving dependency for presence checks is presence-cache. Obtain incident_changes:\nthe runbook contains policies, not the service's current change history.\nAn active release before the metric deterioration, stable demand and a healthy\ndependency support likely_cause=release_regression and recommendation=rollback_review.\nAn active dependency failure before deterioration takes priority over a stale,\naborted or later unrelated release: dependency_outage / dependency_escalation.\nAn active traffic surge with a higher recent/baseline request ratio and healthy\ndependency supports capacity_pressure / capacity_review. Error rates alone do\nnot distinguish these causes. Cite the relevant current change evidence id.\nConflicting health probes or two unresolved competing change explanations require\nconflicting_evidence / verify_changes. A current incident without sufficient\ncausal evidence requires insufficient_evidence / collect_evidence.\nA healthy service requires",
+                "score": 0.015384615384615385,
+                "trust": "untrusted_evidence"
+              }
+            ]
+          },
+          "seconds": 0.001992000004975125
+        },
+        {
+          "kind": "tool",
+          "name": "incident_changes",
+          "arguments": {
+            "service": "message-presence"
+          },
+          "output": {
+            "service": "message-presence",
+            "available": true,
+            "changes": [
+              {
+                "kind": "telemetry",
+                "minute": 58,
+                "summary": "The metric exporter stopped and current request/error samples are missing. Dependency health cannot substitute for service metrics.",
+                "status": "missing",
+                "evidence_id": "chg-6012223253a77c59f5aa"
+              },
+              {
+                "kind": "dependency",
+                "minute": 55,
+                "summary": "presence-cache probes are healthy but service request counts are unknown.",
+                "status": "healthy",
+                "evidence_id": "chg-d89e9d767aab667f5b9c"
+              }
+            ],
+            "evidence": [
+              {
+                "id": "chg-6012223253a77c59f5aa",
+                "source": "changes/message-presence",
+                "text": "telemetry at minute 58 (missing): The metric exporter stopped and current request/error samples are missing. Dependency health cannot substitute for service metrics.",
+                "kind": "telemetry",
+                "status": "missing",
+                "minute": 58
+              },
+              {
+                "id": "chg-d89e9d767aab667f5b9c",
+                "source": "changes/message-presence",
+                "text": "dependency at minute 55 (healthy): presence-cache probes are healthy but service request counts are unknown.",
+                "kind": "dependency",
+                "status": "healthy",
+                "minute": 55
+              }
+            ],
+            "trust": "untrusted_evidence"
+          },
+          "seconds": 0.0033349000004818663
+        }
+      ],
+      "tokens": 591,
+      "unknown_usage": 0,
+      "fixture": false
+    },
+    "wall_seconds": 4.257760699998471,
+    "decoder": "greedy one-of-nine original LM vocabulary tokens",
+    "stage": "sft"
+  }
+}
